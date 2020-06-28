@@ -20,9 +20,10 @@ else:
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
 
-ALIVE_MESSAGE = Config.ALIVE_MSG
+  ALIVE_MESSAGE = Config.ALIVE_MSG
 else:
   ALIVE_MESSAGE = alive_caption
+
 alive_caption = "**ＤａＲｋ　ｐＲｉＮｃＥ IS Still Running\n\n**"
 alive_caption += "`BOT STATUS\n\n`"
 alive_caption += f"`Telethon version: {version.__version__}\n`"
