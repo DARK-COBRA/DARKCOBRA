@@ -1,7 +1,7 @@
 {
-  "name": "FRIDAY",
-  "description": "Only For Legends",
-  "logo": "https://telegra.ph/file/9b54a71ac22abd00448a5.jpg",
+  "name": "ＤａＲｋ　ｐＲｉＮｃＥ",
+  "description": "@use_dark_prince Userbot Kanged From Everywhere",
+  "logo": "https://telegra.ph/file/3952f58c07382778cab87.jpg",
     "keywords": [
     "telegram",
     "userbot",
@@ -9,7 +9,7 @@
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/leobrownlee/FRIDAY/",
+  "repository": "https://github.com/No-OnE-Kn0wS-Me/dArK_pRiNcE/",
   "website": "#TODO",
   "success_url": "#TODO",
   "env": {
@@ -28,7 +28,7 @@
       "required": false
     },
     "ALIVE_NAME": {
-      "description": "Fill your Full name or Username like @masterDestroyer.",
+      "description": "Fill your Full name or Username like @No_OnE_Kn0wS_Me .",
       "value": ""
     },
     "ALIVE_PIC": {
@@ -74,7 +74,7 @@
        "value": ""
     }, 
     "STRING_SESSION": {
-      "description": "Get this value from https://fridayuserbot.midhunkm1294bit.repl.run",
+      "description": "Get this value by running commands on Termux",
       "value": ""
     },
     "GITHUB_ACCESS_TOKEN": {
@@ -83,7 +83,7 @@
       "required": false
     },
     "GIT_REPO_NAME": {
-      "description": "Your repo name Example: midhunkm1294/Friday, but GITHUB_ACCESS_TOKEN must be setup first.",
+      "description": "Your repo name Example: No-OnE-Kn0wS-Me/dArK_pRiNcE, but GITHUB_ACCESS_TOKEN must be setup first.",
       "value": "",
       "required": false
     },
@@ -127,6 +127,14 @@
       "description": "Get your own APPID from https://api.openweathermap.org/data/2.5/weather",
       "required": false
     },
+    "NO_OF_BUTTONS_DISPLAYED_IN_H_ME_CMD": {
+      "description": " Set The Amount Of Buttons Displayed In Help Command",
+      "required": false
+    },
+    "NO_OF_COLUMS_DISPLAYED_IN_H_ME_CMD": {
+      "description": "Set The Amount Of Rows You Want To Displayed In Help Command default 2",
+      "required": false
+    }, 
     "TZ": {
       "description": "Required for Correct Time for autopic get from http://www.timezoneconverter.com/cgi-bin/findzone.tzc",
       "value": "Asia/Kolkata",
