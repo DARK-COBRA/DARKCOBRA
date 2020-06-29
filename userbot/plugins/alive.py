@@ -30,11 +30,10 @@ if ALIVE_MESSAGE is None:
   ALIVE_MESSAGE += "[DEPLOY This Lit Userbot Now](https://github.com/No-OnE-Kn0wS-Me/dArK_pRiNcE)"
 
 buttons=[
-                    [custom.Button.url("Repo Link", "https://github.com/No-OnE-Kn0wS-Me/dArK_pRiNcE")],
+                    [custom.Button.url("ＤａＲｋ　ｐＲｉＮｃＥ Repo", "https://github.com/No-OnE-Kn0wS-Me/dArK_pRiNcE")]
                 ],
                 link_preview=True
-
-
+                )
 
 
 #@command(outgoing=True, pattern="^.alive$")
