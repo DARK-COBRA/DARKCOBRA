@@ -9,6 +9,7 @@ from telethon.tl.types import ChannelParticipantsAdmins
 from userbot import ALIVE_NAME, CMD_HELP
 from userbot.utils import admin_cmd
 from telethon import version
+from telethon import events, custom
 from platform import python_version, uname
 
 ALIVE_IMG = Config.ALIVE_PHOTTO
