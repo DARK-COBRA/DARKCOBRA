@@ -28,8 +28,7 @@ if ALIVE_MESSAGE is None:
   ALIVE_MESSAGE += "`I'll Be With You Till My Dyno Ends!!\n\n`"
   ALIVE_MESSAGE += f"`Support Channel` : @uSe_DaRk_PrInCe\n\n"
   ALIVE_MESSAGE += f"`Bot Created And Maintained By`:   {DEFAULTUSER}\n\n"
-  ALIVE_MESSAGE += "[DEPLOY This Lit Userbot Now](https://github.com/No-OnE-Kn0wS-Me/dArK_pRiNcE)"
-
+  
 buttons=[
                     [custom.Button.url("ＤａＲｋ　ｐＲｉＮｃＥ Repo", "https://github.com/No-OnE-Kn0wS-Me/dArK_pRiNcE")]
                 ],
@@ -42,4 +41,6 @@ buttons=[
 async def amireallyalive(alive):
     """ For .alive command, check if the bot is running.  """
     await alive.delete() 
-    await borg.send_file(alive.chat_id, ALIVE_IMG,caption=ALIVE_MESSAGE)
+    await borg.send_file(alive.chat_id, ALIVE_IMG,caption=ALIVE_MESSAGE,buttons=buttons,
+                link_preview=True
+            )
