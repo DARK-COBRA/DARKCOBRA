@@ -32,7 +32,7 @@ if ALIVE_MESSAGE is None:
 buttons=[
                     [custom.Button.url("ＤａＲｋ　ｐＲｉＮｃＥ Repo", "https://github.com/No-OnE-Kn0wS-Me/dArK_pRiNcE")]
                 ],
-                link_preview=True
+                link_preview=False
                 )
 
 
@@ -42,5 +42,5 @@ async def amireallyalive(alive):
     """ For .alive command, check if the bot is running.  """
     await alive.delete() 
     await borg.send_file(alive.chat_id, ALIVE_IMG,caption=ALIVE_MESSAGE,buttons=buttons,
-                link_preview=True
+                link_preview=False
             )
