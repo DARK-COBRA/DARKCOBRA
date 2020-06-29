@@ -29,11 +29,11 @@ if ALIVE_MESSAGE is None:
   ALIVE_MESSAGE += f"`Support Channel` : @uSe_DaRk_PrInCe\n\n"
   ALIVE_MESSAGE += f"`Bot Created And Maintained By`:   {DEFAULTUSER}\n\n"
   
-buttons=[
+               buttons=[
                     [custom.Button.url("ＤａＲｋ　ｐＲｉＮｃＥ Repo", "https://github.com/No-OnE-Kn0wS-Me/dArK_pRiNcE")]
                 ],
                 link_preview=False
-                )
+            )
 
 
 #@command(outgoing=True, pattern="^.alive$")
