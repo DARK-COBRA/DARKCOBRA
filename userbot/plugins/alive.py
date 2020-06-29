@@ -14,8 +14,6 @@ from platform import python_version, uname
 ALIVE_IMG = Config.ALIVE_PHOTTO
 if ALIVE_IMG is None:
   ALIVE_IMG = "https://telegra.ph/file/3952f58c07382778cab87.jpg"
-else:
-  ALIVE_PHOTTO = ALIVE_IMG
 
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
@@ -23,8 +21,6 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars 
 ALIVE_MESSAGE = Config.ALIVE_MSG
 if ALIVE_MESSAGE is None:
   ALIVE_MESSAGE = alive_caption
-else:
-  ALIVE_MSG = ALIVE_MESSAGE
 
 alive_caption = "**ＤａＲｋ　ｐＲｉＮｃＥ IS Still Running\n\n**"
 alive_caption += "`BOT STATUS\n\n`"
