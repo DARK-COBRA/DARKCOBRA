@@ -19,15 +19,15 @@ if ALIVE_IMG is None:
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
 
 ALIVE_MESSAGE = Config.ALIVE_MSG
-if ALIVE_MSG is None:
-  ALIVE_MSG = "**🔱ＤａＲｋ　ｐＲｉＮｃＥ IS still Alive🔱\n\n\n**"
-  ALIVE_MSG += "`My Bot Status\n\n\n`"
-  ALIVE_MSG += f"`Telethon version: Telethon Not Found\n`"
-  ALIVE_MSG += f"`Python: PYTHON-3.6.4 \n\n`"
-  ALIVE_MSG += "`I'll Be With You Till My Dyno Ends!!\n\n`"
-  ALIVE_MSG += f"`Support Channel` : @uSe_DaRk_PrInCe\n\n"
-  ALIVE_MSG += f"`Bot Created And Maintained By`:   {DEFAULTUSER}\n\n"
-  ALIVE_MSG += "[DEPLOY This Lit Userbot Now](https://github.com/No-OnE-Kn0wS-Me/dArK_pRiNcE)"
+if ALIVE_MESSAGE is None:
+  ALIVE_MESSAGE = "**🔱ＤａＲｋ　ｐＲｉＮｃＥ IS still Alive🔱\n\n\n**"
+  ALIVE_MESSAGE += "`My Bot Status\n\n\n`"
+  ALIVE_MESSAGE += f"`Telethon version: Telethon Not Found\n`"
+  ALIVE_MESSAGE += f"`Python: PYTHON-3.6.4 \n\n`"
+  ALIVE_MESSAGE += "`I'll Be With You Till My Dyno Ends!!\n\n`"
+  ALIVE_MESSAGE += f"`Support Channel` : @uSe_DaRk_PrInCe\n\n"
+  ALIVE_MESSAGE += f"`Bot Created And Maintained By`:   {DEFAULTUSER}\n\n"
+  ALIVE_MESSAGE += "[DEPLOY This Lit Userbot Now](https://github.com/No-OnE-Kn0wS-Me/dArK_pRiNcE)"
 
 
 
