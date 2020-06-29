@@ -20,16 +20,16 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars 
 
 ALIVE_MESSAGE = Config.ALIVE_MSG
 if ALIVE_MESSAGE is None:
-  ALIVE_MESSAGE = alive_caption
+  ALIVE_MESSAGE = "**ＤａＲｋ　ｐＲｉＮｃＥ IS Still Running\n\n**"
+  ALIVE_MESSAGE += "`BOT STATUS\n\n`"
+  ALIVE_MESSAGE += f"`Telethon version: {version.__version__}\n`"
+  ALIVE_MESSAGE += "`Database Status: ERROR! DATABASE NOT FOUND!\n`"
+  ALIVE_MESSAGE += f"`Python: PYTHON-3.6.4 \n`"
+  ALIVE_MESSAGE += "`I'll Be With You Till My Dynos Ends!!\n`"
+  ALIVE_MESSAGE += f"`Bot Created And Maintained By`:   {DEFAULTUSER}\n\n"
+  ALIVE_MESSAGE += "[DEPLOY This Lit Userbot Now](https://github.com/No-OnE-Kn0wS-Me/dArK_pRiNcE)"
 
-alive_caption = "**ＤａＲｋ　ｐＲｉＮｃＥ IS Still Running\n\n**"
-alive_caption += "`BOT STATUS\n\n`"
-alive_caption += f"`Telethon version: {version.__version__}\n`"
-alive_caption += "`Database Status: ERROR! DATABASE NOT FOUND!\n`"
-alive_caption += f"`Python: PYTHON-3.6.4 \n`"
-alive_caption += "`I'll Be With You Till My Dynos Ends!!\n`"
-alive_caption += f"`Bot Created And Maintained By`:   {DEFAULTUSER}\n\n"
-alive_caption += "[DEPLOY This Lit Userbot Now](https://github.com/No-OnE-Kn0wS-Me/dArK_pRiNcE)"
+
 
 
 
