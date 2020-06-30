@@ -50,5 +50,5 @@ async def amireallyalive(alive):
     await alive.delete()
     await alive.edit(DARK_BUTTONS,link_preview=True
 )
-    await borg.send_file(alive.chat_id, ALIVE_IMG,caption=ALIVE_MESSAGE,DARK_BUTTONS,link_preview=True
+    await borg.send_file(alive.chat_id, ALIVE_IMG,caption=ALIVE_MESSAGE,buttons=DARK_BUTTONS,link_preview=True
             )
