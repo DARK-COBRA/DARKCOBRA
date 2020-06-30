@@ -48,7 +48,7 @@ if ALIVE_MESSAGE is None:
 async def amireallyalive(alive):
     """ For .alive command, check if the bot is running.  """
     await alive.delete()
-    await event.edit(buttons=buttons,link_preview=True
+    await alive.edit(buttons=buttons,link_preview=True
 )
     await borg.send_file(alive.chat_id, ALIVE_IMG,caption=ALIVE_MESSAGE,buttons=buttons,
                 link_preview=True
