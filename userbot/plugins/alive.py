@@ -41,15 +41,15 @@ if ALIVE_MESSAGE is None:
                     [custom.Button.url("🔰Update Fork🔰", "tg://need_update_for_some_feature"), custom.Button.url(
                         "✳️Fork Boost✳️", "tg://some_unsupported_feature"), custom.Button.url(
                         "📤Cloud Torrent📥", "https://github.com/ravana69/oneclickrun")]
-                ],link_preview=True)
-
+                ]
 
 #@command(outgoing=True, pattern="^.alive$")
 @borg.on(admin_cmd(pattern=r"alive"))
 async def amireallyalive(alive):
     """ For .alive command, check if the bot is running.  """
     await alive.delete()
-    await event.edit(buttons=buttons) 
+    await event.edit(buttons=buttons,link_preview=True
+)
     await borg.send_file(alive.chat_id, ALIVE_IMG,caption=ALIVE_MESSAGE,buttons=buttons,
                 link_preview=True
             )
