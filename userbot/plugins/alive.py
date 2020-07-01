@@ -23,17 +23,7 @@ if ALIVE_IMG is None:
 
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
-buttons=[
-                    [custom.Button.url("👤Contact Creator👤", "https://telegram.dog/r4v4n4"), custom.Button.url(
-                        "📼Ravana Audio Memes📼", "https://t.me/tgaudiomemes")],
-                    [custom.Button.url("👨‍💻Source Code👨‍💻", "https://github.com/ravana69/Pornhub"), custom.Button.url(
-                        "❕❗Deploy Me❗❕", "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Fravana69%2FPornHub%2F&template=https%3A%2F%2Fgithub.com%2Fravana69%2FPornHub%2F")],
-                    [custom.Button.url("🔰Update Fork🔰", "tg://need_update_for_some_feature"), custom.Button.url(
-                        "✳️Fork Boost✳️", "tg://some_unsupported_feature"), custom.Button.url(
-                        "📤Cloud Torrent📥", "https://github.com/ravana69/oneclickrun")]
-                ],
-                link_preview=True
-            ) 
+
 
 ALIVE_MESSAGE = Config.ALIVE_MSG
 if ALIVE_MESSAGE is None:
@@ -48,6 +38,17 @@ if ALIVE_MESSAGE is None:
                 link_preview=True
             )
 
+buttons=[
+                    [custom.Button.url("👤Contact Creator👤", "https://telegram.dog/r4v4n4"), custom.Button.url(
+                        "📼Ravana Audio Memes📼", "https://t.me/tgaudiomemes")],
+                    [custom.Button.url("👨‍💻Source Code👨‍💻", "https://github.com/ravana69/Pornhub"), custom.Button.url(
+                        "❕❗Deploy Me❗❕", "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Fravana69%2FPornHub%2F&template=https%3A%2F%2Fgithub.com%2Fravana69%2FPornHub%2F")],
+                    [custom.Button.url("🔰Update Fork🔰", "tg://need_update_for_some_feature"), custom.Button.url(
+                        "✳️Fork Boost✳️", "tg://some_unsupported_feature"), custom.Button.url(
+                        "📤Cloud Torrent📥", "https://github.com/ravana69/oneclickrun")]
+                ],
+                link_preview=True
+            ) 
 
 #@command(outgoing=True, pattern="^.alive$")
 @borg.on(admin_cmd(pattern=r"alive"))
