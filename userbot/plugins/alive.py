@@ -47,8 +47,7 @@ buttons=[
                         "✳️Fork Boost✳️", "tg://some_unsupported_feature"), custom.Button.url(
                         "📤Cloud Torrent📥", "https://github.com/ravana69/oneclickrun")]
                 ]
-            ) 
-
+            
 #@command(outgoing=True, pattern="^.alive$")
 @borg.on(admin_cmd(pattern=r"alive"))
 async def amireallyalive(alive):
