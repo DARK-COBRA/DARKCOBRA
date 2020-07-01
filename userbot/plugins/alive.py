@@ -34,6 +34,7 @@ if ALIVE_MESSAGE is None:
   ALIVE_MESSAGE += f"`Support Channel` : @uSe_DaRk_PrInCe\n\n"
   ALIVE_MESSAGE += f"`Bot Created And Maintained By`:   {DEFAULTUSER}\n\n"
  
+buttons = DARK_BUTTONS 
  DARK_BUTTONS = [
                     [custom.Button.url("👤Contact Creator👤", "https://telegram.dog/r4v4n4"), custom.Button.url(
                         "📼Ravana Audio Memes📼", "https://t.me/tgaudiomemes")],
@@ -50,5 +51,5 @@ async def amireallyalive(alive):
     """ For .alive command, check if the bot is running.  """
     await alive.delete()
     )
-    await borg.send_file(alive.chat_id, ALIVE_IMG,caption=ALIVE_MESSAGE,DARK_BUTTONS,link_preview=True
+    await borg.send_file(alive.chat_id, ALIVE_IMG,caption=ALIVE_MESSAGE,buttons
             )
