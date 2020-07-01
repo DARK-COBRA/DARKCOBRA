@@ -52,6 +52,5 @@ buttons=[
 @borg.on(admin_cmd(pattern=r"alive"))
 async def amireallyalive(alive):
     """ For .alive command, check if the bot is running.  """
-    await alive.delete()
-    )
+    await alive.delete() 
     await borg.send_file(alive.chat_id, ALIVE_IMG,caption=ALIVE_MESSAGE)
