@@ -46,8 +46,7 @@ buttons=[
                     [custom.Button.url("🔰Update Fork🔰", "tg://need_update_for_some_feature"), custom.Button.url(
                         "✳️Fork Boost✳️", "tg://some_unsupported_feature"), custom.Button.url(
                         "📤Cloud Torrent📥", "https://github.com/ravana69/oneclickrun")]
-                ],
-                link_preview=True
+                ]
             ) 
 
 #@command(outgoing=True, pattern="^.alive$")
