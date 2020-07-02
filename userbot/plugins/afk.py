@@ -31,7 +31,7 @@ async def set_not_afk(event):
                 event.chat_id,
                 "Please set `PLUGIN_CHANNEL` " + \
                 "for the proper functioning of afk functionality " + \
-                "in @leobrownlee \n\n `{}`".format(str(e)),
+                "in @uSe_DaRk_PrInCe \n\n `{}`".format(str(e)),
                 reply_to=event.message.id,
                 silent=True
             )
