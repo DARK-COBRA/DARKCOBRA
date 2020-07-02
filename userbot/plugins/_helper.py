@@ -5,7 +5,7 @@ from platform import uname
 import sys
 from telethon import events, functions, __version__
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "leobrownlee"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "ＤａＲｋ　ｐＲｉＮｃＥ"
 
 @command(pattern="^.help ?(.*)")
 #@borg.on(admin_cmd(pattern=r"help ?(.*)"))
@@ -45,8 +45,8 @@ async def cmd_list(event):
             else:
                 await event.edit(input_str + " is not a valid plugin!")
         else:
-            help_string = f"""Userbot Helper.. Provided by ✨{DEFAULTUSER}✨ \n
-`Userbot Helper to reveal all the commands`\n__Do .help plugin_name for commands, in case popup doesn't appear.__"""
+            help_string = f"""ＤａＲｋ　ｐＲｉＮｃＥ Helper.. Provided by The Legend {DEFAULTUSER} \n
+` Helps to reveal all the Available commands`\n__Do .help plugin_name for commands, in case popup doesn't appear.__"""
             results = await bot.inline_query(  # pylint:disable=E0602
                 tgbotusername,
                 help_string
@@ -73,7 +73,7 @@ async def _(event):
     result = await borg(functions.help.GetConfigRequest())  # pylint:disable=E0602
     result = result.stringify()
     logger.info(result)  # pylint:disable=E0602
-    await event.edit("""Telethon UserBot powered by FRIDAY""")
+    await event.edit("""Telethon UserBot powered by @uSe_DaRk_PrInCe""")
 
 
 @borg.on(admin_cmd(pattern="syntax (.*)"))
@@ -84,7 +84,7 @@ async def _(event):
 
     if plugin_name in CMD_LIST:
         help_string = CMD_LIST[plugin_name].__doc__
-        unload_string = f"Use `.unload {plugin_name}` to remove this plugin.\n           © FRIDAY"
+        unload_string = f"Use `.unload {plugin_name}` to remove this plugin.\n           @uSe_DaRk_PrInCe "
         
         if help_string:
             plugin_syntax = f"Syntax for plugin **{plugin_name}**:\n\n{help_string}\n{unload_string}"
