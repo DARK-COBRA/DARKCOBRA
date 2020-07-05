@@ -13,7 +13,9 @@ from telethon.errors import FloodWaitError
 from userbot.utils import admin_cmd
 from userbot import ALIVE_NAME
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "FRIDAY"
+BIO_MSG = Config.ALIVE_PHOTTO
+if BIO_MSG is None:
+  BIO_MSG = "https://telegra.ph/file/3952f58c07382778cab87.jpg"
 
 DEL_TIME_OUT = 60
 
@@ -25,7 +27,7 @@ async def _(event):
     while True:
         DMY = time.strftime("%d.%m.%Y")
         HM = time.strftime("%H:%M:%S")
-        bio = f"📅{DMY} 🔥{DEFAULTUSER}🔥 ⌚️{HM}"
+        bio = f"📅{DMY} 🔥{BIO_MSG}🔥 ⌚️{HM}"
         logger.info(bio)
         try:
             await borg(functions.account.UpdateProfileRequest(  # pylint:disable=E0602
