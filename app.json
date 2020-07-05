@@ -43,6 +43,11 @@
       "description": "put here any telegraph media link for pmpermit custom pic.",
       "value": ""
     },
+    "PM_PERMIT_GROUP_ID": {
+      "description": "Put an Group Id Same As PRIVATE_GROUP_ID Required For Pmpermit plugin.",
+      "value": "",
+      "required": false
+    },
     "APP_ID": {
       "description": "Get this value from my.telegram.org! Please do not steal",
       "value": ""
