@@ -28,7 +28,7 @@ USER_BOT_NO_WARN = ("`Hello, This is AntiSpam Security Service⚠️.You have fo
                     "⭕️**Now You Are In Trouble So Send** 🔥 `/start` 🔥 **To Start A Valid Conversation!!**⭕️")
 
 
-if Var.PRIVATE_GROUP_ID is not None:
+if Var.PM_PERMIT_GROUP_ID is not None:
     @command(pattern="^.approve ?(.*)")
     async def approve_p_m(event):
         if event.fwd_from:
