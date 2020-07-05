@@ -39,6 +39,11 @@
       "description": "put here any telegraph media link for alive pic.",
       "value": ""
     },
+    "BIO_MSG": {
+      "description": "Put Your Telegram Bio Here Required For Auto Bio.",
+      "value": "",
+      "required": false
+    },
     "PMPERMIT_PIC": {
       "description": "put here any telegraph media link for pmpermit custom pic.",
       "value": ""
