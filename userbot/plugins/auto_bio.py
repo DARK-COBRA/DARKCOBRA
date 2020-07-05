@@ -15,7 +15,7 @@ from userbot import ALIVE_NAME
 
 BIO_MSG = Config.ALIVE_PHOTTO
 if BIO_MSG is None:
-  BIO_MSG = "https://telegra.ph/file/3952f58c07382778cab87.jpg"
+  BIO_MSG = "@uSe_DaRk_PrInCe"
 
 DEL_TIME_OUT = 60
 
