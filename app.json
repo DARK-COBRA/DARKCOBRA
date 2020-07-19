@@ -29,11 +29,13 @@
     },
     "ALIVE_NAME": {
       "description": "Fill your Full name or Username like @No_OnE_Kn0wS_Me .",
-      "value": ""
+      "value": "",
+      "required": false
     },
     "ALIVE_MSG": {
       "description": "Set Custom Alive Message When entering .alive command .",
-      "value": ""
+      "value": "",
+      "required": false
     },
     "ALIVE_PHOTTO": {
       "description": "put here any telegraph media link for alive pic.",
@@ -162,20 +164,20 @@
     "REDIRECTCHANNEL": {
       "description": "Put You Channel Username Reflecting Your Info or Your Tags Etc",
       "value": "",
-      "required": false
-    
+      "required": false 
     }
-
-
   },
-  "addons": [{
-    "plan": "heroku-postgresql",
-    "options": {
-      "version": "9.5"
+  "addons": [
+    {
+      "plan": "heroku-postgresql",
+      "options": {
+        "version": "9.6"
+      }
     }
-  }],
-  "buildpacks": [{
-    "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+  ],
+  "buildpacks": [
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
   },{
     "url":"https://github.com/amivin/aria2-heroku.git"
   },{
