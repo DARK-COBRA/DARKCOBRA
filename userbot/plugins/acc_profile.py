@@ -59,7 +59,7 @@ async def _(event):
         await event.edit(str(e))
     else:
         if photo:
-            await event.edit("now, Uploading to @leobrownlee ...")
+            await event.edit("now, Uploading to @uSe_DaRk_PrInCe ...")
             file = await borg.upload_file(photo)  # pylint:disable=E0602
             try:
                 await borg(functions.photos.UploadProfilePhotoRequest(  # pylint:disable=E0602
