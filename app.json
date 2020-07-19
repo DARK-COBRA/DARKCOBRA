@@ -31,7 +31,7 @@
       "description": "Fill your Full name or Username like @No_OnE_Kn0wS_Me .",
       "value": ""
     },
-    ALIVE_MSG": {
+    "ALIVE_MSG": {
       "description": "Set Custom Alive Message When entering .alive command .",
       "value": ""
     },
