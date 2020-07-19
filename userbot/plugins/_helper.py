@@ -5,7 +5,7 @@ from platform import uname
 import sys
 from telethon import events, functions, __version__
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "leobrownlee"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "@uSe_DaRk_PrInCe"
 
 @command(pattern="^.help ?(.*)")
 #@borg.on(admin_cmd(pattern=r"help ?(.*)"))
@@ -29,7 +29,7 @@ async def cmd_list(event):
                         out_file,
                         force_document=True,
                         allow_cache=False,
-                        caption="**COMMANDS**",
+                        caption="**COMMANDS** In ＤａＲｋ　ｐＲｉＮｃＥ",
                         reply_to=reply_to_id
                     )
                     await event.delete()
