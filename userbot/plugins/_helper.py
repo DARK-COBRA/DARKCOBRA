@@ -84,7 +84,7 @@ async def _(event):
 
     if plugin_name in CMD_LIST:
         help_string = CMD_LIST[plugin_name].__doc__
-        unload_string = f"Use `.unload {plugin_name}` to remove this plugin.\n           © Dark Prince"
+        unload_string = f"Use `.unload {plugin_name}` to remove this plugin.\n           © ＤａＲｋ　ｐＲｉＮｃＥ"
         
         if help_string:
             plugin_syntax = f"Syntax for plugin **{plugin_name}**:\n\n{help_string}\n{unload_string}"
