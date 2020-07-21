@@ -2,18 +2,16 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-""" Command: .animestkr , .rndm 
+""" Command: .dab , .brain 
 
-credit: owner"""
+credit: lejend @r4v4n4"""
 
 import random
 
 from telethon import events, types, functions, utils
 
 
-def choser(cmd, pack, blacklist=None):
-    if blacklist is None:
-        blacklist = {}
+def choser(cmd, pack, blacklist={}):
     docs = None
     @borg.on(events.NewMessage(pattern=rf'\.{cmd}', outgoing=True))
     async def handler(event):
@@ -30,8 +28,8 @@ def choser(cmd, pack, blacklist=None):
         await event.respond(file=random.choice(docs))
 
 
-choser('rndm', 'IndianBhai_ke_locker_me')
-choser('animestkr', 'IndianBhai_ke_Animated', {
+choser('brain', 'supermind')
+choser('dab', 'DabOnHaters', {
     1653974154589768377,
     1653974154589768312,
     1653974154589767857,

@@ -2,14 +2,13 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 """ Command: .fpost word
-
-credit: @pureindialover"""
+credit: @r4v4n4"""
 
 import string
 
 from telethon import events
 from telethon.tl import types
-from uniborg.util import admin_cmd
+from userbot.utils import admin_cmd
 
 msg_cache = {}
 
