@@ -5,6 +5,8 @@ import os
 import sys
 from telethon.sessions import StringSession
 from telethon import TelegramClient
+from userbot.helpers import fonts as fonts
+from userbot.helpers import functions as catdef
 
 from var import Var
 
@@ -25,6 +27,9 @@ LOAD_PLUG = {}
 
 # PaperPlaneExtended Support Vars
 ENV = os.environ.get("ENV", False)
+
+CAT_ID = ["861055237", "1008681754"]
+
 """ PPE initialization. """
 
 from logging import basicConfig, getLogger, INFO, DEBUG
