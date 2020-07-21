@@ -155,8 +155,8 @@ async def get_full_user(event):
 
 CMD_HELP.update({
     "clone":
-    "\n .clone <username\reply>
-   \n usage : steals their profile including dp, name
-\n .revert 
-\n usage: To back to your profile but it'll show ALIVE_NAME instead of your current name and DEFAULT_BIO instead of your current bio
+    ".clone <username/reply>\
+\nUsage: steals others profile including dp, name.\
+\n\n.revert\
+\nUsage: To back to your profile but it'll show ALIVE_NAME instead of your current name and DEFAULT_BIO instead of your current bio
 "})
