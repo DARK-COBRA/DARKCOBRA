@@ -1,7 +1,8 @@
 """Get Telegram Profile Picture and other information
 and set as own profile.
 Syntax: .clone @username"""
-#Copy That Plugin by @ViperAdnan and @mrconfused
+#Copy That Plugin by @ViperAdnan
+#modified by @No_OnE_Kn0wS_Me 
 #Give credit if you are going to kang it.
 
 import html
@@ -26,7 +27,7 @@ from telethon.tl.types import InputPhoto, MessageMediaPhoto, User, Chat, Channel
 from userbot import bot, CMD_HELP , AUTONAME , DEFAULT_BIO , ALIVE_NAME
 
 DEFAULTUSER = str(AUTONAME) if AUTONAME else str(ALIVE_NAME)
-DEFAULTUSERBIO = str(DEFAULT_BIO) if DEFAULT_BIO else "ǝɔɐds ǝʇɐʌıɹd ǝɯos ǝɯ ǝʌı⅁˙ oıq ɹoɟ ɓuıʞuıɥʇ uɐɯ ʇıɐM"
+DEFAULTUSERBIO = str(DEFAULT_BIO) if DEFAULT_BIO else "Legends Says To @uSe_DaRk_PrInCe "
 BOTLOG_CHATID = Config.PRIVATE_GROUP_BOT_API_ID
 BOTLOG = True
 
@@ -76,7 +77,7 @@ async def _(event):
     await event.delete()
     await borg.send_message(
       event.chat_id,
-      "**LET US BE AS ONE**",
+      "**Who Are You? .. **",
       reply_to=reply_message
       )
     if BOTLOG:
@@ -151,3 +152,11 @@ async def get_full_user(event):
                 return replied_user, None
             except Exception as e:
                 return None, e
+
+CMD_HELP.update({
+    "clone":
+    "\n .clone <username/reply>
+   \n usage : steals their profile including dp, name
+\n .revert 
+\n usage: To back to your profile but it'll show ALIVE_NAME instead of your current name and DEFAULT_BIO instead of your current bio
+"})
