@@ -47,6 +47,7 @@ requests>=2.18.4
 search-engine-parser>=0.4.2
 selenium
 speedtest-cli>=2.0.2
+spotify_token
 sqlalchemy>=1.2
 telegraph
 urbandict>=0.5
