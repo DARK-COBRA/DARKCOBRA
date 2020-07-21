@@ -158,5 +158,5 @@ CMD_HELP.update({
     ".clone <username/reply>\
 \nUsage: steals others profile including dp, name.\
 \n\n.revert\
-\nUsage: To back to your profile but it'll show ALIVE_NAME instead of your current name and DEFAULT_BIO instead of your current bio
+\nUsage: To back to your profile but it'll show ALIVE_NAME instead of your current name and DEFAULT_BIO instead of your current bio\
 "})
