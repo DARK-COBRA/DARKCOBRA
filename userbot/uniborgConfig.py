@@ -31,7 +31,10 @@ if ENV:
         # Telegram BOT Token from @BotFather
         TG_BOT_TOKEN_BF_HER = os.environ.get("TG_BOT_TOKEN_BF_HER", None)
         TG_BOT_USER_NAME_BF_HER = os.environ.get("TG_BOT_USER_NAME_BF_HER", None)
-        #
+        #spootifie
+        USERNAME = os.environ.get("USERNAME", None)
+        PASSWORD = os.environ.get("PASSWORD", None)
+        BIOPREFIX = os.environ.get("BIOPREFIX", None)
         #log
         DUAL_LOG = os.environ.get("DUAL_LOG", None)
         # DO NOT EDIT BELOW THIS LINE IF YOU DO NOT KNOW WHAT YOU ARE DOING
