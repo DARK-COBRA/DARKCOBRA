@@ -28,6 +28,7 @@ httplib2
 humanize
 lxml
 oauth2client
+patoolib
 psycopg2
 psycopg2-binary
 PyLyrics
