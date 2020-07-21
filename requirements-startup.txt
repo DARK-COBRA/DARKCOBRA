@@ -26,6 +26,7 @@ hachoir
 heroku3
 httplib2
 humanize
+justwatch
 lxml
 oauth2client
 patool
