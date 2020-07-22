@@ -12,9 +12,9 @@ from userbot import ALIVE_NAME
 
 naam = str(ALIVE_NAME)
 
-bot = "@MissRose_bot"
+bot = "@queendevilbot"
 
-@borg.on(admin_cmd("roseinfo ?(.*)"))
+@borg.on(admin_cmd("qinfo ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return    
@@ -26,11 +26,11 @@ async def _(event):
               response = await conv.get_response()
               await conv.send_message("/info")
               audio = await conv.get_response()
-              final = ("If you would like to know more about this user, use /info <userid/username> in RoseBot." , "")
+              final = ("If you would like to know more about this user, use /info <userid/username> in @queendevilbot." , "")
               await borg.send_message(event.chat_id, audio.text)
               await event.delete()
           except YouBlockedUserError:
-              await event.edit("**Error:** `unblock` @MissRose_bot `and retry!")
+              await event.edit("**Error:** `unblock` @queendevilbot `and retry!")
     elif "@" in sysarg:
       async with borg.conversation(bot) as conv:
           try:
@@ -38,11 +38,11 @@ async def _(event):
               response = await conv.get_response()
               await conv.send_message("/info " + sysarg)
               audio = await conv.get_response()
-              final = ("If you would like to know more about this user, use /info <username/userid> in RoseBot." , "")
+              final = ("If you would like to know more about this user, use /info <username/userid> in @queendevilbot." , "")
               await borg.send_message(event.chat_id, audio.text)
               await event.delete()
           except YouBlockedUserError:
-              await event.edit("**Error:** `unblock` @MissRose_Bot `and try again!")
+              await event.edit("**Error:** `unblock` @queendevilbot `and try again!")
     elif "" in sysarg:
       async with borg.conversation(bot) as conv:
           try:
@@ -54,4 +54,4 @@ async def _(event):
               await borg.send_message(event.chat_id, audio.text)
               await event.delete()
           except YouBlockedUserError:
-              await event.edit("**Error:** `unblock` @MissRose_Bot `and try again!")
+              await event.edit("**Error:** `unblock` @queendevilbot `and try again!")
