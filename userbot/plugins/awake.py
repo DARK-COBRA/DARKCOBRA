@@ -35,9 +35,9 @@ if ALIVE_MESSAGE is None:
   ALIVE_MESSAGE += f"`Bot Created And Maintained By`: {DEFAULTUSER}\n\n "
                 
             
-#@command(outgoing=True, pattern="^.alive$")
-@borg.on(admin_cmd(pattern=r"alive"))
-async def amireallyalive(alive):
-    """ For .alive command, check if the bot is running.  """
-    await alive.delete() 
-    await borg.send_file(alive.chat_id, ALIVE_IMG,caption=ALIVE_MESSAGE)
+#@command(outgoing=True, pattern="^.awake$")
+@borg.on(admin_cmd(pattern=r"awake"))
+async def amireallyalive(awake):
+    """ For .awake command, check if the bot is running.  """
+    await awake.delete() 
+    await borg.send_file(awake.chat_id, ALIVE_IMG,caption=ALIVE_MESSAGE)
