@@ -1,3 +1,5 @@
+#Thanks to catuserbot for this plugin 
+# modified by @No_OnE_Kn0wS_Me 
 import requests
 from bs4 import BeautifulSoup
 from telethon import events
@@ -42,7 +44,7 @@ async def _(event):
                 loa,
                 force_document=True,
                 allow_cache=False,
-                caption=query,
+                caption="`Audio File Medium Quality Successfully Uploaded By:`@uSe_DaRk_PrInCe",
                 reply_to=reply_to_id
             )
     await event.delete()
@@ -77,7 +79,7 @@ async def _(event):
                 loa,
                 force_document=True,
                 allow_cache=False,
-                caption=query,
+                caption="Audio File HQ Successfully Uploaded By:`@uSe_DaRk_PrInCe",
                 reply_to=reply_to_id
             )
     await event.delete()
@@ -121,7 +123,7 @@ async def _(event):
                 loa,
                 force_document=True,
                 allow_cache=False,
-                caption=query,
+                caption="`Video File Successfully Uploaded By:` @uSe_DaRk_PrInCe",
                 supports_streaming=True,
                 reply_to=reply_to_id,
                 attributes=[DocumentAttributeVideo(
@@ -140,5 +142,9 @@ async def _(event):
 
 CMD_HELP.update({"getmusic":
     "`.song` query or `.song` reply to song name :\
-    \nUSAGE:finds the song you entered in query and sends it"
+    \nUSAGE:finds the song you entered in query and sends it in medium quality\
+    `.song320` query or `.song320` reply to song name :\
+     \nUSAGE:finds the song you entered in query and sends it in High Quality\
+    `.videosong` query or `.videosong` reply to song name :\
+    \nUSAGE:finds the Video song you entered in query and sends it As A video File\"
 })    
