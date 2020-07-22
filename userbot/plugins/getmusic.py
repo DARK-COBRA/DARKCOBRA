@@ -33,18 +33,19 @@ async def _(event):
     reply_to_id = event.message.id
     if event.reply_to_msg_id:
         reply_to_id = event.reply_to_msg_id
-    await event.edit("Ok finding Your Awesome Song From My db")    
+    await event.edit("`i am going to find your song..🎶`"),
     bruh(str(cmd))
     l = glob.glob("*.mp3")
     loa = l[0]
-    await event.edit("Sending Song From My Database To Telegram")
+    await event.edit("`yeeeaah..! i found something..🎉`")
     await borg.send_file(
                 event.chat_id,
                 loa,
                 force_document=True,
                 allow_cache=False,
-                caption="File Successfully Uploaded By @uSe_DaRk_PrInCe",
+                caption="`📁File successfully Uploaded by` : [ＤａＲｋ ｐＲｉＮｃＥ](https://t.me/uSe_DaRk_PrInCe) 🔱",
                 reply_to=reply_to_id
             )
+    await event.delete()
     os.system("rm -rf *.mp3")
     subprocess.check_output("rm -rf *.mp3",shell=True)
