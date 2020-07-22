@@ -6,6 +6,8 @@ Available Commands:
 import emoji
 from googletrans import Translator
 from userbot.utils import admin_cmd
+from telethon import events
+
 
 
 @borg.on(admin_cmd(pattern="tr ?(.*)"))
