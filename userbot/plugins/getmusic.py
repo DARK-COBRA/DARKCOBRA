@@ -33,7 +33,7 @@ async def _(event):
     reply_to_id = event.message.id
     if event.reply_to_msg_id:
         reply_to_id = event.reply_to_msg_id
-    await event.edit("Ok finding Your Awesome Song From My Database ◉‿◉")    
+    await event.edit("Ok finding Your Awesome Song From My db")    
     bruh(str(cmd))
     l = glob.glob("*.mp3")
     loa = l[0]
@@ -43,7 +43,7 @@ async def _(event):
                 loa,
                 force_document=True,
                 allow_cache=False,
-                caption=cmd,
+                caption="File Successfully Uploaded By @uSe_DaRk_PrInCe",
                 reply_to=reply_to_id
             )
     os.system("rm -rf *.mp3")
