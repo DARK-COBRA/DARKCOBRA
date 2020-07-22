@@ -1,6 +1,4 @@
-'''
-Fix by @mariodevs
-'''
+
 import os
 import sys
 from telethon.sessions import StringSession
@@ -9,15 +7,7 @@ from userbot.helpers import fonts as fonts
 from userbot.helpers import functions as catdef
 
 from var import Var
-from userbot import catdef
 
-deEmojify = catdef.deEmojify
-trumptweet = catdef.trumptweet 
-changemymind = catdef.changemymind
-kannagen = catdef.kannagen
-moditweet = catdef.moditweet
-tweets = catdef.tweets
-waifutxt = catdef.waifutxt
 
 os.system("pip install --upgrade pip")
 if Var.STRING_SESSION:
