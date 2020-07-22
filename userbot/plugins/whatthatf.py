@@ -2,7 +2,6 @@ from telethon import events
 import asyncio
 import os
 import sys
-from uniborg import util
 from telethon import events, functions, __version__
 from uniborg.util import admin_cmd
 
