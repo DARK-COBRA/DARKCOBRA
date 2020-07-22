@@ -22,30 +22,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                     query, len(CMD_LIST)),
                 buttons=buttons,
                 link_preview=True
-           ) 
-        elif query.startswith("repo"):
-            result = builder.article(
-                "@No_OnE_Kn0wS_Me : Source ",
-                text=f"ＤａＲｋ ｐＲｉＮｃＥ Repo",
-                buttons=[
-                    [custom.Button.url("👤Click on the button to deploy dark Prince repo👤", "https://github.com/No-OnE-Kn0wS-Me/dArK_pRiNcE")],
-                ],
-                link_preview=True
-            )
-        elif query.startswith("alive"):
-            result = builder.article(
-                "@uSe_DaRk_PrInCe ",
-                text=f"ＤａＲｋ ｐＲｉＮｃＥ Is Alive",
-                buttons=[
-                    [custom.Button.url("👤Contact Creator👤", "https://telegram.dog/No_OnE_Kn0wS_Me"), custom.Button.url(
-                        "Support channel✔", "https://t.me/@uSe_DaRk_PrInCe")],
-                    [custom.Button.url("👨‍💻Source Code👨‍💻", "https://github.com/No-OnE-Kn0wS-Me/dArK_pRiNcE"), custom.Button.url(
-                        "❕❗Deploy Me❗❕", "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Fravana69%2FPornHub%2F&template=https%3A%2F%2Fgithub.com%2Fravana69%2FPornHub%2F")],
-                    [custom.Button.url("🔰Update Fork🔰", "tg://need_update_for_some_feature"), custom.Button.url(
-                        "✳️Fork Boost✳️", "tg://some_unsupported_feature")]
-                ],
-                link_preview=True
-            )     
+           )
         await event.answer([result] if result else None)
 
 
@@ -124,7 +101,7 @@ def paginate_help(page_number, loaded_plugins, prefix):
             helpable_plugins.append(p)
     helpable_plugins = sorted(helpable_plugins)
     modules = [custom.Button.inline(
-        "{} {} {}".format(random.choice(list(multi)), x, random.choice(list(multi))),
+        "{} {}".format(random.choice(list(multi)), x, random.choice(list(multi))),
       data="us_plugin_{}".format(x))
         for x in helpable_plugins]
     if number_of_cols == 1:
