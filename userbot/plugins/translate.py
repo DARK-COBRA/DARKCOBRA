@@ -11,7 +11,7 @@ from telethon import events
 
 
 @borg.on(admin_cmd(pattern="tr ?(.*)"))
-@borg.on(events.NewMessage(pattern=r"\.tr(.*)",incoming=True))
+@borg.on(events.NewMessage(pattern=r"\.tr ?(.*)",incoming=True))
 async def _(event):
     if event.fwd_from:
         return
