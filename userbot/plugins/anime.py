@@ -9,7 +9,6 @@ import asyncio
 import os
 import sys
 import random
-from userbot.utils import admin_cmd
 
 
 action_list = ['6 Angels ', '12 Beast ', 'Accel World ', 'Accel World: Infinite Burst ', 'Adventures of Kotetsu ', 'Afro Samurai ', 'Agent Aika ', 'Aika R-16: Virgin Mission ', 'Air Gear ', 'Air Master ', 'Akakichi no Eleven ', 'Akashic Records of Bastard Magic Instructor ', 'Akumetsu ', 'Alive: The Final Evolution ', 'All Purpose Cultural Cat-Girl Nuku Nuku DASH! ', 'Amakusa 1637 ', 'Amefurashi ', 'Angel/Dust ', 'Angel Links ', "Angel's Feather ", 'Anne Freaks ', 'Apocalypse Zero ', 'Aquarion Evol ', 'Aquarion Logos ', 'Arc the Lad ', 'Aria the Scarlet Ammo ', "Armed Girl's Machiavellism ", 'Armitage III ', 'Armored Trooper Votoms ', 'Armored Trooper Votoms: Pailsen Files ', 'Arpeggio of Blue Steel ', 'Ashizuri Suizokukan ', 'The Asterisk War ', 'Aventura (manga) ', 'B.B. (manga) ', 'Bakumatsu Gijinden Roman ', 'Bambi and Her Pink Gun ', 'Baoh ', 'Basquash! ', 'Bastard!! ', 'Bat-Manga!: The Secret History of Batman in Japan ', 'Battle Rabbits ', 'Beelzebub (manga) ', 'Ben-To ', 'Berserk (2016 TV series) ', 'Birdy the Mighty ', 'Birth (anime) ', 'Black Bullet ', 'Black God (manga) ', 'Blame! ', 'Blame! (film) ', 'Blassreiter ', 'Blood-C: The Last Dark ', 'Blood: The Last Vampire ', 'Blue Blink ', 'Blue Seed ', 'Blue Sheep Reverie ', 'Bogle (manga) ', 'Boruto: Naruto the Movie ', 'Brave 10 ', 'Broken Blade ', 'Brotherhood: Final Fantasy XV ', 'Btooom! ', 'Bubblegum Crisis ', 'Bungo Stray Dogs ', 'Burn Up! ', 'Burn-Up Excess ', 'Burn-Up Scramble ', 'Burn-Up W ', 'Butlers: Chitose Momotose Monogatari ', 'C (TV series) ', 'C3 (novel series) ', 'Campus Special Investigator Hikaruon ', 'Caravan Kidd ', 'The Castle of Cagliostro ', 'Cat Paradise ', 'A Certain Magical Index ', 'Chivalry of a Failed Knight ', 'Chōsoku Henkei Gyrozetter ', 'Chronos Ruler ', 'City Hunter ', 'Clockwork Planet ', 'Cluster Edge ', 'Comedy (2002 film) ', 'Coppelion ', 'Cowboy Bebop ', 'Cowboy Bebop: The Movie ', 'Crimson Spell ', 'Crown (manga) ', 'Crusher Joe ', 'D4 Princess ', 'The Dagger of Kamui ', 'Daigunder ', 'Dance in the Vampire Bund ', 'Daphne in the Brilliant Blue ', 'Darkside Blues ', 'Debutante Detective Corps ', 'Demon City Shinjuku ', 'Demonizer Zilch ', 'Dennō Bōkenki Webdiver ', 'Desert Punk ', 'The Devil of the Earth ', 'Devilman ', 'Dimension W ', 'DJ (2013 anime) ', 'Dog Days (Japanese TV series) ', 'Dragon Ball Z: Bardock – The Father of Goku ', 'Dragon Ball Z: The History of Trunks ', 'Dragon Crisis! ', 'Dream Eater Merry ', 'Durarara!! ', 'Dynamic Heroes ', "E's ", "Eden: It's an Endless World! ", "Eden's Bowy ", 'Ehrgeiz (TV series) ', 'Elementalors ', "The Enemy's the Pirates! ", 'Fairy Gone ', 'Final Fantasy: Unlimited ', 'Flag (TV series) ', 'FLCL ', 'Freesia (manga) ', 'Freezing (manga) ', 'Full Metal Panic! ', "Full-Blast Science Adventure – So That's How It Is ", 'Futakoi Alternative ', 'G-On Riders ', 'Ga-Rei ', 'Gaist Crusher ', 'The Galaxy Railways ', 'Gantz ', 'Gantz: O ', 'Genesis of Aquarion ', 'Ghost in the Shell: Stand Alone Complex ', 'Giant Gorg ', 'Girls und Panzer ', 'Glass Maiden ', 'Gokudo the Adventurer ', 'Grenadier (manga) ', 'Grey (manga) ', 'Gulliver Boy ', 'Gunslinger Stratos: The Animation ', 'Guyver: The Bioboosted Armor ', 'Hajime no Ippo ', 'Hanako and the Terror of Allegory ', 'Hand Shakers ', 'Happy World! ', 'Hayate × Blade ', 'Hero Heel ', 'Hero Mask ', 'Hidamari no Ki ', 'Highlander: The Search for Vengeance ', 'Holy Talker ', 'Hyakka Ryōran ', 'Immortal Grand Prix ', 'Iron Virgin Jun ', 'The Irregular at Magic High School The Movie: The Girl Who Calls the Stars ', 'The Irregular at Magic High School ', 'Sword Oratoria ', 'Isuca ', 'Izetta: The Last Witch ', 'Japan (1992 manga) ', 'Jibaku-kun ', 'Jungle Book Shōnen Mowgli ', 'Jungle King Tar-chan ', 'Junk Force (manga) ', 'Junk: Record of the Last Hero ', 'Jushin Liger (TV series) ', 'The Kabocha Wine ', 'Kacchū no Senshi Gamu ', 'Kaiji (manga) ', 'Kamikaze (manga) ', 'Kamiyadori ', 'Kämpfer ', 'Kamui (manga series) ', 'Karakuri Circus ', 'Katanagatari ', 'Kaze ga Gotoku ', 'Kaze no Stigma ', 'Kemurikusa ', 'Kengan Ashura ', 'Kenka Shōbai ', 'Kick-Heart ', 'Kill la Kill ', 'The King Kong Show ', 'The King of Braves GaoGaiGar Final ', 'Kinnikuman ', 'Kishin Corps ', 'Kite (1998 film) ', 'Kite Liberator ', 'Kiznaiver ', 'Knights of Ramune ', 'Koihime Musō ', 'Kon Kon Kokon ', 'Kongō Banchō ', 'Kōtetsu Sangokushi ', 'Kōya no Shōnen Isamu ']
@@ -20,11 +19,11 @@ mecha_list = ['Ai City ', 'Akane Maniax ', 'Aldnoah.Zero ', 'All Purpose Cultura
 slice_of_life_list = ['A Channel (manga) ', 'Abandon the Old in Tokyo ', 'Age 12 ', 'Aho-Girl ', 'Aiura ', 'Akiba-chan (TV series) ', 'Akogare ', 'Amanchu! ', 'Amano Megumi wa Sukidarake! ', 'And Yet the Town Moves ', 'Ane no Kekkon ', 'Anime-Gatari ', 'Asahinagu ', 'Asari-chan ', 'Ashizuri Suizokukan ', 'Azumanga Daioh ', 'Baby & Me ', 'Baby Princess ', 'Bakuman ', 'Barairo no Ashita ', 'Barakamon ', 'Best Student Council ', 'Binbō Shimai Monogatari ', 'Blend S ', "A Centaur's Life ", 'Chihayafuru ', 'Chimpui ', 'Chitose Get You!! ', 'Choir! ', 'Cinnamoroll ', 'Clannad (visual novel) ', 'The Comic Artist and His Assistants ', 'The Cosmopolitan Prayers ', 'Crayon Shin-chan ', 'Crossing Time ', 'Dagashi Kashi ', 'Daily Lives of High School Boys ', 'Dareka no Manazashi ', 'DD Fist of the North Star ', "Dead Dead Demon's Dededede Destruction ", 'Doki Doki School Hours ', "Dreamin' Sun ", 'Drowning Love ', 'Encouragement of Climb ', 'Endro! ', 'Flower of Life (manga) ', 'Flying Witch ', 'Food Wars!: Shokugeki no Soma ', 'Futagashira ', 'Futaribeya: A Room for Two ', 'GA Geijutsuka Art Design Class ', 'Ganbare!! Tabuchi-kun!! ', 'Genshiken ', 'A Gentle Breeze in the Village ', "Girls' Last Tour ", 'Glasslip ', 'Gokicha ', 'Goodnight Punpun ', 'Gourmet Girl Graffiti ', 'Green Green (TV series) ', 'Hachimitsu ni Hatsukoi ', 'Hakumei and Mikochi ', 'Hana-kun to Koisuru Watashi ', 'Hanamaru Kindergarten ', 'Hanasaku Iroha ', 'Hanayamata ', 'Happy Happy Clover ', 'Hayate the Combat Butler ', 'Hello! Lady Lynn ', 'Hello! Sandybell ', 'Heroine Shikkaku ', 'Hibi Chōchō ', 'Hibi Rock ', 'Hidamari Sketch ', 'Hitori Bocchi no Marumaru Seikatsu ', 'Hōkago Play ', 'Hori-san to Miyamura-kun ', 'House of the Sun ', 'Human Crossing ', 'Hyakko ', 'Hyouka ', "If It's for My Daughter, I'd Even Defeat a Demon Lord ", 'Is the Order a Rabbit? ', 'Jūhan Shuttai! ', 'K-On! ', 'Kamichu! ', 'Kamisama Minarai: Himitsu no Cocotama ', 'Kamurobamura-e ', 'Kanamemo ', 'Teasing Master Takagi-san ', 'Karakuri Odette ', 'Kenka Shōbai ', 'Kids on the Slope ', 'Kill Me Baby ', 'Kimi ni Todoke ', 'Kira Kira Happy Hirake! Cocotama ', 'Kokoro Button ', 'Kono Oto Tomare! Sounds of Life ', 'Konohana Kitan ', 'Koro Sensei Quest ', 'Kū Neru Futari Sumu Futari ', 'Kyō, Koi o Hajimemasu ', 'L DK ', 'Liar × Liar ', 'Little Forest ', 'Love Celeb ', 'Love Hina ', 'Love Live! ', 'Lucky Star (manga) ', 'Maestro (manga) ', 'Mai Mai Miracle ', 'Mainichi Kaasan ', 'Manga Dogs ', 'Maple Town ', 'Meganebu! ', 'Mitsuboshi Colors ', 'Mitsudomoe (manga) ', 'Morita-san wa Mukuchi ', 'Mushishi ', 'My Roommate Is a Cat ', 'Nagareboshi Lens ', 'Naisho no Tsubomi ', 'Nasu (manga) ', 'Natsuiro Kiseki ', 'Ningen Karimenchū ', "No Matter How I Look at It, It's You Guys' Fault I'm Not Popular! ", 'Non Non Biyori ', 'Nōnai Poison Berry ', 'Nono-chan ', 'Noucome ', "Nurse Hitomi's Monster Infirmary ", 'Ojamanga Yamada-kun ', 'The One I Love (manga) ', 'One Off (miniseries) ', 'Orange (manga) ', 'Otoko no Isshō ', 'Paboo & Mojies ', 'Place to Place ', 'Poyopoyo Kansatsu Nikki ', 'Princess Maison ', 'Project 575 ', 'The Push Man and Other Stories ', 'Recorder and Randsell ', 'Recovery of an MMO Junkie ', 'ReRe Hello ', 'Rin-ne ', 'Robot Girls Z ', 'S.S. Astro ', 'Sabagebu! ', 'Saint Young Men ', 'Sakura Quest ', 'Sakura Trick ', 'Sanrio Boys ', 'Sanzoku Diary ', 'Sayonara Sorcier ', 'Sayonara, Tama-chan ', 'Sazae-san ', 'School Days (visual novel) ', 'Seitokai Yakuindomo ', 'Senryu Girl ', 'Servant × Service ', 'Shitsuren Chocolatier ', 'Silver Spoon (manga) ', 'Sketchbook (manga) ', 'Slow Start (manga) ', 'Solanin ', 'Soul Eater Not! ', 'Sound of the Sky ', 'Space Brothers (manga) ', 'Star-Myu ', 'Stella Women’s Academy, High School Division Class C³ ', 'Strawberry Marshmallow ', "Student Council's Discretion ", 'Sukimasuki ', 'Sunny (manga) ', 'Super Seisyun Brothers ', 'Sweetness and Lightning ', 'Sylvanian Families (OVA series) ', 'Tamagotchi! (TV series) ', 'Tenshi Nanka Ja Nai ', 'Tesagure! Bukatsu-mono ', "Today's Menu for the Emiya Family ", 'Tokyo Alice ', 'Tonari no Kashiwagi-san ', 'Toradora! ', 'Town Doctor Jumbo!! ', 'True Love (manga) ', 'True Tears (TV series) ', 'The Tyrant Falls in Love ', 'Uchi no Sanshimai ', 'Ultimate Otaku Teacher ', 'Undercurrent (manga) ', 'Wake Up, Girls! ', 'Welcome to the N.H.K. ', 'What a Wonderful World! ', 'Working!! ', 'Yokohama Kaidashi Kikō ', 'Yotsuba&! ', 'YuruYuri ']
 isekai_list = ['12 Beast ', '100 Sleeping Princes and the Kingdom of Dreams ', "Arifureta: From Commonplace to World's Strongest ", 'Ascendance of a Bookworm ', 'Aura Battler Dunbine ', 'The Brave-Tuber ', 'Captain N: The Game Master ', 'Conception (video game) ', 'Death March to the Parallel World Rhapsody ', "Didn't I Say to Make My Abilities Average in the Next Life?! ", 'Digimon Adventure ', 'Do You Love Your Mom and Her Two-Hit Multi-Target Attacks? ', 'Dog Days (Japanese TV series) ', 'Drifters (manga) ', 'El-Hazard ', 'Endride ', 'The Familiar of Zero ', 'Fushigi Yûgi ', 'Gate (novel series) ', 'Grimgar of Fantasy and Ash ', 'Hachinantte Sore wa Inai Deshō! ', 'The Hero is Overpowered but Overly Cautious ', 'High School Prodigies Have It Easy Even In Another World ', 'How a Realist Hero Rebuilt the Kingdom ', 'How Not to Summon a Demon Lord ', "I've Been Killing Slimes for 300 Years and Maxed Out My Level ", 'In Another World with My Smartphone ', 'Infinite Dendrogram ', 'Inuyasha ', 'Isekai Cheat Magician ', 'Isekai Izakaya "Nobu" ', 'Isekai Quartet ', 'Kemonomichi ', 'Kiba (TV series) ', "Knight's & Magic ", 'KonoSuba ', 'Kyo Kara Maoh! ', 'Log Horizon ', 'Magic Knight Rayearth ', 'Magical Shopping Arcade Abenobashi ', 'Maō-sama, Retry! ', 'MÄR ', 'The Master of Ragnarok & Blesser of Einherjar ', 'Mushoku Tensei ', 'My Next Life as a Villainess: All Routes Lead to Doom! ', 'New Life+: Young Again in Another World ', 'No Game No Life ', 'No Game, No Life Zero ', 'Outbreak Company ', 'Overlord (novel series) ', 'Pop in Q ', "Problem Children Are Coming from Another World, Aren't They? ", 'Re:Zero − Starting Life in Another World ', 'Reborn as a Vending Machine, I Now Wander the Dungeon ', 'Restaurant to Another World ', 'The Rising of the Shield Hero ', 'The Saga of Tanya the Evil ', "So I'm a Spider, So What? ", 'Spirited Away ', 'Sword Art Online ', 'That Time I Got Reincarnated as a Slime ', 'Tweeny Witches ', 'The Twelve Kingdoms ', "Wise Man's Grandchild "]
 
-@borg.on(admin_cmd("anime"))
-async def _(event):
+@borg.on(events.NewMessage(pattern=r"\.action", outgoing=True))
+async def action(event):
     if event.fwd_from:
         return   
-    number_of_times = event.text[7:]
+    number_of_times = event.text[8:]
     number_of_times = int(number_of_times)
     i = 0
     anime_list = []
@@ -49,7 +48,7 @@ async def _(event):
     msg_str = msg_str.replace('"',"")
     await event.edit("**"+msg_str+"**")    
      
-@borg.on(admin_cmd(pattern=r"harem"))
+@borg.on(events.NewMessage(pattern=r"\.harem", outgoing=True))
 async def action(event):
     if event.fwd_from:
         return   
@@ -78,7 +77,7 @@ async def action(event):
     msg_str = msg_str.replace('"',"")
     await event.edit("**"+msg_str+"**")
 
-@borg.on(admin_cmd(pattern=r"mecha"))
+@borg.on(events.NewMessage(pattern=r"\.mecha", outgoing=True))
 async def action(event):
     if event.fwd_from:
         return   
@@ -107,7 +106,7 @@ async def action(event):
     msg_str = msg_str.replace('"',"")
     await event.edit("**"+msg_str+"**")
 
-@borg.on(admin_cmd(pattern=r"romance"))
+@borg.on(events.NewMessage(pattern=r"\.romance", outgoing=True))
 async def action(event):
     if event.fwd_from:
         return   
@@ -136,7 +135,7 @@ async def action(event):
     msg_str = msg_str.replace('"',"")
     await event.edit("**"+msg_str+"**")
 
-@borg.on(admin_cmd(pattern=r"isekai"))
+@borg.on(events.NewMessage(pattern=r"\.isekai", outgoing=True))
 async def action(event):
     if event.fwd_from:
         return   
@@ -165,7 +164,7 @@ async def action(event):
     msg_str = msg_str.replace('"',"")
     await event.edit("**"+msg_str+"**")
 
-@borg.on(admin_cmd(pattern=r"adventure"))
+@borg.on(events.NewMessage(pattern=r"\.adventure", outgoing=True))
 async def action(event):
     if event.fwd_from:
         return   
@@ -194,7 +193,7 @@ async def action(event):
     msg_str = msg_str.replace('"',"")
     await event.edit("**"+msg_str+"**") 
 
-@borg.on(admin_cmd(pattern=r"slice"))
+@borg.on(events.NewMessage(pattern=r"\.slice", outgoing=True))
 async def action(event):
     if event.fwd_from:
         return   
