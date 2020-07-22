@@ -146,5 +146,5 @@ CMD_HELP.update({"getmusic":
     `.song320` query or `.song320` reply to song name :\
      \nUSAGE:finds the song you entered in query and sends it in High Quality\
     `.videosong` query or `.videosong` reply to song name :\
-    \nUSAGE:finds the Video song you entered in query and sends it As A video File\"
+    \nUSAGE:finds the Video song you entered in query and sends it As A video File"
 })    
