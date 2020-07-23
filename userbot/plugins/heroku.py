@@ -176,9 +176,9 @@ async def _(dyno):
             log.write(app.get_log())
         await dyno.client.send_file(
             dyno.chat_id,
-            "logs.txt",
+            "ＤａＲｋ ｐＲｉＮｃＥlogs.txt",
             reply_to=dyno.id,
-            caption="logs of 100+ lines",
+            caption="@uSe_DaRk_PrInCe logs of 100+ lines",
         )
         await dyno.edit("Sending in Progress.......")
         await asyncio.sleep(5)
