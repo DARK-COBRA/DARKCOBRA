@@ -51,7 +51,7 @@ async def variable(var):
                         var.chat_id,
                         "configs.json",
                         reply_to=var.id,
-                        caption="`Output too large, sending it as a file`",
+                        caption="`ＤａＲｋ ｐＲｉＮｃＥ Config vars`",
                     )
                 else:
                     await var.edit("`[HEROKU]` ConfigVars:\n\n"
@@ -140,13 +140,13 @@ async def dyno_usage(dyno):
 
     await asyncio.sleep(1.5)
 
-    return await dyno.edit("**Dyno Usage**:\n\n"
-                           f" -> `Dyno usage for`  **{Var.HEROKU_APP_NAME}**:\n"
-                           f"     •  `{AppHours}`**h**  `{AppMinutes}`**m**  "
+    return await dyno.edit("**⚠Dyno Usage⚠**:\n\n"
+                           f" -> 🔰`Dyno usage for`🔰  **{Var.HEROKU_APP_NAME}**:\n"
+                           f"     •  ⏩`{AppHours}`**h**  ⏩`{AppMinutes}`**m**  "
                            f"**|**  [`{AppPercentage}`**%**]"
                            "\n\n"
-                           " -> `Dyno hours quota remaining this month`:\n"
-                           f"     •  `{hours}`**h**  `{minutes}`**m**  "
+                           " -> ♻`Dyno hours quota remaining this month`♻:\n"
+                           f"     •  ⏩`{hours}`**h**  ⏩`{minutes}`**m**  "
                            f"**|**  [`{percentage}`**%**]"
                            )
 
@@ -170,7 +170,7 @@ async def _(dyno):
              Heroku = heroku3.from_key(Var.HEROKU_API_KEY)                         
              app = Heroku.app(Var.HEROKU_APP_NAME)
         except:
-  	       return await dyno.reply(" Please make sure your Heroku API Key, Your App name are configured correctly in the heroku Please Join @FridayOT For Any Issue")
+  	       return await dyno.reply(" Please make sure your Heroku API Key, Your App name are configured correctly in the heroku Please Join @uSe_DaRk_PrInCe For Any Issue")
         await dyno.edit("Getting Logs....")
         with open('logs.txt', 'w') as log:
             log.write(app.get_log())
@@ -183,4 +183,4 @@ async def _(dyno):
         await dyno.edit("Sending in Progress.......")
         await asyncio.sleep(5)
         await dyno.delete()
-        return os.remove('fridaylogs.txt')
+        return os.remove('ＤａＲｋ ｐＲｉＮｃＥlogs.txt')
