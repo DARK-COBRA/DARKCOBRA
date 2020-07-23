@@ -101,7 +101,7 @@ def paginate_help(page_number, loaded_plugins, prefix):
             helpable_plugins.append(p)
     helpable_plugins = sorted(helpable_plugins)
     modules = [custom.Button.inline(
-        "{} {}".format(random.choice(list(multi)), x, random.choice(list(multi))),
+        "{} {} {}".format(random.choice(list(multi)), x, random.choice(list(multi))),
       data="us_plugin_{}".format(x))
         for x in helpable_plugins]
     if number_of_cols == 1:
