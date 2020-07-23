@@ -1,3 +1,6 @@
+"""CC- @refundisillegal\nSyntax:-\n.get var NAME\n.del var NAME\n.set var NAME"""
+
+# Copyright (C) 2020 Adek Maulana.
 # All rights reserved.
 """
    Heroku manager for your userbot
@@ -8,15 +11,23 @@ import asyncio
 import os
 import requests
 import math
-from userbot.utils import register
 from userbot.utils import admin_cmd
+from userbot import CMD_HELP
+from userbot.uniborgConfig import Config
 
+# ================= 
+
+Heroku = heroku3.from_key(Config.HEROKU_API_KEY)
+Heroku = heroku3.from_key(Var.HEROKU_API_KEY)
+heroku_api = "https://api.heroku.com"
+HEROKU_APP_NAME = Config.HEROKU_APP_NAME
+HEROKU_API_KEY = Config.HEROKU_API_KEY
 
 Heroku = heroku3.from_key(Var.HEROKU_API_KEY)
 heroku_api = "https://api.heroku.com"
 
 
-@register(outgoing=True, pattern=r"^\.(set|get|del) var(?: |$)(.*)(?: |$)([\s\S]*)")
+@borg.on(admin_cmd(pattern="(set|get|del) var(?: |$)(.*)(?: |$)([\s\S]*)", outgoing=True))
 async def variable(var):
     """
         Manage most of ConfigVars setting, set new var, get current var,
@@ -51,7 +62,7 @@ async def variable(var):
                         var.chat_id,
                         "configs.json",
                         reply_to=var.id,
-                        caption="`ＤａＲｋ ｐＲｉＮｃＥ Config vars`",
+                        caption="`Output too large, sending it as a file`",
                     )
                 else:
                     await var.edit("`[HEROKU]` ConfigVars:\n\n"
@@ -93,7 +104,7 @@ async def variable(var):
             return await var.edit(f"**{variable}**  `is not exists`")
 
 
-@register(outgoing=True, pattern=r"^\.usage(?: |$)")
+@borg.on(admin_cmd(pattern="usage(?: |$)", outgoing=True))
 async def dyno_usage(dyno):
     """
         Get your account Dyno Usage
@@ -140,23 +151,38 @@ async def dyno_usage(dyno):
 
     await asyncio.sleep(1.5)
 
-    return await dyno.edit("**⚠Dyno Usage⚠**:\n\n"
-                           f" -> 🔰`Dyno usage for`🔰  **{Var.HEROKU_APP_NAME}**:\n"
-                           f"     •  ⏩`{AppHours}`**h**  ⏩`{AppMinutes}`**m**  "
+    return await dyno.edit("**Dyno Usage**:\n\n"
+                           f" -> `Dyno usage for`  **{Var.HEROKU_APP_NAME}**:\n"
+                           f"     •  `{AppHours}`**h**  `{AppMinutes}`**m**  "
                            f"**|**  [`{AppPercentage}`**%**]"
                            "\n\n"
-                           " -> ♻`Dyno hours quota remaining this month`♻:\n"
-                           f"     •  ⏩`{hours}`**h**  ⏩`{minutes}`**m**  "
+                           " -> `Dyno hours quota remaining this month`:\n"
+                           f"     •  `{hours}`**h**  `{minutes}`**m**  "
                            f"**|**  [`{percentage}`**%**]"
                            )
 
-
-@command(pattern="^.info heroku")
-async def info(event):
-    await borg.send_message(event.chat_id, "**Info for Module to Manage Heroku:**\n\n`.usage`\nUsage:__Check your heroku dyno hours status.__\n\n`.set var <NEW VAR> <VALUE>`\nUsage: __add new variable or update existing value variable__\n**!!! WARNING !!!, after setting a variable the bot will restart.**\n\n`.get var or .get var <VAR>`\nUsage: __get your existing varibles, use it only on your private group!__\n**This returns all of your private information, please be cautious...**\n\n`.del var <VAR>`\nUsage: __delete existing variable__\n**!!! WARNING !!!, after deleting variable the bot will restarted**")
-    await event.delete()
-
-
+@borg.on(admin_cmd(pattern="logs$", outgoing=True))
+async def _(dyno):        
+        try:
+             Heroku = heroku3.from_key(HEROKU_API_KEY)                         
+             app = Heroku.app(HEROKU_APP_NAME)
+        except:
+  	       return await dyno.reply(" Please make sure your Heroku API Key, Your App name are configured correctly in the heroku")
+        await dyno.edit("Getting Logs....")
+        with open('logs.txt', 'w') as log:
+            log.write(app.get_log())
+        await dyno.edit("Got the logs wait a sec")    
+        await dyno.client.send_file(
+            dyno.chat_id,
+            "logs.txt",
+            reply_to=dyno.id,
+            caption="logs of 100+ lines",
+        )
+        
+        await asyncio.sleep(5)
+        await dyno.delete()
+        return os.remove('logs.txt')
+    
 def prettyjson(obj, indent=2, maxlinelength=80):
     """Renders JSON content with indentation and line splits/concatenations to fit maxlinelength.
     Only dicts, lists and basic types are supported"""
@@ -164,23 +190,7 @@ def prettyjson(obj, indent=2, maxlinelength=80):
     items, _ = getsubitems(obj, itemkey="", islast=True, maxlinelength=maxlinelength - indent, indent=indent)
     return indentitems(items, indent, level=0)
 
-@register(outgoing=True, pattern=r"^\.logs")
-async def _(dyno):        
-        try:
-             Heroku = heroku3.from_key(Var.HEROKU_API_KEY)                         
-             app = Heroku.app(Var.HEROKU_APP_NAME)
-        except:
-  	       return await dyno.reply(" Please make sure your Heroku API Key, Your App name are configured correctly in the heroku Please Join @uSe_DaRk_PrInCe For Any Issue")
-        await dyno.edit("Getting Logs....")
-        with open('logs.txt', 'w') as log:
-            log.write(app.get_log())
-        await dyno.client.send_file(
-            dyno.chat_id,
-            "ＤａＲｋ ｐＲｉＮｃＥlogs.txt",
-            reply_to=dyno.id,
-            caption="@uSe_DaRk_PrInCe logs of 100+ lines",
-        )
-        await dyno.edit("Sending in Progress.......")
-        await asyncio.sleep(5)
-        await dyno.delete()
-        return os.remove('ＤａＲｋ ｐＲｉＮｃＥlogs.txt')
+CMD_HELP.update({
+  "heroku":
+  "Info for Module to Manage Heroku:**\n\n`.usage`\nUsage:__Check your heroku dyno hours status.__\n\n`.set var <NEW VAR> <VALUE>`\nUsage: __add new variable or update existing value variable__\n**!!! WARNING !!!, after setting a variable the bot will restart.**\n\n`.get var or .get var <VAR>`\nUsage: __get your existing varibles, use it only on your private group!__\n**This returns all of your private information, please be cautious...**\n\n`.del var <VAR>`\nUsage: __delete existing variable__\n**!!! WARNING !!!, after deleting variable the bot will restarted**\n\n`.herokulogs`\nUsage:sends you recent 100 lines of logs in heroku"
+})    
