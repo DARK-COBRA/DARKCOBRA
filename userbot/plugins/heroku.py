@@ -174,14 +174,14 @@ async def _(dyno):
         await dyno.edit("Got the logs wait a sec")    
         await dyno.client.send_file(
             dyno.chat_id,
-            "@uSe_DaRk_PrInCe logs.txt",
+            "logs.txt",
             reply_to=dyno.id,
-            caption="logs of 100+ lines",
+            caption="@uSe_DaRk_PrInCe logs of 100+ lines",
         )
         
         await asyncio.sleep(5)
         await dyno.delete()
-        return os.remove('@uSe_DaRk_PrInCe logs.txt')
+        return os.remove('logs.txt')
     
 def prettyjson(obj, indent=2, maxlinelength=80):
     """Renders JSON content with indentation and line splits/concatenations to fit maxlinelength.
