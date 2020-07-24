@@ -38,10 +38,10 @@ async def tor_search(event):
 	if " " in search_str:
 		search_str = search_str.replace(" ","+")
 		print(search_str)
-		res = requests.get("https://www.torrentdownloads.me/search/?new=1&s_cat=0&search="+search_str,headers)
+		res = requests.get("http://1337x.to/search/?new=1&s_cat=0&search="+search_str,headers)
 
 	else:
-		res = requests.get("https://www.torrentdownloads.me/search/?search="+search_str,headers)
+		res = requests.get("http://1337x.to/search/?search="+search_str,headers)
 
 	source = bs(res.text,'lxml')
 	urls = []
@@ -49,12 +49,12 @@ async def tor_search(event):
 	titles = []
 	counter = 0
 	for div in source.find_all('div',{'class':'grey_bar3 back_none'}):
-		# print("https://www.torrentdownloads.me"+a['href'])
+		# print("http://1337x.to"+a['href'])
 		try:
 			title = div.p.a['title']
 			title = title[20:]
 			titles.append(title)
-			urls.append("https://www.torrentdownloads.me"+div.p.a['href'])
+			urls.append("http://1337x.to"+div.p.a['href'])
 		except KeyError:
 			pass
 		except TypeError:
