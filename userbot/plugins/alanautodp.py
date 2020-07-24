@@ -7,6 +7,19 @@ Command: `.alandp`
 USING THIS PLUGIN CAN RESULT IN ACCOUNT BAN + CAS BAN + SPAM BAN + ACCOUNT SUSPENSION . WE DONT CARE ABOUT BAN, SO WE ARR USING THIS.
 """
 import os
+import asyncio
+from telethon import events
+from telethon.tl.types import ChannelParticipantsAdmins
+from userbot import ALIVE_NAME, CMD_HELP
+from userbot.utils import admin_cmd
+from telethon import version
+from math import ceil
+import json
+import random
+import re
+from telethon import events, errors, custom
+import io
+from platform import python_version, uname
 from datetime import datetime
 from PIL import Image, ImageDraw, ImageFont
 from pySmartDL import SmartDL
