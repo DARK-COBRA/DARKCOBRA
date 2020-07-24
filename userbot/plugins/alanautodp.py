@@ -16,6 +16,7 @@ import asyncio
 import shutil 
 import random, re
 
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
 
 FONT_FILE_TO_USE = "userbot/helpers/styles/digital.ttf"
 
@@ -35,7 +36,7 @@ async def autopic(event):
             place_holder = None   
         shutil.copy(downloaded_file_name, photo)
         im = Image.open(photo)
-        current_time = datetime.now().strftime("@Sur_vivor \n\n  %H:%M:%S \n %d/%m/%y")
+        current_time = datetime.now().strftime(" {DEFAULTUSER} \n\n  %H:%M:%S \n %d/%m/%y")
         img = Image.open(photo)
         drawn_text = ImageDraw.Draw(img)
         fnt = ImageFont.truetype(FONT_FILE_TO_USE, 35)
