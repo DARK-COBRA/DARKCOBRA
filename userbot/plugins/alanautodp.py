@@ -14,6 +14,7 @@ from telethon.tl import functions
 from uniborg.util import admin_cmd
 import asyncio
 import shutil 
+from userbot import ALIVE_NAME, CMD_HELP
 import random, re
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
