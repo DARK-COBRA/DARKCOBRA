@@ -1,16 +1,17 @@
 """
 Torrent Search Plugin for Userbot. //torrentdownloads.me
 cmd: .search search_string
-Note: Number of results are currently limited to 11
+Note: Number of results are currently limited to 15
 By:-@Zero_cool7870
 
 """
 from bs4 import BeautifulSoup as bs 
 import requests
-from uniborg.util import admin_cmd
+from userbot.utils import admin_cmd
 import asyncio
 import json
-
+from bs4 import BeautifulSoup 
+from telethon import events
 
 
 def dogbin(magnets):
@@ -25,7 +26,7 @@ def dogbin(magnets):
 		counter = counter + 1
 	return urls	
 	
-@borg.on(admin_cmd(pattern="search ?(.*)", allow_sudo=True))
+@borg.on(admin_cmd(pattern="tsearch ?(.*)"))
 async def tor_search(event):
 	if event.fwd_from:
 		return 
@@ -38,10 +39,10 @@ async def tor_search(event):
 	if " " in search_str:
 		search_str = search_str.replace(" ","+")
 		print(search_str)
-		res = requests.get("http://1337x.to/search/?new=1&s_cat=0&search="+search_str,headers)
+		res = requests.get("https://www.torrentdownloads.me/search/?new=1&s_cat=0&search="+search_str,headers)
 
 	else:
-		res = requests.get("http://1337x.to/search/?search="+search_str,headers)
+		res = requests.get("https://www.torrentdownloads.me/search/?search="+search_str,headers)
 
 	source = bs(res.text,'lxml')
 	urls = []
@@ -49,19 +50,19 @@ async def tor_search(event):
 	titles = []
 	counter = 0
 	for div in source.find_all('div',{'class':'grey_bar3 back_none'}):
-		# print("http://1337x.to"+a['href'])
+		# print("https://www.torrentdownloads.me"+a['href'])
 		try:
 			title = div.p.a['title']
 			title = title[20:]
 			titles.append(title)
-			urls.append("http://1337x.to"+div.p.a['href'])
+			urls.append("https://www.torrentdownloads.me"+div.p.a['href'])
 		except KeyError:
 			pass
 		except TypeError:
 			pass
 		except AttributeError:
 			pass	
-		if counter == 11:
+		if counter == 15:
 			break		
 		counter = counter + 1
 	if not urls:
@@ -92,6 +93,4 @@ async def tor_search(event):
 	while counter != len(titles):
 		msg = msg + "⁍ [{}]".format(titles[counter])+"({})".format(shorted_links[counter])+"\n\n"
 		counter = counter + 1
-
-
 	await event.edit(msg,link_preview=False)
