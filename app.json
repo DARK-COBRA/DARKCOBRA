@@ -10,8 +10,8 @@
     "productivity"
   ],
   "repository": "https://github.com/No-OnE-Kn0wS-Me/dArK_pRiNcE/",
-  "website": "#TODO",
-  "success_url": "#TODO",
+  "website": "https://github.com/No-OnE-Kn0wS-Me",
+  "success_url": "https://t.me/No_OnE_Kn0wS_Me",
   "env": {
     "ENV": {
       "description": "Setting this to ANYTHING will enable heroku.",
