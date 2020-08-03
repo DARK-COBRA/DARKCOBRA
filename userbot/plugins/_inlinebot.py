@@ -21,13 +21,11 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 text="{}\nCurrently Loaded Plugins: {}".format(
                     query, len(CMD_LIST)),
                 buttons=buttons,
-                link_preview=True
-           )
+                link_preview=False
+            )
         await event.answer([result] if result else None)
-
-
     @tgbot.on(events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-        data=re.compile(b"info_next\((.+?)\)")
+        data=re.compile(b"helpme_next\((.+?)\)")
     ))
     async def on_plug_in_callback_query_handler(event):
         if event.query.user_id == bot.uid:  # pylint:disable=E0602
@@ -38,7 +36,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = "Please get your own Userbot, and don't use mine!"
+            reply_pop_up_alert = "Get your own userbot, don't use Mine\n Check @uSe_DaRk_PrInCe For The Source!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
 
@@ -57,7 +55,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = "Please get your own Userbot, and don't use mine!"
+            reply_pop_up_alert = "Get your own userbot, don't use Mine\n Check @uSe_DaRk_PrInCe For The Source!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
     @tgbot.on(events.callbackquery.CallbackQuery(  # pylint:disable=E0602
         data=re.compile(b"us_plugin_(.*)")
@@ -71,7 +69,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 help_string += "\n"
         except:
             pass
-        if help_string == "":
+        if help_string is "":
             reply_pop_up_alert = "{} is useless".format(plugin_name)
         else:
             reply_pop_up_alert = help_string
@@ -79,17 +77,17 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             © ＤａＲｋ　ｐＲｉＮｃＥ".format(plugin_name)
         try:
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-        except: 
-            #https://github.com/Dark-Princ3/X-tra-Telegram/commit/275fd0ec26b284d042bf56de325472e088e6f364#diff-2b2df8998ff11b6c15893b2c8d5d6af3
+        except:
             with io.BytesIO(str.encode(reply_pop_up_alert)) as out_file:
                 out_file.name = "{}.txt".format(plugin_name)
-                await borg.send_file(
+                await event.client.send_file(
                     event.chat_id,
                     out_file,
                     force_document=True,
                     allow_cache=False,
                     caption="Uploaded By @uSe_DaRk_PrInCe"
                 )
+
 
 def paginate_help(page_number, loaded_plugins, prefix):
     number_of_rows = Config.NO_OF_BUTTONS_DISPLAYED_IN_H_ME_CMD
@@ -119,7 +117,7 @@ def paginate_help(page_number, loaded_plugins, prefix):
     if len(pairs) > number_of_rows:
         pairs = pairs[modulo_page * number_of_rows:number_of_rows * (modulo_page + 1)] + \
             [
-            (custom.Button.inline("<<<Previous", data="{}_prev({})".format(prefix, modulo_page)),
-             custom.Button.inline("Next>>>", data="{}_next({})".format(prefix, modulo_page)))
+            (custom.Button.inline("Previous", data="{}_prev({})".format(prefix, modulo_page)),
+             custom.Button.inline("Next", data="{}_next({})".format(prefix, modulo_page)))
         ]
     return pairs
