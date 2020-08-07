@@ -10,9 +10,9 @@
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/No-OnE-Kn0wS-Me/dArK_pRiNcE/",
-  "website": "https://github.com/No-OnE-Kn0wS-Me",
-  "success_url": "https://t.me/No_OnE_Kn0wS_Me",
+  "repository": " https://github.com/hellboi-atul/hellboi-atul",
+  "website": "https://github.com/hellboi-atul",
+  "success_url": "https://t.me/Dark_cobra_support",
   "env": {
     "ENV": {
       "description": "Setting this to ANYTHING will enable heroku.",
@@ -29,7 +29,7 @@
       "required": false
     },
     "ALIVE_NAME": {
-      "description": "Fill your Full name or Username like @No_OnE_Kn0wS_Me .",
+      "description": "Fill your Full name or Username like @hellboi_atul .",
       "value": "",
       "required": false
     },
@@ -93,7 +93,7 @@
        "value": ""
     }, 
     "STRING_SESSION": {
-      "description": "Get this value by running commands on Termux",
+      "description": "https://darkcobra.crazycreatorr.repl.run/",
       "value": ""
     },
     "GITHUB_ACCESS_TOKEN": {
@@ -141,7 +141,7 @@
     },
     "DOWNLOAD_PFP_URL_CLOCK": {
       "description": "Needed for autopic module. A url that is a preview link of your Profile Pic",
-      "value": "https://telegra.ph/file/2765633721f6e21a0df9e.jpg",
+      "value": "https://telegra.ph/file/c6870835f5e68860fd770.jpg",
       "required": false
     },
     "OPEN_WEATHER_MAP_APPID": {
@@ -168,7 +168,7 @@
     },
     "REDIRECTCHANNEL": {
       "description": "Put You Channel Username Reflecting Your Info or Your Tags Etc",
-      "value": "",
+      "value": "@Dark_cobra_support",
       "required": false 
     }
   },
