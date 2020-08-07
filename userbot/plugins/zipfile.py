@@ -62,7 +62,7 @@ async def _(event):
 
                 directory_name + ".zip",
 
-                caption="Zipped By [Friday](https://github.com/leobrownlee/FRIDAY)",
+                caption="Zipped By [𝔻𝔸ℝ𝕂ℂ𝕆𝔹ℝ𝔸](https://github.com/hellboi-atul/hellboi-atul)",
 
                 force_document=True,
 
@@ -70,7 +70,7 @@ async def _(event):
 
                 reply_to=event.message.id,
 
-            )
+            )𝔻𝔸ℝ𝕂ℂ𝕆𝔹ℝ𝔸
 
             try:
 
