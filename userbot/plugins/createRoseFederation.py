@@ -11,7 +11,7 @@ from userbot import ALIVE_NAME
 
 naam = str(ALIVE_NAME)
 
-bot = "@MissRose_bot"
+bot = "@jarvisofficialsecuritybot"
 
 @borg.on(admin_cmd("createfed ?(.*)"))
 async def _(event):
@@ -23,12 +23,12 @@ async def _(event):
           try:
               await conv.send_message("/start")
               response = await conv.get_response()
-              await conv.send_message("/newfed FridayFederation")
+              await conv.send_message("/newfed DARKCOBRA Federation")
               audio = await conv.get_response()
-              final = ("If you would like to know more about rose federation, please visit MissRose_bot." , "")
+              final = ("If you would like to know more about JARVIS federation, please visit @jarvisofficialsecuritybot." , "")
               await borg.send_message(event.chat_id, audio.text)
               await event.delete()
           except YouBlockedUserError:
-              await event.edit("**Error:** `unblock` @MissRose_bot `and retry!")
+              await event.edit("**Error:** `unblock` @jarvisofficialsecuritybot `and retry!")
     
 
