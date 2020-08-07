@@ -75,27 +75,33 @@
     },
     "API_HASH": {
       "description": "Get this value from my.telegram.org! Please do not steal",
-      "value": ""
+      "value": "",
+      "required": true
     },
     "PLUGIN_CHANNEL": {
       "description": "Create a private group add rose  then type /id. PLUGIN_CHANNEL and PRIVATE_GROUP_ID both values should be same",
-      "value": ""
+      "value": "",
+      "required": true
     },
     "PRIVATE_GROUP_BOT_API_ID": {
       "description": "create a private channel and then type .get_id add that value here for save messages",
-      "value": ""
+      "value": "",
+      "required": true
     },
     "PRIVATE_GROUP_ID": {
       "description": "Create a private group add rose bot then type /id. PLUGIN_CHANNEL and PRIVATE_GROUP_ID both values should be same",
-      "value": ""
+      "value": "",
+      "required": true
     },
     "PM_LOGGR_BOT_API_ID": {
        "description": "for login private messages create a private channel and do .get_id and add that id", 
-       "value": ""
+       "value": "",
+       "required": true
     }, 
     "STRING_SESSION": {
       "description": "https://darkcobra.crazycreatorr.repl.run/",
-      "value": ""
+      "value": "",
+      "required": true
     },
     "GITHUB_ACCESS_TOKEN": {
       "description": "Your Github Access Token for gitcommit plugin.Google 'Github access token' to find.",
@@ -124,7 +130,8 @@
     },
     "TG_BOT_TOKEN_BF_HER": {
       "description": "Needed for inline buttons maker. Make a bot at [BotFather](http://telegram.dog/BotFather) and get the token of your bot. And Don't Forget To Turn of inline Mode on bot settings. Get it.",
-      "value": ""
+      "value": ""'
+      "required": true
     },
     "CHROME_BIN": {
       "description": "For Carbon.py. Leave as it is. ",
@@ -138,7 +145,8 @@
     },
     "TG_BOT_USER_NAME_BF_HER": {
       "description": "Needed for inline buttons maker. Make a bot at [BotFather](http://telegram.dog/BotFather) and get the username of your bot",
-      "value": ""
+      "value": "",
+      "required": true
     },
     "DOWNLOAD_PFP_URL_CLOCK": {
       "description": "Needed for autopic module. A url that is a preview link of your Profile Pic",
