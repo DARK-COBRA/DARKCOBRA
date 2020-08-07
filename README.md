@@ -22,6 +22,8 @@ Best User Bot To Manage Your Telegram Account</h3>
 </div>
 <h2 style="border-bottom: 1px solid rgb(234, 236, 239); box-sizing: border-box; line-height: 1.25; margin-bottom: 16px; margin-top: 24px; padding-bottom: 0.3em;">
 The Only Bot With 300 + Plugins</h2>
+<h2 style="text-align: left;">
+And The Most Awaited Bot In The World</h2>
 <h2 style="border-bottom: 1px solid rgb(234, 236, 239); box-sizing: border-box; line-height: 1.25; margin-bottom: 16px; margin-top: 24px; padding-bottom: 0.3em;">
 We Are Not Responsible For Account Bans</h2>
 <h2 style="border-bottom: 1px solid rgb(234, 236, 239); box-sizing: border-box; line-height: 1.25; margin-bottom: 16px; margin-top: 24px; padding-bottom: 0.3em;">
