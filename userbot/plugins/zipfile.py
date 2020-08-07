@@ -70,7 +70,7 @@ async def _(event):
 
                 reply_to=event.message.id,
 
-            )𝔻𝔸ℝ𝕂ℂ𝕆𝔹ℝ𝔸
+            )
 
             try:
 
