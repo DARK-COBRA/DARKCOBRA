@@ -102,7 +102,7 @@
       "required": false
     },
     "GIT_REPO_NAME": {
-      "description": "Your repo name Example: No-OnE-Kn0wS-Me/dArK_pRiNcE, but GITHUB_ACCESS_TOKEN must be setup first.",
+      "description": "Your repo name Example: Hellboi-atul, but GITHUB_ACCESS_TOKEN must be setup first.",
       "value": "",
       "required": false
     },
