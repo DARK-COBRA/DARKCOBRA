@@ -31,7 +31,7 @@ async def set_not_afk(event):
                 event.chat_id,
                 "Please set `PLUGIN_CHANNEL` " + \
                 "for the proper functioning of afk functionality " + \
-                "in @uSe_DaRk_PrInCe \n\n `{}`".format(str(e)),
+                "in @Dark_cobra_support \n\n `{}`".format(str(e)),
                 reply_to=event.message.id,
                 silent=True
             )
@@ -85,7 +85,7 @@ async def on_afk(event):
     global USER_AFK  # pylint:disable=E0602
     global afk_time  # pylint:disable=E0602
     global last_afk_message  # pylint:disable=E0602
-    afk_since = "**last seen a long time..don't worry zinda hai apna malik😅**"
+    afk_since = "**a work, last seen a long time ago..!**"
     current_message_text = event.message.message.lower()
     if "afk" in current_message_text:
         # userbot's should not reply to other userbot's
