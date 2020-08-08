@@ -101,7 +101,7 @@ async def get_ocr_languages(event):
 async def parse_ocr_space_api(event):
     if event.fwd_from:
         return
-    await event.edit("Processing 🙄🙇‍♂️🙇‍♂️🙇‍♀️")
+    await event.edit("Processing 🙇‍♂️🙇‍♂️🙇‍♀️")
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     lang_code = event.pattern_match.group(1)
