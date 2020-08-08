@@ -26,12 +26,12 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars 
 
 ALIVE_MESSAGE = Config.ALIVE_MSG
 if ALIVE_MESSAGE is None:
-  ALIVE_MESSAGE = "**🔱ＤａＲｋ　ｐＲｉＮｃＥ IS Awake 🔱\n\n\n**"
+  ALIVE_MESSAGE = "**🔱DARK COBRA IS Awake 🔱\n\n\n**"
   ALIVE_MESSAGE += "`My Bot Status\n\n\n`"
   ALIVE_MESSAGE += f"`Telethon: Telethon Not Found\n\n`"
   ALIVE_MESSAGE += f"`Python: PYTHON-3.6.4 \n\n`"
-  ALIVE_MESSAGE += "`I'll Be With You Master Till My Dyno Ends!!\n\n`"
-  ALIVE_MESSAGE += f"`Support Channel` : @uSe_DaRk_PrInCe \n\n"
+  ALIVE_MESSAGE += "`I'll Be With You Master Till My Dyno Ends!!☠\n\n`"
+  ALIVE_MESSAGE += f"`Support Channel` : @Dark_cobra_support \n\n"
   ALIVE_MESSAGE += f"`Bot Created And Maintained By`: {DEFAULTUSER}\n\n "
                 
             
