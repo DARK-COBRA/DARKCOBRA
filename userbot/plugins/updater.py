@@ -1,7 +1,7 @@
 """Update UserBot code (for Dark-Cobra)
 Syntax: .update
-\nAll Credits goes to © @Three_Cube_TeKnoways
-\nFor this awasome plugin.\nPorted from PpaperPlane Extended"""
+\nAll Credits goes to © @hellboi_atul
+\nFor this awasome plugin.\nPorted from DARKCOBRA"""
 
 from os import remove,execl
 import sys
@@ -30,7 +30,7 @@ IS_SELECTED_DIFFERENT_BRANCH = (
 
 OFFICIAL_UPSTREAM_REPO = "https://github.com/hellboi-atul/hellboi-atul.git"
 
-BOT_IS_UP_TO_DATE = "`The userbot is up-to-date.\nThank you for Using this Service.`"
+BOT_IS_UP_TO_DATE = "`The userbot is up-to-date.\nThank you for Using Dark Cobra by @hellboi_atul.`"
 NEW_BOT_UP_DATE_FOUND = (
     "new update found for {branch_name}\n"
     "changelog: \n\n{changelog}\n"
@@ -57,7 +57,7 @@ async def generate_change_log(git_repo, diff_marker):
 
 async def deploy_start(tgbot, message, refspec, remote):
     await message.edit(RESTARTING_APP)
-    await message.edit("Updating and Deploying New Branch. Please wait for 5 minutes then use `.alive` to check if i'm working or not.")
+    await message.edit("Updating and Deploying New Branch. Please wait for 5 minutes then use `.alive` to check if i'm working or not, you are my best boss🤗..")
     await  remote.push(refspec="HEAD:refs/heads/master", force=True)
     await tgbot.disconnect()
     os.execl(sys.executable, sys.executable, *sys.argv)
@@ -95,7 +95,7 @@ async def updater(message):
     )
 
     if not changelog:
-        await message.edit("`Updating...`")
+        await message.edit("`Okay let me update myself`")
         await asyncio.sleep(8)
  
     message_one = NEW_BOT_UP_DATE_FOUND.format(
