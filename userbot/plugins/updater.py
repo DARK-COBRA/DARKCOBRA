@@ -1,4 +1,4 @@
-"""Update UserBot code (for Xtra-Telegram)
+"""Update UserBot code (for Dark-Cobra)
 Syntax: .update
 \nAll Credits goes to © @Three_Cube_TeKnoways
 \nFor this awasome plugin.\nPorted from PpaperPlane Extended"""
