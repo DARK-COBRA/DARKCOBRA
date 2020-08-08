@@ -2,7 +2,7 @@
 
 Syntax: .update
 
-\nAll Credits goes to Â© @Three_Cube_TeKnoways
+\nAll Credits goes to Â© @hellboi_atul
 
 \nFor this awasome plugin.\nPorted from PpaperPlane Extended"""
 
