@@ -1,7 +1,7 @@
-"""Update UserBot Code (FOR DARKCOBRA USERBOT)
-Syntax: .update
-\nAll Credits goes to © @hellboi_atul
-\nFor this awasome plugin.\nPorted from PpaperPlane Extended"""
+#"""Update UserBot Code (FOR DARKCOBRA USERBOT)
+#Syntax: .update
+#\nAll Credits goes to © @hellboi_atul
+#\nFor this awasome plugin.\nPorted from PpaperPlane Extended"""
 
 from os import remove, execle, path, makedirs, getenv, environ,execl
 from shutil import rmtree
@@ -12,7 +12,7 @@ from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 from userbot import CMD_HELP, bot
 from userbot.utils import admin_cmd
 
-UPSTREAM_REPO_URL = "https://github.com/hellboi-atul/hellboi-atul.git"
+UPSTREAM_REPO_URL = "https://github.com/hellboi-atul/hellboi-atul/"
 HEROKU_API_KEY = Var.HEROKU_API_KEY
 HEROKU_APP_NAME = Var.HEROKU_APP_NAME
 
