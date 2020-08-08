@@ -1,4 +1,4 @@
-"""AFK Plugin for Friday
+"""AFK Plugin for DARK COBRA
 Syntax: .afk REASON"""
 import asyncio
 import datetime
@@ -61,15 +61,15 @@ async def _(event):
             afk_time = datetime.datetime.now()  # pylint:disable=E0602
         USER_AFK = f"yes: {reason}"  # pylint:disable=E0602
         if reason:
-            await event.edit(f"My Boss is going!, and Reason is {reason}")
+            await event.edit(f"My Boss is going afk(away from keyboard), and Reason is {reason}")
         else:
-            await event.edit(f"My Boss is Going")
+            await event.edit(f"My Boss is Going afk")
         await asyncio.sleep(5)
         await event.delete()
         try:
             await borg.send_message(  # pylint:disable=E0602
                 Config.PLUGIN_CHANNEL,  # pylint:disable=E0602
-                f"My Boss Want {reason}"
+                f"My Boss Went {reason}"
             )
         except Exception as e:  # pylint:disable=C0103,W0703
             logger.warn(str(e))  # pylint:disable=E0602
@@ -85,7 +85,7 @@ async def on_afk(event):
     global USER_AFK  # pylint:disable=E0602
     global afk_time  # pylint:disable=E0602
     global last_afk_message  # pylint:disable=E0602
-    afk_since = "**a while ago**"
+    afk_since = "**last seen a long time..don't worry zinda hai apna malik😅**"
     current_message_text = event.message.message.lower()
     if "afk" in current_message_text:
         # userbot's should not reply to other userbot's
@@ -121,10 +121,10 @@ async def on_afk(event):
             else:
                 afk_since = f"`{int(seconds)}s` **ago**"
         msg = None
-        message_to_reply = f"My Master Has Been Gone For {afk_since}\nWhere He Is: **Only God Knows** " + \
-            f"\n\n__ I'll back in a few Light years__\n**REASON**: {reason}" \
+        message_to_reply = f"My Master Has Been Gone For {afk_since}\nWhere He Is: **Main nahi bataa sakta(I can't reveal) top secret** " + \
+            f"\n\n__ I'll back soon!__\n**REASON**: {reason}" \
             if reason \
-            else f"**Important Notice**\n\n[This User Is Ded Forever...](https://telegra.ph/file/a4821748db331a0c899a0.mp4) "
+            else f"**Important Notice**\n\n[This User Is little busy now!...](https://telegra.ph/file/a4821748db331a0c899a0.mp4) "
         msg = await event.reply(message_to_reply)
         await asyncio.sleep(5)
         if event.chat_id in last_afk_message:  # pylint:disable=E0602
