@@ -28,7 +28,7 @@
       "required": false
     },
     "ALIVE_NAME": {
-      "description": "Fill your Full name or Username like @No_OnE_Kn0wS_Me .",
+      "description": "Fill your Full name or Username like @hellboi_atul .",
       "value": "",
       "required": false
     },
@@ -92,7 +92,7 @@
        "value": ""
     }, 
     "STRING_SESSION": {
-      "description": "Get this value by running https://darkcobra.crazycreatorr.repl.run/",
+      "description": "Get this value by running https://darkcobra.crazycreatorr.repl.run/ ",
       "value": ""
     },
     "GITHUB_ACCESS_TOKEN": {
