@@ -121,7 +121,7 @@ async def on_afk(event):
             else:
                 afk_since = f"`{int(seconds)}s` **ago**"
         msg = None
-        message_to_reply = f"My Master Has Been Gone For {afk_since}\nWhere He Is: **Main nahi bataa sakta(I can't reveal) top secret** " + \
+        message_to_reply = f"𝐌𝐲 𝐦𝐚𝐬𝐭𝐞𝐫 𝐢𝐬 𝐠𝐨𝐧𝐞 𝐟𝐨𝐫 𝐬𝐨𝐦𝐞 𝐛𝐮𝐬𝐲 𝐰𝐨𝐫𝐤 {afk_since}\nWhere He Is: **𝐈 𝐀𝐌 𝐍𝐎𝐓 𝐁𝐎𝐓𝐇𝐄𝐑𝐄𝐃           𝐋𝐚𝐬𝐭 𝐬𝐞𝐞𝐧 𝐚 𝐥𝐨𝐧𝐠 𝐭𝐢𝐦𝐞 𝐚𝐠𝐨..!                          𝐑𝐄𝐀𝐒𝐎𝐍 𝐆𝐈𝐕𝐄𝐍 𝐁𝐄𝐋𝐎𝐖, 𝐈𝐅 𝐍𝐎𝐓 𝐓𝐇𝐄𝐍 𝐈𝐓𝐒 𝐍𝐎𝐍𝐄 𝐎𝐅 𝐘 𝐁𝐔𝐒𝐒𝐈𝐍𝐄𝐒𝐒 𝐓𝐎 𝐈𝐍𝐓𝐄𝐑𝐅𝐀𝐈𝐑 𝐈𝐍 𝐌𝐘 𝐌𝐀𝐒𝐓𝐄𝐑'𝐒 𝐖𝐎𝐑𝐊 𝐒𝐎 𝐁𝐄𝐓𝐓𝐄𝐑 𝐖𝐀𝐈𝐓 𝐅𝐎𝐑 𝐒𝐎𝐌𝐄𝐓𝐈𝐌𝐄 𝐓𝐈𝐋𝐋 𝐇𝐄 𝐂𝐎𝐌𝐄𝐒❤** " + \
             f"\n\n__ I'll back soon!__\n**REASON**: {reason}" \
             if reason \
             else f"**Important Notice**\n\n[This User Is little busy now!...](https://telegra.ph/file/a4821748db331a0c899a0.mp4) "
