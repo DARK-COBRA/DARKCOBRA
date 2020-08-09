@@ -1,5 +1,3 @@
-#Made By @ceowhitehatcracks Keep Credits If You Are Goanna Kang This Lol
-
 #And Thanks To The Creator Of Autopic This Script Was Made from Snippets From That Script
 
 #Usage .avengersdp Im Not Responsible For Any Ban caused By This
@@ -62,7 +60,7 @@ async def animepp():
 
 async def main(event):
 
-    await event.edit("**Starting Avengers Profile Pic...\n\nDone !!! Check Your DP By @Ceowhitehatcracks**")
+    await event.edit("**Starting Avengers Profile Pic...\n\nDone !!! Check Your DP By @Dark_cobra_support**")
 
     while True:
 
