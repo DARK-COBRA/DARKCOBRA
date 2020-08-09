@@ -135,7 +135,7 @@ if Var.PM_PERMIT_GROUP_ID is not None:
         if event.from_id == bot.uid:
             return
 
-        if Var.PRIVATE_GROUP_ID is None:
+        if Var.PM_LOGGR_BOT_API_ID is None:
             return
 
         if not event.is_private:
