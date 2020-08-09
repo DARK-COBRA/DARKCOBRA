@@ -61,13 +61,13 @@ def register(**args):
                 return
 
             if groups_only and not check.is_group:
-                await check.respond("`I don't think this is a group.`")
+                await check.respond("`I don't think this is a group😅.`")
                 return
 
             try:
                 await func(check)
 
-            # Thanks to @kandnub for this HACK.
+            # Thanks to @hellboi_atul for this HACK.
             # Raise StopPropagation to Raise StopPropagation
             # This needed for AFK to working properly
 
@@ -86,7 +86,7 @@ def register(**args):
                     date = strftime("%Y-%m-%d %H:%M:%S", gmtime())
 
                     text = "**USERBOT ERROR REPORT**\n"
-                    link = "[PaperplaneExtended Support Chat](https://t.me/PaperplaneExtendedSupport)"
+                    link = "[DARK COBRA Support Chat](https://t.me/Dark_cobra_support)"
                     text += "If you want to, you can report it"
                     text += f"- just forward this message to {link}.\n"
                     text += "Nothing is logged except the fact of error and date\n"
@@ -129,7 +129,7 @@ def register(**args):
 
                     if LOGSPAMMER:
                         await check.client.respond(
-                            "`Sorry, my userbot has crashed.\
+                            "`Sorry, my userbot has crashed😔, check logs for more info.\
                         \nThe error logs are stored in the userbot's log chat.`"
                         )
 
