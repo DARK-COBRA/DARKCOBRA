@@ -130,12 +130,12 @@ if Var.PM_PERMIT_GROUP_ID is not None:
             await event.edit(APPROVED_PMs)
 
 
-    @bot.on(events.NewMessage(incoming=True))
+@bot.on(events.NewMessage(incoming=True))
     async def on_new_private_message(event):
         if event.from_id == bot.uid:
             return
 
-        if Var.PM_LOGGR_BOT_API_ID is None:
+        if Var.PRIVATE_GROUP_ID is None:
             return
 
         if not event.is_private:
