@@ -3,7 +3,7 @@ Syntax: .corona <country>"""
 
 from covid import Covid
 
-from uniborg.util import admin_cmd
+from userbot.utils import admin_cmd
 
 
 
