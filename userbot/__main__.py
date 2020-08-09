@@ -49,7 +49,7 @@ for name in files:
 
 import userbot._core
 
-print("🎉DARK COBRA IS HERE Enjoy Using But Rememeber That Dont Misuse Userbot ")
+print("🎉DARK COBRA IS AWAKE☣, you should Thank @hellboi_atul for this awesome bot made by him..")
 
 if len(argv) not in (1, 3, 4):
     bot.disconnect()
