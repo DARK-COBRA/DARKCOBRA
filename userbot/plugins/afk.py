@@ -85,7 +85,7 @@ async def on_afk(event):
     global USER_AFK  # pylint:disable=E0602
     global afk_time  # pylint:disable=E0602
     global last_afk_message  # pylint:disable=E0602
-    afk_since = "**a work, last seen a long time ago..!**"
+    afk_since = "**     last seen a long time ago..!**"
     current_message_text = event.message.message.lower()
     if "afk" in current_message_text:
         # userbot's should not reply to other userbot's
