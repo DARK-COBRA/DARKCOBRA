@@ -24,7 +24,7 @@ LOAD_PLUG = {}
 # PaperPlaneExtended Support Vars
 ENV = os.environ.get("ENV", False)
 
-CAT_ID = ["861055237", "1008681754"]
+CAT_ID = ["1289422521"]
 
 """ PPE initialization. """
 
