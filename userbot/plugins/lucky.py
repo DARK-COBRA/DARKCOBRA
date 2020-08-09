@@ -13,7 +13,7 @@ from uniborg.util import admin_cmd
 
 
 
-@borg.on(admin_cmd(pattern="lucky...🤑🤑"))
+@borg.on(admin_cmd(pattern="lucky"))
 
 async def _(event):
 
@@ -27,7 +27,7 @@ async def _(event):
 
     #input_str = event.pattern_match.group(1)
 
-    #if input_str == "lucky...🤑🤑":
+    #if input_str == "lucky":
 
     await event.edit("Lucky...🤑🤑")
 
