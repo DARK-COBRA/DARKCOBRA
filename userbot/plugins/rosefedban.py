@@ -12,7 +12,7 @@ from userbot import ALIVE_NAME
 
 naam = str(ALIVE_NAME)
 
-bot = "@MissRose_bot"
+bot = "@jarvisofficialsecuritybot"
 
 @borg.on(admin_cmd("fedban ?(.*)"))
 async def _(event):
@@ -26,11 +26,11 @@ async def _(event):
               response = await conv.get_response()
               await conv.send_message("/fban")
               audio = await conv.get_response()
-              final = ("If you would like to know more about fban, use visit RoseBot." , "")
+              final = ("If you would like to know more about fban, use visit @jarvisofficialsecuritybot." , "")
               await borg.send_message(event.chat_id, audio.text)
               await event.delete()
           except YouBlockedUserError:
-              await event.edit("**Error:** `unblock` @MissRose_bot `and retry!")
+              await event.edit("**Error:** `unblock` @jarvisofficialsecuritybot `and retry!")
     elif "@" in sysarg:
       async with borg.conversation(bot) as conv:
           try:
@@ -38,11 +38,11 @@ async def _(event):
               response = await conv.get_response()
               await conv.send_message("/fban " + sysarg)
               audio = await conv.get_response()
-              final = ("If you would like to know more about fban, please visit RoseBot." , "")
+              final = ("If you would like to know more about fban, please visit @jarvisofficialsecuritybot." , "")
               await borg.send_message(event.chat_id, audio.text)
               await event.delete()
           except YouBlockedUserError:
-              await event.edit("**Error:** `unblock` @MissRose_Bot `and try again!")
+              await event.edit("**Error:** `unblock` @jarvisofficialsecuritybot `and try again!")
     elif "" in sysarg:
       async with borg.conversation(bot) as conv:
           try:
@@ -50,11 +50,11 @@ async def _(event):
               response = await conv.get_response()
               await conv.send_message("/fban " + sysarg)
               audio = await conv.get_response()
-              final = ("If you would like to know more about fban, please visit RoseBot." , "")
+              final = ("If you would like to know more about fban, please visit @jarvisofficialsecuritybot." , "")
               await borg.send_message(event.chat_id, audio.text)
               await event.delete()
           except YouBlockedUserError:
-              await event.edit("**Error:** `unblock` @MissRose_Bot `and try again!")
+              await event.edit("**Error:** `unblock` @jarvisofficialsecuritybot `and try again!")
 
 
 
@@ -74,11 +74,11 @@ async def _(event):
               response = await conv.get_response()
               await conv.send_message("/unfban")
               audio = await conv.get_response()
-              final = ("If you would like to know more about fban, use visit RoseBot." , "")
+              final = ("If you would like to know more about fban, use visit @jarvisofficialsecuritybot." , "")
               await borg.send_message(event.chat_id, audio.text)
               await event.delete()
           except YouBlockedUserError:
-              await event.edit("**Error:** `unblock` @MissRose_bot `and retry!")
+              await event.edit("**Error:** `unblock` @jarvisofficialsecuritybot `and retry!")
     elif "@" in sysarg:
       async with borg.conversation(bot) as conv:
           try:
@@ -86,11 +86,11 @@ async def _(event):
               response = await conv.get_response()
               await conv.send_message("/unfban " + sysarg)
               audio = await conv.get_response()
-              final = ("If you would like to know more about fban, please visit RoseBot." , "")
+              final = ("If you would like to know more about fban, please visit @jarvisofficialsecuritybot." , "")
               await borg.send_message(event.chat_id, audio.text)
               await event.delete()
           except YouBlockedUserError:
-              await event.edit("**Error:** `unblock` @MissRose_Bot `and try again!")
+              await event.edit("**Error:** `unblock` @jarvisofficialsecuritybot `and try again!")
     elif "" in sysarg:
       async with borg.conversation(bot) as conv:
           try:
@@ -98,10 +98,10 @@ async def _(event):
               response = await conv.get_response()
               await conv.send_message("/unfban " + sysarg)
               audio = await conv.get_response()
-              final = ("If you would like to know more about fban, please visit RoseBot." , "")
+              final = ("If you would like to know more about fban, please visit @jarvisofficialsecuritybot." , "")
               await borg.send_message(event.chat_id, audio.text)
               await event.delete()
           except YouBlockedUserError:
-              await event.edit("**Error:** `unblock` @MissRose_Bot `and try again!")
+              await event.edit("**Error:** `unblock` @jarvisofficialsecuritybot `and try again!")
 
 
