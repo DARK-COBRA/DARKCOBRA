@@ -3,7 +3,7 @@
 #\nAll Credits goes to © @hellboi_atul
 #\nFor this awasome plugin.\nPorted from PpaperPlane Extended"""
 
-from os import remove, execle, path, makedirs, getenv, environ,execl
+from os import remove, execle, path, makedirs, getenv, environ, execl
 from shutil import rmtree
 import asyncio
 import sys
