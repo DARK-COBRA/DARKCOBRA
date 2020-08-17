@@ -26,10 +26,10 @@ async def _(event):
     reply = await event.get_reply_message()
     if event.pattern_match.group(1):
         query = event.pattern_match.group(1)
-        await event.edit("wi8..! I am finding your song....")
+        await event.edit("wait..let me search for the song you are looking for😇..stay tuned")
     elif reply.message:
         query = reply.message
-        await event.edit("wi8..! I am finding your song....")
+        await event.edit("wait..let me search for the song you are looking for😇..stay tuned")
     else:
     	await event.edit("`What I am Supposed to find `")
     	return
@@ -37,7 +37,7 @@ async def _(event):
     await darkmusic(str(query),"128k")
     l = glob.glob("*.mp3")
     if l:
-        await event.edit("yeah..! i found something wi8..🥰")
+        await event.edit("Wait😉, I found something for you.. Uploading...!")
     else:
         await event.edit(f"Sorry..! i can't find anything with `{query}`")
     loa = l[0]    
@@ -46,7 +46,7 @@ async def _(event):
                 loa,
                 force_document=True,
                 allow_cache=False,
-                caption="`Audio File Medium Quality Successfully Uploaded",
+                caption="`Audio File uploaded successfully by DARK COBRA!",
                 reply_to=reply_to_id
             )
     await event.delete()
@@ -61,10 +61,10 @@ async def _(event):
     reply = await event.get_reply_message()
     if event.pattern_match.group(1):
         query = event.pattern_match.group(1)
-        await event.edit("wi8..! I am finding your song....")
+        await event.edit("wait..let me search for the song you are looking for😇..stay tuned ")
     elif reply.message:
         query = reply.message
-        await event.edit("wi8..! I am finding your song....")
+        await event.edit("wait..let me search for the song you are looking for😇..stay tuned")
     else:
     	await event.edit("`What I am Supposed to find `")
     	return
@@ -72,7 +72,7 @@ async def _(event):
     await darkmusic(str(query),"320k")
     l = glob.glob("*.mp3")
     if l:
-        await event.edit("yeah..! i found something wi8..🥰")
+        await event.edit("Wait😉, I found something for you.. Uploading...! ")
     else:
         await event.edit(f"Sorry..! i can't find anything with `{query}`")
     loa = l[0]    
@@ -99,14 +99,14 @@ async def _(event):
         await event.edit("wi8..! I am finding your videosong....")
     elif reply.message:
         query = reply.message
-        await event.edit("wi8..! I am finding your videosong....")
+        await event.edit("wait ser! I am finding your videosong....")
     else:
         await event.edit("What I am Supposed to find")
         return
     await darkmusicvideo(query)
     l = glob.glob(("*.mp4")) + glob.glob(("*.mkv")) + glob.glob(("*.webm")) 
     if l:
-        await event.edit("yeah..! i found something wi8..🥰")
+        await event.edit("huss😉..I got something..uploading!")
     else:
         await event.edit(f"Sorry..! i can't find anything with `{query}`")
     loa = l[0]  
@@ -125,7 +125,7 @@ async def _(event):
                 loa,
                 force_document=True,
                 allow_cache=False,
-                caption="`Video File Successfully Uploaded",
+                caption="`Video File Successfully Uploaded by DARK COBRA",
                 supports_streaming=True,
                 reply_to=reply_to_id,
                 attributes=[DocumentAttributeVideo(
