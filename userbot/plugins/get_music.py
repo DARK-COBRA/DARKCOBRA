@@ -8,7 +8,7 @@ import asyncio
 from userbot.utils import admin_cmd
 
 
-@borg.on(admin_cmd("smd (.*)"))
+@borg.on(admin_cmd("gaana (.*)"))
 async def _(event):
     if event.fwd_from:
         return
