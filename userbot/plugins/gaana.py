@@ -1,5 +1,6 @@
 # Originally from Bothub
 # Port to UserBot by @heyworld
+#ported and modified to DARK COBRA by @hellboi-atul
 #Copyright (C) 2020 azrim.
 
 from telethon import events
@@ -46,16 +47,17 @@ async def _(event):
           await bot.forward_messages(event.chat_id, respond.message)
 
 @register(outgoing=True, pattern="^.netease(?: |$)(.*)")
+@register(events.NewMessage(pattern=r"\.netease(.*)",incoming=True))
 async def WooMai(netase):
     if netase.fwd_from:
         return
     song = netase.pattern_match.group(1)
     chat = "@WooMaiBot"
     link = f"/netease {song}"
-    await netase.edit("```Getting Your Music```")
+    await netase.reply("```Getting Your Music```")
     async with bot.conversation(chat) as conv:
           await asyncio.sleep(2)
-          await netase.edit("`Downloading...Please wait`")
+          await netase.reply("`Downloading...Please wait`")
           try:
               msg = await conv.send_message(link)
               response = await conv.get_response()
