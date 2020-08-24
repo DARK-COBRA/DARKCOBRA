@@ -7,13 +7,13 @@ import os
 from PIL import Image
 from glitch_this import ImageGlitcher
 
-from userge import userge, Message, Config
-from userge.utils import take_screen_shot, runcmd
+from telethon import events, Message, Config
+from uniborg.utils import take_screen_shot, runcmd
 
 Glitched = Config.DOWN_PATH + "glitch.gif"
 
 
-@userge.on_cmd("glitch", about={
+@borg.on_cmd("glitch", about={
     'header': "Reply to any media to glitch",
     'flags': {
         '-s': "Upload glitched IMG as a Sticker"},
