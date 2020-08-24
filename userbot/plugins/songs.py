@@ -18,7 +18,8 @@ from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 from telethon.tl.types import DocumentAttributeVideo
 
-@borg.on(admin_cmd(pattern="song(?: |$)(.*)"))
+@borg.on(admin_cmd(pattern="songs ?(.*)"))
+@borg.on(events.NewMessage(pattern=r"\.song(.*)",incoming=True))
 async def _(event):
     reply_to_id = event.message.id
     if event.reply_to_msg_id:
@@ -26,12 +27,12 @@ async def _(event):
     reply = await event.get_reply_message()
     if event.pattern_match.group(1):
         query = event.pattern_match.group(1)
-        await event.edit("wait..let me search for the song you are looking for😇..stay tuned")
+        await event.reply("wait..let me search for the song you are looking for😇..stay tuned")
     elif reply.message:
         query = reply.message
-        await event.edit("wait..let me search for the song you are looking for😇..stay tuned")
+        await event.reply("wait..let me search for the song you are looking for😇..stay tuned")
     else:
-    	await event.edit("`What I am Supposed to find `")
+    	await event.reply("`What I am Supposed to find `")
     	return
     
     await darkmusic(str(query),"128k")
