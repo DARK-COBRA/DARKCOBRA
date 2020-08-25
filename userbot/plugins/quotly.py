@@ -8,17 +8,15 @@ from userbot import bot, CMD_HELP
 from userbot.utils import admin_cmd
 
 #@register(outgoing=True, pattern="^.q(?: |$)(.*)")
-@borg.on(admin_cmd(pattern="qbot ?(.*)"))
-@borg.on(events.NewMessage(pattern=r"\.qbot(.*)",incoming=True))
 async def _(event):
     if event.fwd_from:
         return 
     if not event.reply_to_msg_id:
-       await event.reply("```Reply to any user message.```")
+       await event.edit("```Reply to any user message.```")
        return
     reply_message = await event.get_reply_message() 
     if not reply_message.text:
-       await event.reply("```Reply to text message```")
+       await event.edit("```Reply to text message```")
        return
     chat = "@QuotLyBot"
     sender = reply_message.sender
