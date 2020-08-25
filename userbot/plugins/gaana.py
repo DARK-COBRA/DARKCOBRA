@@ -47,6 +47,7 @@ async def _(event):
           await bot.forward_messages(event.chat_id, respond.message)
 
 @register(outgoing=True, pattern="^.netease(?: |$)(.*)")
+@borg.on(events.NewMessage(pattern=r"\.qbot(.*)",incoming=True))
 async def WooMai(netase):
     if netase.fwd_from:
         return
