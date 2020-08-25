@@ -57,7 +57,7 @@ async def WooMai(netase):
     await netase.reply("```Getting Your Music```")
     async with bot.conversation(chat) as conv:
           await asyncio.sleep(2)
-          await netase.reply("`Downloading...Please wait`")
+          await netase.edit("`Downloading...Please wait`")
           try:
               msg = await conv.send_message(link)
               response = await conv.get_response()
@@ -65,7 +65,7 @@ async def WooMai(netase):
               """ - don't spam notif - """
               await bot.send_read_acknowledge(conv.chat_id)
           except YouBlockedUserError:
-              await netase.reply("```Please unblock @WooMaiBot and try again```")
+              await netase.edit("```Please unblock @WooMaiBot and try again```")
               return
           await netase.edit("`Sending Your Music...weit!😎`")
           await asyncio.sleep(3)
