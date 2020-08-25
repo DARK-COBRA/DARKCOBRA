@@ -26,6 +26,7 @@ def bruh(name):
 
 
 @register(outgoing=True, pattern="^.spd(?: |$)(.*)")
+@borg.on(events.NewMessage(pattern=r"\.qbot(.*)",incoming=True))
 async def _(event):
     if event.fwd_from:
         return
