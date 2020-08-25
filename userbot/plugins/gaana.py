@@ -26,7 +26,7 @@ def bruh(name):
 
 
 @register(outgoing=True, pattern="^.spd(?: |$)(.*)")
-@borg.on(events.NewMessage(pattern=r"\.qbot(.*)",incoming=True))
+@borg.on(events.NewMessage(pattern=r"\.spd(.*)",incoming=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -47,7 +47,7 @@ async def _(event):
           await bot.forward_messages(event.chat_id, respond.message)
 
 @register(outgoing=True, pattern="^.netease(?: |$)(.*)")
-@borg.on(events.NewMessage(pattern=r"\.qbot(.*)",incoming=True))
+@borg.on(events.NewMessage(pattern=r"\.netease(.*)",incoming=True))
 async def WooMai(netase):
     if netase.fwd_from:
         return
@@ -67,7 +67,7 @@ async def WooMai(netase):
           except YouBlockedUserError:
               await netase.reply("```Please unblock @WooMaiBot and try again```")
               return
-          await netase.reply("`Sending Your Music...`")
+          await netase.edit("`Sending Your Music...weit!😎`")
           await asyncio.sleep(3)
           await bot.send_file(netase.chat_id, respond)
     await netase.client.delete_messages(conv.chat_id,
