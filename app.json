@@ -50,7 +50,7 @@
     "PMPERMIT_PIC": {
       "description": "put here any telegraph media link for pmpermit custom pic.",
       "value": "",
-      "required": false
+      "required": true
     },
     "PM_PERMIT_GROUP_ID": {
       "description": "Put an Group Id Same As PRIVATE_GROUP_ID Required For Pmpermit plugin.",
