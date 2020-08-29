@@ -27,16 +27,15 @@ def bruh(name):
 
 
 @register(outgoing=True, pattern="^.spd(?: |$)(.*)")
-@borg.on(events.NewMessage(pattern=r"\.spd(.*)",incoming=True))
 async def _(event):
     if event.fwd_from:
         return
     link = event.pattern_match.group(1)
     chat = "@SpotifyMusicDownloaderBot"
-    await event.reply("```Getting Your Music```")
+    await event.edit("```Getting Your Music```")
     async with bot.conversation(chat) as conv:
           await asyncio.sleep(2)
-          await event.reply("`Downloading music taking some times,  Stay Tuned.....`")
+          await event.edit("`Downloading music taking some times,  Stay Tuned.....`")
           try:
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=752979930))
               await bot.send_message(chat, link)
@@ -48,14 +47,13 @@ async def _(event):
           await bot.forward_messages(event.chat_id, respond.message)
 
 @register(outgoing=True, pattern="^.netease(?: |$)(.*)")
-@borg.on(events.NewMessage(pattern=r"\.netease(.*)",incoming=True))
 async def WooMai(netase):
     if netase.fwd_from:
         return
     song = netase.pattern_match.group(1)
     chat = "@WooMaiBot"
     link = f"/netease {song}"
-    await netase.reply("```Getting Your Music```")
+    await netase.edit("```Getting Your Music```")
     async with bot.conversation(chat) as conv:
           await asyncio.sleep(2)
           await netase.edit("`Downloading...Please wait`")
