@@ -18,7 +18,7 @@ from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 from telethon.tl.types import DocumentAttributeVideo
 
-@borg.on(admin_cmd(pattern="songs ?(.*)"))
+@borg.on(admin_cmd(pattern="song(?: |$)(.*)"))
 async def _(event):
     reply_to_id = event.message.id
     if event.reply_to_msg_id:
@@ -81,7 +81,7 @@ async def _(event):
                 loa,
                 force_document=True,
                 allow_cache=False,
-                caption="Audio File HQ Successfully Uploaded",
+                caption="Audio File HQ Successfully Uploaded by dark cobra",
                 reply_to=reply_to_id
             )
     await event.delete()
@@ -106,7 +106,7 @@ async def _(event):
     await darkmusicvideo(query)
     l = glob.glob(("*.mp4")) + glob.glob(("*.mkv")) + glob.glob(("*.webm")) 
     if l:
-        await event.edit("huss😉..I got something..uploading!")
+        await event.edit("yuss😉..I got something..uploading!")
     else:
         await event.edit(f"Sorry..! i can't find anything with `{query}`")
     loa = l[0]  
