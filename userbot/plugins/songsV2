@@ -168,7 +168,7 @@ async def _(event):
     os.system("rm -rf ./temp/*.jpg")
     os.system("rm -rf ./temp/*.webp")
     
-CMD_HELP.update({"getmusic":
+CMD_HELP.update({"songsV2":
     "`.song` query or `.song` reply to song name :\
     \nUSAGE:finds the song you entered in query and sends it"
 })
