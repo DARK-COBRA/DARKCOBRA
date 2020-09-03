@@ -1,5 +1,6 @@
 # plugin made by @hellboi_atul
 # Copyright (C) DARK COBRA 2020.
+# if you change this line you are gay...bc fuck off!
 
 from telethon import events
 import asyncio
@@ -35,11 +36,21 @@ async def _(event):
           await asyncio.sleep(2)
           await event.edit("`Downloading, Stay Tuned.....`")
           try:
-              response = conv.wait_event(events.NewMessage(incoming=True,from_users=442186886))
-              await bot.send_message(chat, link)
-              respond = await response
+              msg = await conv.send_message(link)
+              response = await conv.get_response()
+              respond = await conv.get_response()
+              """ - don't spam notif - """
+              await bot.send_read_acknowledge(conv.chat_id)
+              
+         
           except YouBlockedUserError:
               await event.reply("```Please unblock @FindMusicPleaseBot and try again```")
               return
-          await event.delete()
-          await bot.forward_messages(event.chat_id, respond.message)
+          await gaana.edit("`Sending Your Music...weit!😎`")
+          await asyncio.sleep(3)
+          await bot.send_file(gaana.chat_id, respond)
+    await gaana.client.delete_messages(conv.chat_id,
+                                       [msg.id, response.id, respond.id])
+    await gaana.delete()
+
+         
