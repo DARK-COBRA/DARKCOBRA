@@ -31,26 +31,16 @@ async def _(event):
         return
     link = event.pattern_match.group(1)
     chat = "@FindMusicPleaseBot"
-    await event.edit("```Getting Your Music Ser```")
+    await event.edit("```Searching your music..```")
     async with bot.conversation(chat) as conv:
           await asyncio.sleep(2)
-          await event.edit("`Downloading, Stay Tuned.....`")
+          await event.edit("`Downloading music, Stay Tuned.....`")
           try:
-              msg = await conv.send_message(link)
-              response = await conv.get_response()
-              respond = await conv.get_response()
-              """ - don't spam notif - """
-              await bot.send_read_acknowledge(conv.chat_id)
-              
-         
+              response = conv.wait_event(events.NewMessage(incoming=True,from_users=442186886))
+              await bot.send_message(chat, link)
+              respond = await response
           except YouBlockedUserError:
-              await event.reply("```Please unblock @FindMusicPleaseBot and try again```")
+              await event.reply("```Please unblock @Findmusicpleasebot and try again```")
               return
-          await gaana.edit("`Sending Your Music...weit!😎`")
-          await asyncio.sleep(3)
-          await bot.send_file(gaana.chat_id, respond)
-    await gaana.client.delete_messages(conv.chat_id,
-                                       [msg.id, response.id, respond.id])
-    await gaana.delete()
-
-         
+          await event.delete()
+          await bot.forward_messages(event.chat_id, respond.message)
