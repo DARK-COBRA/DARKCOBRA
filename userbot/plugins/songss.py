@@ -28,7 +28,7 @@ def bruh(name):
 async def SendMusicPleaseBot(gaana):
     if gaana.fwd_from:
         return
-    song = netase.pattern_match.group(1)
+    song = gaana.pattern_match.group(1)
     chat = "@SendMusicPleaseBot"
     link = f"{song}"
     await netase.edit("```Getting Your Music```")
