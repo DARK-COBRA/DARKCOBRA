@@ -24,23 +24,29 @@ def bruh(name):
     os.system("instantmusic -q -s "+name)
 
 
-
 @register(outgoing=True, pattern="^.gaana(?: |$)(.*)")
-async def _(event):
-    if event.fwd_from:
+async def SendMusicPleaseBot(gaana):
+    if gaana.fwd_from:
         return
-    link = event.pattern_match.group(1)
-    chat = "@FindMusicPleaseBot"
-    await event.edit("```Searching your music..```")
+    song = netase.pattern_match.group(1)
+    chat = "@SendMusicPleaseBot"
+    link = f"{song}"
+    await netase.edit("```Getting Your Music```")
     async with bot.conversation(chat) as conv:
           await asyncio.sleep(2)
-          await event.edit("`Downloading music, Stay Tuned.....`")
+          await gaana.edit("`Downloading...Please wait`")
           try:
-              response = conv.wait_event(events.NewMessage(incoming=True,from_users=442186886))
-              await bot.send_message(chat, link)
-              respond = await response
+              msg = await conv.send_message(link)
+              response = await conv.get_response()
+              respond = await conv.get_response()
+              """ - don't spam notif - """
+              await bot.send_read_acknowledge(conv.chat_id)
           except YouBlockedUserError:
-              await event.reply("```Please unblock @Findmusicpleasebot and try again```")
+              await netase.edit("```Please unblock @SendmusicpleaseBot and try again```")
               return
-          await event.delete()
-          await bot.forward_messages(event.chat_id, respond.message)
+          await gaana.edit("`Sending Your Music...weit!😎`")
+          await asyncio.sleep(3)
+          await bot.send_file(gaana.chat_id, respond)
+    await netase.client.delete_messages(conv.chat_id,
+                                       [msg.id, response.id, respond.id])
+    await gaana.delete()
