@@ -11,7 +11,7 @@ JAVES_NNAME = str(ALIVE_NAME)
 from telethon.events import ChatAction
 
 #@bot.on(rekcah05(pattern=f"gban(?: |$)(.*)", allow_sudo=True))
-@command(outgoing=True, pattern="^!gban(?: |$)(.*)")
+@command(outgoing=True, pattern="^.gban(?: |$)(.*)")
 async def startgban(rk): 
    lazy = rk ; sender = await lazy.get_sender() ; me = await lazy.client.get_me()
    if not sender.id == me.id:
