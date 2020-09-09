@@ -13,7 +13,7 @@ from userbot.utils import admin_cmd
 async def _(event):
     if event.fwd_from:
         return
-    animation_interval = 1
+    animation_interval = 3
     animation_ttl = range(0,36)
     #input_str = event.pattern_match.group(1)
    # if input_str == "gulli":
