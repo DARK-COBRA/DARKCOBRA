@@ -1,52 +1,62 @@
-# plugin made by @hellboi_atul
+# plugin made by @hellboi_atul bug fixes by @Mrconfused 
 # Copyright (C) DARK COBRA 2020.
-# if you change this line you are gay...bc fuck off!
+# if you change these lines you are gay...bc fuck off!
+# leechers stay away😑...if you use this code without credit...u gay bitch fuck off...!
 
-from telethon import events
-import asyncio
-#from userbot.utils import admin_cmd
-from userbot.events import register 
-from userbot import bot, CMD_HELP
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-import os
-try:
- import subprocess
-except:
- os.system("pip install instantmusic")
 
+from userbot.utils import admin_cmd
 
+import asyncio
 
-os.system("rm -rf *.mp3")
+ 
 
+@borg.on(admin_cmd(pattern="gaana ?(.*)"))
 
-def bruh(name):
-
-    os.system("instantmusic -q -s "+name)
-
-
-@register(outgoing=True, pattern="^.gaana(?: |$)(.*)")
 async def FindMusicPleaseBot(gaana):
-    if gaana.fwd_from:
-        return
+
     song = gaana.pattern_match.group(1)
+
     chat = "@FindMusicPleaseBot"
-    link = f"{song}"
+
+    if not song:
+
+        return await gaana.edit("```what should i search```")
+
     await gaana.edit("```Getting Your Music```")
+
+    await asyncio.sleep(2)
+
     async with bot.conversation(chat) as conv:
-          await asyncio.sleep(2)
-          await gaana.edit("`Downloading...Please wait`")
-          try:
-              msg = await conv.send_message(link)
-              response = await conv.get_response()
-              respond = await conv.get_response()
-              """ - don't spam notif - """
-              await bot.send_read_acknowledge(conv.chat_id)
-          except YouBlockedUserError:
-              await gaana.edit("```Please unblock @FindmusicpleaseBot and try again```")
-              return
-          await gaana.edit("`Sending Your Music...weit!😎`")
-          await asyncio.sleep(3)
-          await bot.send_file(gaana.chat_id, respond)
-    await gaana.client.delete_messages(conv.chat_id,
-                                       [msg.id, response.id, respond.id])
+
+        await gaana.edit("`Downloading...Please wait`")
+
+        try:
+
+            msg = await conv.send_message(song)
+
+            response = await conv.get_response()
+
+            if response.text.startswith("Sorry"):
+
+                await bot.send_read_acknowledge(conv.chat_id)
+
+                return await gaana.edit(f"Sorry, can't find {song}")
+
+            respond = await conv.get_response()
+
+            cobra = await conv.get_response()
+
+        except YouBlockedUserError:
+
+            await gaana.edit("```Please unblock``` @FindmusicpleaseBot``` and try again```")
+
+            return
+
+        await gaana.edit("`Sending Your Music...weit!Ã°ÂÂÂ`")
+
+        await bot.send_file(gaana.chat_id, cobra)
+
+        await bot.send_read_acknowledge(conv.chat_id)
+
     await gaana.delete()
