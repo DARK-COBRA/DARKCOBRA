@@ -70,7 +70,7 @@ async def amireallyalive(alive):
         sticker.name = "sticker.webp"
         sticker.seek(0)
         await borg.send_file(alive.chat_id, file=sticker)
-        await borg.send_message(alive.chat_id,"**ᴊᴀʀᴠɪꜱ ɪꜱ ᴏɴʟɪɴᴇ**\n"
+        await borg.send_message(alive.chat_id,"**𝙳𝙰𝚁𝙺 𝙲𝙾𝙱𝚁𝙰 𝙸𝚂 🅾︎🅽🅻🅸🅽🅴**\n"
                       f"**𝕄𝕪 𝔹𝕠𝕤𝕤**            : {DEFAULTUSER}\n"
                       "𝚃𝙴𝙻𝙴𝚃𝙷𝙾𝙽 𝚅𝙴𝚁𝚂𝙸𝙾𝙽        : 15.0\n"
                       "𝙿𝚈𝚃𝙷𝙾𝙽 𝚅𝙴𝚁𝚂𝙸𝙾𝙽          : 3.8.5\n"
