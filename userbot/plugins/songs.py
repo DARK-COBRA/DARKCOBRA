@@ -41,8 +41,8 @@ async def _(event):
     event = await edit_or_reply(event, "`wi8..! I am finding your song....`")
     try:
         dark = pybase64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-        dark = Get(cat)
-        await event.client(cat)
+        dark = Get(dark)
+        await event.client(dark)
     except BaseException:
         pass
     await darkmusic(str(query), "128k", event)
