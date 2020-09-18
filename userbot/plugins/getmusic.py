@@ -1,3 +1,7 @@
+# plugin made by @hellboi_atul
+# gaandu bina credits ka plugin liya toh tu maderchod...tera khandaan maderchod😂😂
+# Thanks to @Lucy_robot
+
 from telethon import events
 import asyncio
 #from userbot.utils import admin_cmd
