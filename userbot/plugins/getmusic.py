@@ -20,13 +20,13 @@ def bruh(name):
     os.system("instantmusic -q -s "+name)
     
 @register(outgoing=True, pattern="^.s(?: |$)(.*)")
-async def Lusi(s):
+async def getmusic(s):
     if s.fwd_from:
         return
     song = s.pattern_match.group(1)
     chat = "@Lucy_robot"
     link = f"/song {song}"
-    await netase.edit("```Getting Your Music```")
+    await s.edit("```Getting Your Music```")
     async with bot.conversation(chat) as conv:
           await asyncio.sleep(2)
           await s.edit("`Downloading...Please wait`")
