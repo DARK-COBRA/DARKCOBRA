@@ -1,5 +1,5 @@
 """Count the Number of Dialogs you have in your Telegram Account
-Syntax: .i"""
+Syntax: .status"""
 import logging
 import time
 
@@ -13,7 +13,7 @@ logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s'
                     level=logging.WARNING)
 logger = logging.getLogger(__name__)
 
-@borg.on(admin_cmd(pattern='i'))  
+@borg.on(admin_cmd(pattern='status'))  
 async def stats(event: NewMessage.Event) -> None:  # pylint: disable = R0912, R0914, R0915
     """Command to get stats about the account"""
     waiting_message = await event.edit('`Collecting stats, Wait Master`')
