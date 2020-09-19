@@ -83,9 +83,9 @@ async def on_afk(event):
     if event.fwd_from:
         return
     global USER_AFK  # pylint:disable=E0602
-    global afk_time  # pylint:disable=E0602
+    global afk_time  # pylint:disable=E0602 
     global last_afk_message  # pylint:disable=E0602
-    afk_since = "**     last seen a long time ago..!**"
+    afk_since = "**Last seen a long time ago**"
     current_message_text = event.message.message.lower()
     if "afk" in current_message_text:
         # userbot's should not reply to other userbot's
@@ -121,7 +121,7 @@ async def on_afk(event):
             else:
                 afk_since = f"`{int(seconds)}s` **ago**"
         msg = None
-        message_to_reply = f"𝙷𝚎𝚢 𝚝𝚑𝚎𝚛𝚎, 𝚖𝚢 𝚖𝚊𝚜𝚝𝚎𝚛 𝚒𝚜 𝚊𝚏𝚔 𝚒.𝚎 𝚊𝚠𝚊𝚢 𝚏𝚛𝚘𝚖 𝚔𝚎𝚢𝚋𝚘𝚊𝚛𝚍 𝚛𝚒𝚐𝚑𝚝 𝚗𝚘𝚠 𝚜𝚒𝚌𝚎: {afk_since}\nWhere he is actually🤔: **𝙸 𝙳𝙾𝙽'𝚃 𝙺𝙽𝙾𝚆😅, 𝚂𝚘 𝚙𝚕𝚎𝚊𝚜𝚎 𝚠𝚊𝚒𝚝 𝚝𝚒𝚕𝚕 𝚖𝚢 𝚜𝚠𝚎𝚎𝚝 𝚖𝚊𝚜𝚝𝚎𝚛 𝚌𝚘𝚖𝚎𝚜 𝚋𝚊𝚌𝚔🤗❤.. 𝙸 𝙷𝙾𝙿𝙴 𝚃𝙷𝙴 𝚁𝙴𝙰𝚂𝙾𝙽 𝙸𝚂 𝙶𝙸𝚅𝙴𝙽 𝙱𝙴𝙻𝙾𝚆** " + \
+        message_to_reply = f"𝙷𝚎𝚢 𝚝𝚑𝚎𝚛𝚎, 𝚖𝚢 𝚖𝚊𝚜𝚝𝚎𝚛 𝚒𝚜 𝚊𝚏𝚔 𝚒.𝚎 𝚊𝚠𝚊𝚢 𝚏𝚛𝚘𝚖 𝚔𝚎𝚢𝚋𝚘𝚊𝚛𝚍 𝚛𝚒𝚐𝚑𝚝 𝚗𝚘𝚠\nWhere he is actually🤔: **𝙸 𝙳𝙾𝙽'𝚃 𝙺𝙽𝙾𝚆😅, 𝚂𝚘 𝚙𝚕𝚎𝚊𝚜𝚎 𝚠𝚊𝚒𝚝 𝚝𝚒𝚕𝚕 𝚖𝚢 𝚜𝚠𝚎𝚎𝚝 𝚖𝚊𝚜𝚝𝚎𝚛 𝚌𝚘𝚖𝚎𝚜 𝚋𝚊𝚌𝚔🤗❤.. 𝙸 𝙷𝙾𝙿𝙴 𝚃𝙷𝙴 𝚁𝙴𝙰𝚂𝙾𝙽 𝙸𝚂 𝙶𝙸𝚅𝙴𝙽 𝙱𝙴𝙻𝙾𝚆** " + \
             f"\n\n__ I'll back soon!__\n**REASON**: {reason}" \
             if reason \
             else f"**Important Notice**\n\n[This User Is little busy now!...](https://telegra.ph/file/1a97d9d778f52cca5851e.mp4) "
