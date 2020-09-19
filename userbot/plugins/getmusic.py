@@ -41,7 +41,7 @@ async def getmusic(s):
               """ - don't spam notif - """
               await bot.send_read_acknowledge(conv.chat_id)
           except YouBlockedUserError:
-              await netase.edit("```Please unblock @Lucy_robot and try again```")
+              await s.edit("```Please unblock @Lucy_robot and try again```")
               return
           await s.edit("`Sending Your Music...weit!😎`")
           await asyncio.sleep(3)
