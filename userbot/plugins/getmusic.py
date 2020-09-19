@@ -45,7 +45,7 @@ async def getmusic(so):
               return
           await so.edit("`Sending Your Music...weit!😎`")
           await asyncio.sleep(3)
-          await bot.send_file(s.chat_id, respond)
+          await bot.send_file(so.chat_id, respond)
     await so.client.delete_messages(conv.chat_id,
                                        [msg.id, response.id, respond.id])
     await so.delete()
