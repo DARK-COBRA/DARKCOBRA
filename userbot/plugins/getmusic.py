@@ -25,7 +25,7 @@ def bruh(name):
     
 @register(outgoing=True, pattern="^.so(?: |$)(.*)")
 async def getmusic(s):
-    if sung.fwd_from:
+    if so.fwd_from:
         return
     song = so.pattern_match.group(1)
     chat = "@Lucy_robot"
