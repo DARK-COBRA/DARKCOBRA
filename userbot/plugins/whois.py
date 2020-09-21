@@ -39,12 +39,10 @@ from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
 
 from .. import CMD_HELP, LOGS, TEMP_DOWNLOAD_DIRECTORY
-from ..utils import admin_cmd, edit_or_reply, sudo_cmd
-from . import spamwatch
+from ..utils import admin_cmd, edit_or_reply
 
 
 @borg.on(admin_cmd(pattern="userinfo(?: |$)(.*)"))
-@borg.on(sudo_cmd(pattern="userinfo(?: |$)(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
