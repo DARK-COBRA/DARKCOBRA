@@ -14,8 +14,8 @@ from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
 
 from .. import CMD_HELP, LOGS, TEMP_DOWNLOAD_DIRECTORY
-from ..utils import admin_cmd, edit_or_reply, sudo_cmd
-from . import spamwatch
+from ..utils import admin_cmd, edit_or_reply
+
 
 
 
@@ -66,14 +66,6 @@ async def _(event):
         dc_id, location = get_input_location(replied_user.profile_photo)
     except:
         dc_id = "Couldn't fetch DC ID!"
-    if spamwatch:
-        ban = spamwatch.get_ban(user_id)
-        if ban:
-            sw = f"**Spamwatch Banned :** `True` \n       **-**🤷‍♂️**Reason : **`{ban.reason}`"
-        else:
-            sw = f"**Spamwatch Banned :** `False`"
-    else:
-        sw = "**Spamwatch Banned :**`Not Connected`"
     try:
         casurl = "https://api.cas.chat/check?user_id={}".format(user_id)
         data = get(casurl).json()
