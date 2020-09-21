@@ -1,6 +1,6 @@
 # by uniborg...Thanks @spechide 
 # Now will be used in DARK COBRA too....
-Syntax: .afk REASON"""
+"""Syntax: .afk REASON"""
 import asyncio
 import datetime
 from datetime import datetime
