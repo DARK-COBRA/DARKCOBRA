@@ -56,12 +56,11 @@ async def _(event):
 
 
 @borg.on(admin_cmd(pattern="ping$"))
-@borg.on(sudo_cmd(pattern="ping$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
     start = datetime.now()
-    event = await edit_or_reply(event, "__**☞ Pong!__**")
+    event = await edit_or_reply(event, "__**(★ Pong!__**")
     end = datetime.now()
     ms = (end - start).microseconds / 1000
     await event.edit(
