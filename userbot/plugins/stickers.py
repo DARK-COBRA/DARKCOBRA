@@ -80,7 +80,7 @@ async def kang(args):
     if photo:
         splat = args.text.split()
         if not emojibypass:
-            emoji = "😂"
+            emoji = "❤"
         pack = 1
         if len(splat) == 3:
             pack = splat[2]  # User sent both
