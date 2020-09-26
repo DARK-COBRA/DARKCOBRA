@@ -26,7 +26,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 NO_PM_LOG_USERS = []
 
 BOTLOG = True
-BOTLOG_CHATID = Config.PM_LOG_GRP_ID
+BOTLOG_CHATID = Config.PM_LOGGR_BOT_API_ID
 
 
 @register(outgoing=True, pattern=r"^.save(?: |$)([\s\S]*)")
@@ -41,9 +41,9 @@ async def log(log_text):
             textx = user + log_text.pattern_match.group(1)
             await bot.send_message(BOTLOG_CHATID, textx)
         else:
-            await log_text.edit("`What am I supposed to log?`")
+            await log_text.edit("`What am I supposed to save?`")
             return
-        await log_text.edit("`Logged Successfully`")
+        await log_text.edit("`Saved Successfully`")
     else:
         await log_text.edit("`This feature requires Logging to be enabled!`")
     await sleep(2)
