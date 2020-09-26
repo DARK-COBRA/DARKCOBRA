@@ -27,7 +27,7 @@ async def _(event):
 @borg.on(events.NewMessage(pattern=r"\.ilu", outgoing=True))
 async def _(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"
-        return
+        
     
         await event.edit("ɪƒ ƴσυ'ʀє αʟσηє")
         await asyncio.sleep(20)
