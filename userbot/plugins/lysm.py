@@ -3,7 +3,7 @@ from uniborg.util import admin_cmd
 import asyncio
 from telethon import events
 
-@borg.on(admin_cmd(pattern="degi ?(.*)"))
+@borg.on(admin_cmd(pattern="lysm ?(.*)"))
 async def _(event):
      if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         await event.edit("Yar")
@@ -24,9 +24,9 @@ async def _(event):
         await asyncio.sleep(1)
         await event.edit("`Yar patta hai I love you so much❤`")
 
-        @borg.on(events.NewMessage(pattern=r"\.nehi", outgoing=True))
+@borg.on(events.NewMessage(pattern=r"\.ilu", outgoing=True))
 async def _(event):
-    if event.fwd_from:
+    if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"
         return
     
         await event.edit("ɪƒ ƴσυ'ʀє αʟσηє")
@@ -47,7 +47,5 @@ async def _(event):
         await asyncio.sleep(15)
         await event.edit("`ɓυт αηƴтɪɱє ƴσυ ηєє∂ αnчσnє, ɪt'ʟʟ ʝυѕт ɓє ɱє.❤`")
         
-         return
-
-        await asyncio.sleep(999)
+       
     
