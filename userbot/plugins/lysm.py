@@ -24,4 +24,4 @@ async def _(event):
         await asyncio.sleep(1)
         await event.edit("`Yar patta hai I love you so much❤`")
 
-    await asyncio.sleep(999)
+    
