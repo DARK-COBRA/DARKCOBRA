@@ -1,11 +1,11 @@
 """Add the user(s) to the current chat
-Syntax: .add <User(s)>"""
+Syntax: .edd <User(s)>"""
 
 from telethon import functions
 from userbot.utils import admin_cmd
 
 
-@borg.on(admin_cmd(pattern="add ?(.*)"))
+@borg.on(admin_cmd(pattern="edd ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
