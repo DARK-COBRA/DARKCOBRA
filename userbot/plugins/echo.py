@@ -31,7 +31,7 @@ from ..utils import admin_cmd, edit_or_reply
 from .sql_helper.echo_sql import addecho, get_all_echos, is_echo, remove_echo
 
 
-@borg.on(admin_cmd(pattern="addecho$"))
+@borg.on(admin_cmd(pattern="enableecho$"))
 async def echo(cat):
     if cat.fwd_from:
         return
@@ -54,7 +54,7 @@ async def echo(cat):
         await edit_or_reply(cat, "Reply To A User's Message to echo his messages")
 
 
-@borg.on(admin_cmd(pattern="rmecho$"))
+@borg.on(admin_cmd(pattern="disableecho$"))
 async def echo(cat):
     if cat.fwd_from:
         return
