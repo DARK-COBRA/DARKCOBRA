@@ -4,22 +4,27 @@ from userbot.utils import admin_cmd
 from userbot import ALIVE_NAME
 from telethon.tl.types import ChannelParticipantsAdmins
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Unknown"
-PM_IMG = "https://telegra.ph/file/00f47c54ceda3944dc47c.jpg"
-pm_caption = "**ᴅᴀʀᴋ ᴄᴏʙʀᴀ ɪꜱ ᴏɴʟɪɴᴇ**\n"
+PM_IMG = "https://telegra.ph/file/76df9853cef5f5a857896.jpg"
+pm_caption = "**⚜ɢᴏᴅᴢɪʟʟᴀ ɪs ᴏɴʟɪɴᴇ⚜**\n"
+ 
+pm_caption += f"**M̴y̴ ̴B̴o̴s̴s̴**       : {DEFAULTUSER}\n"
 
-pm_caption += f"**M̴y̴ ̴B̴o̴s̴s̴**            : {DEFAULTUSER}\n"
 
-pm_caption += "ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀꜱɪᴏɴ        :  15.0.0 \n"
+pm_caption += "Mʏ Bᴏᴛ Sᴛᴀᴛᴜꜱ : Wᴏʀᴋɪɴɢ ᴘᴇʀғᴇᴄᴛʟʏ 🔥"
 
-pm_caption += "ꜱᴜᴘᴘᴏʀᴛ ᴄʜᴀɴɴᴇʟ          : [ᴊᴏɪɴ](https://t.me/Dark_cobra_support)\n"
 
-pm_caption += "ꜱᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ        : [ᴊᴏɪɴ](https://t.me/Dark_cobra_support_group)\n"
+pm_caption += "тєℓєтнσи      : тєℓєтнσи-15.0.0 𖤐⃟🔷"
 
-pm_caption += "ʟɪᴄᴇɴꜱᴇ                 : [ᴍɪᴛ ʟɪᴄᴇɴꜱᴇ](https://github.com/DARK-COBRA/DARKCOBRA/blob/master/LICENSE)\n"
+pm_caption += "ρутнσи        : ρутнσи-3.8.5 𖤐⃟🔷"
 
-pm_caption += "ᴄᴏᴘʏʀɪɢʜᴛ ʙʏ            : [ʜᴇʟʟʙᴏɪ - ᴀᴛᴜʟ](https://github.com/hellboi-atul)\n"
 
-pm_caption += " [┏┓━┏┓━━━━┏┓━┏┓━━━━━\n ┃┃━┃┃━━━━┃┃━┃┃━━━━━\n ┃┗━┛┃┏━━┓┃┃━┃┃━┏━━┓\n ┃┏━┓┃┃┏┓┃┃┃━┃┃━┃┏┓┃ \n ┃┃━┃┃┃┃━┫┃┗┓┃┗┓┃┗┛┃ \n ┗┛━┗┛┗━━┛┗━┛┗━┛┗━━┛](https://t.me/Dark_cobra_support_group)"
+pm_caption += "My Master's other acc  : @Godzilla_365 🔱"
+
+pm_caption += "ι'ℓℓ вє ωιтн му мαѕтєя тιℓℓ му ∂уиσ єи∂ѕ!!☠ 𖤐⃟🛰"
+
+
+
+pm_caption += " [┏┓━┏┓━━━━┏┓━┏┓━━━━━\n ┃┃━┃┃━━━━┃┃━┃┃━━━━━\n ┃┗━┛┃┏━━┓┃┃━┃┃━┏━━┓\n ┃┏━┓┃┃┏┓┃┃┃━┃┃━┃┏┓┃ \n ┃┃━┃┃┃┃━┫┃┗┓┃┗┓┃┗┛┃ \n ┗┛━┗┛┗━━┛┗━┛┗━┛┗━━┛](https://t.me/Mothra365)"
 #@command(outgoing=True, pattern="^.alive$")
 @borg.on(admin_cmd(pattern=r"alive"))
 async def amireallyalive(alive):
