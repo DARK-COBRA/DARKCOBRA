@@ -10,21 +10,21 @@ pm_caption = "**⚜ɢᴏᴅᴢɪʟʟᴀ ɪs ᴏɴʟɪɴᴇ⚜**\n"
 pm_caption += f"**M̴y̴ ̴B̴o̴s̴s̴**       : {DEFAULTUSER}\n"
 
 
-pm_caption += "Mʏ Bᴏᴛ Sᴛᴀᴛᴜꜱ      : Wᴏʀᴋɪɴɢ ᴘᴇʀғᴇᴄᴛʟʏ🔥"
+pm_caption += "Mʏ Bᴏᴛ Sᴛᴀᴛᴜꜱ      : Wᴏʀᴋɪɴɢ ᴘᴇʀғᴇᴄᴛʟʏ🔥"    
 
 
-pm_caption += "тєℓєтнσи           : тєℓєтнσи-15.0.0 𖤐⃟🔷"
+pm_caption += "тєℓєтнσи           : тєℓєтнσи-15.0.0 𖤐⃟🔷"           
 
-pm_caption += "ρутнσи             : ρутнσи-3.8.5 𖤐⃟🔷"
-
-
-
-
-pm_caption += "My Master's other acc  : @Godzilla_365 🔱"
+pm_caption += "ρутнσи             : ρутнσи-3.8.5 𖤐⃟🔷"                 
 
 
 
-pm_caption += "ι'ℓℓ вє ωιтн му мαѕтєя тιℓℓ му ∂уиσ єи∂ѕ!!☠ 𖤐⃟🛰"
+
+pm_caption += "My Master's other acc  : @Godzilla_365 🔱"       
+
+
+
+pm_caption += "ι'ℓℓ вє ωιтн му мαѕтєя тιℓℓ му ∂уиσ єи∂ѕ!!☠ 𖤐⃟🛰"                                            
 
 
 
