@@ -73,7 +73,7 @@ async def variable(var):
             os.remove("configs.json")
             return
     elif exe == "set":
-        await var.edit("`Setting information...`")
+        await var.edit("`Setting information...weit ser`")
         variable = var.pattern_match.group(2)
         if not variable:
             return await var.edit(">`.set var <ConfigVars-name> <value>`")
@@ -176,7 +176,7 @@ async def _(dyno):
             dyno.chat_id,
             "logs.txt",
             reply_to=dyno.id,
-            caption="@uSe_DaRk_PrInCe logs of 100+ lines",
+            caption="DARK COBRA logs of 100+ lines",
         )
         
         await asyncio.sleep(5)

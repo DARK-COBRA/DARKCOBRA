@@ -1,21 +1,20 @@
-"""Invite the user(s) to the current chat
-Syntax: .invite <User(s)>"""
+"""Add the user(s) to the current chat
+Syntax: .edd <User(s)>"""
 
 from telethon import functions
 from userbot.utils import admin_cmd
 
 
-@borg.on(admin_cmd(pattern="invite ?(.*)"))
+@borg.on(admin_cmd(pattern="edd ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
     to_add_users = event.pattern_match.group(1)
     if event.is_private:
-        await event.edit("`.invite` users to a chat, not to a Private Message")
+        await event.edit("`.add` users to a chat, don't use this in PM")
     else:
         logger.info(to_add_users)
         if not event.is_channel and event.is_group:
-            # https://lonamiwebs.github.io/Telethon/methods/messages/add_chat_user.html
             for user_id in to_add_users.split(" "):
                 try:
                     await borg(functions.messages.AddChatUserRequest(
@@ -25,9 +24,8 @@ async def _(event):
                     ))
                 except Exception as e:
                     await event.reply(str(e))
-            await event.edit("Invited Successfully")
+            await event.edit("Added Successfully")
         else:
-            # https://lonamiwebs.github.io/Telethon/methods/channels/invite_to_channel.html
             for user_id in to_add_users.split(" "):
                 try:
                     await borg(functions.channels.InviteToChannelRequest(
@@ -36,4 +34,4 @@ async def _(event):
                     ))
                 except Exception as e:
                     await event.reply(str(e))
-            await event.edit("Invited Successfully")
+            await event.edit("ADDED the user to the chat successfully.")
