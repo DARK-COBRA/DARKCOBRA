@@ -1,3 +1,18 @@
+
+#CREDITS: @WhySooSerious, @Sur_vivor
+
+import time
+
+from uniborg.util import admin_cmd, sudo_cmd
+
+from userbot import ALIVE_NAME
+
+from datetime import datetime
+
+from userbot import Lastupdate
+
+from userbot.plugins import currentversion
+
 #Functions
 
 def get_readable_time(seconds: int) -> str:
@@ -69,3 +84,19 @@ pm_caption += f"➥ **Version** : `{currentversion}`\n"
 pm_caption += f"➥ **My Boss** : {DEFAULTUSER} \n"
 
 pm_caption += "➥ **Heroku Database** : `AWS - Working Properly`\n\n"
+
+
+@borg.on(admin_cmd(pattern=r"alive"))
+
+@borg.on(sudo_cmd(pattern=r"alive", allow_sudo=True))
+
+async def friday(alive):
+
+    await alive.get_chat()
+
+    """ For .alive command, check if the bot is running.  """
+
+    await borg.send_file(alive.chat_id, PM_IMG, caption=pm_caption)
+
+    await alive.delete()
+
