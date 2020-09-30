@@ -1,6 +1,6 @@
 # plugin made by @hellboi_atul
 # gaandu bina credits ka plugin liya toh tu maderchod...tera khandaan maderchod😂😂
-# Thanks to @Lucy_robot
+# Thanks to @SongsForYouBot
 
 from telethon import events
 import asyncio
@@ -28,7 +28,7 @@ async def getmusic(so):
     if so.fwd_from:
         return
     song = so.pattern_match.group(1)
-    chat = "@Lucy_robot"
+    chat = "@SongsForYouBot"
     link = f"/song {song}"
     await so.edit("```Getting Your Music```")
     async with bot.conversation(chat) as conv:
@@ -41,7 +41,7 @@ async def getmusic(so):
               """ - don't spam notif - """
               await bot.send_read_acknowledge(conv.chat_id)
           except YouBlockedUserError:
-              await so.edit("```Please unblock @Lucy_robot and try again```")
+              await so.edit("```Please unblock @SongsForYouBot and try again```")
               return
           await so.edit("`Sending Your Music...weit!😎`")
           await asyncio.sleep(3)
