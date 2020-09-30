@@ -45,22 +45,25 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "This user"
 async def amireallyalive(alive):
     """ For .alive command, check if the bot is running.  """
     if ALIVE_PHOTTO:
-        pm_caption = "**𝙳𝙰𝚁𝙺 𝙲𝙾𝙱𝚁𝙰 𝙸𝚂 🅾︎🅽🅻🅸🅽🅴**\n"
-        pm_caption += f"**𝕄𝕪 𝔹𝕠𝕤𝕤**            : {DEFAULTUSER}\n"
-        pm_caption += "𝚃𝙴𝙻𝙴𝚃𝙷𝙾𝙽 𝚅𝙴𝚁𝚂𝙸𝙾𝙽        : 15.0\n"
-        pm_caption += "𝙿𝚈𝚃𝙷𝙾𝙽 𝚅𝙴𝚁𝚂𝙸𝙾𝙽          : 3.8.5\n"
-        pm_caption += "𝚂𝚄𝙿𝙿𝙾𝚁𝚃 𝙲𝙷𝙰𝙽𝙽𝙴𝙻         : [ᴊᴏɪɴ](https://t.me/dark_cobra_support)\n"
-        pm_caption += "𝚂𝚄𝙿𝙿𝙾𝚁𝚃 𝙶𝚁𝙾𝚄𝙿           : [ᴊᴏɪɴ](https://t.me/dark_cobra_support_group)\n"
-        pm_caption += "𝘓𝘐𝘚𝘌𝘕𝘊𝘌                  : [AGPL-3.0  ʟɪᴄᴇɴꜱᴇ](https://jenaatul8.wixsite.com/hellboi-atul)\n"
-        pm_caption += "𝘾𝙊𝙋𝙔𝙍𝙄𝙂𝙃𝙏 𝘽𝙔            : [ @hellboi_atul ](https://t.me/hellboi_atul)\n"
-        pm_caption += "[┏┓━┏┓━━━━┏┓━┏┓━━━━━\n ┃┃━┃┃━━━━┃┃━┃┃━━━━━\n ┃┗━┛┃┏━━┓┃┃━┃┃━┏━━┓\n ┃┏━┓┃┃┏┓┃┃┃━┃┃━┃┏┓┃ \n ┃┃━┃┃┃┃━┫┃┗┓┃┗┓┃┗┛┃ \n ┗┛━┗┛┗━━┛┗━┛┗━┛┗━━┛](https://t.me/Dark_cobra_support_group)"
+        PM_IMG = "https://telegra.ph/file/6ea2e0728fb5a7fd73c5f.jpg"
+pm_caption = "➥ **⚜ɢᴏᴅᴢɪʟʟᴀ ɪs ᴏɴʟɪɴᴇ⚜\n\n"
+pm_caption += "➥ **SYSTEMS STATS**\n"
+pm_caption += "➥ **Telethon Version:** `1.15.0` \n"
+pm_caption += "➥ **Python:** `3.7.4` \n"
+pm_caption += f"➥ **Uptime** : `{uptime}` \n"
+pm_caption += "➥ **Database Status:**  `Functional`\n"
+pm_caption += "➥ **Current Branch** : `master`\n"
+pm_caption += f"➥ **Version** : `{currentversion}`\n"
+pm_caption += f"➥ **My Boss** : {DEFAULTUSER} \n"
+pm_caption += "➥ **Heroku Database** : `AWS - Working Properly`\n\n"
+        pm_caption += "[┏┓━┏┓━━━━┏┓━┏┓━━━━━\n ┃┃━┃┃━━━━┃┃━┃┃━━━━━\n ┃┗━┛┃┏━━┓┃┃━┃┃━┏━━┓\n ┃┏━┓┃┃┏┓┃┃┃━┃┃━┃┏┓┃ \n ┃┃━┃┃┃┃━┫┃┗┓┃┗┓┃┗┛┃ \n ┗┛━┗┛┗━━┛┗━┛┗━┛┗━━┛](https://t.me/Mothra365)"
         chat = await alive.get_chat()
         await alive.delete()
         """ For .allive command, check if the bot is running.  """
         await borg.send_file(alive.chat_id, ALIVE_PIC,caption=pm_caption, link_preview = False)
         await allive.delete()
         return
-    req = requests.get("https://telegra.ph/file/6d067b1a626a25735f5ed.png")
+    req = requests.get("")
     req.raise_for_status()
     file = BytesIO(req.content)
     file.seek(0)
