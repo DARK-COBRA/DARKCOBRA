@@ -117,7 +117,7 @@ async def upstream(ups):
         heroku_app = None
         heroku_applications = heroku.apps()
         if not HEROKU_APP_NAME:
-            await ups.edit('CAT Please set up the `HEROKU_APP_NAME` variable to be able to update userbot.')
+            await ups.edit('DC Please set up the `HEROKU_APP_NAME` variable to be able to update userbot.')
             repo.__del__()
             return
         for app in heroku_applications:
