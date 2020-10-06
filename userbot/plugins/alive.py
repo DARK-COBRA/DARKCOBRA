@@ -22,7 +22,7 @@ pm_caption += "ᴄᴏᴘʏʀɪɢʜᴛ ʙʏ            : [ʜᴇʟʟʙᴏɪ - ᴀ�
 pm_caption += " [┏┓━┏┓━━━━┏┓━┏┓━━━━━\n ┃┃━┃┃━━━━┃┃━┃┃━━━━━\n ┃┗━┛┃┏━━┓┃┃━┃┃━┏━━┓\n ┃┏━┓┃┃┏┓┃┃┃━┃┃━┃┏┓┃ \n ┃┃━┃┃┃┃━┫┃┗┓┃┗┓┃┗┛┃ \n ┗┛━┗┛┗━━┛┗━┛┗━┛┗━━┛](https://t.me/Dark_cobra_support_group)"
 #@command(outgoing=True, pattern="^.alive$")
 @borg.on(admin_cmd(pattern=r"alive"))
-@borg.on(sudo_cmd(pattern="alive", allow_sudo=True))
+@borg.on(sudo_cmd(pattern="alive$", allow_sudo=True))
 async def amireallyalive(alive):
     chat = await alive.get_chat()
     await alive.delete()
