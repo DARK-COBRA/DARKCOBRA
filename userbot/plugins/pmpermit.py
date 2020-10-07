@@ -23,8 +23,12 @@ PREV_REPLY_MESSAGE = {}
 PM_ON_OFF = Config.PM_DATA
 
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
-CUSTOM_MIDDLE_PMP = str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else "**YOU HAVE TRESPASSED TO MY MASTERS INBOX** \n`THIS IS ILLEGAL AND REGARDED AS A CRIME`"
+DEFAULTUSER = (
+               str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
+)
+CUSTOM_MIDDLE_PMP = (
+               str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else "**YOU HAVE TRESPASSED TO MY MASTERS INBOX** \n`THIS IS ILLEGAL AND REGARDED AS A CRIME`" 
+)
 USER_BOT_WARN_ZERO = "`You were spamming my sweet master's inbox, henceforth your retarded lame ass has been blocked by my master's userbot⭕️.`\n**Now GTFO, i'm busy**"
 USER_BOT_NO_WARN = ("`Hello, This is DARK COBRA⚠️.You have found your way here to my master,`"
                    f"{DEFAULTUSER}'s `inbox. Kuch kaam dhandaa nai hai kya aapko..\n"
