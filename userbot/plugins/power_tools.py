@@ -14,8 +14,7 @@ from uniborg.util import admin_cmd
 
 @borg.on(admin_cmd(pattern="restart"))
 async def _(event):
-    if event.fwd_from:
-        return
+    if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
      await asyncio.sleep(2)
      await event.edit("Restarting [██░] ...\n)
      await asyncio.sleep(2)
