@@ -16,9 +16,9 @@ from uniborg.util import admin_cmd
 async def _(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
      await asyncio.sleep(2)
-     await event.edit("Restarting [██░] ...\n)
+     await event.edit("Restarting [██░] ...)
      await asyncio.sleep(2)
-     await event.edit("Restarting [███]...\n)
+     await event.edit("Restarting [███]......)
      await asyncio.sleep(2)
     await event.edit("Restarted boss....✈ `.king` me or type `.help` or type '.awake' or type '.allive' to check if your DC is online/alive ")
     await borg.disconnect()
