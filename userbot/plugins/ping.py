@@ -2,7 +2,7 @@ import asyncio
 from datetime import datetime
 
 from .. import ALIVE_NAME, CMD_HELP
-from ..utils import admin_cmd, edit_or_reply, sudo_cmd
+from ..utils import admin_cmd, edit_or_reply
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "DARK COBRA"
 
@@ -55,25 +55,25 @@ async def _(event):
     )
 
 
-@borg.on(admin_cmd(pattern="ping$"))
+@borg.on(admin_cmd(pattern="king$"))
 async def _(event):
     if event.fwd_from:
         return
     start = datetime.now()
-    event = await edit_or_reply(event, "__**(★ Pong!__**")
+    event = await edit_or_reply(event, "__**(★ Kong!__**")
     end = datetime.now()
     ms = (end - start).microseconds / 1000
     await event.edit(
-        f"__**✦҈͜͡➳ Pong!__**\n★ {ms}\n★ __**My**__ __**Master**__ [{DEFAULTUSER}]"
+        f"__**✦҈͜͡➳ Kong!__**\n★ {ms}\n★ __**My**__ __**Master**__ [{DEFAULTUSER}]"
     )
 
 
 CMD_HELP.update(
     {
-        "ping": "__**PLUGIN NAME :** Ping__\
+        "ping": "__**PLUGIN NAME :** King__\
     \n\n📌** CMD ★** `.pingy`\
     \n**USAGE   ★  **A kind ofping with extra animation\
-    \n\n📌** CMD ★** `.ping`\
+    \n\n📌** CMD ★** `.king`\
     \n**USAGE   ★  **Shows you the ping speed of server"
     }
 )
