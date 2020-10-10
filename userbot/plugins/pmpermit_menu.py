@@ -36,7 +36,7 @@ async def _(event):
                "`2`. To Give Your Details.\n"
                "`3`. To enquire something\n"
                "`4`. To request something\n")
-         ONE = ("__Okay. Your request has been registered. Do not spam my master's inbox.You can expect a reply within 24 light years. He is a busy man, unlike you probably.__\n\n"
+         ONE = ("__Okay. Your request has been registered. Do not spam my master's inbox.You can expect a reply within 24 light years. He is a busy guy, unlike you probably.__\n\n"
                 "**⚠️ You will be blocked and reported if you spam  ⚠️**\n\n"
                 "__Use__ `/start` __to go back to the main menu.__")
          TWO = ("**So uncool, this is not your home. Go bother someone else. You have been blocked and reported until further notice.**")
@@ -45,11 +45,11 @@ async def _(event):
          LWARN = ("**This is your last warning. DO NOT send another message else you will be blocked and reported. Keep patience. My Master will respond Your Request.**\n__Use__ `/start` __to go back to the main menu.__")
      
         async with borg.conversation(chat) as conv:
-          await borg.send_message(chat, PM)
-          chat_id = event.from_id
-          response = await conv.get_response(chat)
-          y = response.text
-          if y == "1":
+         await borg.send_message(chat, PM)
+         chat_id = event.from_id
+         response = await conv.get_response(chat)
+         y = response.text
+         if y == "1":
              await borg.send_message(chat, ONE)
              response = await conv.get_response(chat)
              await event.delete()
@@ -107,4 +107,3 @@ async def _(event):
                      await borg.send_message(chat, TWO)
                      await asyncio.sleep(3)
                      await event.client(functions.contacts.BlockRequest(chat_id))
-
