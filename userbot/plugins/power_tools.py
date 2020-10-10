@@ -14,6 +14,11 @@ from uniborg.util import admin_cmd
 
 @borg.on(admin_cmd(pattern="restart"))
 async def _(event):
+    await asyncio.sleep(2)
+    await event.edit("Restarting [██░] ...")
+    await asyncio.sleep(2)
+    await event.edit("Restarting [███]...")
+    await asyncio.sleep(2)
     await event.edit("Restarted boss....✈ `.king` me or type `.help` or type '.awake' or type '.allive' to check if your DC is online/alive ")
     await borg.disconnect()
     os.execl(sys.executable, sys.executable, *sys.argv)
