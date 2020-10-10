@@ -46,9 +46,9 @@ async def _(event):
      
         async with borg.conversation(chat) as conv:
             await borg.send_message(chat, PM)
-         chat_id = event.from_id
-         response = await conv.get_response(chat)
-         y = response.text
+            chat_id = event.from_id
+            response = await conv.get_response(chat)
+            y = response.text
          if y == "1":
              await borg.send_message(chat, ONE)
              response = await conv.get_response(chat)
