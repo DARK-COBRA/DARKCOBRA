@@ -49,7 +49,7 @@ async def _(event):
           chat_id = event.from_id
           response = await conv.get_response(chat)
           y = response.text
-         if y == "1":
+          if y == "1":
              await borg.send_message(chat, ONE)
              response = await conv.get_response(chat)
              await event.delete()
