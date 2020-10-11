@@ -20,7 +20,7 @@ requirements_path = path.join(
 HEROKU_API_KEY = Var.HEROKU_API_KEY
 HEROKU_APP_NAME = Var.HEROKU_APP_NAME
 GIT_REPO_NAME = "DARKCOBRA"
-UPSTREAM_REPO_URL = "https://github.com/DARK-COBRA/DARKCOBRA"
+UPSTREAM_REPO_URL = "https://github.com/DARK-COBRA/DARKCOBRA.git"
 
 async def gen_chlog(repo, diff):
     ch_log = ''
