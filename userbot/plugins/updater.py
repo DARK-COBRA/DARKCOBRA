@@ -3,7 +3,7 @@
 #\nAll Credits goes to © @hellboi_atul
 #\nFor this awasome plugin.\nPorted from PpaperPlane Extended"""
 
-Syntax: .update
+"""Syntax: .update
 \nAll Credits goes to © @Three_Cube_TeKnoways
 \nFor this awasome plugin.\nPorted from PpaperPlane Extended"""
 
