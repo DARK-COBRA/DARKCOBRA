@@ -13,7 +13,7 @@ from telethon.errors import FloodWaitError
 from userbot.utils import admin_cmd
 from userbot import ALIVE_NAME
 
-BIO_MSG = Config.ALIVE_PHOTTO
+BIO_MSG = Config.BIO_MSG
 if BIO_MSG is None:
   BIO_MSG = "I am a pro @Dark_cobra_support"
 
