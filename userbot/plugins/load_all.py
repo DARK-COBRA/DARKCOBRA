@@ -1,5 +1,6 @@
 # Ported to DC(DARK COBRA) by @hellboi_atul
 # please give credits if you wanna kang this..
+
 from telethon.tl.types import InputMessagesFilterDocument
 from ..utils import remove_plugin, load_module, admin_cmd
 from pathlib import Path
