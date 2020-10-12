@@ -1,9 +1,4 @@
-"""Emoji
-Available Commands:
-.emoji shrug
-.emoji apple
-.emoji :/
-.emoji -_-"""
+"""Plugin do DARK COBRA by @hellboi_atul"""
 
 from telethon import events
 
@@ -25,6 +20,17 @@ async def _(event):
 
     animation_ttl = range(0, 11)
 
+
+    if event.reply_to_msg_id:
+        reply_message = await event.get_reply_message()
+        replied_user = await event.client(GetFullUserRequest(reply_message.from_id))
+        firstname = replied_user.user.first_name
+        usname = replied_user.user.username
+        idd = reply_message.from_id
+        if idd==1289422521:
+            await event.edit("This is My Master\n**How dare you trying to tell me to kill master u nub nibba!**\n\n__Your account is on hold! Pay 99$ to my master__ [Atul](tg://user?id=1289422521) __to release your account__😏")
+        else:
+
     input_str = event.pattern_match.group(1)
 
     if input_str == "fhack":
@@ -43,13 +49,13 @@ async def _(event):
             "`Hacking... 52%\n█████████████▒▒▒▒▒▒▒▒▒▒▒▒ `\n`Decryption successful!`\n`Looking for telegram data : ✅`\n`⚠️ error occurred ..`\n`Found folder sd/telegram : ✅`\n`⚠️ error occurred ..`\n`Searching for databases : ✅`\n`Found msgstore.db.crypt12 :  ✅`\nETA: 0m, 25s",
             "`Hacking... 84%\n█████████████████████▒▒▒▒ `\n`Scanning file...`\n`Looking for telegram data : ✅`\n`⚠️ error occurred ..`\n`Found folder sd/telegram : ✅`\n`⚠️ error occurred ..`\n`⚠️ error occurred ..`\n`Searching for databases : ✅`\n`Found msgstore.db.crypt12 :  ✅`\n`Scanning file :  ✅`\nETA: 0m, 16s",
             "`Hacking... 100%\n` 98% HACKED`",
-            "`Targeted Account Hacked...`\n\n`_______________________`\n`result ... :)`\n\n`Chatlist : ✅`\n`Calls : ✅`\n`groups : ✅`\n `Contacts : ✅`\n`Channel : ✅`\n`Deleted Messages : ❌`\n`Edited Messages : ❌`\n`All API Tokens : ✅`\n\n`Pay 69$ To` @cyper666 `Or send your girlfriend number To Remove This Hack`"
+            "`Targeted Account Hacked...`\n\n`_______________________`\n`result ... :)`\n\n`Chatlist : ✅`\n`Calls : ✅`\n`groups : ✅`\n `Contacts : ✅`\n`Channel : ✅`\n`Deleted Messages : ❌`\n`Edited Messages : ❌`\n`All API Tokens : ✅`\n\n`Pay 69$ To` {DEFAULTUSER} `Or send your girlfriend number To Remove This Hack`"
            
         ]
         await event.client.send_file(event.chat_id, SHUTDOWN,
-                                                     caption="`hacking inprogress...`", voice_note=True),
+                                                     caption="`hacking in progress...`", voice_note=True),
         await event.client.send_file(event.chat_id, STARTUP,
-                                                     caption="`you will be hacked in a moment. thank you..`", voice_note=True),
+                                                     caption="`you will be hacked in a moment by my userbot. thank you..`", voice_note=True),
 
         for i in animation_ttl:
 
