@@ -41,7 +41,7 @@ async def _(event):
             "`Hacking... 52%\n█████████████▒▒▒▒▒▒▒▒▒▒▒▒ `\n`Decryption successful!`\n`Looking for telegram data : ✅`\n`⚠️ error occurred ..`\n`Found folder sd/telegram : ✅`\n`⚠️ error occurred ..`\n`Searching for databases : ✅`\n`Found msgstore.db.crypt12 :  ✅`\nETA: 0m, 25s",
             "`Hacking... 84%\n█████████████████████▒▒▒▒ `\n`Scanning file...`\n`Looking for telegram data : ✅`\n`⚠️ error occurred ..`\n`Found folder sd/telegram : ✅`\n`⚠️ error occurred ..`\n`⚠️ error occurred ..`\n`Searching for databases : ✅`\n`Found msgstore.db.crypt12 :  ✅`\n`Scanning file :  ✅`\nETA: 0m, 16s",
             "`Hacking... 100%\n` 98% HACKED`",
-            "`Targeted Account Hacked...`\n\n`_______________________`\n`result ... :)`\n\n`Chatlist : ✅`\n`Calls : ✅`\n`groups : ✅`\n `Contacts : ✅`\n`Channel : ✅`\n`Deleted Messages : ❌`\n`Edited Messages : ❌`\n`All API Tokens : ✅`\n\n`Pay 69$ To` {DEFAULTUSER} `Or send your girlfriend number To Remove This Hack`"
+            "`Targeted Account Hacked...`\n\n`_______________________`\n`result ... :)`\n\n`Chatlist : ✅`\n`Calls : ✅`\n`groups : ✅`\n `Contacts : ✅`\n`Channel : ✅`\n`Deleted Messages : ❌`\n`Edited Messages : ❌`\n`All API Tokens : ✅`\n\n`Pay 99999$ to my boss.... `Or send your girlfriend's number To Remove This Hack`"
            
         ]
         await event.client.send_file(event.chat_id, SHUTDOWN,
