@@ -1,4 +1,5 @@
-#Made by @helloji123bot. Keep credits cause it hurts...
+# Made by @helloji123bot. Keep credits cause it hurts...
+# Noice plugin.. Modified by @hellboi_atul for DARK COBRA..but the main credit goes to the owner who made it..
 
 
 import random, re
@@ -6,10 +7,10 @@ from uniborg.util import admin_cmd
 import asyncio
 from telethon import events
 
-@borg.on(admin_cmd(pattern="rban ?(.*)"))
+@borg.on(admin_cmd(pattern="fgben ?(.*)"))
 async def _(event):
      if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
-        await event.edit("Javes: Preparing to gban user....")
+        await event.edit("Preparing to gban this nub nibba....")
         await asyncio.sleep(2)
         await event.edit("Gbanning user.....")
         await asyncio.sleep(2)
@@ -95,14 +96,14 @@ async def _(event):
         await asyncio.sleep(2)
         await event.edit("Gbanning user... \n 204 chats")
         await asyncio.sleep(1.5)
-        await event.edit("Javes: Gbanned user successfully in 204 chats.\nBlocked and added to gban watch!")
+        await event.edit("Gbanned this nub nibba successfully in😏: 204 chats.\nBlocked and added to gban watch!")
     
      
         
-@borg.on(admin_cmd(pattern="unrban ?(.*)"))
+@borg.on(admin_cmd(pattern="fungben ?(.*)"))
 async def _(event):
      if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
-        await event.edit("Javes: Preparing to Ungban user....")
+        await event.edit("Preparing to Ungban this nub nibba please weit for a while.....")
         await asyncio.sleep(2)
         await event.edit("UnGbanning user.....")
         await asyncio.sleep(2)
@@ -188,4 +189,4 @@ async def _(event):
         await asyncio.sleep(2)
         await event.edit("UnGbanning user... \n 204 chats")
         await asyncio.sleep(1.5)
-        await event.edit("Javes: UnGbanned user successfully in 204 chats.\nUnBlocked and removed from gban watch")
+        await event.edit("UnGbanned this nub nibba successfully in 204 chats.\nUnBlocked and removed from gban watch")
