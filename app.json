@@ -172,10 +172,11 @@
       "required": false 
     }
   },
-  "addons": [
-    {
-      "plan": "heroku-postgresql",
-      "options": {
-      }
- }]
+  "addons": [{
+    "plan": "heroku-postgresql",
+    "options": {
+      "version": "9.6"
+    }
+  }]
 }
+
