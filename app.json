@@ -12,6 +12,7 @@
   "repository": "https://github.com/hellboi-atul/hellboi-atul/",
   "website": "https://github.com/hellboi-atul/hellboi-atul/",
   "success_url": "https://t.me/Dark_cobra_support",
+  "stack":"container"
   "env": {
     "ENV": {
       "description": "Setting this to ANYTHING will enable heroku.",
@@ -175,24 +176,5 @@
     {
       "plan": "heroku-postgresql",
       "options": {
-        "version": "12"
-      }
-    }
-  ],
-  "buildpacks": [
-    {
-      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
-  },{
-    "url":"https://github.com/amivin/aria2-heroku.git"
-  },{
-    "url":"https://github.com/heroku/heroku-buildpack-google-chrome"
-  },{
-     "url": "https://github.com/heroku/heroku-buildpack-apt.git"
-  },{
-    "url":"https://github.com/heroku/heroku-buildpack-chromedriver"
-  },{
-    "url": "https://github.com/opendoor-labs/heroku-buildpack-p7zip"
-  },{
-    "url": "heroku/python"
   }]
 }
