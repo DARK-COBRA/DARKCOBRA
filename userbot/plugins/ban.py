@@ -69,7 +69,7 @@ UNBAN_RIGHTS = ChatBannedRights(
 MUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=True)
 
 UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
-# ================================================
+# ===========================Consts.=====================
 
 
 @borg.on(admin_cmd(pattern="(ban|unban) ?(.*)", allow_sudo=True))
