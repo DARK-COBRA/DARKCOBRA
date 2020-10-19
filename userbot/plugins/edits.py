@@ -1,8 +1,7 @@
-# (c) @TeleBotHelp and @Sensible_userbot
-# By @xditya. Kangers keep credits xD
+# Got it from @userbotjunks
 # All in one code.
 
-"""TeleBot
+"""
 Available Commands:
 .tlol
 .lol
