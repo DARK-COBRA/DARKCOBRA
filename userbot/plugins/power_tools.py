@@ -14,7 +14,6 @@ from uniborg.util import admin_cmd
 
 @borg.on(admin_cmd(pattern="restart"))
 async def _(event):
-    await asyncio.sleep(2)
     await event.edit("Restarting [██░] ...")
     await asyncio.sleep(2)
     await event.edit("Restarting [███]...")
