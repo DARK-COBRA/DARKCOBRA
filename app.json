@@ -176,5 +176,6 @@
     {
       "plan": "heroku-postgresql",
       "options": {
-  }]
+      }
+ }]
 }
