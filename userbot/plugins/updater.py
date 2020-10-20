@@ -108,7 +108,7 @@ async def upstream(ups):
         await ups.respond("do `.update now` to update")
         return
     if force_update:
-        await ups.edit('Force-Syncing to latest stable userbot code, please wait master...😅😅')
+        await ups.edit('Force-Syncing to latest stable userbot code, please wait ser...😅😅')
     else:
         await ups.edit('Updating userbot, please wait....you are my best boss🤗😇')
     if HEROKU_API_KEY is not None:
