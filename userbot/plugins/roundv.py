@@ -1,3 +1,11 @@
+# COPYRIGHT © DARK COBRA
+# Plugin made by @hellboi_atul ...
+# You may use this with permission..and 
+# Please don't remove the credits.. 
+# else gay...
+# Plugin which can convert any 1:1 video(square video) to round video...
+
+
 import datetime
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
