@@ -10,8 +10,8 @@ pm_caption += "**Yes Master, Am Alive And Systems Are Working Perfectly As It Sh
 pm_caption += "✘ About My System ✘\n\n"
 pm_caption += "➾ **ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀꜱɪᴏɴ** : 15.0.0\n"
 pm_caption += "➾ **ꜱᴜᴘᴘᴏʀᴛ ᴄʜᴀɴɴᴇʟ** : [ᴊᴏɪɴ](https://t.me/Dark_cobra_support)\n"
-pm_caption += "➾ **ʟɪᴄᴇɴꜱᴇ** : [ᴛᴇᴀᴍ ᴘɪᴋᴀᴄʜᴜ](https://github.com/DARK-COBRA/DARKCOBRA)\n"
-pm_caption += "➾ **ᴄᴏᴘʏʀɪɢʜᴛ ʙʏ** : [ᴛᴇᴀᴍ ᴘɪᴋᴀᴄʜᴜ](https://github.com/DARK-COBRA)\n\n"
+pm_caption += "➾ **ʟɪᴄᴇɴꜱᴇ** : [𝚃𝙴𝙰𝙼 𝙲𝙾𝙱𝚁𝙰](https://github.com/DARK-COBRA/DARKCOBRA)\n"
+pm_caption += "➾ **ᴄᴏᴘʏʀɪɢʜᴛ ʙʏ** : [𝙳𝙰𝚁𝙺-𝙲𝙾𝙱𝚁𝙰](https://github.com/DARK-COBRA)\n\n"
 pm_caption += f"➾ **ᴍʏ ᴍᴀsᴛᴇʀ** : {DEFAULTUSER}\n"
 @borg.on(admin_cmd(pattern=r"alive"))
 async def amireallyalive(alive):
