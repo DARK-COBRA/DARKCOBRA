@@ -57,6 +57,11 @@
       "value": "",
       "required": false
     },
+    "CUSTOM_PMPERMIT": {
+      "description": "Custom middle pm permit text... May skip..doesn't really matter...",
+      "value": "",
+      "required": false
+    },
     "APP_ID": {
       "description": "Get this value from my.telegram.org! Please do not steal",
       "value": ""
@@ -86,6 +91,11 @@
     "PRIVATE_GROUP_ID": {
       "description": "Create a private group add rose bot then type /id. PLUGIN_CHANNEL and PRIVATE_GROUP_ID both values should be same",
       "value": ""
+    },
+    "OCR_SPACE_API_KEY": {
+      "description": "Needed for ocr.py, get it from ocr.space .",
+      "value": "",
+      "required": false
     },
     "PM_LOGGR_BOT_API_ID": {
        "description": "for login private messages create a private channel and do .get_id and add that id", 
