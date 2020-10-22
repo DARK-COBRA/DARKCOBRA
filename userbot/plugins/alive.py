@@ -2,7 +2,7 @@ import requests
 import asyncio
 from telethon import *
 from telethon import events
-from userbot.utils import admin_cmd
+from uniborg.utils import admin_cmd
 from userbot import ALIVE_NAME
 from telethon.tl.types import ChannelParticipantsAdmins
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "DARK COBRA"
