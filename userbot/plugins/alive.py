@@ -16,8 +16,11 @@ pm_caption += "➾ **ꜱᴜᴘᴘᴏʀᴛ ᴄʜᴀɴɴᴇʟ** : [ᴊᴏɪɴ](htt
 pm_caption += "➾ **ʟɪᴄᴇɴꜱᴇ** : [𝚃𝙴𝙰𝙼 𝙲𝙾𝙱𝚁𝙰](https://github.com/DARK-COBRA/DARKCOBRA)\n"
 pm_caption += "➾ **ᴄᴏᴘʏʀɪɢʜᴛ ʙʏ** : [𝙳𝙰𝚁𝙺-𝙲𝙾𝙱𝚁𝙰](https://github.com/DARK-COBRA)\n\n"
 pm_caption += f"➾ **ᴍʏ ᴍᴀsᴛᴇʀ** : {DEFAULTUSER}\n"
+
 @borg.on(admin_cmd(pattern=r"alive"))
+
 @borg.on(events.MessageEdited(pattern='.alive (.*)'))
+
 async def amireallyalive(alive):
     chat = await alive.get_chat()
     await alive.delete()
