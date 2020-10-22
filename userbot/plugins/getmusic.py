@@ -1,11 +1,10 @@
 # plugin made by @hellboi_atul
 # gaandu bina credits ka plugin liya toh tu maderchod...tera khandaan maderchod😂😂
-# Thanks to @SongsForYouBot
+# Thanks to @SongsForYouBot's owner..
 
 from telethon import events
 import asyncio
-#from userbot.utils import admin_cmd
-from userbot.events import register 
+from userbot.utils import admin_cmd
 from userbot import bot, CMD_HELP
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 import os
@@ -23,7 +22,7 @@ def bruh(name):
 
     os.system("instantmusic -q -s "+name)
 
-@register(outgoing=True, pattern="^.so(?: |$)(.*)")
+@borg.on(events.NewMessage(pattern='.so (.*)'))
 async def getmusic(so):
     if so.fwd_from:
         return
