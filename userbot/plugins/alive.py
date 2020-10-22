@@ -1,6 +1,4 @@
-import requests
 import asyncio
-from telethon import *
 from telethon import events
 from uniborg.util import admin_cmd
 from userbot import ALIVE_NAME
