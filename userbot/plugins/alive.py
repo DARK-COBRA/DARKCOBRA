@@ -4,7 +4,7 @@ from uniborg.util import admin_cmd
 from userbot import ALIVE_NAME
 from telethon.tl.types import ChannelParticipantsAdmins
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "DARK COBRA"
-PM_IMG = "https://telegra.ph/file/63d4609c6ab1feac0cb12.jpg"
+PM_IMG = "https://telegra.ph/file/08672a4d0ea479daf8736.jpg"
 pm_caption = "** 𝙳𝙰𝚁𝙺 𝙲𝙾𝙱𝚁𝙰 𝙸𝚂 𝙾𝙽𝙻𝙸𝙽𝙴**\n\n"
 pm_caption += "**Yes Master, Am Alive And Systems Are Working Perfectly As It Should Be...**\n\n"
 pm_caption += "✘ About My System ✘\n\n"
