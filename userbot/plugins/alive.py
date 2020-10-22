@@ -2,7 +2,7 @@ import requests
 import asyncio
 from telethon import *
 from telethon import events
-from userbot.events import register
+from userbot.utils import admin_cmd
 from userbot import ALIVE_NAME
 from telethon.tl.types import ChannelParticipantsAdmins
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "DARK COBRA"
@@ -16,9 +16,7 @@ pm_caption += "➾ **ʟɪᴄᴇɴꜱᴇ** : [𝚃𝙴𝙰𝙼 𝙲𝙾𝙱𝚁�
 pm_caption += "➾ **ᴄᴏᴘʏʀɪɢʜᴛ ʙʏ** : [𝙳𝙰𝚁𝙺-𝙲𝙾𝙱𝚁𝙰](https://github.com/DARK-COBRA)\n\n"
 pm_caption += f"➾ **ᴍʏ ᴍᴀsᴛᴇʀ** : {DEFAULTUSER}\n"
 
-@borg.on(events.NewMessage(pattern='.alive (.*)'))
-
-@borg.on(events.MessageEdited(pattern='.alive (.*)'))
+@borg.on(admin_cmd(pattern=r"alive"))
 
 async def amireallyalive(alive):
     chat = await alive.get_chat()
