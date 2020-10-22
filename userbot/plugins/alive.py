@@ -17,7 +17,7 @@ pm_caption += "➾ **ʟɪᴄᴇɴꜱᴇ** : [𝚃𝙴𝙰𝙼 𝙲𝙾𝙱𝚁�
 pm_caption += "➾ **ᴄᴏᴘʏʀɪɢʜᴛ ʙʏ** : [𝙳𝙰𝚁𝙺-𝙲𝙾𝙱𝚁𝙰](https://github.com/DARK-COBRA)\n\n"
 pm_caption += f"➾ **ᴍʏ ᴍᴀsᴛᴇʀ** : {DEFAULTUSER}\n"
 
-@borg.on(admin_cmd(pattern=r"alive"))
+@borg.on(events.NewMessage(pattern='.alive (.*)'))
 
 @borg.on(events.MessageEdited(pattern='.alive (.*)'))
 
