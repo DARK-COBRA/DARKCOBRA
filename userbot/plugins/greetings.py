@@ -1,4 +1,6 @@
 from userbot.events import register
+from telethon import *
+from telethon import events
 
 @borg.on(events.NewMessage(pattern='.gnt (.*)'))
 
