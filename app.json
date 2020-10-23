@@ -62,6 +62,11 @@
       "value": "",
       "required": false
     },
+    "PM_DATA": {
+      "description": "Write DISABLE if you want to disable pm permit else leave it blank...",
+      "value": "",
+      "required": false
+    },
     "APP_ID": {
       "description": "Get this value from my.telegram.org! Please do not steal",
       "value": ""
