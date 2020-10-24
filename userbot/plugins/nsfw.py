@@ -1,4 +1,5 @@
 # Ported from userge by @buddhhu
+# Ported to DC from plus userbot by @hellboi_atul
 
 import os, urllib, requests, asyncio
 from userbot.utils import admin_cmd
