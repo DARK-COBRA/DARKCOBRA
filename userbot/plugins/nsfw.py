@@ -3,7 +3,7 @@
 import os, urllib, requests, asyncio
 
 
-@plus_ub(pattern=r"boobs", from_users=sudo)
+@borg.on(pattern=r"boobs", from_users=sudo)
 async def boobs(event):
     if not os.path.isdir(Var.TEMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Var.TEMP_DOWNLOAD_DIRECTORY)
@@ -18,7 +18,7 @@ async def boobs(event):
     await event.delete()
     await a.delete()
 
-@plus_ub(pattern=r"butts", from_users=sudo)
+@borg.on(pattern=r"butts", from_users=sudo)
 async def butts(event):
     if not os.path.isdir(Var.TEMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Var.TEMP_DOWNLOAD_DIRECTORY)
