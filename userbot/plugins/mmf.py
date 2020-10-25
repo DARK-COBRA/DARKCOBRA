@@ -17,7 +17,7 @@ from userbot.utils import admin_cmd
 
 
 
-@borg.on(admin_cmd(pattern=r"mmf"))
+@borg.on(admin_cmd(pattern=r"mmf ?(.*)"))
 
 async def handler(event):
 
