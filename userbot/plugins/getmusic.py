@@ -28,7 +28,7 @@ async def getmusic(so):
         return
     song = so.pattern_match.group(1)
     chat = "@SongsForYouBot"
-    link = f"/song {song}"
+    link = f"{song}"
     await so.edit("```Getting Your Music```")
     async with bot.conversation(chat) as conv:
           await asyncio.sleep(2)
@@ -43,7 +43,7 @@ async def getmusic(so):
               await so.edit("```Please unblock @SongsForYouBot and try again```")
               return
           await so.edit("`Sending Your Music...weit!😎`")
-          await asyncio.sleep(3)
+          await asyncio.sleep(1)
           await bot.send_file(so.chat_id, respond)
     await so.client.delete_messages(conv.chat_id,
                                        [msg.id, response.id, respond.id])
