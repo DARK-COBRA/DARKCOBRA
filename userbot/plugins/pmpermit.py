@@ -82,8 +82,8 @@ if Var.PRIVATE_GROUP_ID is not None:
         reason = event.pattern_match.group(1)
         chat = await event.get_chat()
         if event.is_private:
-          if chat.id == 1289422521 or chat.id == 1283371034 or chat.id == 1131874175:
-            await event.edit("You are tried to block my Creator😡 , now i will sleep for 100 seconds 😴 ")
+          if chat.id == 1289422521 or chat.id == 1388344357 or chat.id == 1131874175:
+            await event.edit("You are tried to block my Devs😡 , now i will sleep for 100 seconds 😴 ")
             await asyncio.sleep(100)
           else:
             if pmpermit_sql.is_approved(chat.id):
