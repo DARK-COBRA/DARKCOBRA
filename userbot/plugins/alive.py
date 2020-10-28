@@ -35,8 +35,8 @@ pm_caption += f"➾ **ᴍʏ ᴍᴀsᴛᴇʀ** ☞ {DEFAULTUSER}\n"
 
 @borg.on(admin_cmd(pattern=r"alive"))
 
-async def amireallyalive(alive):
-    chat = await alive.get_chat()
+async def amireallyalive(yes):
+    chat = await yes.get_chat()
 
     on = await borg.send_file(yes.chat_id, file=file1,caption=pm_caption)
 
