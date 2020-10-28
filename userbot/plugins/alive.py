@@ -1,5 +1,5 @@
 # Thanks to Sipak bro and Raganork.. 
-# animation Idea by @NOOB_GUY_OP (Sipakisking)
+# animation Idea by @NOOB_GUY_OP (Sipakisking) && @Hell boy_pikachu
 # Made by @hellboi_atul ....and thanks to @Crackexy for the logos...
 # Kang with credits else gay...
 import asyncio
