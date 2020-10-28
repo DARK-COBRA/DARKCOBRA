@@ -17,7 +17,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "DARK COBRA"
 # Kang with credits else gay...
 # alive.py for DC(DARK COBRA)
 
-edit_time = 3
+edit_time = 5
 """ =======================CONSTANTS====================== """
 file1 = "https://telegra.ph/file/6aa39732748ed7c319943.jpg"
 file2 = "https://telegra.ph/file/a6d72504bc09e71484a54.jpg"
