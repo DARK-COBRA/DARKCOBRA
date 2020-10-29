@@ -4,7 +4,7 @@ from datetime import datetime
 from pathlib import Path
 from telethon.tl.types import InputMessagesFilterDocument
 from userbot.utils import admin_cmd, load_module, remove_plugin
-from .. import ALIVE_NAME
+from userbot import ALIVE_NAME
 
 DELETE_TIMEOUT = 5
 thumb_image_path = "./Resources/IMG_20201005_150245_168.jpg"
