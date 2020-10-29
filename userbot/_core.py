@@ -11,7 +11,7 @@ thumb_image_path = "./Resources/IMG_20201005_150245_168.jpg"
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "DARK COBRA"
 
 
-@borg.on(admin_cmd(pattern=r"send (?P<shortname>\w+)", outgoing=True))
+@bot.on(admin_cmd(pattern=r"send (?P<shortname>\w+)", outgoing=True))
 async def send(event):
     if event.fwd_from:
         return
@@ -41,7 +41,7 @@ async def send(event):
         await edit_or_reply(event, "**404**: __File Not Found__")
 
 
-@borg.on(admin_cmd(pattern="install"))
+@bot.on(admin_cmd(pattern="install"))
 async def install(event):
     if event.fwd_from:
         return
@@ -74,7 +74,7 @@ async def install(event):
     await event.delete()
 
 
-@borg.on(admin_cmd(pattern=r"unload (?P<shortname>\w+)$"))
+@bot.on(admin_cmd(pattern=r"unload (?P<shortname>\w+)$"))
 async def unload(event):
     if event.fwd_from:
         return
@@ -90,7 +90,7 @@ async def unload(event):
         )
 
 
-@borg.on(admin_cmd(pattern=r"load (?P<shortname>\w+)$"))
+@bot.on(admin_cmd(pattern=r"load (?P<shortname>\w+)$"))
 async def load(event):
     if event.fwd_from:
         return
