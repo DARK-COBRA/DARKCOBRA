@@ -4,7 +4,7 @@ from datetime import datetime
 from pathlib import Path
 from telethon.tl.types import InputMessagesFilterDocument
 from userbot.utils import admin_cmd, load_module, remove_plugin
-from userbot import ALIVE_NAME
+from userbot import ALIVE_NAME, bot as borg
 
 DELETE_TIMEOUT = 5
 thumb_image_path = "./Resources/IMG_20201005_150245_168.jpg"
@@ -17,7 +17,7 @@ async def send(event):
         return
     hmm = bot.uid
     message_id = event.message.id
-    thumb = thumb_image_path
+    thumb = 'https://telegra.ph/file/a90141cd403025504bcd3.jpg'
     input_str = event.pattern_match.group(1)
     the_plugin_file = "./userbot/plugins/{}.py".format(input_str)
     if os.path.exists(the_plugin_file):
