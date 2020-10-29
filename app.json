@@ -38,8 +38,8 @@
       "required": true
     },
     "ALIVE_PHOTTO": {
-      "description": "put here any telegraph media link for alive pic.",
-      "value": "",
+      "description": "Let it be what it is(skip)..or you can change the link according to your convince..this link is useful for `.awake` command.",
+      "value": "https://telegra.ph/file/0d0fafe17acca1c51b42d.jpg",
       "required": true
     },
     "BIO_MSG": {
