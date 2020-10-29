@@ -18,7 +18,7 @@ async def send(event):
         return
     hmm = bot.uid
     message_id = event.message.id
-    thumb = 'https://telegra.ph/file/a90141cd403025504bcd3.jpg'
+    thumb = thumb_image_path
     input_str = event.pattern_match.group(1)
     the_plugin_file = "./userbot/plugins/{}.py".format(input_str)
     if os.path.exists(the_plugin_file):
