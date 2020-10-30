@@ -28,16 +28,16 @@ async def leave(e):
         else:
             await e.edit('`Sar This is Not A Chat`')
 
-@borg.on(admin_cmd(pattern="chatinfo(?: |$)(.*)", outgoing=True))
+@borg.on(admin_cmd(pattern="chinfo(?: |$)(.*)", outgoing=True))
 async def info(event):
-    await event.edit("`Analysing the chat...`")
+    await event.edit("`Weit lemme analyze the chat`")
     chat = await get_chatinfo(event)
     caption = await fetch_info(chat, event)
     try:
         await event.edit(caption, parse_mode="html")
     except Exception as e:
         print("Exception:", e)
-        await event.edit("`An unexpected error has occurred.`")
+        await event.edit("`An unexpected error has occurred, Sed I couldn't figure it out...`")
     return
     
     
@@ -269,8 +269,8 @@ async def get_users(show):
             remove("userslist.txt")  
   
 CMD_HELP.update({
-    "chatinfo":
-    ".chatinfo or .chatinfo <username of group>\
+    "groupdata":
+    ".chinfo or .chatinfo <username of group>\
      \nUsage: Shows you the total information of the required chat.\
      \n\n.adminlist\
      \nUsage: Retrieves a list of admins in the chat.\
