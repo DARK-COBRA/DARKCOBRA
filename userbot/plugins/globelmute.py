@@ -1,6 +1,6 @@
 '''
-© Sensible Userbot
-added speciality for sudos if u kang give me credits
+Fuck
+Fixed for userbot.. By @hellboi_atul.
 '''
 from userbot.plugins.sql_helper.mute_sql import is_muted, mute, unmute
 import asyncio
@@ -16,26 +16,7 @@ async def startgmute(event):
     user_id = reply.from_id
     if user_id == (await borg.get_me()).id:	
         await event.edit(r"Btw Boss!!Why would I Gmute You. You are my Boss!!")	
-        return	
-    if user_id in Config.SUDO_USERS:	
-        await event.edit(	
-            "**He has more power than me.**\nPerhaps I can't gmute him.\n\n"	
-            "**Why??:** `He is a sudo user`.")	
-        return
-    if user_id in Config.WHITELIST_USERS:	
-        await event.edit(	
-            "**He has more Power Of Thor And Hulk.**\nPerhaps I can't gmute him.\n\n"	
-            "**WHY??** He is a Whitelist user.")	
-        return
-    if user_id in Config.SUPPORT_USERS:	
-        await event.edit(	
-            "**He has Friend as Thanos!!.**\nPerhaps I can't gmute him.\n\n"	
-            "**why??:** He is SUPPORT user.")	
-        return
-    if user_id in Config.DEVLOPERS:	
-        await event.edit(	
-            "**He my Creator.**\nPerhaps I can't gmute him.\n\n"	
-            "**Why??** He is my Creator.")	
+        	
         return
     elif event.is_private:
         await event.edit("Putting Duct Tape on that person's mouth!Now Just Shut Up!!")
