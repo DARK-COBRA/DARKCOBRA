@@ -28,7 +28,7 @@ async def getmusic(so):
         return
     song = so.pattern_match.group(1)
     chat = "@SongsForYouBot"
-    link = f"{song}"
+    link = f"/song {song}"
     await so.edit("```Getting Your Music```")
     async with bot.conversation(chat) as conv:
           await asyncio.sleep(2)
