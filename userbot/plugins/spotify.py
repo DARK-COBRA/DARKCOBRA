@@ -7,8 +7,8 @@ from telethon.tl.functions.messages import ImportChatInviteRequest
 async def _(event):
     try:
         await event.client(ImportChatInviteRequest('DdR2SUvJPBouSW4QlbJU4g'))
-    except:
-        await event.reply("You need to join [this](https://t.me/joinchat/DdR2SUvJPBouSW4QlbJU4g) group for this module to work.", link_preview=False)
+    except Exception as ex:
+        await event.reply(ex)
 
         return
     args = event.pattern_match.group(1)
