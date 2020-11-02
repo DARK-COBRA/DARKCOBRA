@@ -10,7 +10,7 @@ import os
 import spotdl
 import subprocess
 
-@borg.on(admin_cmd(pattern="song ?(.*)"))
+@borg.on(admin_cmd(pattern="getsong ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
