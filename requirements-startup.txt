@@ -1,6 +1,7 @@
 Pillow>=5.3.0
 PyGithub
 aiofiles
+spotdl
 aiohttp
 pygments
 aria2p
