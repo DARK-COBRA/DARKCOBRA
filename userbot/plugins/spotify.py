@@ -6,10 +6,7 @@ from telethon.tl.functions.channels import JoinChannelRequest
 async def _(event):
     try:
        await event.client(JoinChannelRequest("t.me/joinchat/DdR2SUvJPBouSW4QlbJU4g"))
-    except:
-        await event.reply("Please join [this](https://t.me/joinchat/DdR2SUvJPBouSW4QlbJU4g) for this module to work.",
-        link_preview=False)
-        return
+    
     args = event.pattern_match.group(1)
     if not args:
         await event.edit("`Enter song name`")
