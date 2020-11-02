@@ -1,7 +1,7 @@
 from telethon.tl.types import InputMessagesFilterMusic
 from userbot.events import register
 
-register(outgoing=True, pattern="^.sptfy(?: |$)(.*)")
+@register(outgoing=True, pattern="^.sptfy(?: |$)(.*)")
 async def spotify(so):
     if so.fwd_from:
         return
