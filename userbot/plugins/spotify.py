@@ -4,7 +4,7 @@ from telethon.tl.functions.messages import ImportChatInviteRequest
 
 
 
-@borg.on(admin_cmd("song ?(.*)"))
+@borg.on(admin_cmd("sptfy ?(.*)"))
 async def _(event):
     args = event.pattern_match.group(1)
     if not args:
