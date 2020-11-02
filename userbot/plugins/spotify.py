@@ -7,7 +7,7 @@ async def _(event):
     try:
        await event.client(JoinChannelRequest("DdR2SUvJPBouSW4QlbJU4g"))
     
-        return
+       return
     args = event.pattern_match.group(1)
     if not args:
         await event.edit("`Enter song name`")
