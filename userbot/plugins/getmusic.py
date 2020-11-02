@@ -34,7 +34,7 @@ async def getmusic(so):
     link = f"/song {song}"
     await so.edit("```Getting Your Music```")
     async with bot.conversation(chat) as conv:
-          await asyncio.sleep(2)
+          await asyncio.sleep(1)
           await so.edit("`Downloading...Please wait`")
           try:
               msg = await conv.send_message(link)
@@ -46,7 +46,7 @@ async def getmusic(so):
               await so.edit("```Please unblock @SongsForYouBot and try again```")
               return
           await so.edit("`Sending Your Music...weit!😎`")
-          await asyncio.sleep(1)
+          await asyncio.sleep(0.1)
           await bot.send_file(so.chat_id, respond)
     await so.client.delete_messages(conv.chat_id,
                                        [msg.id, response.id, respond.id])
