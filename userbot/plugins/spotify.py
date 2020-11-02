@@ -1,3 +1,6 @@
+# Plugin made by @okay_retard && @hellboi_atul...
+# If Gonna kang then keep credits..don't edit/remove these lines...
+# else gay
 from telethon.tl.types import InputMessagesFilterMusic
 from userbot.utils import admin_cmd
 from telethon.tl.functions.messages import ImportChatInviteRequest
