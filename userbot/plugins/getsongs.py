@@ -1,3 +1,8 @@
+# This useless plugin is made By @hellboi_atul..
+# Downloads songs from Spotify
+# Keep credits if gonna kang...do not remove/edit this line..
+# Else gay..
+
 from telethon import events
 import subprocess
 from telethon.errors import MessageEmptyError, MessageTooLongError, MessageNotModifiedError
@@ -28,7 +33,7 @@ async def _(event):
         shell=True)
     l = glob.glob("*.mp3")
     loa = l[0]
-    await event.edit("`Yes 🌚 I found the song..🎶`")
+    await event.edit("`Yeah, I found the song..🎶`")
     await event.client.send_file(
         event.chat_id,
         loa,
