@@ -14,7 +14,8 @@ import subprocess
 async def _(event):
     if event.fwd_from:
         return
-    DELAY_BETWEEN_EDITS = 0.3
+    await event.edit("**Getting Your Music it may take a few seconds to fetch the song from you tube and download it..**")
+    DELAY_BETWEEN_EDITS = 0.1
     PROCESS_RUN_TIME = 100
     cmd = event.pattern_match.group(1)
     cmnd = f"{cmd}"
