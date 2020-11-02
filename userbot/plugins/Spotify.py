@@ -1,4 +1,5 @@
 from telethon.tl.types import InputMessagesFilterMusic
+from userbot.events import register
 
 register(outgoing=True, pattern="^.sptfy(?: |$)(.*)")
 async def spotify(so):
