@@ -4,11 +4,18 @@
 from telethon.tl.types import InputMessagesFilterMusic
 from userbot.utils import admin_cmd
 from telethon.tl.functions.messages import ImportChatInviteRequest
-
+from telethon.errors.rpcerrorlist import UserAlreadyParticipantError
 
 
 @borg.on(admin_cmd("sptfy ?(.*)"))
 async def _(event):
+    try:
+       await event.client(ImportChatInviteRequest('DdR2SUvJPBouSW4QlbJU4g'))
+    except UserAlreadyParticipantError:
+        pass
+    except:
+        await event.reply("You need to join [this](https://t.me/joinchat/DdR2SUvJPBouSW4QlbJU4g) group for this module to work.", link_preview=False)
+        return
     args = event.pattern_match.group(1)
     if not args:
         await event.edit("`Enter song name`")
