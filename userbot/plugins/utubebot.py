@@ -15,7 +15,6 @@ async def fetcher(event):
         return
     song = event.pattern_match.group(1)
     chat = "@utubebot"
-    reply_id_ = await reply_id(event)
     event = await edit_or_reply(event, SEARCH_STRING, parse_mode="html")
     async with event.client.conversation(chat) as conv:
         try:
@@ -39,14 +38,14 @@ async def fetcher(event):
             music = await conv.get_response()
             await event.client.send_read_acknowledge(conv.chat_id)
         except YouBlockedUserError:
-            await catevent.edit(BOT_BLOCKED_STRING, parse_mode="html")
+            await event.edit(BOT_BLOCKED_STRING, parse_mode="html")
             return
         await event.client.send_file(
             event.chat_id,
             music,
             caption=f"<b>==> <code>{song}</code></b>",
             parse_mode="html",
-            reply_to=reply_id_,
+            reply_to=event.reply_to_msg_id,
         )
         await event.delete()
         await delete_messages(event, chat, purgeflag)
