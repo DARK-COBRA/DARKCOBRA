@@ -45,7 +45,6 @@ async def fetcher(event):
             music,
             caption=f"<b>==> <code>{song}</code></b>",
             parse_mode="html",
-            reply_to=event.reply_to_msg_id,
         )
         await event.delete()
         await delete_messages(event, chat, purgeflag)
