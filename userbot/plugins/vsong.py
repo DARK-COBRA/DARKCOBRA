@@ -12,6 +12,13 @@ from telethon.tl.types import DocumentAttributeAudio
 from uniborg.util import admin_cmd
 
 
+try:
+   from youtubesearchpython import SearchVideos 
+except:
+	os.system("pip install pip install youtube-search-python")
+	from youtubesearchpython import SearchVideos 
+
+
 async def progress(current, total, event, start, type_of_ps, file_name=None):
     """Generic progress_callback for uploads and downloads."""
     now = time.time()
