@@ -193,7 +193,7 @@ async def download_video(v_url):
             v_url.chat_id,
             f"{darkcobra_data['id']}.mp4",
             supports_streaming=True,
-            caption=Video upload successfuly by DARK COBRA userbot😎,
+            caption=darkcobra_data['title'],
             progress_callback=lambda d, t: asyncio.get_event_loop(
             ).create_task(
                 progress(d, t, v_url, c_time, "Uploading..",
