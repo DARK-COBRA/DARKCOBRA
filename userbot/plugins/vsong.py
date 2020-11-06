@@ -87,7 +87,7 @@ async def download_video(v_url):
     teamcobra = v_url.pattern_match.group(1)
     if not teamcobra:
          return await dc.edit("`Error \nusage vsong <song name>`")
-    search = SearchVideos(url, offset = 1, mode = "json", max_results = 1)
+    search = SearchVideos(v_url, offset = 1, mode = "json", max_results = 1)
     test = search.result()
     p = json.loads(test)
     q = p.get('search_result')
