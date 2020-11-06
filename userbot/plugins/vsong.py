@@ -1,3 +1,8 @@
+# Plugin made by @hellboi_atul and bug fixes By Shivam Patel(Team Cobra)
+# Give credits... Dont remove or edit these lines
+# uses ytdl 
+# made for DARK COBRA userbot..
+
 import os
 import time
 import math
@@ -79,14 +84,14 @@ def time_formatter(milliseconds: int) -> str:
 
 
 
-@borg.on(admin_cmd(pattern="vsongs (.*)"))
+@borg.on(admin_cmd(pattern="vsong (.*)"))
 async def download_video(v_url):  
     pro = v_url ; sender = await pro.get_sender() ; me = await pro.client.get_me()
     pro1 = v_url.text
     if not sender.id == me.id:
-        dc = await pro.reply("`processing...`")
+        dc = await pro.reply("`processing, please weit...`")
     else:
-    	dc = await pro.edit("`processing...`")   
+    	dc = await pro.edit("`processing, please weit...`")   
     teamcobra = pro1[8:]
     if not teamcobra:
          return await dc.edit("`Error \nusage vsong <song name>`")
@@ -188,7 +193,7 @@ async def download_video(v_url):
             v_url.chat_id,
             f"{darkcobra_data['id']}.mp4",
             supports_streaming=True,
-            caption=darkcobra_data['title'],
+            caption=Video upload successfuly by DARK COBRA userbot😎,
             progress_callback=lambda d, t: asyncio.get_event_loop(
             ).create_task(
                 progress(d, t, v_url, c_time, "Uploading..",
