@@ -4,7 +4,7 @@ import math
 import asyncio, json
 from youtube_dl import YoutubeDL
 from pySmartDL import SmartDL
-from userbot.utils  progress
+from userbot.utils import progress
 from youtube_dl.utils import (DownloadError, ContentTooShortError,
                               ExtractorError, GeoRestrictedError,
                               MaxDownloadsReached, PostProcessingError,
