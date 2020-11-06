@@ -75,7 +75,7 @@ async def mim(event):
     await event.edit(
         "```Memefying 🔸🔸🔸```"
     )
-    await asyncio.sleep(5)
+    await asyncio.sleep(0.1)
     text = event.pattern_match.group(1)
     webp_file = await draw_meme_text(dls_loc, text)
     await event.client.send_file(
@@ -236,7 +236,7 @@ async def mim(event):
     await event.edit(
         "```Memifying 🔸🔸🔸 ```"
     )
-    await asyncio.sleep(5)
+    await asyncio.sleep(0.1)
     text = event.pattern_match.group(1)
     photo = await draw_meme(dls_loc, text)
     await event.client.send_file(
