@@ -46,20 +46,3 @@ async def nope(doit):
     await doit.delete()
 
 
-@borg.on(admin_cmd(pattern="pgame(?: |$)(.*)"))
-
-async def nope(doit):
-    ok = doit.pattern_match.group(1)
-    if not ok:
-        if doit.is_reply:
-            what = (await doit.get_reply_message()).message
-        
-            return
-    mathsbattle = await bot.inline_query(
-        "gamebot", f"{(deEmojify(ok))}")
-    await mathsbattle[0].click(doit.chat_id,
-                            reply_to=doit.reply_to_msg_id,
-                            silent=True if doit.is_reply else False,
-                            hide_via=True)
-    await doit.delete()
-
