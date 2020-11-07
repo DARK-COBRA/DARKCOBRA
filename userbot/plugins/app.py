@@ -19,8 +19,6 @@ from userbot.events import register
 
 @borg.on(events.NewMessage(pattern='.app (.*)'))
 
-@borg.on(events.MessageEdited(pattern='.app (.*)'))
-
 async def apk(e):
     try:
         app_name = e.pattern_match.group(1)
