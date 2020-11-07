@@ -7,7 +7,7 @@ from pygments.lexers import Python3Lexer
 from pygments.formatters import ImageFormatter
 from userbot.utils import admin_cmd
 
-@borg.on(admin_cmd(pattern="encode ?(.*)"))
+@borg.on(admin_cmd(pattern="ncode ?(.*)"))
 async def coder_print(event):
 	a = await event.client.download_media(await event.get_reply_message(), Var.TEMP_DOWNLOAD_DIRECTORY)
 	s = open(a, 'r')
