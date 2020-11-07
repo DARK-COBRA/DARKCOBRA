@@ -35,8 +35,7 @@ async def nope(doit):
     if not ok:
         if doit.is_reply:
             what = (await doit.get_reply_message()).message
-        else:
-            await doit.edit("`Please give some query to search..!`")
+        
             return
     xoxoxo = await bot.inline_query(
         "xobot", f"{(deEmojify(ok))}")
