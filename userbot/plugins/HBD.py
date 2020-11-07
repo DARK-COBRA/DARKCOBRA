@@ -14,7 +14,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Unknown"
 async def _(event):
     if event.fwd_from:
         return
-    animation_interval = 2
+    animation_interval = 5
     animation_ttl = range(0, 16)
     await event.edit("Starting...")
     animation_chars = [          
@@ -22,7 +22,7 @@ async def _(event):
               "**How Are You?**",
               "[.](http://2.bp.blogspot.com/-WGLaIVbpK6U/WT4sr0LG2TI/AAAAAAAAVX0/1t0F3gECRh4okN6zJzq6fMwQ7dA4Qw8AwCLcB/s1600/happy-birthday-to-you.png)",
               "**Wishing you 👈 a 👌 day 🌞 filled 😏 with 👏 happiness and 👏 a 👌 year 🎉 filled 😏 with 👏 joy 😁.**",
-              "**Sending you 👈 smiles 😀 for  every 👏 moment 🏆 of 💦 your special 😲 day 🌞*",
+              "**Sending you 👈 smiles 😀 for  every 👏 moment 🏆 of your special 😲 day 🌞*",
               "**Have 👏 a 👌 wonderful 😊 time 🕐 and a very 👌 happy 😊 birthday 🎂!**",
               "**Count your 👏 life 👤 by 😈 smiles, 😀 not 🚫 tears. 😭 Count your 👏 age 👵 by 😈 friends, 👫 not 🚫 years. 📅 Happy 😊 birthday 🎂!**",
               "**I hope 🙏 all 💯 your 👏 birthday 🎂 wishes and 👏 dreams 🔚 come true. 💯**",
