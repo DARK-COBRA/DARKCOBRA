@@ -1,5 +1,5 @@
-#stickery alive by @hellboi_atul
-# credits @xaditya (telebot) && RAM (JARVIS)
+# stickery alive by @hellboi_atul
+# credits @xditya
 
 import os
 import requests
@@ -41,7 +41,7 @@ def get_readable_time(seconds: int) -> str:
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "This user"
 
-@borg.on(admin_cmd(outgoing=True, pattern="allive"))
+@borg.on(admin_cmd(outgoing=True, pattern="salive"))
 async def amireallyalive(alive):
     """ For .alive command, check if the bot is running.  """
     if ALIVE_PHOTTO:
