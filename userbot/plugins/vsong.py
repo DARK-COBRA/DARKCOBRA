@@ -91,7 +91,7 @@ async def download_video(v_url):
     if not sender.id == me.id:
         dc = await pro.reply("`processing, please weit...`")
     else:
-    	dc = await pro.edit("`processing, please weit...`")   
+    	dc = await pro.edit("`processing, please weit...😍`")   
     teamcobra = pro1[8:]
     if not teamcobra:
          return await dc.edit("`Error \nusage vsong <song name>`")
@@ -133,7 +133,7 @@ async def download_video(v_url):
         song = False
         video = True
     try:
-        await dc.edit("`Fetching data, please wait..`")
+        await dc.edit("`Fetching data, please wait..😋😍😎`")
         with YoutubeDL(opts) as darkcobra:
             darkcobra_data = darkcobra.extract_info(teamcobra)
     except DownloadError as error:
@@ -186,7 +186,7 @@ async def download_video(v_url):
         os.remove(f"{darkcobra_data['id']}.mp3")
         await v_url.delete()
     elif video:
-        await dc.edit(f"`Preparing to upload your video song🤗 :`\
+        await dc.edit(f"`Preparing to upload your video song🤗❤ :`\
         \n**{darkcobra_data['title']}**\
         \nby *{darkcobra_data['uploader']}*")
         await v_url.client.send_file(
