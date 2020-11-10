@@ -33,7 +33,8 @@ pm_caption += "➾ **ʟɪᴄᴇɴꜱᴇ**  ☞ [𝚃𝙴𝙰𝙼 𝙲𝙾𝙱�
 pm_caption += "➾ **ᴄᴏᴘʏʀɪɢʜᴛ ʙʏ** ☞ [𝙳𝙰𝚁𝙺-𝙲𝙾𝙱𝚁𝙰](https://github.com/DARK-COBRA/DARKCOBRA)\n\n"
 pm_caption += f"➾ **ᴍʏ ᴍᴀsᴛᴇʀ** ☞ {DEFAULTUSER}\n"
 
-@borg.on(admin_cmd(pattern=r"alive"))
+@borg.on(admin_cmd(outgoing=True, pattern="alive$"))
+@borg.on(sudo_cmd(pattern="alive$", allow_sudo=True))
 
 async def amireallyalive(yes):
     chat = await yes.get_chat()
