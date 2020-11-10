@@ -30,6 +30,7 @@ heroku3
 httplib2
 humanize
 justwatch
+keyboard
 lottie
 lxml
 oauth2client
