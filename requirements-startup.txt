@@ -36,6 +36,7 @@ oauth2client
 patool
 psycopg2
 psycopg2-binary
+pygame
 PyLyrics
 pySmartDL
 pybase64>=0.4.0
