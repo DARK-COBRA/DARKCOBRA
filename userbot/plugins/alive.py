@@ -5,7 +5,7 @@
 import asyncio
 import random
 from telethon import events
-from userbot.utils import admin_cmd
+from userbot.utils import admin_cmd, sudo_cmd
 from userbot import ALIVE_NAME
 from telethon.tl.types import ChannelParticipantsAdmins
 # 🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔
@@ -34,6 +34,7 @@ pm_caption += "➾ **ᴄᴏᴘʏʀɪɢʜᴛ ʙʏ** ☞ [𝙳𝙰𝚁𝙺-𝙲�
 pm_caption += f"➾ **ᴍʏ ᴍᴀsᴛᴇʀ** ☞ {DEFAULTUSER}\n"
 
 @borg.on(admin_cmd(pattern=r"alive"))
+@borg.on(sudo_cmd(pattern=r"alive", allow_sudo=True))
 
 async def amireallyalive(yes):
     chat = await yes.get_chat()
