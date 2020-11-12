@@ -28,7 +28,7 @@
       "required": false
     },
     "COMMAND_HAND_LER": {
-      "description": "For customized command handler change it \. or \> or \` or leave blank",
+      "description": "For customized command handler change it \. or \> or \, or leave blank",
       "value": "",
       "required": false
     },
