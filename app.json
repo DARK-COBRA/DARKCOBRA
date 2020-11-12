@@ -28,8 +28,8 @@
       "required": false
     },
     "COMMAND_HAND_LER": {
-      "description": "For customized command handler keep it as it is or change it \` or \>.",
-      "value": "\.",
+      "description": "For customized command handler change it \. or \> or \` or leave blank",
+      "value": "",
       "required": false
     },
     "ALIVE_NAME": {
