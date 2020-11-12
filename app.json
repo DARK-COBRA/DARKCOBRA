@@ -27,6 +27,11 @@
       "value": "",
       "required": false
     },
+    "COMMAND_HAND_LER": {
+      "description": "For customized command handler keep it as it is or change it \` or \>.",
+      "value": "\.",
+      "required": false
+    },
     "ALIVE_NAME": {
       "description": "Fill your Full name or Username like @hellboi_atul.",
       "value": "",
