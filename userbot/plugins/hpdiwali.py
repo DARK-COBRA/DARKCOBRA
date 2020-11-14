@@ -1,4 +1,7 @@
-
+# Plugin made by Dark cobra
+# For Dark cobra 
+# Made by Shivam Patel(Team Cobra)
+# Kang with credits..
 import random
 from userbot import CMD_HELP
 from userbot.events import register
