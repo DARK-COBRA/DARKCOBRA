@@ -1,7 +1,9 @@
 # Plugin made by @hellboi_atul for DARK COBRA..
 # You can use this..but don't edit/remove these comment lines..
 # This module fetches the link from YouTube for the given query..
+# merged .uta
 # So wahi...Enjoy
+
 
 import re
 import random
@@ -40,6 +42,37 @@ async def nope(doit):
             return
     sticcers = await bot.inline_query(
         "vid", f"{(deEmojify(ok))}")
+    await sticcers[0].click(doit.chat_id,
+                            reply_to=doit.reply_to_msg_id,
+                            silent=True if doit.is_reply else False,
+                            hide_via=True)
+    await doit.delete()
+
+
+
+
+
+
+# Social Distancing..
+
+
+
+
+
+
+
+@borg.on(admin_cmd(pattern="uta(?: |$)(.*)"))
+
+async def nope(doit):
+    ok = doit.pattern_match.group(1)
+    if not ok:
+        if doit.is_reply:
+            what = (await doit.get_reply_message()).message
+        else:
+            await doit.edit("`Sir please give some query to search and download it for you..!`")
+            return
+    sticcers = await bot.inline_query(
+        "Lybot", f"{(deEmojify(ok))}")
     await sticcers[0].click(doit.chat_id,
                             reply_to=doit.reply_to_msg_id,
                             silent=True if doit.is_reply else False,
