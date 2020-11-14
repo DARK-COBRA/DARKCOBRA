@@ -11,7 +11,7 @@ from userbot.utils import admin_cmd
 async def _(event):
     if event.fwd_from:
         return
-    animation_interval = 0.1
+    animation_interval = 1
     animation_ttl = range(0,20)
     await event.edit("Happy Diwali Dosto🤗")
     animation_chars = [
