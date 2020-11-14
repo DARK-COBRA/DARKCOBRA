@@ -1,4 +1,6 @@
-
+# Made by Dark Cobra; Made for Dark Cobra
+# Don't remove these lines else gay..
+# Kang with credits..
 from telethon import events
 
 import asyncio
@@ -9,9 +11,9 @@ from userbot.utils import admin_cmd
 async def _(event):
     if event.fwd_from:
         return
-    animation_interval = 1
-    animation_ttl = range(0,1000)
-    await event.edit("Happy Diwali Dosto")
+    animation_interval = 0.1
+    animation_ttl = range(0,20)
+    await event.edit("Happy Diwali Dosto🤗")
     animation_chars = [
             """-----💜happy💜diwali💜
 ----💜happy💜diwali💜
@@ -1261,13 +1263,13 @@ async def _(event):
         	
         await asyncio.sleep(animation_interval)
         await event.edit(animation_chars[i % 6])
-@borg.on(admin_cmd("h2dd"))
+@borg.on(admin_cmd("diwali"))
 async def _(event):
     if event.fwd_from:
         return
-    animation_interval = 0
-    animation_ttl = range(0,1000)
-    await event.edit("Happy Diwali Dosto")
+    animation_interval = 1
+    animation_ttl = range(0,80)
+    await event.edit("❤Happy Diwali Dosto❤")
     animation_chars = ["💖happy💖diwali💖","💙happy💙diwali💙","❤️happy♥️diwali❤️","💚happy💚diwali💚","💜happy💜diwali💜",]
 
     for i in animation_ttl:
