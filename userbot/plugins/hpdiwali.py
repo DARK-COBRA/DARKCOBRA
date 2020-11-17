@@ -19,8 +19,8 @@ def choser(cmd, pack, blacklist={}):
 
         if event.fwd_from:
             return
-        animation_interval = 3
-        animation_ttl = range(0,5)
+        animation_interval = 2
+        animation_ttl = range(0,8)
         nonlocal docs
         
         for i in animation_ttl:
