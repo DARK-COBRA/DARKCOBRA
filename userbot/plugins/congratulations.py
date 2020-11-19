@@ -3,7 +3,7 @@ import random, re
 from uniborg.util import admin_cmd
 
 RUNSREACTS = [
-    "`Congratulations and BRAVO!`",
+    "**Congratulations and BRAVO!**",
     "`You did it! So proud of you!`",
     "`This calls for celebrating! Congratulations!`",
     "`I knew it was only a matter of time. Well done!`",
