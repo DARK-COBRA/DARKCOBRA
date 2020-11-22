@@ -1,7 +1,7 @@
 # By @Danish_00
 # Fixed By a NOOB
-# Made for DARK-COBRA 
-# Kang with credits..
+# Made for DARK COBRA by team Cobra..
+# kang with credits do not edit these lines..
 
 from telethon.tl.types import MessageMediaPhoto
 import os, urllib, requests, asyncio
