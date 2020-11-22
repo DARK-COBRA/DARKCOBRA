@@ -132,6 +132,8 @@ if ENV:
         LYDIA_API = os.environ.get("LYDIA_API",None)
         PLUGIN_CHANNEL = int(os.environ.get("PLUGIN_CHANNEL", None))
         PM_DATA = os.environ.get("PM_DATA", "ENABLE")
+        # Deepai value can get from https://deepai.org/
+        DEEP_AI = os.environ.get("DEEP_AI", None)
         
 else:
     class Config(object):
