@@ -19,7 +19,7 @@ async def _(event):
 	if event.fwd_from:
 		return
 	deq = deque(list("🍦🍧🍩🍪🎂🍰🧁🍫🍬🍭"))
-	for _ in range(999):
+	for _ in range(20):
 		await asyncio.sleep(1)
 		await event.edit("".join(deq))
 		deq.rotate(1)
@@ -29,7 +29,7 @@ async def _(event):
 	if event.fwd_from:
 		return
 	deq = deque(list("😁☹️😁☹️😁☹️😁"))
-	for _ in range(999):
+	for _ in range(20):
 		await asyncio.sleep(1)
 		await event.edit("".join(deq))
 		deq.rotate(1)
@@ -39,17 +39,17 @@ async def _(event):
 	if event.fwd_from:
 		return
 	deq = deque(list("❤️🧡💛💚💙💜🖤"))
-	for _ in range(999):
+	for _ in range(20):
 		await asyncio.sleep(1)
 		await event.edit("".join(deq))
 		deq.rotate(1)
     
-@borg.on(admin_cmd(pattern=r"tlol"))
+@borg.on(admin_cmd(pattern=r"ethink"))
 async def _(event):
 	if event.fwd_from:
 		return
 	deq = deque(list("🤔🧐🤨🤔🧐🤨"))
-	for _ in range(999):
+	for _ in range(20):
 		await asyncio.sleep(1)
 		await event.edit("".join(deq))
 		deq.rotate(1)
@@ -59,7 +59,7 @@ async def _(event):
 	if event.fwd_from:
 		return
 	deq = deque(list("😂🤣😂🤣😂🤣"))
-	for _ in range(999):
+	for _ in range(20):
 		await asyncio.sleep(1)
 		await event.edit("".join(deq))
 		deq.rotate(1)
