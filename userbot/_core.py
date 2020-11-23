@@ -36,10 +36,10 @@ async def send(event):
         await pro.edit(
             f"**==> Plugin name:** `{input_str}`\n**==> Uploaded in {time_taken_in_ms} seconds only.**\n**==> Uploaded by:** [{DEFAULTUSER}](tg://user?id={hmm})\n"
         )
-        await asyncio.sleep(DELETE_TIMEOUT)
+        await asyncio.sleep(1)
         await event.delete()
     else:
-        await edit_or_reply(event, "**404**: __File Not Found__")
+        await event.edit("**ERROR 404**: __File Not Found__")
 
 
 @bot.on(admin_cmd(pattern="install"))
