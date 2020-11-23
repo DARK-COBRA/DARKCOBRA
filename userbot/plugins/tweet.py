@@ -332,24 +332,24 @@ async def tweet(event):
     await purge()
 
 
-@bot.on(admin_cmd(pattern="tweetme(?: |$)(.*)"))
+@borg.on(admin_cmd(pattern="tweetme(?: |$)(.*)"))
 
-async def teletweet(hehe):
-      what = hehe.pattern_match.group(1)
+async def tweetme(okie):
+#"""Creates random anime sticker!"""
+    what = okie.pattern_match.group(1)
     if not what:
-        if hehe.is_reply:
-            what = (await hehe.get_reply_message()).message
+        if okie.is_reply:
+            what = (await okie.get_reply_message()).message
         else:
-            await hehe.edit( "Tweets must contain some text, pero!")
+            await okie.edit("`Tweets must contain some text, pero!`")
             return
-    sticcers = await bot.inline_query("TwitterStatusBot", f"{(deEmojify(what))}")
-    await sticcers[0].click(
-        hehe.chat_id,
-        reply_to=hehe.reply_to_msg_id,
-        silent=True if hehe.is_reply else False,
-        hide_via=True,
-    )
-    await hehe.delete()
+    sticcers = await bot.inline_query(
+        "TwitterStatusBot", f"{(deEmojify(what))}")
+    await sticcers[0].click(okie.chat_id,
+                            reply_to=okie.reply_to_msg_id,
+                            silent=True if okie.is_reply else False,
+                            hide_via=True)
+    await okie.delete()
 
 CMD_HELP.update(
     {
