@@ -181,7 +181,7 @@ async def johnny(event):
     await purge()
 
 @register(outgoing=True, pattern=r"^\.sunny(?: |$)(.*)")
- async def sunny(event):
+async def sunny(event):
      text = event.pattern_match.group(1)
         text = re.sub("&", "", text)
       reply_to_id = event.message
