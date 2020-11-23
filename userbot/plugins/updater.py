@@ -2,7 +2,7 @@
 #Syntax: .update
 #\nAll Credits goes to © @hellboi_atul
 #\nFor this awasome plugin.\nPorted from PpaperPlane Extended"""
-
+from telethon import events
 from os import remove, execle, path, makedirs, getenv, environ, execl
 from shutil import rmtree
 import asyncio
@@ -140,11 +140,11 @@ async def upstream(ups):
         else:
             remote = repo.create_remote("heroku", heroku_git_url)
             await ups.edit("⬛⬛⬛⬛ \n⬛🔴🔴⬛ \n⬛🔴🔴⬛ \n⬛⬛⬛⬛ \n")
-           await asyncio.sleep(2)
-           await ups.edit("⬛⬛⬛⬛ \n⬛🌕🌕⬛ \n⬛🌕🌕⬛ \n⬛⬛⬛⬛ \n")
-           await asyncio.sleep(2)
-           await ups.edit("⬛⬛⬛⬛ \n⬛❇️❇️⬛ \n⬛❇️❇️⬛ \n⬛⬛⬛⬛ \n")
-           await asyncio.sleep(2)
+            await asyncio.sleep(1)
+            await ups.edit("⬛⬛⬛⬛ \n⬛🌕🌕⬛ \n⬛🌕🌕⬛ \n⬛⬛⬛⬛ \n")
+            await asyncio.sleep(1)
+            await ups.edit("⬛⬛⬛⬛ \n⬛❇️❇️⬛ \n⬛❇️❇️⬛ \n⬛⬛⬛⬛ \n")
+            await asyncio.sleep(1)
         await ups.edit("`⚜️Updating and Deploying Update.⚜️\nPlease wait 5 mins 😁😁,then try .alive to check 😎😎\n\n**Powered by :-**` @DARK_COBRA_SUPPORT ")
         remote.push(refspec="HEAD:refs/heads/master", force=True)
     else:
