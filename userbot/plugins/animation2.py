@@ -619,7 +619,7 @@ E = ("▬▬▬.◙.▬▬▬ \n"
 "╬═╬ Hello, My Friend :D \n"
 "╬═╬☻/ \n"
 "╬═╬/▌ \n"
-"╬═╬/ \")
+"╬═╬/ \ \n")
 
 
 @borg.on(admin_cmd(pattern=r"monster"))
