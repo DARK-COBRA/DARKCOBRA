@@ -59,8 +59,7 @@ async def upstream(ups):
         return
     except InvalidGitRepositoryError as error:
         if conf != "now":
-            await ups.edit(f"Hey, did you type update🤔.....Okie..My dear sweet master..🤗\
-            \nPlease do type |.update now| to update your DARK-COBRA😎.")
+            await ups.edit(f"**Hey ßoss!!!**😁😁\n__To get the Latest update of__ @DARK_COBRA_SUPPORT\n\n do |`.update now`| 😎😎 ")
             return
         repo = Repo.init()
         origin = repo.create_remote('upstream', off_repo)
@@ -143,9 +142,13 @@ async def upstream(ups):
             await asyncio.sleep(1)
             await ups.edit("⬛⬛⬛⬛ \n⬛🌕🌕⬛ \n⬛🌕🌕⬛ \n⬛⬛⬛⬛ \n")
             await asyncio.sleep(1)
+            await ups.edit("⬛⬛⬛⬛ \n⬛🔵🔵⬛ \n⬛🔵🔵⬛ \n⬛⬛⬛⬛ \n")
+            await asyncio.sleep(1)
+            await ups.edit("⬛⬛⬛⬛ \n⬛♋♋⬛ \n⬛♋♋⬛ \n⬛⬛⬛⬛ \n")
+            await asyncio.sleep(1)
             await ups.edit("⬛⬛⬛⬛ \n⬛❇️❇️⬛ \n⬛❇️❇️⬛ \n⬛⬛⬛⬛ \n")
             await asyncio.sleep(1)
-        await ups.edit("`⚜️Updating and Deploying Update.⚜️\nPlease wait 5 mins 😁😁,then try .alive to check 😎😎\n\n**Powered by :-**` @DARK_COBRA_SUPPORT ")
+        await ups.edit("`⚜️Updating Your DarkCobra⚜️\nPlease wait 5 mins 😁😁\nThen try .alive to check` 😎😎\n\n**Powered by :-** @DARK_COBRA_SUPPORT ")
         remote.push(refspec="HEAD:refs/heads/master", force=True)
     else:
         try:
