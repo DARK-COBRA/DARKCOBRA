@@ -19,7 +19,7 @@ if Config.TAG_LOG:
         )
     )
     async def all_messages_catcher(event):        
-     await event.forward_to(Var.TG_BOT_USER_NAME_BF_HER)
+         await event.forward_to(Var.TG_BOT_USER_NAME_BF_HER)
 
         # construct message
         # the message format is stolen from @MasterTagAlertBot
