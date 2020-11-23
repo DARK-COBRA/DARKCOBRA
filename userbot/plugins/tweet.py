@@ -15,7 +15,7 @@ import json
 from PIL import Image, ImageEnhance, ImageOps
 from userbot import CMD_HELP, bot
 from userbot.events import register
-from userbot.tweet import moditweet, johnnytweet, sunnytweet, kimtweet, bhautweet
+from userbot.tweet import moditweet, johnnytweet, sunnytweet, 
 from userbot.utils import admin_cmd
 
 EMOJI_PATTERN = re.compile(
@@ -138,25 +138,7 @@ async def johnny(event):
     await event.delete()
     await purge()
 
-@register(outgoing=True, pattern=r"^\.bhau(?: |$)(.*)")
-async def bhau(event):
-    text = event.pattern_match.group(1)
-    text = re.sub("&", "", text)
-    reply_to_id = event.message
-    if event.reply_to_msg_id:
-        reply_to_id = await event.get_reply_message()
-    if not text:
-        if event.is_reply and not reply_to_id.media:
-            text = reply_to_id.message
-        else:
-            await event.edit("`Send you text to Hindustani Bhau so he can tweet.`")
-            return
-    await event.edit("`Requesting Hindustani bhau to tweet...`")
-    text = deEmojify(text)
-    img = await bhautweet(text)
-    await event.client.send_file(event.chat_id, img, reply_to=reply_to_id)
-    await event.delete()
-    await purge()
+
 
 @register(outgoing=True, pattern=r"^\.sunny(?: |$)(.*)")
 async def sunny(event):
