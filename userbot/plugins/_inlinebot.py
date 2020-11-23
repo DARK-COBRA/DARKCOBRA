@@ -41,6 +41,10 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 link_preview=False
             )
         await event.answer([result] if result else None)
+   else:
+        reply_popp_up_alert = "Please get your own Userbot, and don't use mine!"
+        await event.answer(reply_popp_up_alert, cache_time=0, alert=True)
+
     @tgbot.on(events.callbackquery.CallbackQuery(  # pylint:disable=E0602
         data=re.compile(b"helpme_next\((.+?)\)")
     ))
