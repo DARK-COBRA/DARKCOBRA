@@ -94,8 +94,8 @@ async def _(event):
     await borg(functions.photos.DeletePhotosRequest(await event.client.get_profile_photos("me", limit= n)))    
     await borg(functions.account.UpdateProfileRequest(about=f"{bio}"))
     await borg(functions.account.UpdateProfileRequest(first_name=f"{fname}"))
-    await borg(functions.account.UpdateProfileRequest(first_name=f"{lname}"))
-     event.edit("succesfully reverted to your account back")
+    await borg(functions.account.UpdateProfileRequest(last_name=f"{lname}"))
+    event.edit("succesfully reverted to your account back")
     if BOTLOG:
         await event.client.send_message(BOTLOG_CHATID, f"#REVERT\nSuccesfully reverted back to your profile")
     
