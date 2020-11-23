@@ -129,9 +129,9 @@ async def johnny(event):
         if event.is_reply and not reply_to_id.media:
             text = reply_to_id.message
         else:
-            await event.edit("`Send you text to Modi so he can tweet.`")
+            await event.edit("`Send you text to Johnny so he can tweet.`")
             return
-    await event.edit("`Requesting Modi to tweet...`")
+    await event.edit("`Requesting Johnny to tweet...`")
     text = deEmojify(text)
     img = await johnnytweet(text)
     await event.client.send_file(event.chat_id, img, reply_to=reply_to_id)
@@ -149,9 +149,9 @@ async def sunny(event):
         if event.is_reply and not reply_to_id.media:
             text = reply_to_id.message
         else:
-            await event.edit("`Send you text to sunny so he can tweet.`")
+            await event.edit("`Send you text to Sunny so he can tweet.`")
             return
-    await event.edit("`Requesting sunny to tweet...`")
+    await event.edit("`Requesting Sunny to tweet...`")
     text = deEmojify(text)
     img = await sunnytweet(text)
     await event.client.send_file(event.chat_id, img, reply_to=reply_to_id)
