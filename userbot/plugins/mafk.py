@@ -93,13 +93,14 @@ async def on_afk(event):
         msg = None# Originally by @NOOB_GUY_OP
 # I think its first for DARKCOBRA
         message_to_reply = (
-            f"__My Master Has Been In afk since__ `{total_afk_time}`\nWhere He Is: I don't know dear friend..he is a too busy person "
-            + f"\n\n__I can't guarantee you that when he will come..__\n**REASON**: {reason}"
-            if reason
-            else f"**Heyy!**\n__I am currently unavailable. Since when, you ask? For {total_afk_time} I think.__\n\nWhen will I be back? Soon __Whenever I feel like coming back__**(o(^▽^)o)**  "
+            f"✨✨**ßoss #AFK since :-**`{total_afk_time}`"
+            + f"\n\n🔸__If AnyThing Imp Then dm __🔸"
+            + f"\n\n__\n\n⚜️**Reason:-** `{reason}`"
+  if reason
+            else f"**Heyy!**\n\n**✨ßoss #AFK since :-** `{total_afk_time}`\n\n__Keep patients 😁😁__ or __Dm if Imp__ "
         )
         msg = await event.reply(message_to_reply, file=pic)
-        await asyncio.sleep(5)
+        await asyncio.sleep(2.5)
         if event.chat_id in last_afk_message:  # pylint:disable=E0602
             await last_afk_message[event.chat_id].delete()  # pylint:disable=E0602
         last_afk_message[event.chat_id] = msg  # pylint:disable=E0602
@@ -139,7 +140,7 @@ async def _(event):
             )
         else:
             await borg.send_message(event.chat_id, f"**I am Going afk!**", file=pic)
-        await asyncio.sleep(5)
+        await asyncio.sleep(0.001)
         await event.delete()
         try:
             await borg.send_message(  # pylint:disable=E0602
