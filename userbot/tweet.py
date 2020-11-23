@@ -23,7 +23,7 @@ async def moditweet(text):
 
 async def sunnytweet(text):
     r = requests.get(
-        f"https://nekobot.xyz/api/imagegen?type=tweet&text={text}&username=narendramodi"
+        f"https://nekobot.xyz/api/imagegen?type=tweet&text={text}&username=sunnyleone"
     ).json()
     dc = r.get("message")
     cobra = url(dc)
@@ -37,7 +37,7 @@ async def sunnytweet(text):
 
 async def johnnytweet(text):
     r = requests.get(
-        f"https://nekobot.xyz/api/imagegen?type=tweet&text={text}&username=narendramodi"
+        f"https://nekobot.xyz/api/imagegen?type=tweet&text={text}&username=johnnysins"
     ).json()
     dc = r.get("message")
     cobra = url(dc)
