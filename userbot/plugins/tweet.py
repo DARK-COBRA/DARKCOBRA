@@ -178,25 +178,7 @@ async def sunny(event):
     await event.delete()
     await purge()
 
-@register(outgoing=True, pattern=r"^\.kim(?: |$)(.*)")
-async def kim(event):
-    text = event.pattern_match.group(1)
-    text = re.sub("&", "", text)
-    reply_to_id = event.message
-    if event.reply_to_msg_id:
-        reply_to_id = await event.get_reply_message()
-    if not text:
-        if event.is_reply and not reply_to_id.media:
-            text = reply_to_id.message
-        else:
-            await event.edit("`Send you text to Kim jong so he can tweet.`")
-            return
-    await event.edit("`Requesting Kim Jong to tweet...`")
-    text = deEmojify(text)
-    img = await kimtweet(text)
-    await event.client.send_file(event.chat_id, img, reply_to=reply_to_id)
-    await event.delete()
-    await purge()
+
 
 @register(outgoing=True, pattern=r"^\.modi(?: |$)(.*)")
 async def modi(event):
