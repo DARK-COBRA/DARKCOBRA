@@ -25,7 +25,7 @@ from telethon.tl.functions.photos import (DeletePhotosRequest,
                                           UploadProfilePhotoRequest)
 from telethon.tl.types import InputPhoto, MessageMediaPhoto, User, Chat, Channel
 from userbot import bot, CMD_HELP , AUTONAME , DEFAULT_BIO , ALIVE_NAME
-
+DARKCOBRA = " "
 DEFAULTUSER = str(AUTONAME) if AUTONAME else str(ALIVE_NAME)
 DEFAULTUSERBIO = str(DEFAULT_BIO) if DEFAULT_BIO else "Dark Cobra is best"
 BOTLOG_CHATID = Config.PRIVATE_GROUP_BOT_API_ID
@@ -87,13 +87,15 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    name = f"{DEFAULTUSER}"
+    fname = f"{DEFAULTUSER}"
+    lname = f"{DARKCOBRA}"
     bio = f"{DEFAULTUSERBIO}"
     n = 1
     await borg(functions.photos.DeletePhotosRequest(await event.client.get_profile_photos("me", limit= n)))    
     await borg(functions.account.UpdateProfileRequest(about=f"{bio}"))
-    await borg(functions.account.UpdateProfileRequest(first_name=f"{name}"))
-    await event.edit("succesfully reverted to your account back")
+    await borg(functions.account.UpdateProfileRequest(first_name=f"{fname}"))
+    await borg(functions.account.UpdateProfileRequest(first_name=f"{lname}"))
+     event.edit("succesfully reverted to your account back")
     if BOTLOG:
         await event.client.send_message(BOTLOG_CHATID, f"#REVERT\nSuccesfully reverted back to your profile")
     
