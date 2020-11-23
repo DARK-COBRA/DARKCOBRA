@@ -144,7 +144,7 @@ async def upstream(ups):
             await asyncio.sleep(1)
             await ups.edit("⬛⬛⬛⬛ \n⬛🔵🔵⬛ \n⬛🔵🔵⬛ \n⬛⬛⬛⬛ \n")
             await asyncio.sleep(1)
-            await ups.edit("⬛⬛⬛⬛ \n⬛♋♋⬛ \n⬛♋♋⬛ \n⬛⬛⬛⬛ \n")
+            await ups.edit("⬛⬛⬛⬛ \n⬛☣️☣️⬛ \n⬛☣️☣️⬛ \n⬛⬛⬛⬛ \n")
             await asyncio.sleep(1)
             await ups.edit("⬛⬛⬛⬛ \n⬛❇️❇️⬛ \n⬛❇️❇️⬛ \n⬛⬛⬛⬛ \n")
             await asyncio.sleep(1)
