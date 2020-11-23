@@ -1,7 +1,7 @@
 """ Google Text to Speech
 Available Commands:
-.tts LanguageCode as reply to a message
-.tts LangaugeCode | text to speak"""
+.audio LanguageCode as reply to a message
+.audio LangaugeCode | text to speak"""
 
 
 
@@ -21,7 +21,7 @@ from userbot.utils import admin_cmd
 
 
 
-@borg.on(admin_cmd(pattern="tts (.*)"))
+@borg.on(admin_cmd(pattern="audio (.*)"))
 
 async def _(event):
 
