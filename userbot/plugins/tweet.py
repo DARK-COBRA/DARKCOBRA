@@ -372,3 +372,4 @@ CMD_HELP.update(
         ".type <text>"
         "\nUsage: random sticker is writing your text."
     }
+)
