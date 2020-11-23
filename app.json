@@ -50,7 +50,7 @@
     },
     "PMPERMIT_PIC": {
       "description": "put here any telegraph media link for pmpermit custom pic.",
-      "value": "",
+      "value": "https://telegra.ph/file/ad8430d78a8e1adb3d8ea.jpg",
       "required": true
     },
     "PM_PERMIT_GROUP_ID": {
@@ -97,7 +97,12 @@
     "PRIVATE_GROUP_ID": {
       "description": "Create a private group add rose bot then type /id. PLUGIN_CHANNEL and PRIVATE_GROUP_ID both values should be same",
       "value": ""
-    },
+   },
+    "TAG_LOG": {
+      "description": "Create a group where u want ur tags logs will come add rose bot then get id ,set value, if not then leave blank  ",
+      "value": "",
+      "required" : false
+   },
     "OCR_SPACE_API_KEY": {
       "description": "Needed for ocr.py, get it from ocr.space .",
       "value": "",
