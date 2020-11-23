@@ -1,8 +1,3 @@
-"""	
-	Anilist Search Plugin for Userbot	
-	Usage : .anilist animeName	
-	By :- @Zero_cool7870	
-"""
 
 import requests 
 import re
@@ -75,7 +70,7 @@ async def formatJSON(outData):
         msg += " __" + re.sub("<br>", '\n', cat) +"__"
         return msg
 
-@borg.on(admin_cmd(pattern="anilist ?(.*)"))
+@borg.on(admin_cmd(pattern="anime ?(.*)"))
 async def anilist(event):
 	if event.fwd_from:
 		return
