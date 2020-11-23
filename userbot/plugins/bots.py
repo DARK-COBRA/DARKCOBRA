@@ -203,12 +203,12 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "bots": ".purl <reply to file>\nUse - Get a direct download link of that file/doc/pic/vid\
-        \n\n.instadl <reply to instagram url>\\nUse - Download that instagram post.\
-        \n\n.reader <reply to url>\\nUse - Open that url in telegraph .\
-        \n\n.sgm <reply to any user or tag>\\nUse - send details of that user.\
-        \n\n.recognize <reply to any media>\\nUse - send details about it.\
-        \n\n.wspr <message> <target username/id>\nUse - Send a whisper message to that person.\
+        "bots": ".purl (reply to file)\nUse - Get a direct download link of that file/doc/pic/vid\
+        \n\n.instadl (reply to instagram url)\nUse - Download that instagram post.\
+        \n\n.reader (reply to url)\nUse - Open that url in telegraph .\
+        \n\n.sgm (reply to any user or tag)\nUse - send details of that user.\
+        \n\n.recognize (reply to any media)\nUse - send details about it.\
+        \n\n.wspr (message) (target username/id)\nUse - Send a whisper message to that person.\
         \n\n.limits\nUse - Check if you are limited by telegram."
     }
 )
