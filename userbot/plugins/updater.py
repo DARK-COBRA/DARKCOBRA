@@ -139,7 +139,13 @@ async def upstream(ups):
             remote.set_url(heroku_git_url)
         else:
             remote = repo.create_remote("heroku", heroku_git_url)
-        await ups.edit("Updating and Deploying New Update. Please wait for 5 minutes then use `.alive` to check if i'm working or not, you are my best boss...🤗🤗😎.. Just after this update a restart will take place..that's all- your DARK COBRA by @hellboi_atul ")
+            await ups.edit("⬛⬛⬛⬛ \n⬛🔴🔴⬛ \n⬛🔴🔴⬛ \n⬛⬛⬛⬛ \n")
+           await asyncio.sleep(2)
+           await ups.edit("⬛⬛⬛⬛ \n⬛🌕🌕⬛ \n⬛🌕🌕⬛ \n⬛⬛⬛⬛ \n")
+           await asyncio.sleep(2)
+           await ups.edit("⬛⬛⬛⬛ \n⬛❇️❇️⬛ \n⬛❇️❇️⬛ \n⬛⬛⬛⬛ \n")
+           await asyncio.sleep(2)
+        await ups.edit("`⚜️Updating and Deploying Update.⚜️\nPlease wait 5 mins 😁😁,then try .alive to check 😎😎\n\n**Powered by :-**` @DARK_COBRA_SUPPORT ")
         remote.push(refspec="HEAD:refs/heads/master", force=True)
     else:
         try:
@@ -156,7 +162,7 @@ async def upstream(ups):
     
 
 CMD_HELP.update({
-    'update':
+    'updater':
     ".update\
 \nUsage: Checks if the main userbot repository has any updates and shows a changelog if so.\
 \n\n.update now\
