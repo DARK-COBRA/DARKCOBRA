@@ -1,4 +1,4 @@
-
+#thx Telebot 😂😂😂
 
 from telethon import custom, events
 from telethon.tl.types import Channel
@@ -7,7 +7,7 @@ from telethon.utils import get_display_name
 from userbot.uniborgConfig import Config
 
 if Config.TAG_LOG:
-    DARKCOBRA = int(Config.TAG_LOG)
+    NEEDTOLOG = int(Config.TAG_LOG)
     
 if Config.TAG_LOG:
 
@@ -18,8 +18,10 @@ if Config.TAG_LOG:
             func=lambda e: (e.mentioned),
         )
     )
-    async def all_messages_catcher(event):        
-         await event.forward_to(Var.TG_BOT_USER_NAME_BF_HER)
+    async def all_messages_catcher(event):
+        # the bot might not have the required access_hash to mention the
+        # appropriate PM
+        await event.forward_to(Var.TG_BOT_USER_NAME_BF_HER)
 
         # construct message
         # the message format is stolen from @MasterTagAlertBot
@@ -38,15 +40,21 @@ if Config.TAG_LOG:
 
         if isinstance(where_, Channel):
             message_link = f"https://t.me/c/{where_.id}/{event.id}"
-        else:            
+        else:
+            # not an official link,
+            # only works in DrKLO/Telegram,
+            # for some reason
             message_link = f"tg://openmessage?chat_id={where_.id}&message_id={event.id}"
-             ammoca_message += f"{who_m} tagged you in [{where_m}]({message_link})"
-        if DARKCOBRA is not None:
+            # Telegram is weird :\
+
+        ammoca_message += f"{who_m} tagged you in [{where_m}]({message_link})"
+        if NEEDTOLOG is not None:
             await tgbot.send_message(
-                entity=DARKCOBRA,
+                entity=NEEDTOLOG,
                 message=ammoca_message,
                 link_preview=False,
                 buttons=[[custom.Button.url(button_text, message_link)]],
-                silent=True,)
-         else:
+                silent=True,
+            )
+        else:
             return
