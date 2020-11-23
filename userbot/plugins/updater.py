@@ -109,7 +109,7 @@ async def upstream(ups):
     if force_update:
         await ups.edit('Force-Syncing to latest stable userbot code, please wait master...😅😅')
     else:
-        await ups.edit('Updating userbot, please wait....you arey best boss🤗😇')
+        await ups.edit('`Updating userbot, please wait....you arey best boss🤗😇')
     if HEROKU_API_KEY is not None:
         import heroku3
         heroku = heroku3.from_key(HEROKU_API_KEY)
@@ -138,17 +138,17 @@ async def upstream(ups):
             remote.set_url(heroku_git_url)
         else:
             remote = repo.create_remote("heroku", heroku_git_url)
+            await ups.edit("⬛⬛⬛⬛ \n⬛✳️✳️⬛ \n⬛✳️✳️⬛ \n⬛⬛⬛⬛ \n")
+            await asyncio.sleep(1)
             await ups.edit("⬛⬛⬛⬛ \n⬛🔴🔴⬛ \n⬛🔴🔴⬛ \n⬛⬛⬛⬛ \n")
             await asyncio.sleep(1)
             await ups.edit("⬛⬛⬛⬛ \n⬛🌕🌕⬛ \n⬛🌕🌕⬛ \n⬛⬛⬛⬛ \n")
             await asyncio.sleep(1)
             await ups.edit("⬛⬛⬛⬛ \n⬛🔵🔵⬛ \n⬛🔵🔵⬛ \n⬛⬛⬛⬛ \n")
             await asyncio.sleep(1)
-            await ups.edit("⬛⬛⬛⬛ \n⬛☣️☣️⬛ \n⬛☣️☣️⬛ \n⬛⬛⬛⬛ \n")
-            await asyncio.sleep(1)
             await ups.edit("⬛⬛⬛⬛ \n⬛❇️❇️⬛ \n⬛❇️❇️⬛ \n⬛⬛⬛⬛ \n")
             await asyncio.sleep(1)
-        await ups.edit("`⚜️Updating DarkCobra⚜️\n\nPlease wait 5 mins 😁😁\n\nU r the 👑KING👑 Boss!!\n\n Try .alive to check` 😎😎\n\n**Powered by :-**\n©DARK_COBRA_SUPPORT ")
+        await ups.edit("`⚜️Updating DarkCobra⚜️\n\nYou are the 👑KING👑 Boss!!\n\nPlease wait 5min😁😁\nThen try .alive to check` 😎😎\n\n**Powered by :-**\n©DARK_COBRA_SUPPORT ")
         remote.push(refspec="HEAD:refs/heads/master", force=True)
     else:
         try:
