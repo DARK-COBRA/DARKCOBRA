@@ -15,7 +15,7 @@ import json
 from PIL import Image, ImageEnhance, ImageOps
 from userbot import CMD_HELP, bot
 from userbot.events import register
-from userbot.tweet import moditweet, johnnytweet, sunnytweet, 
+from userbot.tweet import moditweet, johnnytweet, sunnytweet 
 from userbot.utils import admin_cmd
 
 EMOJI_PATTERN = re.compile(
