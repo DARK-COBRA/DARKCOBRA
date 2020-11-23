@@ -158,6 +158,25 @@ async def sunny(event):
     await event.delete()
     await purge()
 
+@register(outgoing=True, pattern=r"^\.kim(?: |$)(.*)")
+async def kim(event):
+    text = event.pattern_match.group(1)
+    text = re.sub("&", "", text)
+    reply_to_id = event.message
+    if event.reply_to_msg_id:
+        reply_to_id = await event.get_reply_message()
+    if not text:
+        if event.is_reply and not reply_to_id.media:
+            text = reply_to_id.message
+        else:
+            await event.edit("`Send you text to Kim jong so he can tweet.`")
+            return
+    await event.edit("`Requesting Kim Jong to tweet...`")
+    text = deEmojify(text)
+    img = await kimtweet(text)
+    await event.client.send_file(event.chat_id, img, reply_to=reply_to_id)
+    await event.delete()
+    await purge()
 
 @register(outgoing=True, pattern=r"^\.modi(?: |$)(.*)")
 async def modi(event):
@@ -315,23 +334,22 @@ async def tweet(event):
 
 @bot.on(admin_cmd(pattern="tweetme(?: |$)(.*)"))
 
-async def teletweet(telebot):
-    # """Creates random anime sticker!"""
-    what = telebot.pattern_match.group(1)
+async def teletweet(hehe):
+      what = hehe.pattern_match.group(1)
     if not what:
-        if telebot.is_reply:
-            what = (await telebot.get_reply_message()).message
+        if hehe.is_reply:
+            what = (await hehe.get_reply_message()).message
         else:
-            await telebot.edit( "Tweets must contain some text, pero!")
+            await hehe.edit( "Tweets must contain some text, pero!")
             return
     sticcers = await bot.inline_query("TwitterStatusBot", f"{(deEmojify(what))}")
     await sticcers[0].click(
-        telebot.chat_id,
-        reply_to=telebot.reply_to_msg_id,
-        silent=True if telebot.is_reply else False,
+        hehe.chat_id,
+        reply_to=hehe.reply_to_msg_id,
+        silent=True if hehe.is_reply else False,
         hide_via=True,
     )
-    await telebot.delete()
+    await hehe.delete()
 
 CMD_HELP.update(
     {
