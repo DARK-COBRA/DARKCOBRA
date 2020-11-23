@@ -43,7 +43,7 @@ def deEmojify(inputString: str) -> str:
 
 async def sunny(text):
         r = requests.get(
-            f"https://nekobot.xyz/api/imagegen?type=tweet&text={text}&username=Sunnyleone").json()
+            f"https://nekobot.xyz/api/imagegen?type=tweet&text={text}&username=sunnyleone").json()
         cobra = r.get("message")
         dan = url(cobra)
         if not dan:
@@ -55,6 +55,20 @@ async def sunny(text):
         return "danish.webp"
 
 #hmmmmm
+
+async def johnny(text):
+        r = requests.get(
+            f"https://nekobot.xyz/api/imagegen?type=tweet&text={text}&username=johnnysins").json()
+        heho = r.get("message")
+        nikal = url(heho)
+        if not nikal:
+            return  "check syntax once more"
+        with open("dcd.png", "wb") as f:
+            f.write(requests.get(heho).content)
+        img = Image.open("dcd.png").convert("RGB")
+        img.save("dcd.webp", "webp")    
+        return "dcd.webp"
+#hohoho
 
 async def moditweet(text):
         r = requests.get(
@@ -99,19 +113,6 @@ async def changemymind(text):
     return "gpx.webp"
 
 #hehe
-async def kannagen(text):
-    r = requests.get(
-        f"https://nekobot.xyz/api/imagegen?type=kannagen&text={text}"
-    ).json()
-    geng = r.get("message")
-    kapak = url(geng)
-    if not kapak:
-        return "check syntax once more"
-    with open("gpx.png", "wb") as f:
-        f.write(requests.get(geng).content)
-    img = Image.open("gpx.png").convert("RGB")
-    img.save("gpx.webp", "webp")
-    return "gpx.webp"
 
 
 
@@ -139,7 +140,6 @@ async def purge():
     except OSError:
         pass
 
-
 @register(outgoing=True, pattern=r"^\.trump(?: |$)(.*)")
 async def trump(event):
     text = event.pattern_match.group(1)
@@ -160,12 +160,32 @@ async def trump(event):
     await event.delete()
     await purge()
 
-@register(outgoing=True, pattern=r"^\.sunny(?: |$)(.*)")
-async def sunny(event):
+@register(outgoing=True, pattern=r"^\.johnny(?: |$)(.*)")
+async def johnny(event):
     text = event.pattern_match.group(1)
     text = re.sub("&", "", text)
     reply_to_id = event.message
     if event.reply_to_msg_id:
+        reply_to_id = await event.get_reply_message()
+    if not text:
+        if event.is_reply and not reply_to_id.media:
+            text = reply_to_id.message
+        else:
+            await event.edit("`Send you text to Johnny so he can tweet.`")
+            return
+    await event.edit("`Requesting Sins to tweet...`")
+    text = deEmojify(text)
+    img = await johnny(text)
+    await event.client.send_file(event.chat_id, img, reply_to=reply_to_id)
+    await event.delete()
+    await purge()
+
+@register(outgoing=True, pattern=r"^\.sunny(?: |$)(.*)")
+ async def sunny(event):
+     text = event.pattern_match.group(1)
+        text = re.sub("&", "", text)
+      reply_to_id = event.message
+      if event.reply_to_msg_id:
         reply_to_id = await event.get_reply_message()
     if not text:
         if event.is_reply and not reply_to_id.media:
