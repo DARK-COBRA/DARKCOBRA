@@ -183,11 +183,11 @@ async def johnny(event):
 @register(outgoing=True, pattern=r"^\.sunny(?: |$)(.*)")
 async def sunny(event):
      text = event.pattern_match.group(1)
-        text = re.sub("&", "", text)
-      reply_to_id = event.message
-      if event.reply_to_msg_id:
-        reply_to_id = await event.get_reply_message()
-    if not text:
+     text = re.sub("&", "", text)
+     reply_to_id = event.message
+     if event.reply_to_msg_id:
+         reply_to_id = await event.get_reply_message()
+     if not text:
         if event.is_reply and not reply_to_id.media:
             text = reply_to_id.message
         else:
