@@ -1,3 +1,7 @@
+#dc
+
+#dc
+#dc
 import os
 import re
 import requests
@@ -50,7 +54,7 @@ async def sunny(text):
         img.save("danish.webp", "webp")    
         return "danish.webp"
 
-
+#hmmmmm
 
 async def moditweet(text):
         r = requests.get(
@@ -64,7 +68,7 @@ async def moditweet(text):
         img = Image.open("dc.png").convert("RGB")
         img.save("dc.webp", "webp")    
         return "dc.webp"
-
+#hohoho
 async def trumptweet(text):
     r = requests.get(
         f"https://nekobot.xyz/api/imagegen?type=trumptweet&text={text}"
@@ -78,7 +82,7 @@ async def trumptweet(text):
     img = Image.open("gpx.png").convert("RGB")
     img.save("gpx.webp", "webp")
     return "gpx.webp"
-
+#@danish_00
 
 async def changemymind(text):
     r = requests.get(
@@ -94,7 +98,7 @@ async def changemymind(text):
     img.save("gpx.webp", "webp")
     return "gpx.webp"
 
-
+#hehe
 async def kannagen(text):
     r = requests.get(
         f"https://nekobot.xyz/api/imagegen?type=kannagen&text={text}"
