@@ -1,7 +1,7 @@
 
 from telethon import events
 from userbot.utils import admin_cmd
-from userbot import ALIVE_NAME
+from userbot import ALIVE_NAME, CMD_HELP
 from collections import deque
 import importlib.util
 import random, re, asyncio
@@ -825,3 +825,12 @@ async def _(event):
     for i in animation_ttl:
             await asyncio.sleep(animation_interval)
             await event.edit(animation_chars[i % 8])
+
+
+
+CMD_HELP.update(
+    {
+        "animation1.py": ".help animation1"
+        "\nUsage: There's no need of help in this..just do .help animation1 and explore yourself.\n\n"
+    }
+)
