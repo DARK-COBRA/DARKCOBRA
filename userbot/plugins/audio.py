@@ -135,10 +135,20 @@ async def _(event):
 
         await event.edit("Processed {} ({}) in {} seconds!".format(text[0:97], lan, ms))
 
-        await asyncio.sleep(5)
+        await asyncio.sleep(0.2)
 
         await event.delete()
 
     except Exception as e:
 
         await event.edit(str(e))
+
+
+CMD_HELP.update(
+    {
+        "audio": ".audio <language code> "
+        "\nUsage: reply any msg with .audio (language code) example .audio en / .audio hi\n\n"
+        ".audio <language code> | <msg> "
+        "\nUsage: convert text to Audio example .audio en|msg (note:- this | mark is important.\n\n"
+    }
+)
