@@ -682,16 +682,16 @@ async def main(event):
 CMD_HELP.update(
     {
         "auto_pic": 
-    "use any cmd to auto change ur profile photo"
-    "\navengersdp 
-    \nhacker 
-    \nmarveldp 
-    \npredatordp 
-    \nspacedp 
-    \nsurvivorpfp 
-    \nactiondp 
-    \nanimedp 
-    \ngamerpfp"
+    "use any cmd to auto change ur profile photo      
+    avengersdp ,
+    .hacker ,
+    .marveldp ,
+    .predatordp ,
+    .spacedp ,
+    .survivorpfp ,
+    .actiondp ,
+    .animedp ,
+    .gamerpfp"
     
     }
 )
