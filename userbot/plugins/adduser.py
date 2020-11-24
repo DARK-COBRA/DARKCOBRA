@@ -3,7 +3,7 @@ Syntax: .edd <User(s)>"""
 
 from telethon import functions
 from userbot.utils import admin_cmd
-
+from userbot import CMD_HELP
 
 @borg.on(admin_cmd(pattern="edd ?(.*)"))
 async def _(event):
@@ -35,3 +35,9 @@ async def _(event):
                 except Exception as e:
                     await event.reply(str(e))
             await event.edit("ADDED the user to the chat successfully.")
+CMD_HELP.update(
+    {
+        "adduser": 
+    ".edd <username>"
+    "\nAdd the username in the grp/channel where u type."
+    })
