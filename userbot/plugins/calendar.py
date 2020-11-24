@@ -6,6 +6,7 @@ from datetime import datetime
 import requests
 import json
 from uniborg.util import admin_cmd
+from userbot import CMD_HELP
 
 
 @borg.on(admin_cmd(pattern="calendar (.*)"))
@@ -14,7 +15,7 @@ async def _(event):
         return
     start = datetime.now()
     input_str = event.pattern_match.group(1)
-    input_sgra = input_str.split("-")
+    input_sgra = input_str.split(".")
     if len(input_sgra) == 3:
         yyyy = input_sgra[0]
         mm = input_sgra[1]
@@ -30,6 +31,12 @@ async def _(event):
             a = response_content["error"]
         await event.edit(str(a))
     else:
-        await event.edit("SYNTAX: .calendar YYYY-MM-DD")
+        await event.edit("SYNTAX: .calendar YYYY.MM.DD")
     end = datetime.now()
     ms = (end - start).seconds
+CMD_HELP.update(
+    {
+        "calendar": 
+    ".calendar YYYY.MM.DD "
+    "\nshow calendar"
+    })
