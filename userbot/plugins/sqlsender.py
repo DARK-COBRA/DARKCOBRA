@@ -1,4 +1,4 @@
-from userbot import client, CMD_HELP, CMD_LIST
+from userbot import *
 from telethon import events
 from userbot.events import *
 from telethon import functions, types
@@ -42,7 +42,7 @@ async def send(event):
         
 CMD_HELP.update({
     "sqlsender":
-    "`!sqlsend <sql_helpername>`\
+    "`.sqlsend <sql_helpername>`\
 \n**Usage:** send the sql helper\
 \n\n``\
 \n****\
