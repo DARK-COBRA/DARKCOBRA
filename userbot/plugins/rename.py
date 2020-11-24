@@ -80,6 +80,6 @@ CMD_HELP.update(
         "rename": 
     ".rename filename."
     "\nReply to media with above command to rename and upload the file with given name__"
-    "
+    
     }
 )
