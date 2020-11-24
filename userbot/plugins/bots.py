@@ -50,43 +50,6 @@ async def _(event):
               await event.edit("sorry, I couldnt find it")
               
 
-@borg.on(admin_cmd(pattern="instadl ?(.*)"))
-async def _(event):
-    if event.fwd_from:
-        return 
-    if not event.reply_to_msg_id:
-       await event.edit("```Reply to any user message.```")
-       return
-    reply_message = await event.get_reply_message() 
-    chat = "allsaverbot"
-    sender = reply_message.sender
-    if reply_message.sender.bot:
-       await event.edit("```Reply to actual users message.```")
-       return
-    await event.edit("```Opening 😅😅```")
-    async with event.client.conversation(chat) as conv:
-          try:     
-              response = conv.wait_event(events.NewMessage(incoming=True,from_users=804576054))
-              response2 = conv.wait_event(events.NewMessage(incoming=True,from_users=804576054))
-              response3 = conv.wait_event(events.NewMessage(incoming=True,from_users=804576054))
-              await asyncio.sleep(3)
-              await event.client.forward_messages(chat, reply_message)
-              await asyncio.sleep(2)
-              response = await response
-              response = await response2 
-              response = await response3
-          except YouBlockedUserError: 
-              await asyncio.sleep(3)
-              await event.reply("```Please unblock (allsaverbot) ```")
-              return
-          if response.text.startswith("Hi!"):
-             await asyncio.sleep(3)
-             await event.edit("```Can you kindly disable your forward privacy settings```")
-          else: 
-             await asyncio.sleep(3)
-             await event.delete()
-             await asyncio.sleep(2)
-             await event.client.send_message(event.chat_id, response.message)
 
 @borg.on(admin_cmd(pattern="wspr ?(.*)"))
 async def wspr(event):
@@ -204,7 +167,6 @@ async def _(event):
 CMD_HELP.update(
     {
         "bots": ".purl (reply to file)\nUse - Get a direct download link of that file/doc/pic/vid\
-        \n\n.instadl (reply to instagram url)\nUse - Download that instagram post.\
         \n\n.reader (reply to url)\nUse - Open that url in telegraph .\
         \n\n.sgm (reply to any user or tag)\nUse - send details of that user.\
         \n\n.recognize (reply to any media)\nUse - send details about it.\
