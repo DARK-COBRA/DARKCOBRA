@@ -683,7 +683,7 @@ CMD_HELP.update(
     {
         "auto_pic": 
     
-    "type any of these cmd nd it makes ur profile pic auto change in interval of 400sec 🙂\n\n.actressdp 
+    "type any of these cmd nd it makes ur profile pic auto change in interval of 400sec 🙂""\n.actressdp 
     \n.avengersdp 
     \n.hacker 
     \n.marveldp 
