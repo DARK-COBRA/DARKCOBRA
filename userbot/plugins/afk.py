@@ -1,6 +1,6 @@
-# by uniborg...Thanks @spechide 
+
 # Now will be used in DARK COBRA too....
-"""Syntax: .afk REASON"""
+
 import asyncio
 import datetime
 from datetime import datetime
@@ -117,13 +117,13 @@ async def on_afk(event):
         #           afk_since = f"`{int(seconds)}s` **ago**"
         msg = None
         message_to_reply = (
-            f"__My Master Has Been In afk since__ `{total_afk_time}`\nWhere He Is: I don't know buddy..he is a busy person "
-            + f"\n\n__I can't guarantee you that when he will come..__\n**REASON**: {reason}"
+            f"__ Master Been #AFK since__ `{total_afk_time}`"
+            + f"\n\n_\n**REASON**: {reason}"
             if reason
-            else f"**Heyy!**\n__I am currently unavailable. Since when, you ask? For {total_afk_time} I guess.__\n\nWhen will I be back? Soon __Whenever I feel like coming back__**(o(^▽^)o)**  "
+            else f"**Hey!!**\n`Master is  #AFK`\n\n__Since__>>> {total_afk_time}"
         )
         msg = await event.reply(message_to_reply)
-        await asyncio.sleep(5)
+        await asyncio.sleep(2)
         if event.chat_id in last_afk_message:  # pylint:disable=E0602
             await last_afk_message[event.chat_id].delete()  # pylint:disable=E0602
         last_afk_message[event.chat_id] = msg  # pylint:disable=E0602
@@ -155,11 +155,11 @@ async def _(event):
         USER_AFK = f"yes: {reason}"  # pylint:disable=E0602
         if reason:
             await borg.send_message(
-                event.chat_id, f"**I shall be Going afk!** __because ~ {reason}__"
+                event.chat_id, f"**I shall be Going afk!**\n __Reason >>> {reason}__"
             )
         else:
             await borg.send_message(event.chat_id, f"**I am Going afk!**")
-        await asyncio.sleep(5)
+        await asyncio.sleep(2)
         await event.delete()
         try:
             await borg.send_message(  # pylint:disable=E0602
