@@ -14,6 +14,8 @@ import asyncio
 import os
 import random
 from userbot.utils import admin_cmd
+from userbot import CMD_HELP
+
 #@borg.on(events.NewMessage(pattern=r"\.karb ", outgoing=True))
 @borg.on(admin_cmd(pattern="karb"))
 async def carbon_api(e):
@@ -108,3 +110,10 @@ async def carbon_api(e):
    os.remove('./carbon.png')
    # Removing carbon.png after uploading
    await e.delete() # Deleting msg
+
+CMD_HELP.update(
+    {
+        "carbonRBG": 
+    ".karb <reply to text> "
+    "\nCreate a cool random colorful carbon image for that text 😂😂(not work in media)"
+    })
