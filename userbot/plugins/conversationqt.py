@@ -33,7 +33,7 @@ import random
 
 from userbot.utils import admin_cmd
 
-
+from userbot import CMD_HELP
 
 
 
@@ -543,3 +543,11 @@ async def _(event):
 
 
         await event.edit("`\"What’s something you misunderstood as a child and only realized much later was wrong?\"`")
+
+
+CMD_HELP.update(
+    {
+        "conversationqt": 
+    ".qt "
+    "\nAsk a random question which helps u in conversation 🤗"
+    })
