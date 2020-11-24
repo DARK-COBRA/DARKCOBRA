@@ -67,4 +67,4 @@ CMD_HELP.update(
         "barcode": 
     ".barcode <reply to any text> "
     "\nCreate a barcode for that text 😂😂(not work in media)"
-    "
+    })
