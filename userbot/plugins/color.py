@@ -10,7 +10,7 @@ from userbot import CMD_HELP
 
 DARKCOBRA = Config.DEEP_AI if Config.DEEP_AI else "quickstart-QUdJIGlzIGNvbWluZy4uLi4K"
 @borg.on(admin_cmd(pattern="colp$", outgoing=True))
-async def detect(event):
+async def _(event):
     
                
     reply = await event.get_reply_message()
@@ -19,14 +19,14 @@ async def detect(event):
         return await event.edit(
            "Reply to any image or non animated sticker !"
         )
-    devent = await event.edit("Downloading the file to check...")
+    devent = await event.edit("`Downloading the file😅😁😁....`")
     media = await event.client.download_media(reply)
     if not media.endswith(("png", "jpg", "webp")):
         return await event.edit(
              "Reply to any image or non animated sticker !"
         )#By @Danish_00
 #Fixed By a NOOB
-    devent = await event.edit("coloring image sar...")
+    devent = await event.edit("`Coloring image 🎨🖌️...`")#hehehhehehhe
     r = requests.post(
         "https://api.deepai.org/api/colorizer",
         files={
@@ -45,13 +45,13 @@ async def detect(event):
     result = f"{r_json}"
     
     await devent.delete()
-    await borg.send_message(
+    await borg.send_message(#hehehhehehehehheh
         event.chat_id,
         file=result
     )
 
 
-
+#hehehehehe
 CMD_HELP.update(
     {
         "color": 
