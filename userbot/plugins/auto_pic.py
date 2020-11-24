@@ -682,16 +682,8 @@ async def main(event):
 CMD_HELP.update(
     {
         "auto_pic": 
-    "use any cmd to auto change ur profile photo      
-    avengersdp ,
-    .hacker ,
-    .marveldp ,
-    .predatordp ,
-    .spacedp ,
-    .survivorpfp ,
-    .actiondp ,
-    .animedp ,
-    .gamerpfp"
+    "use given cmds in .help auto_pic"
+    "\nto change ur profile picture automatically in every 400sec"
     
     }
 )
