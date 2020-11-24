@@ -168,3 +168,9 @@ async def carbon_api(e):
 
    await e.delete() # Deleting msg
    
+CMD_HELP.update(
+    {
+        "carbon": 
+    ".carbon <reply to any text> "
+    "\nCreate a cool carbon image for that text 😂😂(not work in media)"
+    })
