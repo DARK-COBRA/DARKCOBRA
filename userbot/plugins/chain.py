@@ -5,6 +5,7 @@
 from telethon import events
 from telethon.tl.functions.messages import SaveDraftRequest
 from userbot.utils import admin_cmd
+from userbot import CMD_HELP
 
 @borg.on(admin_cmd(pattern="chain"))
 async def _(event):
@@ -22,3 +23,11 @@ async def _(event):
         message = reply
         count += 1
     await event.edit(f"Chain length: {count}")
+
+
+CMD_HELP.update(
+    {
+        "chain": 
+    ".chain <reply to any msg> "
+    "\nCount the chain length means the reply-reply how many times 😂😂"
+    })
