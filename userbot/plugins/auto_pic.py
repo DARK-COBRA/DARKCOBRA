@@ -679,11 +679,28 @@ async def main(event):
         await event.client(functions.photos.UploadProfilePhotoRequest( file))
         os.system("rm -rf donottouch.jpg")
         await asyncio.sleep(400)
+
 CMD_HELP.update(
     {
-        "auto_pic": 
-    "use given cmds in .help auto_pic"
-    "\nto change ur profile picture automatically in every 400sec"
-    
-    }
+        "auto_pic": ".actressdp"
+        "\nUsage: Change ur profile pic automatically\n\n"
+        ".avengersdp"
+        "\nUsage: Change ur profile pic automatically\n\n"
+        ".hacker"
+        "\nUsage: Change ur profile pic automatically\n\n"
+        ".marveldp"
+        "\nUsage: Change ur profile pic automatically\n\n"
+        ".predatordp"
+        "\nUsage: Change ur profile pic automatically\n\n"
+        ".spacedp"
+        "\nUsage: Change ur profile pic automatically\n\n"
+        ".survivorpfp"
+        "\nUsage: Change ur profile pic automatically\n\n"
+        ".actiondp"
+        "\nUsage: Change ur profile pic automatically\n\n"
+        ".animedp"
+        "\nUsage: Change ur profile pic automatically\n\n"
+        ".gamerpfp"
+        "\nUsage: Change ur profile pic automatically\n\n"
+        }
 )
