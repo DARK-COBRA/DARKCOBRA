@@ -83,11 +83,11 @@ CMD_HELP.update(
     {
         "spam": ".spam <no of msgs> <your msg>"
         "\nUsage: spams the current chat, the current limit for this is from 1 to 99.\n\n"
-        "bigspam": ".bigspam <no of msgs> <your msg>"
+        ".bigspam <no of msgs> <your msg>"
         "\nUsage: Spams the current chat, the current limit is above 100.\n\n"
-        "pspam": ".pspam <no of pics to spam> <telegraph link of that pic>"
+        ".pspam <no of pics to spam> <telegraph link of that pic>"
         "\nUsage: Spams the current chat with number you pics you did put in <no of pics to spam>.\n\n"
-        "deplayspam": "Not working well, will be fixed soon!"
+        ".delayspam <delay time> <count> <msg>"
         "\nUsage: Spams the current chat with with the input msgs with a delay time that has been given as its input.\n\n"
     }
 )
