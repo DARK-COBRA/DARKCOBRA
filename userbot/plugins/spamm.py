@@ -1,11 +1,9 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.
-#
-# Licensed under the Raphielscape Public License, Version 1.b (the "License");
-# you may not use this file except in compliance with the License.
-#
+# By dark cobra for Dark cobra with logger support
+# Kang with credits..
 
 import asyncio
 from asyncio import wait
+from userbot import CMD_HELP
 
 
 from userbot.events import register
@@ -50,7 +48,7 @@ async def bigspam(e):
                 )
         
         
-@register(outgoing=True, pattern="^.picspam")
+@register(outgoing=True, pattern="^.pspam")
 async def tiny_pic_spam(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         message = e.text
@@ -80,3 +78,16 @@ async def spammer(e):
             LOGGER_GROUP, "#DelaySPAM\n"
             "DelaySpam was executed successfully")
             
+
+CMD_HELP.update(
+    {
+        "spam": ".spam <no of msgs> <your msg>"
+        "\nUsage: spams the current chat, the current limit for this is from 1 to 99.\n\n"
+        "bigspam": ".bigspam <no of msgs> <your msg>"
+        "\nUsage: Spams the current chat, the current limit is above 100.\n\n"
+        "pspam": ".pspam <no of pics to spam> <telegraph link of that pic>"
+        "\nUsage: Spams the current chat with number you pics you did put in <no of pics to spam>.\n\n"
+        "deplayspam": "Not working well, will be fixed soon!"
+        "\nUsage: Spams the current chat with with the input msgs with a delay time that has been given as its input.\n\n"
+    }
+)
