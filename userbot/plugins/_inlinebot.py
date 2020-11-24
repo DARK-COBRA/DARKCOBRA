@@ -130,8 +130,10 @@ def paginate_help(page_number, loaded_plugins, prefix):
         if not p.startswith("_"):
             helpable_plugins.append(p)
     helpable_plugins = [p for p in loaded_plugins if not p.startswith("_")]
-   modules = [custom.Button.inline(
-        "{} {} {}".format(random.choice(list(multi)), x, random.choice(list(multi))),
+
+       modules =  [
+                 custom.Button.inline(
+        "{} {}".format(random.choice(list(multi)), x, random.choice(list(multi))),
         data="us_plugin_{}".format(x))
         for x in helpable_plugins]
     if number_of_cols == 1:
