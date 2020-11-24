@@ -1,7 +1,7 @@
 
 from telethon import events
 from uniborg.util import admin_cmd
-
+from userbot import CMD_HELP
 
 @borg.on(admin_cmd(pattern="copy"))
 async def _(event):
@@ -16,3 +16,10 @@ async def _(event):
         await event.edit(the_real_message)
     else:
         await event.edit("Reply to a  message .copy to copy nd paste ")
+
+CMD_HELP.update(
+    {
+        "copy": 
+    ".copy <reply to any text> "
+    "\nCopy that text nd redeliver it"
+    })    
