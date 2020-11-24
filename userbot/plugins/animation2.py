@@ -1,7 +1,7 @@
 from telethon import events
 from userbot.utils import admin_cmd
 import random, re, asyncio
-from userbot import ALIVE_NAME
+from userbot import ALIVE_NAME, CMD_HELP
 from userbot import CMD_HELP
 from collections import deque
 import importlib.util
@@ -644,3 +644,9 @@ async def bluedevilhello(hello):
 async def bluedevilhmf(hmf):
     await hmf.edit(E)
 
+CMD_HELP.update(
+    {
+        "animation2.py": ".help animation2"
+        "\nUsage: Explore yourself.\n\n"
+    }
+)
