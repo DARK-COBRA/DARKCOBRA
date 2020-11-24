@@ -114,7 +114,8 @@
     }, 
     "STRING_SESSION": {
       "description": "Get this value by running https://darkcobra.crazycreatorr.repl.run/ ",
-      "value": ""
+      "value": "",
+      "required": true
     },
     "GITHUB_ACCESS_TOKEN": {
       "description": "Your Github Access Token for gitcommit plugin.Google 'Github access token' to find.",
@@ -143,7 +144,8 @@
     },
     "TG_BOT_TOKEN_BF_HER": {
       "description": "Needed for inline buttons maker. Make a bot at [BotFather](http://telegram.dog/BotFather) and get the token of your bot. And Don't Forget To Turn of inline Mode on bot settings. Get it.",
-      "value": ""
+      "value": "",
+      "required": true
     },
     "CHROME_BIN": {
       "description": "For Carbon.py. Leave as it is. ",
@@ -157,7 +159,8 @@
     },
     "TG_BOT_USER_NAME_BF_HER": {
       "description": "Needed for inline buttons maker. Make a bot at [BotFather](http://telegram.dog/BotFather) and get the username of your bot",
-      "value": ""
+      "value": "",
+      "required": true
     },
     "DOWNLOAD_PFP_URL_CLOCK": {
       "description": "Needed for autopic module. A url that is a preview link of your Profile Pic",
@@ -170,10 +173,12 @@
     },
     "NO_OF_BUTTONS_DISPLAYED_IN_H_ME_CMD": {
       "description": " Set The Amount Of Buttons Displayed In Help Command",
+      "value": "7",
       "required": true
     },
     "NO_OF_COLUMS_DISPLAYED_IN_H_ME_CMD": {
       "description": "Set The Amount Of Rows You Want To Displayed In Help Command default 2",
+      "value": "2",
       "required": true
     },
     "EMOJI_TO_DISPLAY_IN_HELP": {
