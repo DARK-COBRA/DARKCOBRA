@@ -683,15 +683,15 @@ CMD_HELP.update(
     {
         "auto_pic": 
     "use any cmd to auto change ur profile photo"
-    "\n.avengersdp 
-    \n.hacker 
-    \n.marveldp 
-    \n.predatordp 
-    \n.spacedp 
-    \n.survivorpfp 
-    \n.actiondp 
-    \n.animedp 
-    \n.gamerpfp"
+    "\navengersdp 
+    \nhacker 
+    \nmarveldp 
+    \npredatordp 
+    \nspacedp 
+    \nsurvivorpfp 
+    \nactiondp 
+    \nanimedp 
+    \ngamerpfp"
     
     }
 )
