@@ -183,7 +183,7 @@
     },
     "EMOJI_TO_DISPLAY_IN_HELP": {
       "description": "Set The emojies You Want to Add In Help Command You Can Add Multiple Emojies too!!",
-      "value": "",
+      "value": "📨",
       "required": true
     }, 
     "TZ": {
