@@ -7,6 +7,7 @@ from telethon.tl import functions
 from datetime import datetime
 
 from PIL import Image, ImageDraw, ImageFont
+from userbot import CMD_HELP
 
 from userbot.utils import admin_cmd
 
@@ -678,4 +679,18 @@ async def main(event):
         await event.client(functions.photos.UploadProfilePhotoRequest( file))
         os.system("rm -rf donottouch.jpg")
         await asyncio.sleep(400)
-
+CMD_HELP.update(
+    {
+        "auto_pic": 
+    
+    "type any of these cmd nd it makes ur profile pic auto change in interval of 400sec 🙂\n\n.actressdp 
+    \n.avengersdp 
+    \n.hacker 
+    \n.marveldp 
+    \n.predatordp 
+    \n.spacedp 
+    \n.survivorpfp 
+    \n.actiondp 
+    \n.animedp 
+    \n.gamerpfp"
+    })
