@@ -42,3 +42,11 @@ async def _(event):
         await event.edit(output_str)
     except Exception as exc:
         await event.edit(str(exc))
+CMD_HELP.update(
+    {
+        "translate": ".tr <language code> <reply to text>"
+        "\nUsage: reply any msg with .tr (language code) example .tr en / .tr hi\n\n"
+        ".tr <language code> | <msg> "
+        "\nUsage: translate text example .tr en|msg (note:- this | mark is important.\n\n"
+    }
+)
