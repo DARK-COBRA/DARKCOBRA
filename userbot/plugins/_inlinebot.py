@@ -129,29 +129,14 @@ def paginate_help(page_number, loaded_plugins, prefix):
     for p in loaded_plugins:
         if not p.startswith("_"):
             helpable_plugins.append(p)
-    helpable_plugins = [p for p in loaded_plugins if not p.startswith("_")]
-
-       modules =  [
-                 custom.Button.inline(
+    helpable_plugins = sorted(helpable_plugins)
+    modules = [custom.Button.inline(
         "{} {}".format(random.choice(list(multi)), x, random.choice(list(multi))),
         data="us_plugin_{}".format(x))
         for x in helpable_plugins]
-    if number_of_cols == 1:
-        pairs = list(zip(modules[::number_of_cols]))
-    elif number_of_cols == 2:
-        pairs = list(zip(modules[::number_of_cols], modules[1::number_of_cols]))
-    else:
-        pairs = list(
-            zip(
-                modules[::number_of_cols],
-                modules[1::number_of_cols],
-                modules[2::number_of_cols],
-            )
-        )
+    pairs = list(zip(modules[::number_of_cols], modules[1::number_of_cols]))
     if len(modules) % number_of_cols == 1:
         pairs.append((modules[-1],))
-    elif len(modules) % number_of_cols == 2:
-        pairs.append((modules[-2], modules[-1]))
     max_num_pages = ceil(len(pairs) / number_of_rows)
     modulo_page = page_number % max_num_pages
     if len(pairs) > number_of_rows:
