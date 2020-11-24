@@ -7,7 +7,7 @@ from telethon.tl import functions
 from datetime import datetime
 
 from PIL import Image, ImageDraw, ImageFont
-from userbot import CMD_HELP
+from userbot import CMD_HELP, CMD_LIST
 
 from userbot.utils import admin_cmd
 
