@@ -7,7 +7,6 @@ from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from userbot import bot, CMD_HELP
 from userbot.utils import admin_cmd
 
-#@register(outgoing=True, pattern="^.q(?: |$)(.*)")
 @borg.on(admin_cmd(pattern=r"qbot(?: |$)(.*)"))
 async def _(event):
     if event.fwd_from:
@@ -16,9 +15,7 @@ async def _(event):
        await event.edit("```Reply to any user message.```")
        return
     reply_message = await event.get_reply_message() 
-    if not reply_message.text:
-       await event.edit("```Reply to text message```")
-       return
+    
     chat = "@QuotLyBot"
     sender = reply_message.sender
     if reply_message.sender.bot:
