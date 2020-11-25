@@ -1,5 +1,4 @@
-"""Get Administrators of any Chat*
-Syntax: .get_admin"""
+
 from telethon import events
 from telethon.tl.types import ChannelParticipantsAdmins, ChannelParticipantAdmin, ChannelParticipantCreator
 from userbot.utils import admin_cmd
@@ -57,6 +56,6 @@ async def _(event):
 CMD_HELP.update(
     {
         "get_admin": ".get_admin"
-        "\nUsage": "List the admins present in the chat."
+        "\nUsage List the admins present in the chat."
     }
 )                
