@@ -34,16 +34,15 @@ async def get(event):
         await event.client.send_file(event.chat_id, name, force_document=True)
         os.remove(name)
     else:
-        await event.edit("reply to text message as `.ttf <file name>`")
+        await event.edit("reply to text message as `.doc <file name.extension>`")
 
 
 CMD_HELP.update(
     {
-        "fileconverter": ".open <reply to a file>"
-               "\nUse - Read contents of file and send as a telegram message.\n\n"
-               ".doc <name.extension> <reply to a file>"
-        "\nUse - make ur text a document with ur custom name nd extension example .doc dc.txt."
-        
-
+        "fileconverter": "__**PLUGIN NAME :** fileconverter__\
+    \n\n📌** CMD ★** `.open`\
+    \n**USAGE   ★  **open files as text (id the amount of words r resonable)\
+    \n\n📌** CMD ★** `.doc <file name.extension> <reply to any text/media>`\
+    \n**USAGE   ★  **Create a document of anything (example:- .doc dc.mp4, .doc dc.txt, .doc dc.webp)"
     }
 )
