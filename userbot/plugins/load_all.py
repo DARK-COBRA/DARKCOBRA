@@ -42,6 +42,6 @@ async def install(event):
 CMD_HELP.update(
     {
         "load_all": ".installall"
-        "\nUsage": "install all the plugins present in current chat."
+        "\nUsage install all the plugins present in current chat."
     }
 )        		
