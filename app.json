@@ -192,7 +192,7 @@
       "required": false
     },
     "SUDO_COMMAND_HAND_LER": {
-      "description": "Read This post if any doubt telegra.ph/Setting-Sudo-Command-Handler-11-25",
+      "description": "Read This post to know how to fill. https://telegra.ph/Setting-Sudo-Command-Handler-11-25",
       "value": "",
       "required": true
     }
