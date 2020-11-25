@@ -16,7 +16,7 @@ from userbot import ALIVE_NAME
 from telethon.tl.types import ChannelParticipantsAdmins
 # 🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "DARK COBRA"
-ALIVE_PHOTTO = os.environ.get("ALIVE_PHHOTO" , None)
+ALIVE_PHOTTO = os.environ.get("ALIVE_PHOTTO" , None)
 
 # Thanks to Sipak bro and Raganork.. 
 # animation Idea by @NOOB_GUY_OP (Sipakisking)
