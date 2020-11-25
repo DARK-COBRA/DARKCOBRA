@@ -1,8 +1,3 @@
-"""Emoji
-
-Available Commands:
-
-.deploy"""
 
 from telethon import events
 
@@ -61,6 +56,6 @@ async def _(event):
 CMD_HELP.update(
     {
         "deploy": ".deploy"
-        "\nUsage": "Animation Deploy Plugin."
+        "\nUsage show fake animation of deploy "
     }
 )
