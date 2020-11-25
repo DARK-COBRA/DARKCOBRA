@@ -646,7 +646,7 @@ async def bluedevilhmf(hmf):
 
 CMD_HELP.update(
     {
-        "animation2.py": ".help animation2"
+        "animation2": ".help animation2"
         "\nUsage: Explore yourself.\n\n"
     }
 )
