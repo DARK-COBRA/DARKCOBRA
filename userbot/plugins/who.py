@@ -45,7 +45,7 @@ CMD_HELP.update(
     {
         "urid": ".urid"
         "\nUsage: Gets The User ID of the user"
-        "members": ".members"
+        "\n.members"
         "\nUsage: Gets the user IDs of all the members who are there in the Group\n\n"
     }
 )
