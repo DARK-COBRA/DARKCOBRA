@@ -47,7 +47,7 @@ async def _(event):
 CMD_HELP.update(
     {
         "meaning": ".meaning <word>"
-        "\nUsage": "Give The Meaning of Entered Word."
+        "\nUsage Give The Meaning of Entered Word."
     }
 )            
     
