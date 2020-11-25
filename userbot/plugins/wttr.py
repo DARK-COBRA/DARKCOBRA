@@ -135,3 +135,12 @@ async def _(event):
             )
 
     await event.edit(input_str)
+
+CMD_HELP.update(
+    {
+        "weather": ".weather <Location>"
+        "\nUsage": "Get weather data using OpenWeatherMap\n\n"
+        ".wttr <location>"
+        "\nUsage": "Get weather data using OpenWeatherMap\n\n"
+    }
+)
