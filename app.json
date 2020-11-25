@@ -191,10 +191,10 @@
       "value": "Asia/Kolkata",
       "required": false
     },
-    "REDIRECTCHANNEL": {
-      "description": "Put You Channel Username Reflecting Your Info or Your Tags Etc",
+    "SUDO_COMMAND_HAND_LER": {
+      "description": "Read This Before Entering Anything",
       "value": "",
-      "required": false 
+      "required": true
     }
   },
   "addons": [
