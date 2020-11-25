@@ -73,7 +73,7 @@ async def amireallyalive(yes):
     await yes.delete()
     
     """ For .alive command, check if the bot is running.  """
-    await borg.send_file(alive.chat_id, PM_IMG,caption=pm_caption)
+    await borg.send_file(yes.chat_id, PM_IMG,caption=pm_caption)
     await yes.delete()
 
 
@@ -123,7 +123,7 @@ async def amireallyalive(alive):
         await alive.delete()
         """ For .allive command, check if the bot is running.  """
         await borg.send_file(alive.chat_id, ALIVE_PIC,caption=pm_caption, link_preview = False)
-        await allive.delete()
+        await alive.delete()
         return
     req = requests.get("https://telegra.ph/file/6d067b1a626a25735f5ed.png")
     req.raise_for_status()
