@@ -126,7 +126,7 @@ CMD_HELP.update(
     \n**USAGE   ★  **save ur filter in chat when someone type that key it reply with the msg u put on reply (note:-it activate only when someone reply not u. \
     \n\n📌** CMD ★** `.listfilters`\
     \n**USAGE   ★  **list all ur filters in a chat\
-    \n\n📌** CMD ★** `.clearfilter (key/text)`\
+    \n\n📌** CMD ★** `.clearfilter(key/text)`\#ooooooo
     \n**USAGE   ★  **stop the filter u put on the key\
     \n\n📌** CMD ★** `.clearallfilters`\
     \n**USAGE   ★  **clear all ur filters"
