@@ -240,7 +240,7 @@ async def hehehe(event):
             
 CMD_HELP.update(
     {
-        "feks": "__**PLUGIN NAME :** pm permit__\
+        "pmpermit": "__**PLUGIN NAME :** pm permit__\
     \n\n📌** CMD ★** `.ap`\
     \n**USAGE   ★  **Used to approve a person in personal chat..\
     \n\n📌** CMD ★** `.dap`\
