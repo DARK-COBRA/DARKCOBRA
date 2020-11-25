@@ -1,8 +1,3 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.
-#
-# Licensed under the Raphielscape Public License, Version 1.c (the "License");
-# you may not use this file except in compliance with the License.
-#
 
 import os
 from telethon import events
@@ -33,7 +28,7 @@ USERNAME_TAKEN = "```This username is already taken.```"
 # ===============================================================
 
 
-@borg.on(admin_cmd(pattern="pbio (.*)"))  # pylint:disable=E0602
+@borg.on(admin_cmd(pattern="pbio (.*)")) 
 async def _(event):
     if event.fwd_from:
         return
@@ -187,17 +182,17 @@ async def _(event):
 CMD_HELP.update({
     "acc_profile":
     ".username <new_username>\
-\nUsage: Changes your Telegram username.\
+\nUsage Changes your Telegram username.\
 \n\n.pname <firstname> or .pname <firstname> <lastname>\
-\nUsage: Changes your Telegram name.(First and last name will get split by the first space)\
+\nUsage Changes your Telegram name.(First and last name will get split by the first space)\
 \n\n.setpfp or .ppic\
-\nUsage: Reply with .setpfp or .ppic to an image to change your Telegram profie picture.\
+\nUsage Reply with .setpfp or .ppic to an image to change your Telegram profie picture.\
 \n\n.pbio <new_bio>\
-\nUsage: Changes your Telegram bio.\
+\nUsage Changes your Telegram bio.\
 \n\n.delpfp or .delpfp <number>/<all>\
-\nUsage: Deletes your Telegram profile picture(s).\
+\nUsage Deletes your Telegram profile picture(s).\
 \n\n.myusernames\
-\nUsage: Shows usernames reserved by you.that is created by you channels or groups\
+\nUsage Shows usernames reserved by you.that is created by you channels or groups\
 \n\n.count\
-\nUsage: Counts your groups, chats, bots etc..."
+\nUsage Counts your groups, chats, bots etc..."
 })
