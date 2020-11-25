@@ -7,6 +7,7 @@ from userbot.google_imgs import googleimagesdownload
 import os
 import shutil
 from re import findall
+from userbot import CMD_HELP
 from userbot.utils import admin_cmd
 
 
@@ -46,3 +47,11 @@ async def img_sampler(event):
     await event.client.send_file(await event.client.get_input_entity(event.chat_id), lst)
     shutil.rmtree(os.path.dirname(os.path.abspath(lst[0])))
     await event.delete()
+    
+    
+CMD_HELP.update(
+    {
+        "images": ".img <Search Query>"
+        "\nUsage": "Give Images related to Search Query Entered."
+    }
+)        
