@@ -57,6 +57,6 @@ async def _(event):
 CMD_HELP.update(
     {
         "get_admin": ".get_admin"
-        "\nUsage": "List the admins present in the chat."
+        "\nUsage": "List the admins present in the chat.\n\n"
     }
 )                
