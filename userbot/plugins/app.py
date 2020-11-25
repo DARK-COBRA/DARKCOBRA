@@ -60,5 +60,5 @@ async def mod(event):
 CMD_HELP.update(
     {
         "app": "`.app (app name)\nUse - Get a preview nd link of all apps from playstore.\
-        \n\n.appx (app name)\\nUse - send mod apks file.`"})
+        \n\n.appx (app name)\nUse - send mod apks file.`"})
         
