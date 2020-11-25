@@ -3,7 +3,7 @@ from telethon import events
 from pathlib import Path
 from var import Var
 from userbot import LOAD_PLUG
-from userbot import CMD_LIST
+from userbot import CMD_LIST, SUDO_LIST
 import re
 import logging
 import inspect
