@@ -817,8 +817,9 @@ async def get_user_from_id(user, event):
     return user_obj
 
 
-CMD_HELP.update({
-    "admin":
+
+
+      CMD_HELP.update({ "Admin":
     ".promote <username/reply> <custom rank (optional)>\
 \nUsage: Provides admin rights to the person in the chat.\
 \n\n.demote <username/reply>\
