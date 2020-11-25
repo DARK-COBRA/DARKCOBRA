@@ -317,14 +317,14 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "afk": "__**PLUGIN NAME :** Afk__\
-\n\n📌** CMD ➥** `.afk` [Optional Reason]\
-\n**USAGE   ➥  **Sets you as afk.\nReplies to anyone who tags/PM's \
-you telling them that you are AFK(reason)\n\n__Switches off AFK when you type back anything, anywhere.__\
-\n\n📌** CMD ➥** `.mafk` [Optional Reason] (link of a media)\
-\n**USAGE   ➥  **Sets you as afk(**WITH MEDIA**).\nReplies to anyone who tags/PM's \
-you telling them that you are AFK(reason)\n\n__Switches off AFK when you type back anything, anywhere.__
-"
+        "afk": "#AFK"
+"\n\n📌** CMD ➥** `.afk` [Optional Reason]"
+"\n**USAGE   ➥  **Sets you as afk.\nReplies to anyone who tags/PM's 
+you telling them that you are AFK(reason)\n\n__Switches off AFK when you type back anything, anywhere.__"
+"\n\n📌** CMD ➥** `.mafk` [Optional Reason] (link of a media)\
+"\n**USAGE   ➥  **Sets you as afk(**WITH MEDIA**).\nReplies to anyone who tags/PM's 
+you telling them that you are AFK(reason)\n\n__Switches off AFK when you type back anything, anywhere.__"
+
     }
 )
 
