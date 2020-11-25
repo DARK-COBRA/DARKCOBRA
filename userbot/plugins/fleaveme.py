@@ -1,14 +1,5 @@
-#Credit: @r4v4n4
-"""Emoji
-
-Available Commands:
-
-.fleave"""
-
 from telethon import events
-
 import asyncio
-
 from uniborg.util import admin_cmd
 from userbot import CMD_HELP
 
@@ -61,6 +52,6 @@ async def _(event):
 CMD_HELP.update(
     {
         "fleaveme": ".fleaveme"
-        "\nUsage": "#Animation Leave Plugin"
+        "\nUsage #Animation Leave Plugin"
     }
 )        
