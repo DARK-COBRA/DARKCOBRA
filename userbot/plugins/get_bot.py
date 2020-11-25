@@ -1,5 +1,3 @@
-""" Get the Bots in any chat*
-Syntax: .get_bot"""
 from telethon import events
 from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantsBots
 from userbot.utils import admin_cmd
@@ -35,6 +33,6 @@ async def _(event):
 CMD_HELP.update(
     {
         "get_bot": ".get_bot"
-        "\nUsage": "List the Bots Present in current chat/Group."
+        "\nUsage List the Bots Present in current chat/Group."
     }
 )            
