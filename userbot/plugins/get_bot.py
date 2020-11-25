@@ -3,7 +3,7 @@ Syntax: .get_bot"""
 from telethon import events
 from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantsBots
 from userbot.utils import admin_cmd
-
+from userbot import CMD_HELP
 
 @borg.on(admin_cmd("get_bot ?(.*)"))
 async def _(event):
@@ -31,3 +31,10 @@ async def _(event):
     except Exception as e:
         mentions += " " + str(e) + "\n"
     await event.edit(mentions)
+
+CMD_HELP.update(
+    {
+        "get_bot": ".get_bot"
+        "\nUsage": "List the Bots Present in current chat/Group."
+    }
+)            
