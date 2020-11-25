@@ -11,7 +11,7 @@ import asyncio
 import sys
 import io
 from uniborg.util import admin_cmd
-
+from userbot import CMD_HELP
 
 @borg.on(admin_cmd("eval"))
 async def _(event):
@@ -73,3 +73,12 @@ async def aexec(code, event):
         ''.join(f'\n {l}' for l in code.split('\n'))
     )
     return await locals()['__aexec'](event)
+
+
+
+CMD_HELP.update(
+    {
+        "eval": ".eval <code>"
+        "\nUsage":"Run Your Python Codes using .eval\n\n"
+    }
+)
