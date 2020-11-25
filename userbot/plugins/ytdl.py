@@ -18,6 +18,7 @@ from youtube_dl.utils import (DownloadError, ContentTooShortError,
 from asyncio import sleep
 from telethon.tl.types import DocumentAttributeAudio
 from uniborg.util import admin_cmd
+from userbot import CMD_HELP
 
 async def progress(current, total, event, start, type_of_ps, file_name=None):
     """Generic progress_callback for uploads and downloads."""
@@ -210,5 +211,13 @@ async def download_video(v_url):
                 progress(d, t, v_url, c_time, "Uploading..",
                          f"{ytdl_data['title']}.mp4")))
         os.remove(f"{ytdl_data['id']}.mp4")
-        await v_url.delete()
+        await v_url.delete() #.yta To Download in mp3 format .ytv To Download in mp4 format
         
+CMD_HELP.update(
+    {
+        "yta": ".yta <Youtube Link>
+        "\nUsage: Downloads audios from Youtube\n\n"
+        "ytv": ".ytv <Youtube Link>
+        "\nUsage: Downloads videos from Youtube\n\n"
+    }
+)
