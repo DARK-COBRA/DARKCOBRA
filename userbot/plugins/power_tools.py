@@ -11,9 +11,11 @@ import asyncio
 import os
 import sys
 from uniborg.util import admin_cmd
+from userbot import sudo_cmd
 
 
 @borg.on(admin_cmd(pattern="restart"))
+@borg.on(sudo_cmd(pattern="restart", allow_sudo=True))
 async def _(event):
     await event.edit("Restarting ▰▱▱▱▱▱▱▱18%...")
     await asyncio.sleep(1)
@@ -29,13 +31,16 @@ async def _(event):
 
 
 @borg.on(admin_cmd(pattern="shutdown"))
+@borg.on(sudo_cmd(pattern="shutdown", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
     await event.edit("Turning dyno off ...Manually turn me on later")
     await borg.disconnect()
 
-@borg.on(events.NewMessage(pattern=r"\.reboot", outgoing=True))
+#@borg.on(events.NewMessage(pattern=r"\.reboot", outgoing=True))
+@borg.on(admin_cmd(pattern="reboot"))
+@borg.on(sudo_cmd(pattern="reboot", allow_sudo = True))
 async def _(event):
     if event.fwd_from:
         return
