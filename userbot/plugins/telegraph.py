@@ -8,6 +8,7 @@ from PIL import Image
 from datetime import datetime
 from telegraph import Telegraph, upload_file, exceptions
 from userbot.utils import admin_cmd
+from userbot import CMD_HELP
 
 telegraph = Telegraph()
 r = telegraph.create_account(short_name=Config.TELEGRAPH_SHORT_NAME)
@@ -88,3 +89,11 @@ async def _(event):
 def resize_image(image):
     im = Image.open(image)
     im.save(image, "PNG")
+
+    
+CMD_HELP.update(
+    {
+        "telegraph": ".telegraph (media/text)"
+        "\nUsage": "Give Telegraph Link of Replied Type. Mention Media/Text while Using."
+    }
+)
