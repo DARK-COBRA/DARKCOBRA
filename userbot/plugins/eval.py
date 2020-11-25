@@ -1,5 +1,3 @@
-"""Evaluate Python Code inside Telegram
-Syntax: .eval PythonCode"""
 # This Source Code Form is subject to the terms of the Mozilla Public
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
@@ -79,6 +77,6 @@ async def aexec(code, event):
 CMD_HELP.update(
     {
         "eval": ".eval <code>"
-        "\nUsage":"Run Your Python Codes using .eval"
+        "\nUsage Run Your Python Codes using .eval"
     }
 )
