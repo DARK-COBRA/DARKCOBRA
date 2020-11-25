@@ -238,16 +238,18 @@ async def hehehe(event):
             
             
             
-CMD_HELP.update({
-    "pmpermit":
-    "\
-.ap\
-\nUsage: Approves the mentioned/replied person to PM.\
-.dap\
-\nUsage: dispproves the mentioned/replied person to PM.\
-\n\n.block\
-\nUsage: Blocks the person.\
-\n\n.listap\
-\nUsage: To list the all approved users.\
-"
-})
+CMD_HELP.update(
+    {
+        "feks": "__**PLUGIN NAME :** pm permit__\
+    \n\n📌** CMD ★** `.ap`\
+    \n**USAGE   ★  **Used to approve a person in personal chat..\
+    \n\n📌** CMD ★** `.dap`\
+    \n**USAGE   ★  **Used to disapprove a person in personal chat..\
+    \n\n📌** CMD ★** `.block`\
+    \n**USAGE   ★  **Used to block a person in personal chat.. But never mess with the Devs\
+    \n\n📌** CMD ★** `.listap`\
+    \n**USAGE   ★  **List of approved users whom you have approved till now...!\
+    \n\n📌** CMD ★** `auto approved cuz outgoing messages`\
+    \n**USAGE   ★  **This is the case when you message someone first then they will get approved by your userbot automatically.."
+    }
+)
