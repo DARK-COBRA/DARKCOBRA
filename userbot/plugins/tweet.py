@@ -372,27 +372,27 @@ async def tweetme(okie):
                             hide_via=True)
     await okie.delete()
 
-CMD_HELP.update(
-    {
+CMD_HELP.update({
+    
         "tweet": ".tweet <username>.<tweet>"
-        "\nUsage: Create tweet with custom username.\n\n"
+        "\nUsage Create tweet with custom username.\n\n"
         ".trump <tweet>"
-        "\nUsage: Create tweet for Donald Trump.\n\n"
+        "\nUsage Create tweet for Donald Trump.\n\n"
         ".sunny <tweet>"
-        "\nUsage: Create tweet for Sunny Leone.\n\n"
+        "\nUsage Create tweet for Sunny Leone.\n\n"
         ".johnny <tweet>"
-        "\nUsage: Create tweet for Johnny Sins.\n\n"
+        "\nUsage Create tweet for Johnny Sins.\n\n"
         ".bhau <tweet>"
-        "\nUsage: Create tweet for Hindustani bhau.\n\n"
+        "\nUsage Create tweet for Hindustani bhau.\n\n"
         ".modi <tweet>"
         "\nUsage: Create tweet for Modi .\n\n"
         ".tweetme <tweet>"
-        "\nUsage: Create tweet from u in dark theme.\n\n"
+        "\nUsage Create tweet from u in dark theme.\n\n"
         ".cmm <text>"
-        "\nUsage: Create banner for Change My Mind.\n\n"
+        "\nUsage Create banner for Change My Mind.\n\n"
         ".waifu <text>"
-        "\nUsage: Random anime girl stickers.\n\n"
+        "\nUsage Random anime girl stickers.\n\n"
         ".type <text>"
-        "\nUsage: random sticker is writing your text."
+        "\nUsage random sticker is writing your text."
     }
 )
