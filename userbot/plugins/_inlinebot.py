@@ -5,7 +5,7 @@ import random
 import re
 from telethon.tl.custom import Button 
 from telethon import events, errors, custom
-from userbot import CMD_LIST
+from userbot import CMD_LIST, CMD_HELP
 import io
 
 #Making The Back Command Was The Toughest Work #by @Shivam_Patel,@The_Siddharth_Nigam,@danish_00,@ProgrammingError also v changed Pop up or inline help to text
@@ -16,8 +16,8 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     async def backr(event):
             if event.query.user_id == bot.uid :
                 current_page_number=0
-                buttons = paginate_help(current_page_number, CMD_LIST, "helpme")
-                await event.edit("Here U R At Main Menu", buttons=buttons)
+                buttons = paginate_help(current_page_number, CMD_HELP, "helpme")
+                await event.edit("`>>>\n\nHere Is The Main Menu Of\n©DARKCOBRA`", buttons=buttons)
             else:
                 reply_pop_up_alert = "Please get your own Userbot,for more info visit @DARK_COBRA_SUPPORT!"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
@@ -27,8 +27,8 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     async def opner(event):
             if event.query.user_id == bot.uid :
                 current_page_number=0
-                buttons = paginate_help(current_page_number, CMD_LIST, "helpme")
-                await event.edit("OKK MASTER U WANT IT BACK", buttons=buttons)
+                buttons = paginate_help(current_page_number, CMD_HELP, "helpme")
+                await event.edit("`>>>\n\nReopened The Main Menu of \n©DARKCOBRA` ", buttons=buttons)
             else:
                 reply_pop_up_alert = "Please get your own Userbot,for more info visit @DARK_COBRA_SUPPORT!"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
@@ -41,7 +41,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         query = event.text
         if event.query.user_id == bot.uid and query.startswith("Userbot"):
             rev_text = query[::-1]
-            buttons = paginate_help(0, CMD_LIST, "helpme")
+            buttons = paginate_help(0, CMD_HELP, "helpme")
             result = builder.article("© Userbot Help",text="{}\nCurrently Loaded Plugins: {}".format(query, len(CMD_LIST)),buttons=buttons,link_preview=False)
             await event.answer([result] if result else None)
         else:
@@ -56,8 +56,8 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 event.data_match.group(1).decode("UTF-8"))
             
             buttons = paginate_help(
-                current_page_number + 1, CMD_LIST, "helpme")
-            # https://t.me/TelethonChat/115200
+                current_page_number + 1, CMD_HELP, "helpme")
+           
             await event.edit(buttons=buttons)
         else:
             reply_pop_up_alert = "Please get your own Userbot, and don't use mine for more info visit @DARK_COBRA_SUPPORT!"
@@ -74,10 +74,10 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             
             buttons = paginate_help(
                 current_page_number - 1,
-                CMD_LIST,  # pylint:disable=E0602
+                CMD_HELP,  # pylint:disable=E0602
                 "helpme"
             )
-            # https://t.me/TelethonChat/115200
+            
             await event.edit(buttons=buttons)
         else:
             reply_pop_up_alert = "Please get your own Userbot, and don't use mine!"
@@ -87,7 +87,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     async def on_plug_in_callback_query_handler(event):
         if event.query.user_id == bot.uid:
             fci = custom.Button.inline("Open Main Menu Again", data="open")
-            await event.edit("The menu has been closed..!", buttons=fci)
+            await event.edit("`The menu has been closed..!`", buttons=fci)
             
   
 
@@ -98,16 +98,17 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         plugin_name = event.data_match.group(1).decode("UTF-8")
         help_string = ""
         try:
-            for i in CMD_LIST[plugin_name]:
+            for i in CMD_HELP[plugin_name]:
                 help_string += i
-                help_string += "\n"
+          
         except:
             pass
         if help_string is "":
-            reply_pop_up_alert = "{} is useless".format(plugin_name)
+         
+            reply_pop_up_alert = " CMD_HELP not set yet 😅😅 try\n .help {}".format(plugin_name)
         else:
             reply_pop_up_alert = help_string
-        reply_pop_up_alert += "\n Use .unload {} to remove this plugin\n\
+        reply_pop_up_alert += "\n\n Use .unload {} to remove this plugin\n\
             ©DARK COBRA Userbot".format(plugin_name)
         try:
             #fci = [[Button.inline('Go back', 'back')]] 
@@ -131,7 +132,7 @@ def paginate_help(page_number, loaded_plugins, prefix):
             helpable_plugins.append(p)
     helpable_plugins = sorted(helpable_plugins)
     modules = [custom.Button.inline(
-        "{} {}".format(random.choice(list(multi)), x, random.choice(list(multi))),
+        "{} {}".format(random.choice(list(multi)), x),
         data="us_plugin_{}".format(x))
         for x in helpable_plugins]
     pairs = list(zip(modules[::number_of_cols], modules[1::number_of_cols]))
@@ -142,8 +143,8 @@ def paginate_help(page_number, loaded_plugins, prefix):
     if len(pairs) > number_of_rows:
         pairs = pairs[modulo_page * number_of_rows:number_of_rows * (modulo_page + 1)] + \
             [
-            (custom.Button.inline("Previous", data="{}_prev({})".format(prefix, modulo_page)),
-             custom.Button.inline("close menu", data="close"),
-             custom.Button.inline("Next", data="{}_next({})".format(prefix, modulo_page)))
+            (custom.Button.inline("◃:✮𝙿𝚁𝙴𝚅.❃", data="{}_prev({})".format(prefix, modulo_page)),
+             custom.Button.inline("⋇⋆𝙲𝙻✦𝚂𝙴⋆⋇", data="close"),
+             custom.Button.inline("❃.𝙽𝙴𝚇𝚃✮:▹", data="{}_next({})".format(prefix, modulo_page)))
         ]
     return pairs
