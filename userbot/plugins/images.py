@@ -1,8 +1,3 @@
-"""Download & Upload Images on Telegram\n
-Syntax: `.img <Name>` or `.img (replied message)`
-\n Upgraded and Google Image Error Fixed
-"""
-
 from userbot.google_imgs import googleimagesdownload
 import os
 import shutil
@@ -51,7 +46,7 @@ async def img_sampler(event):
     
 CMD_HELP.update(
     {
-        "images": ".img <Search Query>"
-        "\nUsage": "Give Images related to Search Query Entered."
+        "images": ".img <Name>` or `.img (replied message)"
+        "\nUsage Download & Upload Images on Telegram"
     }
 )        
