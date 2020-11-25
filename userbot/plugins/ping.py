@@ -3,7 +3,7 @@ from datetime import datetime
 
 from .. import ALIVE_NAME, CMD_HELP
 from ..utils import admin_cmd, edit_or_reply
-from userbot import sudo_cmd
+from userbot.utils import sudo_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "DARK COBRA"
 
