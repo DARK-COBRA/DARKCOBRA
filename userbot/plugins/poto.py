@@ -1,9 +1,3 @@
-"""Type `.poto` for get **All profile pics of that User**
-\n Or type `.poto (number)` to get the **desired number of photo of a User** .
-"""
-
-
-
 import logging
 from userbot import CMD_HELP
 from userbot.utils import admin_cmd
