@@ -58,7 +58,7 @@ async def cmd_list(event):
             )
             await event.delete()
             
-@borg.on(sudo_cmd(pattern=r"help ?(.*)"))
+@borg.on(sudo_cmd(pattern=r"help ?(.*)", allow_sudo=True))
 async def cmd_list(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!", "-", "_"):
         tgbotusername = Var.TG_BOT_USER_NAME_BF_HER
@@ -110,7 +110,7 @@ async def cmd_list(event):
             
             
 @borg.on(admin_cmd(pattern="dc"))# pylint:disable=E0602
-@borg.on(sudo_cmd(pattern="dc"))
+@borg.on(sudo_cmd(pattern="dc", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -119,7 +119,7 @@ async def _(event):
 
 
 @borg.on(admin_cmd(pattern="config"))  # pylint:disable=E0602
-@borg.on(sudo_cmd(pattern="config"))
+@borg.on(sudo_cmd(pattern="config", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -130,7 +130,7 @@ async def _(event):
 
 
 @borg.on(admin_cmd(pattern="syntax (.*)"))
-@borg.on(sudo_cmd(pattern="syntax (.*)"))
+@borg.on(sudo_cmd(pattern="syntax (.*)",allow_sudo = True))
 async def _(event):
     if event.fwd_from:
         return
