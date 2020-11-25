@@ -1,6 +1,6 @@
 from telethon import events
 import asyncio
-
+from userbot import CMD_HELP
 @borg.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
 async def _(event):
     if event.fwd_from:
@@ -70,3 +70,13 @@ async def _(event):
             await asyncio.sleep(animation_interval)
 
             await event.edit(animation_chars[i % 11])
+
+CMD_HELP.update(
+    {
+        "animation3":".chod .quickheal, .vscan"
+
+
+    }
+)
+
+
