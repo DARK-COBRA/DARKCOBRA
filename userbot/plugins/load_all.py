@@ -6,6 +6,7 @@ from ..utils import remove_plugin, load_module, admin_cmd
 from pathlib import Path
 import userbot.utils
 import os
+from userbot import CMD_HELP
 
 @borg.on(admin_cmd(pattern=r"installall$"))
 async def install(event):
@@ -37,3 +38,10 @@ async def install(event):
 		await a.edit(f"{text}\n**Installed every plugin from the given chat.**")
 		await event.delete()
 		await b.delete()
+
+CMD_HELP.update(
+    {
+        "load_all": ".installall"
+        "\nUsage": "install all the plugins present in current chat."
+    }
+)        		
