@@ -54,6 +54,6 @@ async def _(event):
 CMD_HELP.update(
     {
         "roundv": ".roundv"
-        "\nUsage": "Reply This Commamd to Video to 1:1 ratio to convert into circle format."
+        "\nUsage Reply This Commamd to Video to 1:1 ratio to convert into circle format."
     }
 )
