@@ -6,7 +6,7 @@ from telethon import events
 from telethon.tl import functions
 from telethon.errors import FloodWaitError
 from userbot.utils import admin_cmd
-from userbot import ALIVE_NAME
+from userbot import ALIVE_NAME, CMD_HELP
 
 BIO_MSG = Config.BIO_MSG
 if BIO_MSG is None:
@@ -101,3 +101,13 @@ async def autopic(event):
             await asyncio.sleep(60)
         except:
             return
+
+CMD_HELP.update(
+    {
+        "auto_profile": ".autobio"
+        "\nUsage: change ur bio automatically nd to stop use .restart\n\n"
+        ".autopic"
+        "\nUsage: change ur pic automatically (rotate pic in every 60sec) nd to stop use .restart\n\n"
+        ".autoname"
+        "\nUsage: Change ur name automatically nd show time ns date there to stop it use .restart"
+          })
