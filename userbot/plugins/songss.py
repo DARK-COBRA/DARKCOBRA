@@ -11,7 +11,7 @@ import asyncio
 
  
 
-@borg.on(admin_cmd(pattern="gaana ?(.*)"))
+@borg.on(admin_cmd(pattern="songs ?(.*)"))
 
 async def FindMusicPleaseBot(gaana):
 
