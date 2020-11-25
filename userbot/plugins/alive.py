@@ -23,7 +23,8 @@ ALIVE_PHOTTO = os.environ.get("ALIVE_PHHOTO" , None)
 # Made by @hellboi_atul ....and thanks to @Crackexy for the logos...
 # Kang with credits else gay...
 # alive.py for DC(DARK COBRA)
-
+global ghanti
+ghanti = borg.uid
 edit_time = 5
 """ =======================CONSTANTS====================== """
 file1 = "https://telegra.ph/file/6aa39732748ed7c319943.jpg"
