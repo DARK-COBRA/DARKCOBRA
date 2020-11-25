@@ -830,7 +830,7 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "animation1.py": ".help animation1"
+        "animation1": ".help animation1"
         "\nUsage: There's no need of help in this..just do .help animation1 and explore yourself.\n\n"
     }
 )

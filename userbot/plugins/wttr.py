@@ -1,9 +1,3 @@
-"""Get weather data using OpenWeatherMap
-
-Syntax: .weather <Location>
-
-.wttr <location> """
-
 
 
 import aiohttp
@@ -15,7 +9,7 @@ import time
 from datetime import tzinfo, datetime
 
 from userbot.utils import admin_cmd
-
+from userbot import CMD_HELP
 
 
 
@@ -135,3 +129,12 @@ async def _(event):
             )
 
     await event.edit(input_str)
+
+CMD_HELP.update(
+    {
+        "weather": ".weather <Location>"
+        "\nUsage Get weather data using OpenWeatherMap\n\n"
+        ".wttr <location>"
+        "\nUsage Get weather data using OpenWeatherMap"
+    }
+)

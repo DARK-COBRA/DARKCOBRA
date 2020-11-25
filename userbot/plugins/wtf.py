@@ -7,7 +7,7 @@ Available Commands:
 from telethon import events
 
 import asyncio
-
+from userbot import CMD_HELP
 from userbot.utils import admin_cmd
 
 @borg.on(admin_cmd("wtf"))
@@ -29,3 +29,10 @@ async def _(event):
         	
         await asyncio.sleep(animation_interval)
         await event.edit(animation_chars[i %5 ])
+
+CMD_HELP.update(
+    {
+        "wtf": ".wtf"
+        "\nUsage: Just a Animation of WTF\n\n"
+    }
+)

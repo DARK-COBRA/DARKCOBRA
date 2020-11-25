@@ -69,17 +69,6 @@ async def _(event):
 		deq.rotate(1)
 		
 
-@borg.on(admin_cmd("source$"))
-#@register(outgoing=True, pattern="^.source$")
-async def source(e):
-    if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
-        await e.edit("/Spandey112/SensibleUserbot")
-
-@borg.on(admin_cmd("readme$"))
-#@register(outgoing=True, pattern="^.readme$")
-async def reedme(e):
-    if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
-        await e.edit("/Spandey112/SensibleUserbot/blob/master/README.md")
 
 
 
@@ -107,42 +96,25 @@ async def _(event):
 
 
 
-CMD_HELP.update({
-    "leave": "Leave a Chat"
-})
-CMD_HELP.update({
-    ";__;": "You try it!"
-})
-CMD_HELP.update({
-    "cry": "Cry"
-})
-CMD_HELP.update({
-    "fp": "Send face palm emoji."
-})
-CMD_HELP.update({
-    "moon": "Bot will send a cool moon animation."
-})
-CMD_HELP.update({
-    "clock": "Bot will send a cool clock animation."
-})
-CMD_HELP.update({
-    "readme": "Reedme."
-})
-CMD_HELP.update({
-    "source": "Gives the source of your userbot"
-})
-CMD_HELP.update({
-    "myusernames": "List of Usernames owned by you."
-})
-CMD_HELP.update({
-    "oof": "Same as ;__; but ooof"
-})
-CMD_HELP.update({
-    "earth": "Sends Kensar Earth animation"
-})
-CMD_HELP.update({
-    "heart": "Try and you'll get your emotions back"
-})
-CMD_HELP.update({
-    "fap": "Faking orgasm"
+CMD_HELP.update({"extra":
+    ".leave Leave a Chat"
+
+    "\n\n.;__;  You try it!"
+
+    "\n\n.cry  Cry"
+
+    "\n\n.fp Send face palm emoji."
+
+    "\n\n.moon Bot will send a cool moon animation."
+
+    "\n\n.clock  Bot will send a cool clock animation."
+    "\n\n.myusernames  List of Usernames owned by you."
+
+    "\n\n.oof Same as ;__; but ooof"
+
+    "\n\n.earth  Sends Kensar Earth animation"
+
+    "\n\n.heart  Try and you'll get your emotions back"
+
+    "\n\n.fap  Faking orgasm"
 })

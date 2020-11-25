@@ -11,6 +11,7 @@ from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from userbot.utils import admin_cmd
+from userbot import CMD_HELP
 
 #===================================================================================
 
@@ -48,3 +49,11 @@ async def _(event):
               await event.client.send_message(event.chat_id, response.message)
           if response.media:
               await event.client.send_file(event.chat_id, response)
+                
+           
+CMD_HELP.update(
+    {
+        "roundv": ".roundv"
+        "\nUsage Reply This Commamd to Video to 1:1 ratio to convert into circle format."
+    }
+)

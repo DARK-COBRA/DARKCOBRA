@@ -302,3 +302,10 @@ async def ge(user, event):
         await event.edit(str(err))
         return None
     return user_obj
+
+CMD_HELP.update(
+    {
+        "whois": ".whois @username/userid"
+    "\nUsage: Get Telegram User Information. \n\n"
+    }
+)

@@ -819,8 +819,7 @@ async def get_user_from_id(user, event):
 
 
 CMD_HELP.update({
-    "admin":
-    ".promote <username/reply> <custom rank (optional)>\
+    "admin":".promote <username/reply> <custom rank (optional)>\
 \nUsage Provides admin rights to the person in the chat.\
 \n\n.demote <username/reply>\
 \nUsage Revokes the person's admin permissions in the chat.\

@@ -1,8 +1,8 @@
-"""Get Administrators of any Chat*
-Syntax: .get_admin"""
+
 from telethon import events
 from telethon.tl.types import ChannelParticipantsAdmins, ChannelParticipantAdmin, ChannelParticipantCreator
 from userbot.utils import admin_cmd
+from userbot import CMD_HELP
 
 
 @borg.on(admin_cmd("get_ad?(m)in ?(.*)"))
@@ -52,3 +52,10 @@ async def _(event):
         await event.delete()
     else:
         await event.edit(mentions)
+
+CMD_HELP.update(
+    {
+        "get_admin": ".get_admin"
+        "\nUsage List the admins present in the chat."
+    }
+)                

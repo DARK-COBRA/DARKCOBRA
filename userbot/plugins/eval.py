@@ -1,5 +1,3 @@
-"""Evaluate Python Code inside Telegram
-Syntax: .eval PythonCode"""
 # This Source Code Form is subject to the terms of the Mozilla Public
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
@@ -11,7 +9,7 @@ import asyncio
 import sys
 import io
 from uniborg.util import admin_cmd
-
+from userbot import CMD_HELP
 
 @borg.on(admin_cmd("eval"))
 async def _(event):
@@ -73,3 +71,12 @@ async def aexec(code, event):
         ''.join(f'\n {l}' for l in code.split('\n'))
     )
     return await locals()['__aexec'](event)
+
+
+
+CMD_HELP.update(
+    {
+        "eval": ".eval <code>"
+        "\nUsage Run Your Python Codes using .eval"
+    }
+)

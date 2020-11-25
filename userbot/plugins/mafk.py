@@ -1,6 +1,3 @@
-# Originally by @NOOB_GUY_OP
-# I think its first for DARKCOBRA
-"""Syntax: .afk REASON"""
 import asyncio
 import datetime
 from datetime import datetime
@@ -21,8 +18,6 @@ afk_time = None
 last_afk_message = {}
 afk_start = {}
 
-# Originally by @NOOB_GUY_OP
-# I think its first for DARKCOBRA
 
 @borg.on(events.NewMessage(outgoing=True))  # pylint:disable=E0602
 async def set_not_afk(event):
@@ -151,10 +146,11 @@ async def _(event):
             logger.warn(str(e))  # pylint:disable=E0602
 
 
+
+
 CMD_HELP.update(
     {
-        "mafk": "__**PLUGIN NAME :** Afk__\
-\n\n📌** CMD ➥** `.mafk` [Optional Reason]\
-"
+        "mafk": ".mafk (reason) (link of any media)"
+        "\nUsage mention u as afk with cool media when someone tag or reply to any of ur msg or dm."
     }
 )

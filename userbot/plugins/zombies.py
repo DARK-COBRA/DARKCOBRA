@@ -1,18 +1,10 @@
-# This Source Code Form is subject to the terms of the Mozilla Public
-# License, v. 2.0. If a copy of the MPL was not distributed with this
-# file, You can obtain one at http://mozilla.org/MPL/2.0/.
-
-"""Cmd= `.zombie`
-Usage: Searches for deleted accounts in a groups and channels.
-Use .zombies clean to remove deleted accounts from the groups and channels.
-\nPorted by ©[NIKITA](t.me/kirito6969) and ©[EYEPATCH](t.me/NeoMatrix90)"""
 
 from telethon import events
 from userbot.utils import admin_cmd
 #
 from asyncio import sleep
 from os import remove
-
+from userbot import CMD_HELP
 from telethon.errors import (BadRequestError, ChatAdminRequiredError,
                              ImageProcessFailedError, PhotoCropSizeSmallError,
                              UserAdminInvalidError)
@@ -128,3 +120,12 @@ async def rm_deletedacc(show):
             Config.G_BAN_LOGGER_GROUP, "#CLEANUP\n"
             f"Cleaned **{del_u}** deleted account(s) !!\
             \nCHAT: {show.chat.title}(`{show.chat_id}`)")
+
+CMD_HELP.update(
+    {
+        "zombies": ".zombies"
+        "\nUsage: Searches for deleted accounts in a groups and channels.\n\n"
+        ".zombies clean"
+        "\nUsage: Removed the deleted accounts found by using .zombies command"
+    }
+)

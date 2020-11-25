@@ -1,17 +1,10 @@
-# This Source Code Form is subject to the terms of the Mozilla Public
-# License, v. 2.0. If a copy of the MPL was not distributed with this
-# file, You can obtain one at http://mozilla.org/MPL/2.0/.
-"""Filters
-Available Commands:
-.savefilter
-.listfilters
-.clearfilter"""
+
 import asyncio
 import re
 from telethon import events, utils
 from telethon.tl import types
 from userbot.plugins.sql_helper.filter_sql import get_filter, add_filter, remove_filter, get_all_filters, remove_all_filters
-
+from userbot import CMD_HELP
 
 DELETE_TIMEOUT = 0
 TYPE_TEXT = 0
@@ -125,3 +118,17 @@ async def on_snip_delete(event):
 async def on_all_snip_delete(event):
     remove_all_filters(event.chat_id)
     await event.edit(f"filters **in current chat** deleted successfully")
+
+CMD_HELP.update(
+    {
+        "filters": "__**PLUGIN NAME :** filters__\
+    \n\n📌** CMD ★** `.savefilter (text/filter key) (reply to msg)`\
+    \n**USAGE   ★  **save ur filter in chat when someone type that key it reply with the msg u put on reply (note:-it activate only when someone reply not u. \
+    \n\n📌** CMD ★** `.listfilters`\
+    \n**USAGE   ★  **list all ur filters in a chat\
+    \n\n📌** CMD ★** `.clearfilter(key/text)`\
+    \n**USAGE   ★  **stop the filter u put on the key\
+    \n\n📌** CMD ★** `.clearallfilters`\
+    \n**USAGE   ★  **clear all ur filters"
+    }
+)
