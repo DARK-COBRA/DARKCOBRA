@@ -1,9 +1,3 @@
-"""Get weather data using OpenWeatherMap
-
-Syntax: .weather <Location>
-
-.wttr <location> """
-
 
 
 import aiohttp
@@ -139,8 +133,8 @@ async def _(event):
 CMD_HELP.update(
     {
         "weather": ".weather <Location>"
-        "\nUsage": "Get weather data using OpenWeatherMap\n\n"
+        "\nUsage Get weather data using OpenWeatherMap\n\n"
         ".wttr <location>"
-        "\nUsage": "Get weather data using OpenWeatherMap\n\n"
+        "\nUsage Get weather data using OpenWeatherMap"
     }
 )
