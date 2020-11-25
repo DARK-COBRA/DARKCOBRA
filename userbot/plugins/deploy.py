@@ -9,7 +9,7 @@ from telethon import events
 import asyncio
 
 from uniborg.util import admin_cmd
-
+from userbot import CMD_HELP
 from userbot import AUTONAME
 
 
@@ -55,3 +55,12 @@ async def _(event):
             await asyncio.sleep(animation_interval)
 
             await event.edit(animation_chars[i % 12])
+            
+            
+            
+CMD_HELP.update(
+    {
+        "deploy": ".deploy"
+        "\nUsage": "Animation Deploy Plugin\n\n"
+    }
+)
