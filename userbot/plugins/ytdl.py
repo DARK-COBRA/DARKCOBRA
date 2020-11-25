@@ -215,9 +215,9 @@ async def download_video(v_url):
         
 CMD_HELP.update(
     {
-        "yta": ".yta <Youtube Link>
+        "yta": ".yta <Youtube Link>"
         "\nUsage: Downloads audios from Youtube\n\n"
-        "ytv": ".ytv <Youtube Link>
+        "ytv": ".ytv <Youtube Link>"
         "\nUsage: Downloads videos from Youtube\n\n"
     }
 )
