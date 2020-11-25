@@ -60,11 +60,12 @@ async def _(event):
     if event.fwd_from:
         return
     start = datetime.now()
+    ghanta = borg.uid
     event = await edit_or_reply(event, "__**(★ Kong!__**")
     end = datetime.now()
     ms = (end - start).microseconds / 1000
     await event.edit(
-        f"__**✦҈͜͡➳ Kong!__**\n★ {ms}\n★ __**My**__ __**Master**__ [{DEFAULTUSER}]"
+        f"__**✦҈͜͡➳ Kong!__**\n★ {ms}\n★ __**My**__ __**Master**__ [{DEFAULTUSER}](tg://user?id={ghanta})"
     )
 
 
