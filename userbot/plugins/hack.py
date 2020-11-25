@@ -124,6 +124,6 @@ async def _(event):
 CMD_HELP.update(
     {
         "hack": ".hack"
-        "\nUsage": "#Animation Hack Plugin"
+        "\nUsage #Animation Hack Plugin"
     }
 )        
