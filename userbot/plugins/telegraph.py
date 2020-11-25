@@ -1,7 +1,4 @@
-"""@telegraph Utilities
-Available Commands:
-.telegraph media as reply to a media
-.telegraph text as reply to a large text"""
+
 from telethon import events
 import os
 from PIL import Image
@@ -93,7 +90,7 @@ def resize_image(image):
     
 CMD_HELP.update(
     {
-        "telegraph": ".telegraph (media/text)"
-        "\nUsage": "Give Telegraph Link of Replied Type. Mention Media/Text while Using."
+        "telegraph": ".t(m/t)"
+        "\nUsage .tm Give Telegraph Link of media nd .tt telegraph link of text ."
     }
 )
