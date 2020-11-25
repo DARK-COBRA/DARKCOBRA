@@ -11,7 +11,7 @@ import asyncio
 import os
 import sys
 from uniborg.util import admin_cmd
-from userbot import sudo_cmd
+from userbot.utils import sudo_cmd
 
 
 @borg.on(admin_cmd(pattern="restart"))
