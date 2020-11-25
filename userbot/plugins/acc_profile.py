@@ -18,7 +18,8 @@ from telethon.tl.functions.photos import (DeletePhotosRequest,
                                           GetUserPhotosRequest,
                                           UploadProfilePhotoRequest)
 from telethon.tl.types import InputPhoto, MessageMediaPhoto, User, Chat, Channel
-from userbot import bot, CMD_HELP
+from userbot import bot
+from userbot import CMD_HELP, CMD_LIST
 
 # ====================== CONSTANT ===============================
 INVALID_MEDIA = "```The extension of the media entity is invalid.```"
@@ -184,7 +185,7 @@ async def _(event):
     await event.edit(output_str)
     
 CMD_HELP.update({
-    "profile":
+    "acc_profile":
     ".username <new_username>\
 \nUsage: Changes your Telegram username.\
 \n\n.pname <firstname> or .pname <firstname> <lastname>\
