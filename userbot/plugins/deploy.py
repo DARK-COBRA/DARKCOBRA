@@ -61,6 +61,6 @@ async def _(event):
 CMD_HELP.update(
     {
         "deploy": ".deploy"
-        "\nUsage": "Animation Deploy Plugin\n\n"
+        "\nUsage": "Animation Deploy Plugin."
     }
 )
