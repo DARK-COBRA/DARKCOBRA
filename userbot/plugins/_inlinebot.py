@@ -16,7 +16,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     async def backr(event):
             if event.query.user_id == bot.uid :
                 current_page_number=0
-                buttons = paginate_help(current_page_number, CMD_HELP, "helpme")
+                buttons = paginate_help(current_page_number, CMD_LIST, "helpme")
                 await event.edit("`>>>\n\nHere Is The Main Menu Of\n©DARKCOBRA`", buttons=buttons)
             else:
                 reply_pop_up_alert = "Please get your own Userbot,for more info visit @DARK_COBRA_SUPPORT!"
@@ -27,7 +27,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     async def opner(event):
             if event.query.user_id == bot.uid :
                 current_page_number=0
-                buttons = paginate_help(current_page_number, CMD_HELP, "helpme")
+                buttons = paginate_help(current_page_number, CMD_LIST, "helpme")
                 await event.edit("`>>>\n\nReopened The Main Menu of \n©DARKCOBRA` ", buttons=buttons)
             else:
                 reply_pop_up_alert = "Please get your own Userbot,for more info visit @DARK_COBRA_SUPPORT!"
@@ -41,7 +41,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         query = event.text
         if event.query.user_id == bot.uid and query.startswith("Userbot"):
             rev_text = query[::-1]
-            buttons = paginate_help(0, CMD_HELP, "helpme")
+            buttons = paginate_help(0, CMD_LIST, "helpme")
             result = builder.article("© Userbot Help",text="{}\nCurrently Loaded Plugins: {}".format(query, len(CMD_LIST)),buttons=buttons,link_preview=False)
             await event.answer([result] if result else None)
         else:
@@ -56,7 +56,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 event.data_match.group(1).decode("UTF-8"))
             
             buttons = paginate_help(
-                current_page_number + 1, CMD_HELP, "helpme")
+                current_page_number + 1, CMD_LIST, "helpme")
            
             await event.edit(buttons=buttons)
         else:
@@ -74,7 +74,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             
             buttons = paginate_help(
                 current_page_number - 1,
-                CMD_HELP,  # pylint:disable=E0602
+                CMD_LIST,  # pylint:disable=E0602
                 "helpme"
             )
             
