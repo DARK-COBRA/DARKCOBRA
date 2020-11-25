@@ -10,7 +10,7 @@ from telethon import events
 import asyncio
 
 from uniborg.util import admin_cmd
-
+from userbot import CMD_HELP
 
 
 @borg.on(admin_cmd(pattern=r"fleave"))
@@ -56,3 +56,11 @@ async def _(event):
         await asyncio.sleep(animation_interval)
 
         await event.edit(animation_chars[i % 17])
+        
+        
+CMD_HELP.update(
+    {
+        "fleaveme": ".fleaveme"
+        "\nUsage": "#Animation Leave Plugin"
+    }
+)        
