@@ -3,11 +3,13 @@ from datetime import datetime
 
 from .. import ALIVE_NAME, CMD_HELP
 from ..utils import admin_cmd, edit_or_reply
+from userbot import sudo_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "DARK COBRA"
 
 
 @borg.on(admin_cmd(pattern=f"pingy$", outgoing=True))
+@borg.on(sudo_cmd(pattern=f"pingy", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -56,6 +58,7 @@ async def _(event):
 
 
 @borg.on(admin_cmd(pattern="king$"))
+@borg.on(sudo_cmd(pattern="king", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
