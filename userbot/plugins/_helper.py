@@ -58,7 +58,7 @@ async def cmd_list(event):
             )
             await event.delete()
             
- @borg.on(sudo_cmd(pattern=r"help ?(.*)"))
+@borg.on(sudo_cmd(pattern=r"help ?(.*)"))
 async def cmd_list(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!", "-", "_"):
         tgbotusername = Var.TG_BOT_USER_NAME_BF_HER
