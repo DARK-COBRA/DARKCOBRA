@@ -79,6 +79,6 @@ async def aexec(code, event):
 CMD_HELP.update(
     {
         "eval": ".eval <code>"
-        "\nUsage":"Run Your Python Codes using .eval\n\n"
+        "\nUsage":"Run Your Python Codes using .eval"
     }
 )
