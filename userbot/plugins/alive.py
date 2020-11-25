@@ -42,7 +42,7 @@ pm_caption += "➾ **ᴄᴏᴘʏʀɪɢʜᴛ ʙʏ** ☞ [𝙳𝙰𝚁𝙺-𝙲�
 pm_caption += f"➾ **ᴍʏ ᴍᴀsᴛᴇʀ** ☞ [{DEFAULTUSER}](tg://user?id={ghanti})\n"
 
 @borg.on(admin_cmd(pattern=r"alive"))
-@borg.on(sudo_cmd(pattern=r"alive"))
+@borg.on(sudo_cmd(pattern=r"alive", allow_sudo=True))
 async def amireallyalive(yes):
     chat = await yes.get_chat()
     global ghanti
@@ -106,7 +106,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 @borg.on(admin_cmd(outgoing=True, pattern="salive"))
-@borg.on(sudo_cmd(outgoing=True, pattern="salive"))
+@borg.on(sudo_cmd(outgoing=True, pattern="salive", allow_sudo=True))
 async def amireallyalive(alive):
     """ For .alive command, check if the bot is running.  """
     if ALIVE_PHOTTO:
