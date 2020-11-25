@@ -91,6 +91,6 @@ if 1 == 1:
 CMD_HELP.update(
     {
         "poto": ".poto <Enter Number for Specific Photo>"
-        "\nUsage": "Send the Profile Pic of Replied User."
+        "\nUsage Type .poto for get All profile pics of that User\n Or type `.poto (number)` to get the desired number of photo of a User."
     }
 )        
