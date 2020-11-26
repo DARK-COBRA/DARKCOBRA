@@ -5,7 +5,7 @@ import random
 import re
 from telethon.tl.custom import Button 
 from telethon import events, errors, custom
-from userbot import CMD_LIST
+from userbot import CMD_LIST, CMD_HELP
 import io
 
 #Making The Back Command Was The Toughest Work #by @Shivam_Patel,@The_Siddharth_Nigam,@danish_00,@ProgrammingError also v changed Pop up or inline help to text
@@ -17,7 +17,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             if event.query.user_id == bot.uid :
                 current_page_number=0
                 buttons = paginate_help(current_page_number, CMD_LIST, "helpme")
-                await event.edit("Here U R At Main Menu", buttons=buttons)
+                await event.edit("`>>>\n\nHere Is The Main Menu Of\n©DARKCOBRA`", buttons=buttons)
             else:
                 reply_pop_up_alert = "Please get your own Userbot,for more info visit @DARK_COBRA_SUPPORT!"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
@@ -28,7 +28,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             if event.query.user_id == bot.uid :
                 current_page_number=0
                 buttons = paginate_help(current_page_number, CMD_LIST, "helpme")
-                await event.edit("OKK MASTER U WANT IT BACK", buttons=buttons)
+                await event.edit("`>>>\n\nReopened The Main Menu of \n©DARKCOBRA` ", buttons=buttons)
             else:
                 reply_pop_up_alert = "Please get your own Userbot,for more info visit @DARK_COBRA_SUPPORT!"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
@@ -57,7 +57,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             
             buttons = paginate_help(
                 current_page_number + 1, CMD_LIST, "helpme")
-            # https://t.me/TelethonChat/115200
+           
             await event.edit(buttons=buttons)
         else:
             reply_pop_up_alert = "Please get your own Userbot, and don't use mine for more info visit @DARK_COBRA_SUPPORT!"
@@ -77,7 +77,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 CMD_LIST,  # pylint:disable=E0602
                 "helpme"
             )
-            # https://t.me/TelethonChat/115200
+            
             await event.edit(buttons=buttons)
         else:
             reply_pop_up_alert = "Please get your own Userbot, and don't use mine!"
@@ -87,7 +87,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     async def on_plug_in_callback_query_handler(event):
         if event.query.user_id == bot.uid:
             fci = custom.Button.inline("Open Main Menu Again", data="open")
-            await event.edit("The menu has been closed..!", buttons=fci)
+            await event.edit("`The menu has been closed..!`", buttons=fci)
             
   
 
@@ -104,7 +104,8 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         except:
             pass
         if help_string is "":
-            reply_pop_up_alert = "{} is useless".format(plugin_name)
+         
+            reply_pop_up_alert = " CMD_LIST not set yet 😅😅 try\n .help {}".format(plugin_name)
         else:
             reply_pop_up_alert = help_string
         reply_pop_up_alert += "\n Use .unload {} to remove this plugin\n\
@@ -112,7 +113,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         try:
             #fci = [[Button.inline('Go back', 'back')]] 
             if event.query.user_id == bot.uid :
-                fci = custom.Button.inline("Go Back To Main Menu", data="back")
+                fci = [custom.Button.inline("◤✞ 𝕸𝖆𝖎𝖓 𝕸𝖊𝖓𝖚 ✞◥", data="back"),custom.Button.inline("◤✞ 𝕮𝖑𝖔𝖘𝖊 ✞◥", data="close")]
                 await event.edit(reply_pop_up_alert, buttons=fci)
             else:
                 reply_pop_up_alert = "Please get your own Userbot, and don't use mine for more info visit @DARK_COBRA_SUPPORT!"
@@ -131,7 +132,7 @@ def paginate_help(page_number, loaded_plugins, prefix):
             helpable_plugins.append(p)
     helpable_plugins = sorted(helpable_plugins)
     modules = [custom.Button.inline(
-        "{} {}".format(random.choice(list(multi)), x, random.choice(list(multi))),
+        "{} {}".format(random.choice(list(multi)), x),
         data="us_plugin_{}".format(x))
         for x in helpable_plugins]
     pairs = list(zip(modules[::number_of_cols], modules[1::number_of_cols]))
