@@ -12,7 +12,7 @@ from userbot.utils import admin_cmd
 async def _(event):
     if event.fwd_from:
         return
-    animation_interval = 2
+    animation_interval = 1.5
     animation_ttl = range(0,10)
     await event.edit("Happy Diwali Dosto🤗")
     animation_chars = [
@@ -1269,15 +1269,15 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    animation_interval = 1.5
-    animation_ttl = range(0,15)
+    animation_interval = 1
+    animation_ttl = range(0,20)
     await event.edit("❤Happy Diwali Dosto❤")
     animation_chars = ["💖happy💖diwali💖","💙happy💙diwali💙","❤️happy♥️diwali❤️","💚happy💚diwali💚","💜happy💜diwali💜",]
 
     for i in animation_ttl:
         	
         await asyncio.sleep(animation_interval)
-        await event.edit(animation_chars[i % 15])
+        await event.edit(animation_chars[i % 20])
 
 
 @borg.on(admin_cmd("dosto"))
