@@ -179,8 +179,8 @@ async def sunny(event):
     await event.delete()
     await purge()
 
-@register(outgoing=True, pattern=r"^\.kim(?: |$)(.*)")
-async def kim(event):
+@register(outgoing=True, pattern=r"^\.joker(?: |$)(.*)")
+async def j(event):
     text = event.pattern_match.group(1)
     text = re.sub("&", "", text)
     reply_to_id = event.message
@@ -190,11 +190,11 @@ async def kim(event):
         if event.is_reply and not reply_to_id.media:
             text = reply_to_id.message
         else:
-            await event.edit("`Send you text to Kim jong so he can tweet.`")
+            await event.edit("`Send you text to 🃏 Joker so he can tweet.`")
             return
-    await event.edit("`Requesting Kim Jong to tweet...`")
+    await event.edit("`Requesting 🃏 Joker to tweet...`")
     text = deEmojify(text)
-    img = await kimtweet(text)
+    img = await jtweet(text)
     await event.client.send_file(event.chat_id, img, reply_to=reply_to_id)
     await event.delete()
     await purge()
