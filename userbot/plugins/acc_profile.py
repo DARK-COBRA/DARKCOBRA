@@ -2,7 +2,7 @@
 import os
 from telethon import events
 from telethon.tl import functions
-from userbot.utils import admin_cmd
+from userbot.utils import admin_cmd, sudo_cmd
 from telethon.errors import ImageProcessFailedError, PhotoCropSizeSmallError
 from telethon.errors.rpcerrorlist import (PhotoExtInvalidError,
                                           UsernameOccupiedError)
@@ -29,12 +29,13 @@ USERNAME_TAKEN = "```This username is already taken.```"
 
 
 @borg.on(admin_cmd(pattern="pbio (.*)")) 
+@borg.on(sudo_cmd(pattern="pbio (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
     bio = event.pattern_match.group(1)
     try:
-        await borg(functions.account.UpdateProfileRequest(  # pylint:disable=E0602
+        await borg(functions.account.UpdateProfileRequest(  
             about=bio
         ))
         await event.edit("Succesfully changed my profile bio")
@@ -42,7 +43,8 @@ async def _(event):
         await event.edit(str(e))
 
 
-@borg.on(admin_cmd(pattern="pname ((.|\n)*)"))  # pylint:disable=E0602,W0703
+@borg.on(admin_cmd(pattern="pname ((.|\n)*)"))
+@borg.on(sudo_cmd(pattern="pname ((.|\n)*)",allow_sudo=True))  
 async def _(event):
     if event.fwd_from:
         return
@@ -57,11 +59,12 @@ async def _(event):
             last_name=last_name
         ))
         await event.edit("My name was changed successfully")
-    except Exception as e:  # pylint:disable=C0103,W0703
+    except Exception as e:  
         await event.edit(str(e))
 
 
-@borg.on(admin_cmd(pattern="ppic"))  # pylint:disable=E0602
+@borg.on(admin_cmd(pattern="ppic"))  
+@borg.on(sudo_cmd(pattern="ppic"), allow_sudo=True)
 async def _(event):
     if event.fwd_from:
         return
@@ -95,7 +98,8 @@ async def _(event):
         logger.warn(str(e))  # pylint:disable=E0602
 
 
-@borg.on(admin_cmd(outgoing=True, pattern="username (.*)"))
+@borg.on(admin_cmd(outgoing=True, pattern="uname (.*)"))
+@borg.on(sudo_cmd(outgoing=True, pattern="uname (.*)", allow_sudo=True))
 async def update_username(username):
     """ For .username command, set a new username in Telegram. """
     newusername = username.pattern_match.group(1)
@@ -106,44 +110,9 @@ async def update_username(username):
         await username.edit(USERNAME_TAKEN)
 
 
-@borg.on(admin_cmd(outgoing=True, pattern="count$"))
-async def count(event):
-    """ For .count command, get profile stats. """
-    u = 0
-    g = 0
-    c = 0
-    bc = 0
-    b = 0
-    result = ""
-    await event.edit("`Processing..`")
-    dialogs = await bot.get_dialogs(limit=None, ignore_migrated=True)
-    for d in dialogs:
-        currrent_entity = d.entity
-        if isinstance(currrent_entity, User):
-            if currrent_entity.bot:
-                b += 1
-            else:
-                u += 1
-        elif isinstance(currrent_entity, Chat):
-            g += 1
-        elif isinstance(currrent_entity, Channel):
-            if currrent_entity.broadcast:
-                bc += 1
-            else:
-                c += 1
-        else:
-            print(d)
-
-    result += f"`Users:`\t**{u}**\n"
-    result += f"`Groups:`\t**{g}**\n"
-    result += f"`Super Groups:`\t**{c}**\n"
-    result += f"`Channels:`\t**{bc}**\n"
-    result += f"`Bots:`\t**{b}**"
-
-    await event.edit(result)
-
 
 @borg.on(admin_cmd(outgoing=True, pattern=r"delpfp"))
+@borg.on(sudo_cmd(outgoing=True,pattern=r"delpfp", allow_sudo=True))
 async def remove_profilepic(delpfp):
     """ For .delpfp command, delete your current profile picture in Telegram. """
     group = delpfp.text[8:]
@@ -170,6 +139,7 @@ async def remove_profilepic(delpfp):
         f"`Successfully deleted {len(input_photos)} profile picture(s).`")
 
 @borg.on(admin_cmd(pattern="myusernames$"))
+@borg.on(sudo_cmd(pattern=r"myusernames$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
