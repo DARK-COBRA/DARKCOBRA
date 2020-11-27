@@ -22,7 +22,7 @@ async def gps(event):
 
     await event.edit("finding")
 
-    geolocator = Nominatim(user_agent="FRIDAY")
+    geolocator = Nominatim(user_agent="LOCATER")
     geoloc = geolocator.geocode(input_str)
 
     if geoloc:
