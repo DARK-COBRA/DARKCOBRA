@@ -2,9 +2,10 @@ from math import ceil
 import asyncio
 import json
 import random
-import re
+import os,re
+import urllib
 from telethon.tl.custom import Button 
-from telethon import events, errors, custom
+from telethon import events, errors, custom, functions
 from userbot import CMD_LIST, CMD_HELP
 import io
 
@@ -91,36 +92,48 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             
   
 
-    @tgbot.on(events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-        data=re.compile(b"us_plugin_(.*)")
-    ))
+    @tgbot.on(
+        events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+            data=re.compile(b"us_plugin_(.*)")
+        )
+    )
     async def on_plug_in_callback_query_handler(event):
+        if not event.query.user_id == bot.uid:
+            sedok = "Who Tf Are You? Get Your Own Userbot."
+            await event.answer(sedok, cache_time=0, alert=True)
+            return
         plugin_name = event.data_match.group(1).decode("UTF-8")
-        help_string = ""
-        try:
-            for i in CMD_LIST[plugin_name]:
-                help_string += i
-                help_string += "\n"
-        except:
-            pass
-        if help_string is "":
-         
-            reply_pop_up_alert = " CMD_LIST not set yet 😅😅 try\n .help {}".format(plugin_name)
+        help_string = "Commands found in {}:\n".format(plugin_name)
+        for i in CMD_LIST[plugin_name]:
+            help_string += "✮ " + i + "\n"
+        if plugin_name in CMD_HELP:
+            help_string += (
+                f"**💡 PLUGIN NAME 💡 :** `{plugin_name}` \n{CMD_HELP[plugin_name]}"
+            )
         else:
-            reply_pop_up_alert = help_string
-        reply_pop_up_alert += "\n Use .unload {} to remove this plugin\n\
-            ©DARK COBRA Userbot".format(plugin_name)
-        try:
-            #fci = [[Button.inline('Go back', 'back')]] 
-            if event.query.user_id == bot.uid :
-                fci = [custom.Button.inline("◤✞ 𝕸𝖆𝖎𝖓 𝕸𝖊𝖓𝖚 ✞◥", data="back"),custom.Button.inline("◤✞ 𝕮𝖑𝖔𝖘𝖊 ✞◥", data="close")]
-                await event.edit(reply_pop_up_alert, buttons=fci)
-            else:
-                reply_pop_up_alert = "Please get your own Userbot, and don't use mine for more info visit @DARK_COBRA_SUPPORT!"
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-        except: 
-            halps = "Do .help {} to get the list of commands.".format(plugin_name)
-            await event.edit(halps)
+            help_string += " CMD_LIST not set yet 😅😅 try\n .help {}".format(plugin_name)
+
+        reply_pop_up_alert = help_string
+        reply_pop_up_alert += (
+            "\n Use .unload {} to remove this plugin\n ©DARK COBRA Userbot".format(plugin_name)
+        )
+        fci = [
+            custom.Button.inline("◤✞ 𝕸𝖆𝖎𝖓 𝕸𝖊𝖓𝖚 ✞◥", data="back"),
+            custom.Button.inline("◤✞ 𝕮𝖑𝖔𝖘𝖊 ✞◥", data="close"),
+        ]
+        if len(reply_pop_up_alert) >= 4096:
+            crackexy = "`Pasting Your Help Menu.`"
+            await event.answer(crackexy, cache_time=0, alert=True)
+            out_file = reply_pop_up_alert
+            url = "https://del.dog/documents"
+            r = requests.post(url, data=out_file.encode("UTF-8")).json()
+            url = f"https://del.dog/{r['key']}"
+
+            await event.edit(
+                f"Pasted {plugin_name} to {url}", link_preview=False, buttons=fci
+            )
+        else:
+            await event.edit(message=reply_pop_up_alert, buttons=fci)
 
 def paginate_help(page_number, loaded_plugins, prefix):
     number_of_rows = Config.NO_OF_BUTTONS_DISPLAYED_IN_H_ME_CMD
