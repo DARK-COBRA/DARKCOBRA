@@ -105,7 +105,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         plugin_name = event.data_match.group(1).decode("UTF-8")
         help_string = "Commands found in {}:\n".format(plugin_name)
         for i in CMD_LIST[plugin_name]:
-            help_string += "✮ " + i + "\n"
+            help_string += "✮ " + i + "\n\n"
         if plugin_name in CMD_HELP:
             help_string += (
                 f"**💡 PLUGIN NAME 💡 :** `{plugin_name}` \n{CMD_HELP[plugin_name]}"
@@ -115,7 +115,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
 
         reply_pop_up_alert = help_string
         reply_pop_up_alert += (
-            "\n Use .unload {} to remove this plugin\n ©DARK COBRA Userbot".format(plugin_name)
+            "\n\n Use .unload {} to remove this plugin\n ©DARK COBRA Userbot".format(plugin_name)
         )
         fci = [
             custom.Button.inline("◤✞ 𝕸𝖆𝖎𝖓 𝕸𝖊𝖓𝖚 ✞◥", data="back"),
