@@ -177,12 +177,12 @@ for binary, path in binaries.items():
     os.chmod(path, 0o755)
 
 # Global Variables
+
 COUNT_MSG = 0
 USERS = {}
 COUNT_PM = {}
 LASTMSG = {}
+SUDO_LIST = {}
 CMD_HELP = {}
 ISAFK = False
 AFKREASON = None
-
-
