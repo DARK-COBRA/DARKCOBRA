@@ -29,7 +29,7 @@ async def _(event):
     current_msg = event.id
     cap = """
 ==> **Song name** - `{}`
-==> **Uploaded by** [{DEFAULTUSER}](tg://user?id={ghanta})
+==> **Uploaded by** [{DEFAULTUSER}](tg://user?id={ok})
 """
     try:
         async for event in event.client.iter_messages(
