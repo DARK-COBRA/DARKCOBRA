@@ -98,7 +98,8 @@ async def purge():
         pass
 
 
-@register(outgoing=True, pattern=r"^\.trump(?: |$)(.*)")
+#@register(outgoing=True, pattern=r"^\.trump(?: |$)(.*)")
+@borg.on(admin_cmd(outgoing=True, pattern="trump ?(.*)"))
 async def trump(event):
     text = event.pattern_match.group(1)
     text = re.sub("&", "", text)
@@ -118,7 +119,9 @@ async def trump(event):
     await event.delete()
     await purge()
 
-@register(outgoing=True, pattern=r"^\.johnny(?: |$)(.*)")
+#@register(outgoing=True, pattern=r"^\.johnny(?: |$)(.*)")
+@borg.on(admin_cmd(outgoing=True, pattern="johnny ?(.*)"))
+
 async def johnny(event):
     text = event.pattern_match.group(1)
     text = re.sub("&", "", text)
@@ -138,7 +141,8 @@ async def johnny(event):
     await event.delete()
     await purge()
 
-@register(outgoing=True, pattern=r"^\.bhau(?: |$)(.*)")
+#@register(outgoing=True, pattern=r"^\.bhau(?: |$)(.*)")
+@borg.on(admin_cmd(outgoing=True, pattern="bhau ?(.*)"))
 async def bhau(event):
     text = event.pattern_match.group(1)
     text = re.sub("&", "", text)
@@ -159,7 +163,8 @@ async def bhau(event):
     await purge()
 
 
-@register(outgoing=True, pattern=r"^\.sunny(?: |$)(.*)")
+#@register(outgoing=True, pattern=r"^\.sunny(?: |$)(.*)")
+@borg.on(admin_cmd(outgoing=True, pattern="sunny ?(.*)"))
 async def sunny(event):
     text = event.pattern_match.group(1)
     text = re.sub("&", "", text)
@@ -179,7 +184,8 @@ async def sunny(event):
     await event.delete()
     await purge()
 
-@register(outgoing=True, pattern=r"^\.joker(?: |$)(.*)")
+#@register(outgoing=True, pattern=r"^\.joker(?: |$)(.*)")
+@borg.on(admin_cmd(outgoing=True, pattern="joker ?(.*)"))
 async def j(event):
     text = event.pattern_match.group(1)
     text = re.sub("&", "", text)
@@ -199,7 +205,8 @@ async def j(event):
     await event.delete()
     await purge()
 
-@register(outgoing=True, pattern=r"^\.modi(?: |$)(.*)")
+#@register(outgoing=True, pattern=r"^\.modi(?: |$)(.*)")
+@borg.on(admin_cmd(outgoing=True, pattern="modi ?(.*)"))
 async def modi(event):
     text = event.pattern_match.group(1)
     text = re.sub("&", "", text)
@@ -232,7 +239,8 @@ async def miatweet(text):
         img.save("temp.webp", "webp")    
         return "temp.webp"   
    
-@register(outgoing=True, pattern=r"^\.mia(?: |$)(.*)")
+#@register(outgoing=True, pattern=r"^\.mia(?: |$)(.*)")
+@borg.on(admin_cmd(outgoing=True, pattern="mia ?(.*)"))
 async def mia(event):
     text = event.pattern_match.group(1)
     text = re.sub("&", "", text)
@@ -252,7 +260,8 @@ async def mia(event):
     await event.delete()
     await purge()
 
-@register(outgoing=True, pattern=r"^\.cmm(?: |$)(.*)")
+#@register(outgoing=True, pattern=r"^\.cmm(?: |$)(.*)")
+@borg.on(admin_cmd(outgoing=True, pattern="cmm ?(.*)"))
 async def cmm(event):
     text = event.pattern_match.group(1)
     text = re.sub("&", "", text)
@@ -274,8 +283,8 @@ async def cmm(event):
 
 
 
-@register(outgoing=True, pattern="^.type(?: |$)(.*)")
-
+#@register(outgoing=True, pattern="^.type(?: |$)(.*)")
+@borg.on(admin_cmd(outgoing=True, pattern="type ?(.*)"))
 async def type(animu):
 #"""Generate random waifu sticker with the text!"""
      
@@ -295,8 +304,9 @@ async def type(animu):
                             hide_via=True)
     await animu.delete()
 
-@register(outgoing=True, pattern="^.waifu(?: |$)(.*)")
+#@register(outgoing=True, pattern="^.waifu(?: |$)(.*)")
 
+@borg.on(admin_cmd(outgoing=True, pattern="waifu ?(.*)"))
 async def waifu(danish):
 #"""Generate random waifu sticker with the text!"""
      
@@ -317,7 +327,8 @@ async def waifu(danish):
     await danish.delete()
     
 
-@register(outgoing=True, pattern=r"\.tweet(?: |$)(.*)")
+#@register(outgoing=True, pattern=r"\.tweet(?: |$)(.*)")
+@borg.on(admin_cmd(outgoing=True, pattern="tweet ?(.*)"))
 async def tweet(event):
     text = event.pattern_match.group(1)
     text = re.sub("&", "", text)
@@ -347,7 +358,6 @@ async def tweet(event):
 
 
 @borg.on(admin_cmd(pattern="tweetme(?: |$)(.*)"))
-
 async def tweetme(okie):
 #"""Creates random anime sticker!"""
     what = okie.pattern_match.group(1)
