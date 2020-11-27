@@ -3,7 +3,7 @@ from telethon import events
 from pathlib import Path
 from var import Var
 from userbot import LOAD_PLUG
-from userbot import CMD_LIST
+from userbot import CMD_LIST, SUDO_LIST
 import re
 import logging
 import inspect
@@ -399,22 +399,19 @@ def sudo_cmd(pattern=None, **args):
     file_test = Path(previous_stack_frame.filename)
     file_test = file_test.stem.replace(".py", "")
     allow_sudo = args.get("allow_sudo", False)
-
     # get the pattern from the decorator
     if pattern is not None:
         if pattern.startswith("\#"):
             # special fix for snip.py
             args["pattern"] = re.compile(pattern)
         else:
-            
             args["pattern"] = re.compile(Config.SUDO_COMMAND_HAND_LER + pattern)
-            reg =Config.SUDO_COMMAND_HAND_LER[1]
-            cmd = (reg +pattern).replace("$", "").replace("\\", "").replace("^", "")
+            reg = Config.SUDO_COMMAND_HAND_LER[1]
+            cmd = (reg + pattern).replace("$", "").replace("\\", "").replace("^", "")
             try:
                 SUDO_LIST[file_test].append(cmd)
             except:
                 SUDO_LIST.update({file_test: [cmd]})
-
     args["outgoing"] = True
     # should this command be available for other users?
     if allow_sudo:
@@ -422,30 +419,24 @@ def sudo_cmd(pattern=None, **args):
         # Mutually exclusive with outgoing (can only set one of either).
         args["incoming"] = True
         del args["allow_sudo"]
-
     # error handling condition check
     elif "incoming" in args and not args["incoming"]:
         args["outgoing"] = True
-
     # add blacklist chats, UB should not respond in these chats
     args["blacklist_chats"] = True
     black_list_chats = list(Config.UB_BLACK_LIST_CHAT)
     if len(black_list_chats) > 0:
         args["chats"] = black_list_chats
-
     # add blacklist chats, UB should not respond in these chats
-    allow_edited_updates = False
     if "allow_edited_updates" in args and args["allow_edited_updates"]:
-        allow_edited_updates = args["allow_edited_updates"]
+        args["allow_edited_updates"]
         del args["allow_edited_updates"]
-
     # check if the plugin should listen for outgoing 'messages'
-    is_message_enabled = True
-
     return events.NewMessage(**args)
 
+
 async def edit_or_reply(event, text):
-    if event.from_id in Config.SUDO_USERS:
+    if event.sender_id in Config.SUDO_USERS:
         reply_to = await event.get_reply_message()
         if reply_to:
             return await reply_to.reply(text)
