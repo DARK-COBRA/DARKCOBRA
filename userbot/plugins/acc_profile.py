@@ -63,8 +63,7 @@ async def _(event):
         await event.edit(str(e))
 
 
-@borg.on(admin_cmd(pattern="ppic"))  
-@borg.on(sudo_cmd(pattern="ppic"), allow_sudo=True)
+@borg.on(admin_cmd(pattern="ppic"))
 async def _(event):
     if event.fwd_from:
         return
@@ -82,7 +81,7 @@ async def _(event):
         await event.edit(str(e))
     else:
         if photo:
-            await event.edit("now, Uploading to @Telegram ...")
+            await event.edit("now, Uploading to Telegram ...")
             file = await borg.upload_file(photo)  # pylint:disable=E0602
             try:
                 await borg(functions.photos.UploadProfilePhotoRequest(  # pylint:disable=E0602
