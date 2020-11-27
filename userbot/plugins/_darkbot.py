@@ -88,7 +88,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     async def on_plug_in_callback_query_handler(event):
         if event.query.user_id == bot.uid:
             fci = custom.Button.inline("◤✞ 𝕺𝖕𝖊𝖓 𝕸𝖆𝖎𝖓 𝕸𝖊𝖓𝖚 𝕬𝖌𝖆𝖎𝖓 ✞◥", data="open")
-            await event.edit("꧁༺ 𝓣𝓱𝓮 𝓜𝓪𝓲𝓷 𝓗𝓪𝓼 𝓑𝓮𝓮𝓷 𝓒𝓵𝓸𝓼𝓮𝓭 ༻꧂", buttons=fci)
+            await event.edit("`Main Menu Has Been Closed`", buttons=fci)
             
   
 
