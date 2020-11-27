@@ -73,7 +73,7 @@ CMD_HELP.update(
     {
         "ping": "__**PLUGIN NAME :** King__\
     \n\n📌** CMD ★** `.pingy`\
-    \n**USAGE   ★  **A kind ofping with extra animation\
+    \n**USAGE   ★  **A kind of ping with extra animation\
     \n\n📌** CMD ★** `.king`\
     \n**USAGE   ★  **Shows you the ping speed of server"
     }
