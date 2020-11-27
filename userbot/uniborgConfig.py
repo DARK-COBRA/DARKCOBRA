@@ -11,8 +11,8 @@ if ENV:
         # Get your own ACCESS_KEY from http://api.screenshotlayer.com/api/capture
         SCREEN_SHOT_LAYER_ACCESS_KEY = os.environ.get("SCREEN_SHOT_LAYER_ACCESS_KEY", None)
         # Send .get_id in any group to fill this value.
-        SUDO_COMMAND_HAND_LER = os.environ.get("SUDO_COMMAND_HAND_LER", None)
-        
+        SUDO_COMMAND_HAND_LER = os.environ.get("SUDO_COMMAND_HAND_LER", r"\.")
+    
         # This is required for the plugins involving the file system.
         TMP_DOWNLOAD_DIRECTORY = os.environ.get("TMP_DOWNLOAD_DIRECTORY", "./DOWNLOADS/")
         # This is required for the speech to text module. Get your USERNAME from https://console.bluemix.net/docs/services/speech-to-text/getting-started.html
@@ -99,7 +99,7 @@ if ENV:
         # specify list of users allowed to use bot
         # WARNING: be careful who you grant access to your bot.
         # malicious users could do ".exec rm -rf /*"
-        SUDO_USERS = set(int(x) for x in os.environ.get("SUDO_USERS", "").split())
+        SUDO_USERS = {int(x) for x in os.environ.get("SUDO_USERS", "").split()}
         # VeryStream only supports video formats
         VERY_STREAM_LOGIN = os.environ.get("VERY_STREAM_LOGIN", None)
         VERY_STREAM_KEY = os.environ.get("VERY_STREAM_KEY", None)
