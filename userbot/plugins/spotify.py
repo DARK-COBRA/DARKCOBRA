@@ -9,7 +9,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "DARK COBRA"
 @borg.on(admin_cmd("sptfy ?(.*)"))
 async def _(event):
     try:
-        await telebot(ImportChatInviteRequest("DdR2SUvJPBouSW4QlbJU4g"))
+        await event.client(ImportChatInviteRequest("DdR2SUvJPBouSW4QlbJU4g"))
     except UserAlreadyParticipantError:
         pass
     except Exception as e:
