@@ -47,7 +47,7 @@ async def apk(event):
 
 
 @bot.on(admin_cmd(pattern="appx ?(.*)"))
-@not.on(sudo_cmd(pattern="appx ?(.*)", allow_sudo=True))
+@bot.on(sudo_cmd(pattern="appx ?(.*)", allow_sudo=True))
 async def mod(event):
     if event.fwd_from:
         return
