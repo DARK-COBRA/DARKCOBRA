@@ -107,6 +107,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 @borg.on(admin_cmd(outgoing=True, pattern="salive"))
+@borg.on(sudo_cmd(pattern=r"salive", allow_sudo=True))
 async def amireallyalive(alive):
     """ For .alive command, check if the bot is running.  """
     if ALIVE_PHOTTO:
