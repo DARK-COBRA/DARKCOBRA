@@ -2,19 +2,20 @@ import asyncio
 from datetime import datetime
 
 from .. import ALIVE_NAME, CMD_HELP
-from ..utils import admin_cmd, edit_or_reply
+from ..utils import admin_cmd, sudo_cmd, edit_or_reply
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "DARK COBRA"
 
 
 @borg.on(admin_cmd(pattern=f"pingy$", outgoing=True))
+@borg.on(sudo_cmd(pattern=f"pingy%:, allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
     start = datetime.now()
     animation_interval = 0.2
     animation_ttl = range(0, 26)
-    await event.edit("ping....")
+    await edit_or_reply(event, "ping....")
     animation_chars = [
         "⬛⬛⬛⬛⬛⬛⬛⬛⬛",
         "⬛⬛⬛⬛⬛⬛⬛⬛⬛ \n⬛‎📶‎📶‎📶‎📶‎📶‎📶‎📶⬛",
@@ -56,6 +57,7 @@ async def _(event):
 
 
 @borg.on(admin_cmd(pattern="king$"))
+@borg.on(sudo_cmd(pattern="king$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
