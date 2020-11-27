@@ -8,7 +8,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "DARK COBRA"
 
 
 @borg.on(admin_cmd(pattern=f"pingy$", outgoing=True))
-@borg.on(sudo_cmd(pattern=f"pingy%:, allow_sudo=True))
+@borg.on(sudo_cmd(pattern=f"pingy$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
