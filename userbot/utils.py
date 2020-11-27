@@ -442,3 +442,12 @@ async def edit_or_reply(event, text):
             return await reply_to.reply(text)
         return await event.reply(text)
     return await event.edit(text)
+
+async def edit_anim(event, text):
+    if event.sender_id in Config.SUDO_USERS:
+        reply_to = await event.get_reply_message()
+        repl = await reply_to.get_reply_message()
+        if repl:
+            return await repl.respond(text)
+        return await event.reply(text)
+    return await event.edit(text)
