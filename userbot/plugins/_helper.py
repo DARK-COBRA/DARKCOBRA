@@ -1,6 +1,6 @@
 from userbot import CMD_LIST
 from userbot import ALIVE_NAME
-from userbot.utils import admin_cmd
+from userbot.utils import admin_cmd, sudo_cmd
 from platform import uname
 import sys
 from telethon import events, functions, __version__
@@ -8,8 +8,8 @@ from telethon import events, functions, __version__
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "@Dark_cobra_support_group"
 
 #@command(pattern="^.help ?(.*)")
-@borg.on(admin_cmd(pattern=r"alive"))
-@borg.on(sudo_cmd(pattern=r"alive", allow_sudo=True))
+@borg.on(admin_cmd(pattern=r"help"))
+@borg.on(sudo_cmd(pattern=r"help", allow_sudo=True))
 
 async def cmd_list(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/" , "#", "-", "_", "@"):
