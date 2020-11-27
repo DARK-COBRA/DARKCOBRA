@@ -10,14 +10,15 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot import Var
 
 from userbot import CMD_HELP ,ALIVE_NAME
-from userbot.utils import admin_cmd
+from userbot.utils import admin_cmd, edit_or_reply , sudo_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "cat"
 
 @borg.on(admin_cmd(pattern=r"app (.*)"))
+@bot.on(sudo_cmd(pattern="app (.*)", allow_sudo=True))
 async def apk(event):
     app_name = event.pattern_match.group(1)
-    event = await event.edit("Searching!")
+    event = await edit_or_reply(event,"Searching!")
     try:
         remove_space = app_name.split(' ')
         final_name = '+'.join(remove_space)
