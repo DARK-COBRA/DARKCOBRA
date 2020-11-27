@@ -1,3 +1,11 @@
+# Darkcobra Original 🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍
+# kangers Keep Credits 😒😒😒😒😒😒😒😒😒😒😒😒😒😒😒😒😒
+# Made by Dc-Team
+# Don't remove these lines u fool ,,, 
+#
+#
+#hehehhe
+
 from math import ceil
 import asyncio
 import json
@@ -17,8 +25,8 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     async def backr(event):
             if event.query.user_id == bot.uid :
                 current_page_number=0
-                buttons = paginate_help(current_page_number, CMD_LIST, "helpme")
-                await event.edit("`>>>\n\nHere Is The Main Menu Of\n©DARKCOBRA`", buttons=buttons)
+                dc = paginate_help(current_page_number, CMD_LIST, "helpme")
+                await event.edit("`>>>\n\nHere Is The Main Menu Of\n©DARKCOBRA`", buttons=dc)
             else:
                 reply_pop_up_alert = "Please get your own Userbot,for more info visit @DARK_COBRA_SUPPORT!"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
@@ -28,8 +36,8 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     async def opner(event):
             if event.query.user_id == bot.uid :
                 current_page_number=0
-                buttons = paginate_help(current_page_number, CMD_LIST, "helpme")
-                await event.edit("`>>>\n\nReopened The Main Menu of \n©DARKCOBRA` ", buttons=buttons)
+                dc = paginate_help(current_page_number, CMD_LIST, "helpme")
+                await event.edit("`>>>\n\nReopened The Main Menu of \n©DARKCOBRA` ", buttons=dc)
             else:
                 reply_pop_up_alert = "Please get your own Userbot,for more info visit @DARK_COBRA_SUPPORT!"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
@@ -42,8 +50,8 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         query = event.text
         if event.query.user_id == bot.uid and query.startswith("Userbot"):
             rev_text = query[::-1]
-            buttons = paginate_help(0, CMD_LIST, "helpme")
-            result = builder.article("© Userbot Help",text="{}\nCurrently Loaded Plugins: {}".format(query, len(CMD_LIST)),buttons=buttons,link_preview=False)
+            dc = paginate_help(0, CMD_LIST, "helpme")
+            result = builder.article("© Userbot Help",text="{}\nCurrently Loaded Plugins: {}".format(query, len(CMD_LIST)),buttons=dc,link_preview=False)
             await event.answer([result] if result else None)
         else:
               reply_pop_up_alert = "Please get your own Userbot😁😁,for more info visit @DARK_COBRA_SUPPORT! 😎😎"
@@ -56,15 +64,15 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             current_page_number = int(
                 event.data_match.group(1).decode("UTF-8"))
             
-            buttons = paginate_help(
+            dc = paginate_help(
                 current_page_number + 1, CMD_LIST, "helpme")
-           
-            await event.edit(buttons=buttons)
+#hehehehehheh           
+            await event.edit(buttons=dc)
         else:
             reply_pop_up_alert = "Please get your own Userbot, and don't use mine for more info visit @DARK_COBRA_SUPPORT!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-
+#hehhehehehhehhehhehehhe
     @tgbot.on(events.callbackquery.CallbackQuery(  # pylint:disable=E0602
         data=re.compile(b"helpme_prev\((.+?)\)")
     ))
@@ -73,22 +81,22 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             current_page_number = int(
                 event.data_match.group(1).decode("UTF-8"))
             
-            buttons = paginate_help(
+            dc = paginate_help(
                 current_page_number - 1,
                 CMD_LIST,  # pylint:disable=E0602
                 "helpme"
             )
             
-            await event.edit(buttons=buttons)
+            await event.edit(buttons=dc)
         else:
               reply_pop_up_alert = "Please get your own Userbot😁😁,for more info visit @DARK_COBRA_SUPPORT! 😎😎"
               await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-    
+ #hehehehehhehhehhehe   
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
     async def on_plug_in_callback_query_handler(event):
         if event.query.user_id == bot.uid:
-            fci = custom.Button.inline("◤✞ 𝕺𝖕𝖊𝖓 𝕸𝖆𝖎𝖓 𝕸𝖊𝖓𝖚 𝕬𝖌𝖆𝖎𝖓 ✞◥", data="open")
-            await event.edit("`Main Menu Has Been Closed`", buttons=fci)
+            dc = custom.Button.inline("◤✞ 𝕺𝖕𝖊𝖓 𝕸𝖆𝖎𝖓 𝕸𝖊𝖓𝖚 𝕬𝖌𝖆𝖎𝖓 ✞◥", data="open")
+            await event.edit("`Main Menu Has Been Closed`", buttons=dc)
         else:
             reply_pop_up_alert = "Please get your own Userbot😁😁,for more info visit @DARK_COBRA_SUPPORT! 😎😎"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
@@ -101,8 +109,8 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     )
     async def on_plug_in_callback_query_handler(event):
         if not event.query.user_id == bot.uid:
-            sedok = "Please get your own Userbot😁😁,for more info visit @DARK_COBRA_SUPPORT! 😎😎"
-            await event.answer(sedok, cache_time=0, alert=True)
+            cobra = "Please get your own Userbot😁😁,for more info visit @DARK_COBRA_SUPPORT! 😎😎"
+            await event.answer(cobra, cache_time=0, alert=True)
             return
         plugin_name = event.data_match.group(1).decode("UTF-8")
         help_string = "Commands found in {}:\n".format(plugin_name)
@@ -119,7 +127,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         reply_pop_up_alert += (
             "\n\n Use .unload {} to remove this plugin\n ©DARK COBRA Userbot".format(plugin_name)
         )
-        fci = [
+        dc = [
             custom.Button.inline("◤✞ 𝕸𝖆𝖎𝖓 𝕸𝖊𝖓𝖚 ✞◥", data="back"),
             custom.Button.inline("◤✞ 𝕮𝖑𝖔𝖘𝖊 ✞◥", data="close"),
         ]
@@ -130,12 +138,12 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             url = "https://del.dog/documents"
             r = requests.post(url, data=out_file.encode("UTF-8")).json()
             url = f"https://del.dog/{r['key']}"
-
+#hehehhehhehehheheh
             await event.edit(
-                f"Pasted {plugin_name} to {url}", link_preview=False, buttons=fci
+                f"Pasted {plugin_name} to {url}", link_preview=False, buttons=dc
             )
         else:
-            await event.edit(message=reply_pop_up_alert, buttons=fci)
+            await event.edit(message=reply_pop_up_alert, buttons=dc)
 
 def paginate_help(page_number, loaded_plugins, prefix):
     number_of_rows = Config.NO_OF_BUTTONS_DISPLAYED_IN_H_ME_CMD
@@ -163,3 +171,6 @@ def paginate_help(page_number, loaded_plugins, prefix):
              custom.Button.inline("❃.𝙽𝙴𝚇𝚃✮:▹", data="{}_next({})".format(prefix, modulo_page)))
         ]
     return pairs
+
+# chal nikal 
+# gtfo
