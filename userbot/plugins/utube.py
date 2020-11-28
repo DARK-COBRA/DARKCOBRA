@@ -35,7 +35,7 @@ def deEmojify(inputString: str) -> str:
     return re.sub(IF_EMOJI, '', inputString)
 
 
-@borg.on(admin_cmd(pattern="utv(?: |$)(.*)"))
+@borg.on(admin_cmd(pattern="utv ?(.*)"))
 
 async def nope(doit):
     ok = doit.pattern_match.group(1)
@@ -66,7 +66,7 @@ async def nope(doit):
 
 
 
-@borg.on(admin_cmd(pattern="uta(?: |$)(.*)"))
+@borg.on(admin_cmd(pattern="uta ?(.*)"))
 
 async def nope(doit):
     ok = doit.pattern_match.group(1)
@@ -91,7 +91,7 @@ NOT_FOUND_STRING = "<code>Sorry !I am unable to find any results to your query</
 SENDING_STRING = "<code>Ok I found something related to that.....</code>"
 BOT_BLOCKED_STRING = "<code>Please unblock @utubebot and try again</code>"
 
-@bot.on(admin_cmd(pattern="ut (.*)"))
+@bot.on(admin_cmd(pattern="ut ?(.*)"))
 async def fetcher(event):
     if event.fwd_from:
         return
