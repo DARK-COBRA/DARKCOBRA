@@ -1,3 +1,5 @@
+# By @HeisenbergTheDanger and @xditya
+
 import os
 import re
 from telethon import *
