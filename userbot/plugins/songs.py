@@ -14,10 +14,51 @@ import asyncio
 from telethon.tl.functions.messages import ImportChatInviteRequest
 from telethon.errors.rpcerrorlist import UserAlreadyParticipantError
 from telethon.tl.types import InputMessagesFilterMusic
+import os
+try:
+ import subprocess
+except:
+ os.system("pip install instantmusic")
+ 
 
 
+os.system("rm -rf *.mp3")
 
+
+def bruh(name):
+    
+    os.system("instantmusic -q -s "+name)
+    
+
+#@register(outgoing=True, pattern="^.netease(?: |$)(.*)")
 @borg.on(admin_cmd("songs ?(.*)"))
+async def WooMai(netase):
+    if netase.fwd_from:
+        return
+    song = netase.pattern_match.group(1)
+    chat = "@WooMaiBot"
+    link = f"/netease {song}"
+    await netase.edit("```Getting Your Music```")
+    async with bot.conversation(chat) as conv:
+          await asyncio.sleep(2)
+          await netase.edit("`Downloading...Please wait`")
+          try:
+              msg = await conv.send_message(link)
+              response = await conv.get_response()
+              respond = await conv.get_response()
+              """ - don't spam notif - """
+              await bot.send_read_acknowledge(conv.chat_id)
+          except YouBlockedUserError:
+              await netase.edit("```Please unblock @WooMaiBot and try again```")
+              return
+          await netase.edit("`Sending Your Music...weit!😎`")
+          await asyncio.sleep(3)
+          await bot.send_file(netase.chat_id, respond)
+    await netase.client.delete_messages(conv.chat_id,
+                                       [msg.id, response.id, respond.id])
+    await netase.delete()
+
+@borg.on(admin_cmd("song ?(.*)"))
 async def _(event):
     try:
        await event.client(ImportChatInviteRequest('DdR2SUvJPBouSW4QlbJU4g'))
@@ -113,7 +154,7 @@ async def FindMusicPleaseBot(gaana):
     await gaana.delete()
 
 
-@borg.on(admin_cmd(pattern="deezer(?: |$)(.*)"))
+@borg.on(admin_cmd(pattern="deez(?: |$)(.*)"))
 
 async def nope(doit):
     ok = doit.pattern_match.group(1)
@@ -138,9 +179,11 @@ CMD_HELP.update(
         "songs": "__**PLUGIN NAME :** All Songs __\
     \n\n📌** CMD ★** `.songs (name)`\
     \n**USAGE   ★  **Send u a song \
+    \n\n📌** CMD ★** `.song (name)`\
+    \n**USAGE   ★  **Send u a song \
     \n\n📌** CMD ★** `.sptfy (name)`\
     \n**USAGE   ★  **Send u song(best for indian songs)\
-    \n\n📌** CMD ★** `.deezer (name)`\
+    \n\n📌** CMD ★** `.deez (name)`\
     \n**USAGE   ★  **Send u song (note:- u can use .vsong/.uta/.utv (name) too for songs 😁😁"
     }
 )
