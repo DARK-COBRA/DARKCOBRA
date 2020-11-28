@@ -7,7 +7,7 @@
 
 import re
 import random
-from userbot import bot
+from userbot import bot, CMD_HELP
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot.utils import admin_cmd
 import asyncio
