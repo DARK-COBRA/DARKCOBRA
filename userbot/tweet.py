@@ -76,3 +76,19 @@ async def jtweet(text):
     img = Image.open("hoho.png").convert("RGB")
     img.save("hoho.webp", "webp")
     return "hoho.webp"
+
+async def miatweet(text):
+    r = requests.get(
+        f"https://nekobot.xyz/api/imagegen?type=tweet&text={text}&username=miakhalifa"
+    ).json()
+    ab = r.get("message")
+    cd = url(ab)
+    if not cd:
+        return "check syntax once more"
+    with open("hoho.png", "wb") as f:
+        f.write(requests.get(ab).content)
+    img = Image.open("hoho.png").convert("RGB")
+    img.save("hoho.webp", "webp")
+    return "hoho.webp"
+
+
