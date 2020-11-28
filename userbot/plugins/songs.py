@@ -15,7 +15,7 @@ from telethon.tl.functions.messages import ImportChatInviteRequest
 from telethon.errors.rpcerrorlist import UserAlreadyParticipantError
 
 
- IF_EMOJI = re.compile(
+IF_EMOJI = re.compile(
     "["
     "\U0001F1E0-\U0001F1FF"  # flags (iOS)
     "\U0001F300-\U0001F5FF"  # symbols & pictographs
