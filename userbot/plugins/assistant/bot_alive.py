@@ -3,7 +3,7 @@ from telethon import events
 from userbot import ALIVE_NAME, bot
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Unknown"
-PM_IMG = "https://telegra.ph/file/e6223f1abf7720c4938f3.jpg"
+PM_IMG = "https://telegra.ph/file/22e70478bd48568451a1f.jpg"
 pm_caption = "➥ **ASSISTANT IS:** `ONLINE`\n\n"
 pm_caption += "➥ **SYSTEMS STATS**\n"
 pm_caption += "➥ **Telethon Version:** `1.15.0` \n"
