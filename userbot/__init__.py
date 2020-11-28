@@ -5,6 +5,8 @@ from telethon.sessions import StringSession
 from telethon import TelegramClient
 from userbot.helper import functions as darkdef
 from var import Var
+from userbot.functions import dcfunction as topfunc
+
 
 os.system("pip install --upgrade pip")
 if Var.STRING_SESSION:
@@ -16,7 +18,6 @@ else:
 
 
 CMD_LIST = {}
-# for later purposes
 CMD_HELP = {}
 INT_PLUG = ""
 LOAD_PLUG = {}
