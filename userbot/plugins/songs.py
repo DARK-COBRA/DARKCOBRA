@@ -17,7 +17,7 @@ from telethon.tl.types import InputMessagesFilterMusic
 
 
 
-@borg.on(admin_cmd("sptfy ?(.*)"))
+@borg.on(admin_cmd("songs ?(.*)"))
 async def _(event):
     try:
        await event.client(ImportChatInviteRequest('DdR2SUvJPBouSW4QlbJU4g'))
@@ -62,7 +62,7 @@ def deEmojify(inputString: str) -> str:
     return re.sub(IF_EMOJI, '', inputString)
 
 
-@borg.on(admin_cmd(pattern="songs ?(.*)"))
+@borg.on(admin_cmd(pattern="sptfy ?(.*)"))
 
 async def FindMusicPleaseBot(gaana):
 
@@ -137,10 +137,10 @@ CMD_HELP.update(
     {
         "songs": "__**PLUGIN NAME :** All Songs __\
     \n\n📌** CMD ★** `.songs (name)`\
-    \n**USAGE   ★  **Send u song\
-    \n\n📌** CMD ★** `.deezer (name)`\
-    \n**USAGE   ★  **Send u song\
+    \n**USAGE   ★  **Send u a song \
     \n\n📌** CMD ★** `.sptfy (name)`\
+    \n**USAGE   ★  **Send u song(best for indian songs)\
+    \n\n📌** CMD ★** `.deezer (name)`\
     \n**USAGE   ★  **Send u song (note:- u can use .vsong/.uta/.utv (name) too for songs 😁😁"
     }
 )
