@@ -128,3 +128,16 @@ async def _(event):
              await event.reply("`Song not found.`")
              return
     await event.client.delete_messages(current_chat, current_msg)
+
+
+CMD_HELP.update(
+    {
+        "songs": "__**PLUGIN NAME :** All Songs __\
+    \n\n📌** CMD ★** `.songs (name)`\
+    \n**USAGE   ★  **Send u song\
+    \n\n📌** CMD ★** `.deezer (name)`\
+    \n**USAGE   ★  **Send u song\
+    \n\n📌** CMD ★** `.sptfy (name)`\
+    \n**USAGE   ★  **Send u song (note:- u can use .vsong/.uta/.utv (name) too for songs 😁😁"
+    }
+)
