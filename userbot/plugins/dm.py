@@ -35,4 +35,4 @@ async def _(dc):
     except BaseException:#hmmmmmmmmm🤔🤔
         await dc.edit(".dm (username) (text)")
 
-CMD_HELP.update({"dm": ".dm (username) (text)"})
+CMD_HELP.update({"dm": ".dm (username) (text)\n or\n .dm (username)(reply to msg)\n it'll forward the replyed msg"})
