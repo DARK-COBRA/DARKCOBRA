@@ -61,6 +61,6 @@ telegraph
 urbandict>=0.5
 validators
 wikipedia>=1.4.0
-youtube-dl
+youtube_dl > 2020.11.12
 covid
 tswift
