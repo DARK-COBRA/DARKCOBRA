@@ -43,7 +43,7 @@ async def _(event):
               #team mates @danish_00,@Shivam_Patel,@xditya,@The_Siddharth_Nigam
               return
            
-           await event.delete()
+           
              #team mates @danish_00,@Shivam_Patel,@xditya,@AP_XD,@The_Siddharth_Nigam#team mates 
              #team mates @danish_00,@Shivam_Patel,@xditya,@The_Siddharth_Nigam
            await event.client.send_message(event.chat_id, response2.message)
@@ -81,7 +81,7 @@ async def _(event):
               #team mates @danish_00,@Shivam_Patel,@xditya,@The_Siddharth_Nigam
               return
            
-           await event.delete()
+           
              #team mates @danish_00,@Shivam_Patel,@xditya,@AP_XD,@The_Siddharth_Nigam#team mates 
              #team mates @danish_00,@Shivam_Patel,@xditya,@The_Siddharth_Nigam
            await event.client.send_message(event.chat_id, response3.message)
