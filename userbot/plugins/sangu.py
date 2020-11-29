@@ -31,14 +31,14 @@ async def _(event):
           try:     
               #Fixed By @Shivam_Patel
               #team mates @danish_00,@Shivam_Patel,@xditya,@AP_XD,@The_Siddharth_Nigam#team mates 
+              response1 = await response1
+              response2 = await response2 #team mates @danish_00,@Shivam_Patel,@xditya,@AP_XD,@The_Siddharth_Nigam#team mates 
+              response3 = await response3
               response2 = conv.wait_event(events.NewMessage(incoming=True,from_users=461843263))#team mates @danish_00,@Shivam_Patel,@xditya,@AP_XD,@The_Siddharth_Nigam#team mates 
               #team mates @danish_00,@Shivam_Patel,@xditya,@AP_XD,@The_Siddharth_Nigam#team mates 
               await conv.send_message("/search_id {}".format(sender))#team mates @danish_00,@Shivam_Patel,@xditya,@AP_XD,@The_Siddharth_Nigam#team mates 
               #team mates @danish_00,@Shivam_Patel,@xditya,@The_Siddharth_Nigam
               #team mates @danish_00,@Shivam_Patel,@xditya,@AP_XD,@The_Siddharth_Nigam#team mates 
-              response1 = await response1
-              response2 = await response2 #team mates @danish_00,@Shivam_Patel,@xditya,@AP_XD,@The_Siddharth_Nigam#team mates 
-              response3 = await response3
               #team mates @danish_00,@Shivam_Patel,@xditya,@AP_XD,@The_Siddharth_Nigam#team mates 
           except YouBlockedUserError: 
               await event.reply("```Please unblock (@Sangmatainfo_bot) ```")
