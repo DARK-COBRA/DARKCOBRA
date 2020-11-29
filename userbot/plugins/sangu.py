@@ -10,7 +10,7 @@ from telethon.tl.functions.account import UpdateNotifySettingsRequest
 #team mates @danish_00,@Shivam_Patel,@xditya,@The_Siddharth_Nigam
 from userbot.utils import admin_cmd
 #team mates @danish_00,@Shivam_Patel,@xditya,@The_Siddharth_Nigam
-from userbot import bot as borg
+from userbot import bot
 #team mates @danish_00,@Shivam_Patel,@xditya,@The_Siddharth_Nigam
 @borg.on(admin_cmd(pattern="sg ?(.*)"))
 #team mates @danish_00,@Shivam_Patel,@xditya,@The_Siddharth_Nigam
