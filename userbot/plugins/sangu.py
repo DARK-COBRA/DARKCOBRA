@@ -41,7 +41,7 @@ async def _(event):
               await event.reply("```Please unblock (@Sangmatainfo_bot) ```")
               #team mates @danish_00,@Shivam_Patel,@xditya,@The_Siddharth_Nigam
               return
-          if response1.text.startswith("No records found"):
+          if response.text.startswith("No records found"):
              #team mates @danish_00,@Shivam_Patel,@xditya,@The_Siddharth_Nigam
              await event.edit("```User never changed his name...```")
              #team mates @danish_00,@Shivam_Patel,@xditya,@AP_XD,@The_Siddharth_Nigam#team mates 
@@ -83,7 +83,7 @@ async def _(event):
               await event.reply("```Please unblock (@Sangmatainfo_bot) ```")
               #team mates @danish_00,@Shivam_Patel,@xditya,@The_Siddharth_Nigam
               return
-          if response1.text.startswith("No records found"):
+          if response.text.startswith("No records found"):
              #team mates @danish_00,@Shivam_Patel,@xditya,@The_Siddharth_Nigam
              await event.edit("```User never changed his username...```")
              #team mates @danish_00,@Shivam_Patel,@xditya,@AP_XD,@The_Siddharth_Nigam#team mates 
