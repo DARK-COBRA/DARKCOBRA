@@ -28,8 +28,8 @@ if Config.TAG_LOG:
         if who_.bot or who_.verified or who_.support:
             return
 
-        who_m = f"{get_display_name(who_)}"
-
+        who_m = f"[{get_display_name(who_)}](tg://user?id={who_.id})"
+        
         where_ = await event.client.get_entity(event.chat_id)
 
         where_m = get_display_name(where_)
@@ -44,7 +44,7 @@ if Config.TAG_LOG:
             message_link = f"tg://openmessage?chat_id={where_.id}&message_id={event.id}"
             # Telegram is weird :\
 
-        ammoca_message += f"{who_m} tagged you in {where_m}"
+        ammoca_message += f"{who_m} tagged you in [{where_m}]({message_link})"
         if NEEDTOLOG is not None:
             await tgbot.send_message(
                 entity=NEEDTOLOG,
