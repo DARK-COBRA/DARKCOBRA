@@ -556,7 +556,7 @@ async def survivor(pornhub):
 @borg.on(admin_cmd(pattern=r"ded"))
 async def bluedevilded(ded):
     await ded.edit( 
-".        | \n　　　　　
+".        | \n"　　　
 "　　　　　| \n"
 "　　　　　| \n"
 "　　　　　| \n"
