@@ -56,13 +56,12 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             
             dc = paginate_help(
                 current_page_number + 1, CMD_LIST, "helpme")
-#hehehehehheh           
+          
             await event.edit(buttons=dc)
         else:
             reply_pop_up_alert = "Please get your own Userbot, and don't use mine for more info visit @DARK_COBRA_SUPPORT!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-#hehhehehehhehhehhehehhe
     @tgbot.on(events.callbackquery.CallbackQuery(  # pylint:disable=E0602
         data=re.compile(b"helpme_prev\((.+?)\)")
     ))
@@ -120,19 +119,6 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         reply_pop_up_alert += (
             "\n\n Use .unload {} to remove this plugin\n ©DARK COBRA Userbot".format(plugin_name)
         )
-        if len(reply_pop_up_alert) >= 4096:
-            crackexy = "`Pasting Your Help Menu.`"
-            await event.answer(crackexy, cache_time=0, alert=True)
-            out_file = reply_pop_up_alert
-            url = "https://del.dog/documents"
-            r = requests.post(url, data=out_file.encode("UTF-8")).json()
-            url = f"https://del.dog/{r['key']}"
-#hehehhehhehehheheh
-            await event.edit(
-                f"Pasted {plugin_name} to {url}", link_preview=False, buttons=dc
-            )
-        else:
-            await event.edit(message=reply_pop_up_alert, buttons=dc)
         try:
             if event.query.user_id == bot.uid :
                 dc = [custom.Button.inline("◤✞ 𝕸𝖆𝖎𝖓 𝕸𝖊𝖓𝖚 ✞◥",data="back({})".format(shivam)),custom.Button.inline("◤✞ 𝕮𝖑𝖔𝖘𝖊 ✞◥", data="close")]
@@ -143,6 +129,19 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         except: 
             halps = "Do .help {} to get the list of commands.".format(plugin_name)
             await event.edit(halps)
+        if len(reply_pop_up_alert) >= 4096:
+            crackexy = "`Pasting Your Help Menu.`"
+            await event.answer(crackexy, cache_time=0, alert=True)
+            out_file = reply_pop_up_alert
+            url = "https://del.dog/documents"
+            r = requests.post(url, data=out_file.encode("UTF-8")).json()
+            url = f"https://del.dog/{r['key']}"
+            await event.edit(
+                f"Pasted {plugin_name} to {url}", link_preview=False, buttons=dc
+            )
+        else:
+            await event.edit(message=reply_pop_up_alert, buttons=dc)
+
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"back\((.+?)\)")))
    
     async def on_plug_in_callback_query_handler(event):
