@@ -17,8 +17,8 @@ async def _(event):
 	if event.fwd_from:
 		return
 	deq = deque(list("😂🤣😂🤣😂🤣"))
-	for _ in range(48):
-		await asyncio.sleep(0.1)
+	for _ in range(20):
+		await asyncio.sleep(0.6)
 		await event.edit("".join(deq))
 		deq.rotate(1)
 
@@ -28,8 +28,8 @@ async def _(event):
 	if event.fwd_from:
 		return
 	deq = deque(list("😁☹️😁☹️😁☹️😁"))
-	for _ in range(48):
-		await asyncio.sleep(0.1)
+	for _ in range(20):
+		await asyncio.sleep(0.5)
 		await event.edit("".join(deq))
 		deq.rotate(1)
 		
@@ -38,8 +38,8 @@ async def _(event):
 	    if event.fwd_from:
 		    return
 	    deq = deque(list("🕙🕘🕗🕖🕕🕔🕓🕒🕑🕐🕛"))
-	    for _ in range(48):
-		    await asyncio.sleep(0.1)
+	    for _ in range(20):
+		    await asyncio.sleep(0.5)
 		    await event.edit("".join(deq))
 		    deq.rotate(1)
         
@@ -48,8 +48,8 @@ async def _(event):
 	if event.fwd_from:
 		return
 	deq = deque(list("😗😙😚😚😘"))
-	for _ in range(48):
-		await asyncio.sleep(0.1)
+	for _ in range(20):
+		await asyncio.sleep(0.5)
 		await event.edit("".join(deq))
 		deq.rotate(1)	
     
@@ -58,8 +58,8 @@ async def _(event):
 	if event.fwd_from:
 		return
 	deq = deque(list("❤️🧡💛💚💙💜🖤"))
-	for _ in range(48):
-		await asyncio.sleep(0.1)
+	for _ in range(20):
+		await asyncio.sleep(0.4)
 		await event.edit("".join(deq))
 		deq.rotate(1)        
         
@@ -79,8 +79,8 @@ async def _(event):
 	if event.fwd_from:
 		return
 	deq = deque(list("🌏🌍🌎🌎🌍🌏🌍🌎"))
-	for _ in range(48):
-		await asyncio.sleep(0.1)
+	for _ in range(20):
+		await asyncio.sleep(0.5)
 		await event.edit("".join(deq))
 		deq.rotate(1)
     
@@ -89,8 +89,8 @@ async def _(event):
 	    if event.fwd_from:
 		    return
 	    deq = deque(list("🌗🌘🌑🌒🌓🌔🌕🌖"))
-	    for _ in range(48):
-		    await asyncio.sleep(0.1)
+	    for _ in range(20):
+		    await asyncio.sleep(0.5)
 		    await event.edit("".join(deq))
 		    deq.rotate(1)
 			
@@ -99,8 +99,8 @@ async def _(event):
 	if event.fwd_from:
 		return
 	deq = deque(list("🍦🍧🍩🍪🎂🍰🧁🍫🍬🍭"))
-	for _ in range(48):
-		await asyncio.sleep(0.1)
+	for _ in range(20):
+		await asyncio.sleep(0.5)
 		await event.edit("".join(deq))
 		deq.rotate(1)			
         
@@ -555,7 +555,12 @@ async def survivor(pornhub):
 
 @borg.on(admin_cmd(pattern=r"ded"))
 async def bluedevilded(ded):
-    await ded.edit(n + " ==             |\n　　　　　|" "\n　　　　　| \n"
+    await ded.edit( 
+".        | \n　　　　　
+"　　　　　| \n"
+"　　　　　| \n"
+"　　　　　| \n"
+"        | \n"　　　　　
 "　　　　　| \n"
 "　　　　　| \n"
 "　　　　　| \n"
