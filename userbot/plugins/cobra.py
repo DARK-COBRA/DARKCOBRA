@@ -20,16 +20,6 @@ import io
 #Making The Back Command Was The Toughest Work #by @Shivam_Patel,@The_Siddharth_Nigam,@danish_00,@ProgrammingError also v changed Pop up or inline help to text
 if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
 
-    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"back")))
-   
-    async def backr(event):
-            if event.query.user_id == bot.uid :
-                current_page_number=0
-                dc = paginate_help(current_page_number, CMD_LIST, "helpme")
-                await event.edit("`>>>\n\nHere Is The Main Menu Of\n©DARKCOBRA`", buttons=dc)
-            else:
-                reply_pop_up_alert = "Please get your own Userbot,for more info visit @DARK_COBRA_SUPPORT!"
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"open")))
    
@@ -130,10 +120,6 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         reply_pop_up_alert += (
             "\n\n Use .unload {} to remove this plugin\n ©DARK COBRA Userbot".format(plugin_name)
         )
-        dc = [
-            custom.Button.inline("◤✞ 𝕸𝖆𝖎𝖓 𝕸𝖊𝖓𝖚 ✞◥", data="back"),
-            custom.Button.inline("◤✞ 𝕮𝖑𝖔𝖘𝖊 ✞◥", data="close"),
-        ]
         if len(reply_pop_up_alert) >= 4096:
             crackexy = "`Pasting Your Help Menu.`"
             await event.answer(crackexy, cache_time=0, alert=True)
@@ -147,6 +133,31 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             )
         else:
             await event.edit(message=reply_pop_up_alert, buttons=dc)
+        try:
+            if event.query.user_id == bot.uid :
+                dc = [custom.Button.inline("◤✞ 𝕸𝖆𝖎𝖓 𝕸𝖊𝖓𝖚 ✞◥",data="back({})".format(shivam)),custom.Button.inline("◤✞ 𝕮𝖑𝖔𝖘𝖊 ✞◥", data="close")]
+                await event.edit(reply_pop_up_alert, buttons=dc)
+            else:
+                reply_pop_up_alert = "Please get your own Userbot, and don't use mine for more info visit @DARK_COBRA_SUPPORT!"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+        except: 
+            halps = "Do .help {} to get the list of commands.".format(plugin_name)
+            await event.edit(halps)
+    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"back\((.+?)\)")))
+   
+    async def on_plug_in_callback_query_handler(event):
+            
+            if event.query.user_id == bot.uid :
+                try:
+                    current_page_number = int(event.data_match.group(1).decode("UTF-8"))
+                    buttons = paginate_help(current_page_number, CMD_HELP, "helpme")
+                    await event.edit("`>>>\n\nHere Is The Main Menu Of\n©DARKCOBRA`", buttons=buttons)
+                except:
+                    buttons = paginate_help(0, CMD_HELP, "helpme")
+                    await event.edit("`>>>\n\nHere Is The Main Menu Of\n©DARKCOBRA`", buttons=buttons)
+            else:
+                reply_pop_up_alert = "Please get your own Userbot,for more info visit @DARK_COBRA_SUPPORT!"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
 def paginate_help(page_number, loaded_plugins, prefix):
     number_of_rows = Config.NO_OF_BUTTONS_DISPLAYED_IN_H_ME_CMD
@@ -165,7 +176,9 @@ def paginate_help(page_number, loaded_plugins, prefix):
     if len(modules) % number_of_cols == 1:
         pairs.append((modules[-1],))
     max_num_pages = ceil(len(pairs) / number_of_rows)
+    global shivam
     modulo_page = page_number % max_num_pages
+    shivam=modulo_page
     if len(pairs) > number_of_rows:
         pairs = pairs[modulo_page * number_of_rows:number_of_rows * (modulo_page + 1)] + \
             [
