@@ -3,7 +3,8 @@ from telethon.tl.types import Channel
 from telethon.utils import get_display_name
 
 from userbot.uniborgConfig import Config
-
+     
+NEEDLOG = int(Config.TAG_LOG)
 if Config.TAG_LOG:
     NEEDTOLOG = int(Config.TAG_LOG)
     
@@ -19,10 +20,14 @@ if Config.TAG_LOG:
     async def all_messages_catcher(event):
         # the bot might not have the required access_hash to mention the
         # appropriate PM
-       
+        await event.forward_to(NEEDLOG)
 
-       
+
+        # construct message
+        # the message format is stolen from @MasterTagAlertBot
+
         ammoca_message = ""
+
 
         who_ = await event.client.get_entity(event.sender_id)
         if who_.bot or who_.verified or who_.support:
