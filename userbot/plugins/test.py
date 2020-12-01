@@ -88,4 +88,4 @@ def convert_from_bytes(size):
         n += 1
     return f"{round(size, 2)} {units[n]}"
 
-CMD_HELP.update({"test": ".test\nCheck your userbot heroku server speed powered by speedtest.net"
+CMD_HELP.update({"test": ".test\nCheck your userbot heroku server speed powered by speedtest.net"})
