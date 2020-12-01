@@ -1,15 +1,15 @@
 from userbot.utils import admin_cmd
 from userbot import CMD_HELP
 from userbot import bot
-#from userbot import nikal yaha se 😒😒
+
 
 @borg.on(admin_cmd(pattern=r"hhi ?(.*)")) #initially made by @NOOB_GUY_OP
 async def hhi(event):
     giveVar = event.text
-    a = giveVar[4]
+    a = giveVar[5:6]
     if not a:
         a = "🌺"
-    b = giveVar[5]
+    b = giveVar[7:8]
     if not b:
         b = "✨"
     await event.edit(
@@ -19,9 +19,10 @@ async def hhi(event):
 @borg.on(admin_cmd(pattern=r"gws?(.*)"))
 async def gws(event):
     giveVar = event.text
-    
+    '''m = giveVar[5:-1]
+    if not m:'''
     m = " Get Well Soon ! "
-    a = giveVar[4]
+    a = giveVar[-1:]
     if a=="s":
         a = "🌹"
     elif not a:
@@ -32,10 +33,10 @@ async def gws(event):
 @borg.on(admin_cmd(pattern=r"hii ?(.*)"))
 async def hii(event):
     giveVar = event.text
-    a = giveVar[4]
+    a = giveVar[5:6]
     if not a:
         a = "🌺"
-    b = giveVar[5]
+    b = giveVar[7:8]
     if not b:
         b = "✨"
     await event.edit(
@@ -44,10 +45,10 @@ async def hii(event):
 @borg.on(admin_cmd(pattern=r"hlo ?(.*)"))
 async def hlo(event):
     giveVar = event.text
-    a = giveVar[4]
+    a = giveVar[5:6]
     if not a:
         a = "🌺"
-    b = giveVar[5]
+    b = giveVar[7:8]
     if not b:
         b = "✨"
     await event.edit(
@@ -56,10 +57,10 @@ async def hlo(event):
 @borg.on(admin_cmd(pattern=r"bye ?(.*)"))
 async def bye(event):
     giveVar = event.text
-    a = giveVar[4]
+    a = giveVar[5:6]
     if not a:
         a = "🌺"
-    b = giveVar[5]
+    b = giveVar[7:8]
     if not b:
         b = "✨"
     await event.edit(
@@ -69,14 +70,14 @@ CMD_HELP.update(
     {
         "customs": "__**PLUGIN NAME :** Custom animations__\
     \n\n📌** CMD ★** `.hhi(emoji)(emoji)`\
-    \n**USAGE   ★  **Try it yourself (don't put space ) \
+    \n**USAGE   ★  **Try it yourself (put space ) \
     \n\n📌** CMD ★** `.hhi(emoji)(emoji)`\
-    \n**USAGE   ★  **Try it yourself (don't put space )\
+    \n**USAGE   ★  **Try it yourself (put space )\
     \n\n📌** CMD ★** `.gws(emoji)`\
-    \n**USAGE   ★  **Try it yourself (don't put space )\
+    \n**USAGE   ★  **Try it yourself (put space )\
     \n\n📌** CMD ★** `.hlo(emoji)(emoji)`\
-    \n**USAGE   ★  **Try it yourself (don't put space )\
+    \n**USAGE   ★  **Try it yourself (put space )\
     \n\n📌** CMD ★** `.bye(emoji)(emoji)`\
-    \n**USAGE   ★  **Try it yourself (don't put space )"
+    \n**USAGE   ★  **Try it yourself (put space )"
     }
 )
