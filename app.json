@@ -190,6 +190,11 @@
       "description": "Set The emojies You Want to Add In Help Command You Can Add Multiple Emojies too!!",
       "value": "📨",
       "required": true
+    },
+    "SUDO_USERS": {
+      "description": "Put The Id of that person whom u want to give access to use ur bot",
+      "value": "",
+      "required": false
     }, 
     "TZ": {
       "description": "Required for Correct Time for autopic get from http://www.timezoneconverter.com/cgi-bin/findzone.tzc",
