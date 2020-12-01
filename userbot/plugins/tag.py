@@ -21,7 +21,7 @@ from telethon.utils import get_display_name
 
 from userbot.uniborgConfig import Config
      
-NEEDLOG = int(Config.TAG_LOG)
+NEEDLOG = int(Config.TAG_LOG) if Config.TAG_LOG else (Var.TG_BOT_USER_NAME_BF_HER)
 if Config.TAG_LOG:
     NEEDTOLOG = int(Config.TAG_LOG)
     
