@@ -69,7 +69,7 @@ async def _(event):
 	if event.fwd_from:
 		return
 	deq = deque(list("🏃‍🏋‍🤸‍🏃‍🏋‍🤸‍🏃‍🏋‍🤸‍"))
-	for _ in range(48):
+	for _ in range(20):
 		await asyncio.sleep(0.1)
 		await event.edit("".join(deq))
 		deq.rotate(1)
@@ -164,7 +164,7 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    animation_interval = 0.7
+    animation_interval = 0.5
     animation_ttl = range(0, 12)
     await event.edit("ready to die dude.....")
     animation_chars = [
@@ -397,7 +397,7 @@ async def survivor(think):
         "⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡁\n"
         "⠈⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠁\n"
         "⠀⠀⠛⢿⣿⣿⣿⣿⣿⣿⡿⠟\n")
-    await think.edit(n + E)
+    await think.edit(E)
     
     
 @borg.on(admin_cmd(pattern="xdick (.*)"))
@@ -421,7 +421,7 @@ async def survivor(dicksay):
         "⠸⣿⣿⣿⣿⣿⣿⣿⣿⣹⣿⡿⡇⠀⠀⠀⠀⠀⠀⠀⠀\n"
         "⠀⠹⣟⣿⣿⣿⣿⡿⣷⡿⣿⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀\n"
         "⠀⠀⠈⠛⠯⣿⡯⠟⠛⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n")
-    await dicksay.edit(n + F)
+    await dicksay.edit(F)
 
         
 @borg.on(admin_cmd(pattern="frogsay (.*)"))
@@ -443,7 +443,7 @@ async def survivor(frogsay):
         "⠄⣿⡇⠄⠠⣿⣿⣿⣿⣿⣿⣿⡿⠋⠄⠄⣠⣾⣿⣿⣿⣿⣿⣿\n"
         "⠄⣿⠁⠄⠐⠛⠛⠛⠉⠉⠉⠉⠄⠄⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿\n"
         "⠄⠻⣦⣀⣀⣀⣀⣀⣤⣤⣤⣤⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋\n")
-    await frogsay.edit(n + G)
+    await frogsay.edit(G)
     
     
 @borg.on(admin_cmd(pattern="putinsay (.*)"))
@@ -595,7 +595,7 @@ D = ("╥━━━━━━━━╭━━╮━━┳\n"
 "╢┊┊┃┏┳┳━━┓┏┳┫┊┊┣\n"
 "╨━━┗┛┗┛━━┗┛┗┛━━┻\n")
 H = ("╔┓┏╦━╦┓╔┓╔━━╗\n" 
-"║┗┛║┗╣┃║┃║X X  ║\n"
+"║┗┛║┗╣┃║┃║X X║\n"
 "║┏┓║┏╣┗╣┗╣╰╯║\n"
 "╚┛┗╩━╩━╩━╩━━╝\n")
 E = ("▬▬▬.◙.▬▬▬ \n"
