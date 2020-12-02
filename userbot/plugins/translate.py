@@ -6,7 +6,7 @@ Available Commands:
 import emoji
 from userbot import CMD_HELP
 from googletrans import Translator
-from userbot.utils import admin_cmd
+from userbot.utils import admin_cmd, sudo_cmd
 
 
 @borg.on(admin_cmd(pattern="tr (.*)"))
