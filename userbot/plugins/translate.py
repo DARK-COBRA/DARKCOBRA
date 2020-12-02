@@ -4,6 +4,7 @@ Available Commands:
 .tr LangaugeCode | text to translate"""
 
 import emoji
+from asyncio import sleep
 from userbot import CMD_HELP
 from googletrans import Translator
 from userbot.utils import admin_cmd, sudo_cmd
