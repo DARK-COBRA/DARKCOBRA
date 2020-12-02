@@ -9,7 +9,8 @@ from googletrans import Translator
 from userbot.utils import admin_cmd
 
 
-@borg.on(admin_cmd("tr ?(.*)"))
+@borg.on(admin_cmd(pattern="tr (.*)"))
+@borg.on(sudo_cmd(pattern="tr (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -28,21 +29,29 @@ async def _(event):
         return
     text = emoji.demojize(text.strip())
     lan = lan.strip()
-    translator = Translator()
+    Translator()
     try:
-        translated = translator.translate(text, dest=lan)
+        translated = await getTranslate(text, dest=lan)
         after_tr_text = translated.text
-        # TODO: emojify the :
-        # either here, or before translation
-        output_str = """**Translated By 𝔻𝔸ℝ𝕂 ℂ𝕆𝔹ℝ𝔸** from {} to {}
-{}""".format(
-            translated.src,
-            lan,
-            after_tr_text
-        )
+        output_str = f"**TRANSLATED  By 𝔻𝔸ℝ𝕂 ℂ𝕆𝔹ℝ𝔸**\n from {LANGUAGES[translated.src].title()} to {LANGUAGES[lan].title()}\
+                \n`{after_tr_text}`"
         await event.edit(output_str)
     except Exception as exc:
         await event.edit(str(exc))
+
+
+async def getTranslate(text, **kwargs):
+    translator = Translator()
+    result = None
+    for _ in range(10):
+        try:
+            result = translator.translate(text, **kwargs)
+        except Exception:
+            translator = Translator()
+            await sleep(0.1)
+    return result
+
+
 CMD_HELP.update(
     {
         "translate": ".tr <language code> <reply to text>"
