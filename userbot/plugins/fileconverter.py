@@ -1,3 +1,10 @@
+"""plugin made for reading nd  exploting message in tg {i}reveal <reply to file>"""
+# originally made by @ItzSjDude All Rights reserved!!
+#
+# All Credits - @ItzSjDude
+# @ItzSjDude
+# @ItzSjDude
+
 import os
 
 from userbot import CMD_HELP
