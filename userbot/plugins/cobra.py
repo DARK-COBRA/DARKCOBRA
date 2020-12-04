@@ -18,7 +18,7 @@ from telethon.tl.custom import Button
 from telethon import events, errors, custom, functions
 from userbot import CMD_LIST, CMD_HELP
 import io
-#ABAB O KANGAR  BACK OPEN CLSE BTN KANG KIYA TO YE LONE CHIPKA DENA AUR GLOBALS K BINA NAHI CHALAGA aur global 5 gaja diff name and manipulation se imported hai 
+#ABEE O KANGAR  BACK OPEN CLSE BTN KANG KIYA TO YE LONE CHIPKA DENA AUR GLOBALS K BINA NAHI CHALAGA aur global 5 gaja diff name and manipulation se imported hai 
 #Making The Back Command Was The Toughest Work #by @Shivam_Patel,@The_Siddharth_Nigam,@danish_00,@ProgrammingError also v changed Pop up or inline help to text
 from userbot.utils import remove_plugin,load_module
 #Making The Back Command Was The Toughest Work #by @Shivam_Patel,@The_Siddharth_Nigam,@danish_00,@ProgrammingError also v changed Pop up or inline help to text
@@ -125,7 +125,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
 
         reply_pop_up_alert = help_string
         reply_pop_up_alert += (
-            "\n\n Use .unload {} to remove this plugin\n ©DARK COBRA Userbot".format(plugin_name)
+            "\n\n Click on their respective buttons below to load or unload them..report us if you find any bug\n ©DARK COBRA Userbot".format(plugin_name)
         )
         try:
             if event.query.user_id == bot.uid :
@@ -151,9 +151,9 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                     try:
                         fcix = [custom.Button.inline("⋇⋆𝙲𝙻✦𝚂𝙴⋆⋇", data="close"),custom.Button.inline("Go Back",data="back({})".format(shivam)),custom.Button.inline("Unload",data="unload({})".format(shivam_sh1vam))]
                         load_module(event.data_match.group(1).decode("UTF-8"))
-                        await event.edit( "DarkCobra Has Successfully loaded"+ str(event.data_match.group(1).decode("UTF-8")),buttons=fcix)
+                        await event.edit( "DarkCobra Has Successfully loaded" + str(event.data_match.group(1).decode("UTF-8")),buttons=fcix)
                     except Exception as e:
-                        await event.edit("Error{}".format(shortname, str(e))+"DarkCobra Has Successfully loaded"+ str(event.data_match.group(1).decode("UTF-8")),buttons=fcix)
+                        await event.edit("Error{}".format(shortname, str(e))+ "DarkCobra Has Successfully loaded" + str(event.data_match.group(1).decode("UTF-8")),buttons=fcix)
               else:
                     shortname = event.data_match.group(1).decode("UTF-8")
                     fcix = [custom.Button.inline("⋇⋆𝙲𝙻✦𝚂𝙴⋆⋇", data="close"),custom.Button.inline("Go Back",data="back({})".format(shivam)),custom.Button.inline("Unload",data="unload({})".format(shivam_sh1vam))]
@@ -168,9 +168,9 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                     try:
                         fcix = [custom.Button.inline("⋇⋆𝙲𝙻✦𝚂𝙴⋆⋇", data="close"),custom.Button.inline("Go Back",data="back({})".format(shivam)),custom.Button.inline("Load",data="load({})".format(shivam_sh1vam))]
                         remove_plugin(event.data_match.group(1).decode("UTF-8"))
-                        await event.edit( "DarkCobra Has Successfully unloaded"+ str(event.data_match.group(1).decode("UTF-8")),buttons=fcix)
+                        await event.edit( "DarkCobra Has Successfully unloaded" + str(event.data_match.group(1).decode("UTF-8")),buttons=fcix)
                     except Exception as e:
-                        await event.edit("Error{}".format(shortname, str(e))+"DarkCobra Has Successfully unloaded"+ str(event.data_match.group(1).decode("UTF-8")),buttons=fcix)
+                        await event.edit("Error{}".format(shortname, str(e)) +"DarkCobra Has Successfully unloaded"+ str(event.data_match.group(1).decode("UTF-8")),buttons=fcix)
               else:
                     shortname = event.data_match.group(1).decode("UTF-8")
                     fcix = [custom.Button.inline("⋇⋆𝙲𝙻✦𝚂𝙴⋆⋇", data="close"),custom.Button.inline("Go Back",data="back({})".format(shivam)),custom.Button.inline("Load",data="load({})".format(shivam_sh1vam))]
@@ -184,10 +184,10 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 try:
                     current_page_number = int(event.data_match.group(1).decode("UTF-8"))
                     buttons = paginate_help(current_page_number, CMD_HELP, "helpme")
-                    await event.edit("`>>>\n\nHere Is The Main Menu Of\n©DARKCOBRA`", buttons=buttons)
+                    await event.edit("`>>> Here Is The Main Menu Of\n©DARKCOBRA`", buttons=buttons)
                 except:
                     buttons = paginate_help(0, CMD_HELP, "helpme")
-                    await event.edit("`>>>\n\nHere Is The Main Menu Of\n©DARKCOBRA`", buttons=buttons)
+                    await event.edit("`>>> Here Is The Main Menu Of\n©DARKCOBRA`", buttons=buttons)
             else:
                 reply_pop_up_alert = "Please get your own Userbot,for more info visit @DARK_COBRA_SUPPORT!"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
@@ -223,3 +223,4 @@ def paginate_help(page_number, loaded_plugins, prefix):
 
 # chal nikal 
 # gtfo
+# Aaja karle kang
