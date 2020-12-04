@@ -18,13 +18,13 @@ async def _(event):
     a.close()
     a = await event.reply("Reading file...")
     if len(c) >= 4096:            
-            await event.edit("output file too large lemme paste it 😜😜")
+            await event.edit("output file too large lemme paste it 😜😜")#hehe
             out = c
             url = "https://del.dog/documents"
             r = requests.post(url, data=out.encode("UTF-8")).json()
             url = f"https://del.dog/{r['key']}"
             await event.edit(
-                f"Pasted to {url}", link_preview=False)            
+                f"**Pasted to** [Dog Bin]({url}) 😁😁", link_preview=False)            
             await a.delete()
     else:
         await event.client.send_message(event.chat_id, f"{c}")
