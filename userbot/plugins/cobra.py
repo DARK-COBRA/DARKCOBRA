@@ -134,18 +134,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         except: 
             halps = "Do .help {} to get the list of commands.".format(plugin_name)
             await event.edit(halps)
-        if len(reply_pop_up_alert) >= 4096:
-            programmingerror = "`Pasting Your Help Menu.`"
-            await event.answer(programmingerror, cache_time=0, alert=True)
-            out_file = reply_pop_up_alert
-            url = "https://del.dog/documents"
-            r = requests.post(url, data=out_file.encode("UTF-8")).json()
-            url = f"https://del.dog/{r['key']}"
-            await event.edit(
-                f"Pasted {plugin_name} to {url}", link_preview=False, buttons=dc
-            )
-        else:
-            await event.edit(message=reply_pop_up_alert, buttons=dc)
+
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"back\((.+?)\)")))
    
