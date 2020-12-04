@@ -1,5 +1,5 @@
 # Thanks to Sipak bro and Aryan.. 
-# animation Idea by @(Sipakisking) && @Hell boy_pikachu
+# animation Idea by @(ItzSipak) && @Hell boy_pikachu
 # Made by @hellboi_atul ....and thanks to @Crackexy for the logos...
 # Kang with credits else gay...
 import asyncio
@@ -71,11 +71,11 @@ async def amireallyalive(yes):
     await asyncio.sleep(edit_time)
     ok7 = await borg.edit_message(yes.chat_id, ok6, file=file4)
 
-    await alive.delete()
+    await yes.delete()
     
     """ For .alive command, check if the bot is running.  """
-    await borg.send_file(alive.chat_id, PM_IMG,caption=pm_caption)
-    await alive.delete()
+    await borg.send_file(yes.chat_id, PM_IMG,caption=pm_caption)
+    await yes.delete()
 
 
 def get_readable_time(seconds: int) -> str:
