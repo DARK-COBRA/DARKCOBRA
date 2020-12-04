@@ -153,7 +153,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                         load_module(event.data_match.group(1).decode("UTF-8"))
                         await event.edit( "DarkCobra Has Successfully loaded"+ str(event.data_match.group(1).decode("UTF-8")),buttons=fcix)
                     except Exception as e:
-                        await event.edit("Error{}".format(shortname, str(e))+"DarkCobra Has Successfully loaded"+ str(event.data_match.group(1).decode("UTF-8")),buttons=fcix)
+                        await event.edit("Error{}".format(shortname, str(e))+"DarkCobra Has Successfully loaded" + str(event.data_match.group(1).decode("UTF-8")),buttons=fcix)
               else:
                     shortname = event.data_match.group(1).decode("UTF-8")
                     fcix = [custom.Button.inline("⋇⋆𝙲𝙻✦𝚂𝙴⋆⋇", data="close"),custom.Button.inline("Go Back",data="back({})".format(shivam)),custom.Button.inline("Unload",data="unload({})".format(shivam_sh1vam))]
@@ -168,9 +168,9 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                     try:
                         fcix = [custom.Button.inline("⋇⋆𝙲𝙻✦𝚂𝙴⋆⋇", data="close"),custom.Button.inline("Go Back",data="back({})".format(shivam)),custom.Button.inline("Load",data="load({})".format(shivam_sh1vam))]
                         remove_plugin(event.data_match.group(1).decode("UTF-8"))
-                        await event.edit( "DarkCobra Has Successfully unloaded"+ str(event.data_match.group(1).decode("UTF-8")),buttons=fcix)
+                        await event.edit( "DarkCobra Has Successfully unloaded" + str(event.data_match.group(1).decode("UTF-8")),buttons=fcix)
                     except Exception as e:
-                        await event.edit("Error{}".format(shortname, str(e))+"DarkCobra Has Successfully unloaded"+ str(event.data_match.group(1).decode("UTF-8")),buttons=fcix)
+                        await event.edit("Error{}".format(shortname, str(e)) +"DarkCobra Has Successfully unloaded"+ str(event.data_match.group(1).decode("UTF-8")),buttons=fcix)
               else:
                     shortname = event.data_match.group(1).decode("UTF-8")
                     fcix = [custom.Button.inline("⋇⋆𝙲𝙻✦𝚂𝙴⋆⋇", data="close"),custom.Button.inline("Go Back",data="back({})".format(shivam)),custom.Button.inline("Load",data="load({})".format(shivam_sh1vam))]
