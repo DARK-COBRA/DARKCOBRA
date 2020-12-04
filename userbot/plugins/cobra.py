@@ -20,6 +20,7 @@ from userbot import CMD_LIST, CMD_HELP
 import io
 #ABAB O KANGAR  BACK OPEN CLSE BTN KANG KIYA TO YE LONE CHIPKA DENA AUR GLOBALS K BINA NAHI CHALAGA aur global 5 gaja diff name and manipulation se imported hai 
 #Making The Back Command Was The Toughest Work #by @Shivam_Patel,@The_Siddharth_Nigam,@danish_00,@ProgrammingError also v changed Pop up or inline help to text
+from userbot.utils import remove_plugin,load_module
 #Making The Back Command Was The Toughest Work #by @Shivam_Patel,@The_Siddharth_Nigam,@danish_00,@ProgrammingError also v changed Pop up or inline help to text
 #A stark bhai chori karna aaya ho kya friday me ek bar back btn kang kar k man nahi bhara 
 #Agar stark nahi ho to kon hai be tu jo bhi hai kang karna he aaya hai mera back , open btn so get lost
@@ -107,6 +108,8 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             await event.answer(atul, cache_time=0, alert=True)
             return
         plugin_name = event.data_match.group(1).decode("UTF-8")
+        global shivam_sh1vam
+        shivam_sh1vam="{}".format(plugin_name)
         help_string = "Commands found in {}:\n".format(plugin_name)
         k = "💠🔮💎"
         u = 0
@@ -126,7 +129,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         )
         try:
             if event.query.user_id == bot.uid :
-                dc = [custom.Button.inline("◤✞ 𝕲𝖔 𝕭𝖆𝖈𝖐 ✞◥",data="back({})".format(shivam)),custom.Button.inline("◤✞ 𝕮𝖑𝖔𝖘𝖊 ✞◥", data="close")]
+                dc = [custom.Button.inline("⋇⋆𝙲𝙻✦𝚂𝙴⋆⋇", data="close"),custom.Button.inline("Go Back",data="back({})".format(shivam)),custom.Button.inline("Unload",data="unload({})".format(shivam_sh1vam))]
                 await event.edit(reply_pop_up_alert, buttons=dc)
             else:
                 reply_pop_up_alert = "Please get your own Userbot, and don't use mine for more info visit @DARK_COBRA_SUPPORT!"
@@ -139,7 +142,40 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             else:
                 reply_pop_up_alert = "Please get your own Userbot, and don't use mine for more info visit @DARK_COBRA_SUPPORT!"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
+    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"load\((.+?)\)")))
+   
+    async def on_plug_in_callback_query_handler(event):
+              if event.query.user_id == bot.uid :
+                    
+                    
+                    try:
+                        fcix = [custom.Button.inline("⋇⋆𝙲𝙻✦𝚂𝙴⋆⋇", data="close"),custom.Button.inline("Go Back",data="back({})".format(shivam)),custom.Button.inline("Unload",data="unload({})".format(shivam_sh1vam))]
+                        load_module(event.data_match.group(1).decode("UTF-8"))
+                        await event.edit( "DarkCobra Has Successfully loaded"+ str(event.data_match.group(1).decode("UTF-8")),buttons=fcix)
+                    except Exception as e:
+                        await event.edit("Error{}".format(shortname, str(e))+"DarkCobra Has Successfully loaded"+ str(event.data_match.group(1).decode("UTF-8")),buttons=fcix)
+              else:
+                    shortname = event.data_match.group(1).decode("UTF-8")
+                    fcix = [custom.Button.inline("⋇⋆𝙲𝙻✦𝚂𝙴⋆⋇", data="close"),custom.Button.inline("Go Back",data="back({})".format(shivam)),custom.Button.inline("Unload",data="unload({})".format(shivam_sh1vam))]
+                    reply_pop_up_alert = "Please get your own Userbot,for more info visit @DARK_COBRA_SUPPORT!"
+                    await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"unload\((.+?)\)")))
+   
+    async def on_plug_in_callback_query_handler(event):
+              if event.query.user_id == bot.uid :
+                    
+                    
+                    try:
+                        fcix = [custom.Button.inline("⋇⋆𝙲𝙻✦𝚂𝙴⋆⋇", data="close"),custom.Button.inline("Go Back",data="back({})".format(shivam)),custom.Button.inline("Load",data="load({})".format(shivam_sh1vam))]
+                        remove_plugin(event.data_match.group(1).decode("UTF-8"))
+                        await event.edit( "DarkCobra Has Successfully unloaded"+ str(event.data_match.group(1).decode("UTF-8")),buttons=fcix)
+                    except Exception as e:
+                        await event.edit("Error{}".format(shortname, str(e))+"DarkCobra Has Successfully unloaded"+ str(event.data_match.group(1).decode("UTF-8")),buttons=fcix)
+              else:
+                    shortname = event.data_match.group(1).decode("UTF-8")
+                    fcix = [custom.Button.inline("⋇⋆𝙲𝙻✦𝚂𝙴⋆⋇", data="close"),custom.Button.inline("Go Back",data="back({})".format(shivam)),custom.Button.inline("Load",data="load({})".format(shivam_sh1vam))]
+                    reply_pop_up_alert = "Please get your own Userbot,for more info visit @DARK_COBRA_SUPPORT!"
+                    await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"back\((.+?)\)")))
    
     async def on_plug_in_callback_query_handler(event):
