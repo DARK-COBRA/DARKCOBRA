@@ -6,8 +6,8 @@
 #
 #hehehhe
 #Making The Back Command Was The Toughest Work #by @Shivam_Patel,@The_Siddharth_Nigam,@danish_00,@ProgrammingError also v changed Pop up or inline help to text
-#A stak bhai chori karna aaya ho kya friday me ek bar back btn kang kar k man nahi bhara 
-#Agar statk nahi ho to kon hai be tu jo bhi hai kang karna he aaya hai mera back , open btn so get lost
+#A stark bhai chori karna aaya ho kya friday me ek bar back btn kang kar k man nahi bhara 
+#Agar stark nahi ho to kon hai be tu jo bhi hai kang karna he aaya hai mera back , open btn so get lost
 from math import ceil
 import asyncio
 import json
@@ -21,8 +21,8 @@ import io
 #ABAB O KANGAR  BACK OPEN CLSE BTN KANG KIYA TO YE LONE CHIPKA DENA AUR GLOBALS K BINA NAHI CHALAGA aur global 5 gaja diff name and manipulation se imported hai 
 #Making The Back Command Was The Toughest Work #by @Shivam_Patel,@The_Siddharth_Nigam,@danish_00,@ProgrammingError also v changed Pop up or inline help to text
 #Making The Back Command Was The Toughest Work #by @Shivam_Patel,@The_Siddharth_Nigam,@danish_00,@ProgrammingError also v changed Pop up or inline help to text
-#A stak bhai chori karna aaya ho kya friday me ek bar back btn kang kar k man nahi bhara 
-#Agar statk nahi ho to kon hai be tu jo bhi hai kang karna he aaya hai mera back , open btn so get lost
+#A stark bhai chori karna aaya ho kya friday me ek bar back btn kang kar k man nahi bhara 
+#Agar stark nahi ho to kon hai be tu jo bhi hai kang karna he aaya hai mera back , open btn so get lost
 if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
 
 
