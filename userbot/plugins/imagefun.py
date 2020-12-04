@@ -302,8 +302,8 @@ async def hehe(event):
     imglink = f"https://telegra.ph{url_s[0]}"
     nikal = f"https://some-random-api.ml/canvas/youtube-comment?avatar={imglink}&comment={comment}&username={username}"
     r = requests.get(nikal)
-    open("shivam.webp", "wb").write(r.content)
-    chutiya = "shivam.webp"
+    open("shivam.png", "wb").write(r.content)
+    chutiya = "shivam.png"
     await borg.send_file(
         event.chat_id, chutiya, reply_to=dc
     )
