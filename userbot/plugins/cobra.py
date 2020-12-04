@@ -134,7 +134,8 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         except: 
             halps = "Do .help {} to get the list of commands.".format(plugin_name)
             await event.edit(halps)
-
+        
+            await event.edit(message=reply_pop_up_alert, buttons=dc)
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"back\((.+?)\)")))
    
