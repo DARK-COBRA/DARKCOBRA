@@ -28,20 +28,3 @@ async def _(event):
           
             await asyncio.sleep(animation_interval)
             await event.edit(animation_chars[i %27 ])
-
-@borg.on(admin_cmd(pattern="dc"))  # pylint:disable=E0602
-async def _(event):
-    if event.fwd_from:
-        return
-    result = await borg(functions.help.GetNearestDcRequest())  # pylint:disable=E0602
-    await event.edit(result.stringify())
-
-
-@borg.on(admin_cmd(pattern="config"))  # pylint:disable=E0602
-async def _(event):
-    if event.fwd_from:
-        return
-    result = await borg(functions.help.GetConfigRequest())  # pylint:disable=E0602
-    result = result.stringify()
-    logger.info(result)  # pylint:disable=E0602
-    await event.edit("""Telethon UserBot powered by @FRIDAYSUPPORTOFFICIAL""")
