@@ -132,10 +132,13 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 reply_pop_up_alert = "Please get your own Userbot, and don't use mine for more info visit @DARK_COBRA_SUPPORT!"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
         except: 
-            halps = "Do .help {} to get the list of commands.".format(plugin_name)
-            await event.edit(halps)
-        
-            await event.edit(message=reply_pop_up_alert, buttons=dc)
+            if event.query.user_id == bot.uid :
+                sh1vam = [custom.Button.inline("◤✞ 𝕲𝖔 𝕭𝖆𝖈𝖐 ✞◥",data="back({})".format(shivam)),custom.Button.inline("◤✞ 𝕮𝖑𝖔𝖘𝖊 ✞◥", data="close")]
+                halps = "Do .help {} to get the list of commands.".format(plugin_name)
+                await event.edit(halps,buttons=sh1vam)
+            else:
+                reply_pop_up_alert = "Please get your own Userbot, and don't use mine for more info visit @DARK_COBRA_SUPPORT!"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"back\((.+?)\)")))
    
