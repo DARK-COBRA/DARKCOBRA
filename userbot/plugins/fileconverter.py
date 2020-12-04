@@ -24,7 +24,7 @@ async def _(event):
             r = requests.post(url, data=out.encode("UTF-8")).json()
             url = f"https://del.dog/{r['key']}"
             await event.edit(
-                f"**Pasted to** [Dog Bin]({url}) 😁😁", link_preview=False)            
+                f" Output file is too large Not supported By Telegram\n**So Pasted to** [Dog Bin]({url}) 😁😁", link_preview=False)            
             await a.delete()
     else:
         await event.client.send_message(event.chat_id, f"{c}")
