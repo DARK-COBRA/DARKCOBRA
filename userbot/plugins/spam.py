@@ -49,7 +49,7 @@ async def bigspam(e):
         
         
 
-@register(outgoing=True, pattern="^.pspam")
+@register(outgoing=True, pattern="^.mspam")
 async def tiny_pic_spam(e):
     reply = await e.get_reply_message()
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
@@ -63,8 +63,8 @@ async def tiny_pic_spam(e):
         if LOGGER:
             await e.client.send_message(
                 LOGGER_GROUP,
-                "#PICSPAM \n\n"
-                "PicSpam was executed successfully"
+                "#MEDIASPAM \n\n"
+                "MediaSpam was executed successfully boss"
                 )
 
 @register(outgoing=True, pattern="^.delayspam (.*)")
@@ -88,7 +88,7 @@ CMD_HELP.update(
         "\nUsage: spams the current chat, the current limit for this is from 1 to 99.\n\n"
         ".bigspam <no of msgs> <your msg>"
         "\nUsage: Spams the current chat, the current limit is above 100.\n\n"
-        ".pspam <no of spam> <reply to media>"
+        ".mspam <no of spam> (with reply to media)"
         "\nUsage: Spams the current chat with number you did put in <no of spam>.\n\n"
         ".delayspam <delay time> <count> <msg>"
         "\nUsage: Spams the current chat with with the input msgs with a delay time that has been given as its input.\n\n"
