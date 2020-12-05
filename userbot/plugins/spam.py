@@ -48,15 +48,17 @@ async def bigspam(e):
                 )
         
         
+
 @register(outgoing=True, pattern="^.pspam")
 async def tiny_pic_spam(e):
+    reply = await e.get_reply_message()
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         message = e.text
         text = message.split()
         counter = int(text[1])
-        link = str(text[2])
+        media = await e.client.download_media(reply)
         for i in range(1, counter):
-            await e.client.send_file(e.chat_id, link)
+            await e.client.send_file(e.chat_id, media)
         await e.delete()
         if LOGGER:
             await e.client.send_message(
@@ -64,6 +66,7 @@ async def tiny_pic_spam(e):
                 "#PICSPAM \n\n"
                 "PicSpam was executed successfully"
                 )
+
 @register(outgoing=True, pattern="^.delayspam (.*)")
 async def spammer(e):
     spamDelay = float(e.pattern_match.group(1).split(' ', 2)[0])
@@ -85,8 +88,8 @@ CMD_HELP.update(
         "\nUsage: spams the current chat, the current limit for this is from 1 to 99.\n\n"
         ".bigspam <no of msgs> <your msg>"
         "\nUsage: Spams the current chat, the current limit is above 100.\n\n"
-        ".pspam <no of pics to spam> <telegraph link of that pic>"
-        "\nUsage: Spams the current chat with number you pics you did put in <no of pics to spam>.\n\n"
+        ".pspam <no of spam> <reply to media>"
+        "\nUsage: Spams the current chat with number you did put in <no of spam>.\n\n"
         ".delayspam <delay time> <count> <msg>"
         "\nUsage: Spams the current chat with with the input msgs with a delay time that has been given as its input.\n\n"
     }
