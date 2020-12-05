@@ -73,10 +73,7 @@ async def amireallyalive(yes):
 
     await yes.delete()
     
-    """ For .alive command, check if the bot is running.  """
-    await borg.send_file(yes.chat_id, PM_IMG,caption=pm_caption)
-    await yes.delete()
-
+    
 
 def get_readable_time(seconds: int) -> str:
     count = 0
