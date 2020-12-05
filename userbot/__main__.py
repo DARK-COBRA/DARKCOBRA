@@ -8,6 +8,7 @@ from telethon import TelegramClient
 from userbot import bot
 from userbot.utils import load_module, start_assistant
 from var import Var, sh1vam
+from telethon.tl.types import InputMessagesFilterDocument #hehe done ig
 
 LOAD_USERBOT = os.environ.get("LOAD_USERBOT", True)
 LOAD_ASSISTANT = os.environ.get("LOAD_ASSISTANT", True)
