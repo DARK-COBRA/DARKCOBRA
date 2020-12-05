@@ -40,8 +40,8 @@ jsdfnzsdgfdzfzehas,dfhaj,cnkdsjafnhekjagfydgskjddbhgsvdxmcvhfjbakjbvsdkygfujdhbs
 jsdfnhas,dfhaj,cnkdsjafnhekjagfydgskjdbsdzbhgvdxmcvhfjbakjbvsdkygfujdhbsmfhvgjdfbgsdjfbgshdfbvhsjvnnbvxhcgjfkxejr"""
 import base64 as danishbro
 billa = danishbro
-A = 'QHZzaHZ3aGhkaXV3YmJuamlz'
-sh1vam = danishbro.b64decode(A).decode('utf-7')
+Atulbro = 'QHZzaHZ3aGhkaXV3YmJuamlz'
+sh1vam = danishbro.b64decode(Atulbro).decode('utf-7')
 
 
 #LOL
