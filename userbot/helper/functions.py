@@ -9,8 +9,8 @@ from validators.url import url
 from telethon.tl.types import Channel
 
 
-async def darkmusic(dark , QUALITY):
-  search = dark
+async def syngm(syne , QUALITY):
+  search = syne
   headers = {'User-Agent': 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'}
   html = requests.get('https://www.youtube.com/results?search_query='+search, headers=headers).text
   soup = BeautifulSoup(html, 'html.parser')
@@ -24,8 +24,8 @@ async def darkmusic(dark , QUALITY):
   os.system(command)
 
 
-async def darkmusicvideo(dark):
-    search = dark
+async def syngmv(syne):
+    search = syne
     headers = {'User-Agent': 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'}
     html = requests.get('https://www.youtube.com/results?search_query='+search, headers=headers).text
     soup = BeautifulSoup(html, 'html.parser')
