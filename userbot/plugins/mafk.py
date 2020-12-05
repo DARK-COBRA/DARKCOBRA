@@ -105,6 +105,7 @@ async def on_afk(event):
 async def _(event):
     if event.fwd_from:
         return
+    atulbro = await event.get_reply_message()
     global USER_AFK  # pylint:disable=E0602
     global afk_time  # pylint:disable=E0602
     global last_afk_message  # pylint:disable=E0602
@@ -120,7 +121,7 @@ async def _(event):
 # I think its first for DARKCOBRA
     afk_start = start_1.replace(microsecond=0)
     reason = event.pattern_match.group(1)
-    pic = event.pattern_match.group(2)
+    pic = await event.client.download_media(atulbro)
     if not USER_AFK:  # pylint:disable=E0602
         last_seen_status = await borg(  # pylint:disable=E0602
             functions.account.GetPrivacyRequest(types.InputPrivacyKeyStatusTimestamp())
