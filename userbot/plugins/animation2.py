@@ -378,7 +378,7 @@ D = ("⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n"
 "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n")
 
 
-@borg.on(admin_cmd(pattern="athink (.*)"))
+@borg.on(admin_cmd(pattern="athink ?(.*)"))
 async def survivor(think):
     name = think.pattern_match.group(1)
     E = (f"**  ➥ {name} .\n\n**"
@@ -400,7 +400,7 @@ async def survivor(think):
     await think.edit(E)
     
     
-@borg.on(admin_cmd(pattern="xdick (.*)"))
+@borg.on(admin_cmd(pattern="xdick ?(.*)"))
 async def survivor(dicksay):
     name = dicksay.pattern_match.group(1)
     F = (f"**  ➥ {name} .\n**"
@@ -424,7 +424,7 @@ async def survivor(dicksay):
     await dicksay.edit(F)
 
         
-@borg.on(admin_cmd(pattern="frogsay (.*)"))
+@borg.on(admin_cmd(pattern="frogsay ?(.*)"))
 async def survivor(frogsay):
     name = frogsay.pattern_match.group(1)
     G = (f"**  ➥ {name} .\n\n**"
@@ -446,7 +446,7 @@ async def survivor(frogsay):
     await frogsay.edit(G)
     
     
-@borg.on(admin_cmd(pattern="putinsay (.*)"))
+@borg.on(admin_cmd(pattern="putinsay ?(.*)"))
 async def survivor(putinsay):
     name = putinsay.pattern_match.group(1)
     H = (f"**Vladimir Putin ➥ {name} .\n\n**"
@@ -470,7 +470,7 @@ async def survivor(putinsay):
 
 
 
-@borg.on(admin_cmd(pattern="deadfrog (.*)"))
+@borg.on(admin_cmd(pattern="deadfrog ?(.*)"))
 async def survivor(deadfrog):
     name = deadfrog.pattern_match.group(1)
     I = (f"**Froggy ➥ {name} .\n\n**"
@@ -492,7 +492,7 @@ async def survivor(deadfrog):
     await deadfrog.edit(I)
     
   
-@borg.on(admin_cmd(pattern="trumpsay (.*)"))
+@borg.on(admin_cmd(pattern="trumpsay ?(.*)"))
 async def survivor(trumpsay):
     name = trumpsay.pattern_match.group(1)
     J = (f"**Donald Trump ➥ {name} .\n\n**"
@@ -514,7 +514,7 @@ async def survivor(trumpsay):
     await trumpsay.edit(J)
 
 
-@borg.on(admin_cmd(pattern="chinasay (.*)"))
+@borg.on(admin_cmd(pattern="chinasay ?(.*)"))
 async def survivor(ckmkb):
     name = ckmkb.pattern_match.group(1)
     K = (f"**🅲🅺🅼🅺🅱 ➥ {name} .\n\n**"
