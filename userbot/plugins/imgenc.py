@@ -11,7 +11,7 @@ from userbot import CMD_HELP, ALIVE_NAME
 DARKCOBRA = Config.DEEP_AI if Config.DEEP_AI else "quickstart-QUdJIGlzIGNvbWluZy4uLi4K"
 
 
-KANG_KAREGA_MC = str(ALIVE_NAME) if ALIVE_NAME else "nikal Mc"
+KANG_KAREGA_MC = str(ALIVE_NAME) if ALIVE_NAME else "THIS NOOB"
 @bot.on(admin_cmd(pattern="enc ?(.*)", outgoing=True))#hehe
 async def _(event):                   
     reply = await event.get_reply_message()
