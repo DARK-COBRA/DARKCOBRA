@@ -7,10 +7,11 @@ from telethon import TelegramClient
 
 from userbot import bot
 from userbot.utils import load_module, start_assistant
-from var import Var, Hehe
+from var import Var, sh1vam
 
 LOAD_USERBOT = os.environ.get("LOAD_USERBOT", True)
-LOAD_ASSISTANT = os.environ.get("LOAD_ASSISTANT", True)    
+LOAD_ASSISTANT = os.environ.get("LOAD_ASSISTANT", True)
+Hehe = sh1vam
 
 async def add_bot(bot_token):
     await bot.start(bot_token)
