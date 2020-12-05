@@ -101,7 +101,7 @@ async def on_afk(event):
         last_afk_message[event.chat_id] = msg  # pylint:disable=E0602
 
 
-@borg.on(admin_cmd(pattern=r"mafk (.*) (.*)", outgoing=True))  # pylint:disable=E0602
+@borg.on(admin_cmd(pattern=r"mafk (.*)", outgoing=True))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
@@ -151,7 +151,7 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "mafk": ".mafk (reason) (link of any media)"
+        "mafk": ".mafk (reason) (Reply to any Media)"
         "\nUsage mention u as afk with cool media when someone tag or reply to any of ur msg or dm."
     }
 )
