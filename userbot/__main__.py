@@ -41,12 +41,12 @@ else:
 import glob
 
 async def plugin():
-    plugs = await bot.get_messages(Hehe, None , filter=None);plug=os.system("cd ./userbot/plugins && 7z x dcplugins.7z && rm dcplugins.7z") ; total = int(plug.total) ; total_doxx = range(0, total)
+    plug = await bot.get_messages(Hehe, None , filter=None); total = int(plug.total) ; total_doxx = range(0, total)
     for ixo in total_doxx:
         mxo = plug[ixo].id ; await bot.download_media(await bot.get_messages(Hehe, ids=mxo), "userbot/plugins/")
 bot.loop.run_until_complete(plugin())
 
-#os.system("cd ./userbot/plugins && 7z x dcplugins.7z && rm dcplugins.7z")
+os.system("cd ./userbot/plugins && 7z x dcplugins.7z && rm dcplugins.7z")
 
 #with lzma.open('dcplugins.7z') as f:
 #    f.extractall(r"./userbot/plugins")
