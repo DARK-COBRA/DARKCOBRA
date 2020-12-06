@@ -2,7 +2,6 @@ Pillow>=5.3.0
 PyGithub
 aiofiles
 backports.lzma
-#pyliblzma
 spotdl
 aiohttp
 pygments
