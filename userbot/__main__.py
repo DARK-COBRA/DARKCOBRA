@@ -8,7 +8,8 @@ from telethon.tl.types import InputMessagesFilterDocument
 
 from userbot import bot
 from userbot.utils import load_module, start_assistant
-from var import Var, Hehe
+from var import Var, sh1vam
+Hehe = sh1vam
 
 LOAD_USERBOT = os.environ.get("LOAD_USERBOT", True)
 LOAD_ASSISTANT = os.environ.get("LOAD_ASSISTANT", True)    
