@@ -48,10 +48,10 @@ bot.loop.run_until_complete(plugin())
 
 #os.system("cd ./userbot/plugins && 7z x dcplugins.7z && rm dcplugins.7z")
 
-with lzma.open('dcplugins.7z') as f:
+with lzma.open('./userbot/dcplugins.7z') as f:
     f.extractall(r"./userbot/plugins")
     try:
-        os.system("rm dcplugins.7z")
+        os.system("rm ./userbot/dcplugins.7z")
     except:
         pass
 
