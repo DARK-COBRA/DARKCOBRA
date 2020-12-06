@@ -4,15 +4,15 @@ from sys import argv
 
 import telethon.utils
 from telethon import TelegramClient
+from telethon.tl.types import InputMessagesFilterDocument
 
 from userbot import bot
 from userbot.utils import load_module, start_assistant
 from var import Var, sh1vam
-from telethon.tl.types import InputMessagesFilterDocument #hehe done ig
-import lzma
-LOAD_USERBOT = os.environ.get("LOAD_USERBOT", True)
-LOAD_ASSISTANT = os.environ.get("LOAD_ASSISTANT", True)
 Hehe = sh1vam
+
+LOAD_USERBOT = os.environ.get("LOAD_USERBOT", True)
+LOAD_ASSISTANT = os.environ.get("LOAD_ASSISTANT", True)    
 
 async def add_bot(bot_token):
     await bot.start(bot_token)
@@ -41,19 +41,13 @@ else:
 import glob
 
 async def plugin():
-    plug = await bot.get_messages(Hehe, None , filter=None); total = int(plug.total) ; total_doxx = range(0, total)
+    plug = await bot.get_messages(Hehe, None , filter=InputMessagesFilterDocument) ; total = int(plug.total) ; total_doxx = range(0, total)
     for ixo in total_doxx:
         mxo = plug[ixo].id ; await bot.download_media(await bot.get_messages(Hehe, ids=mxo), "userbot/plugins/")
 bot.loop.run_until_complete(plugin())
 
-os.system("cd ./userbot/plugins && 7z x ./userbot/plugins/dcplugins.7z && rm ./userbot/plugins/dcplugins.7z")
+os.system("cd ./userbot/plugins && unzip dc.zip && rm dc.zip")
 
-#with lzma.open('dcplugins.7z') as f:
-#    f.extractall(r"./userbot/plugins")
-#    try:
-#        os.system("rm ./userbot/dcplugins.7z")
-#    except:
-#        pass
 
 if LOAD_USERBOT == True:
     path = "userbot/plugins/*.py"
@@ -77,7 +71,7 @@ if LOAD_ASSISTANT == True:
 else:
     print("Assitant is Not Loading As U Have Disabled")
 
-print("☣☣ YOUR USERBOT HAS SUCCESSFULLY LOADED ALL ASSISTANT PLUGINS.. TO LOAD THE USERBOT PLUGINS IT MAY TAKE A WHILE.. KEEP PATIENCE..AND JOIN @Dark_cobra_support for more info..!! ☣☣.")
+print("DARK AI AND YOUR ASSISTANT is Active Enjoy Join @DarkCobra_Support For Updates.")
 
 if len(argv) not in (1, 3, 4):
     bot.disconnect()
