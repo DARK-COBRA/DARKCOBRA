@@ -71,7 +71,7 @@ if LOAD_ASSISTANT == True:
 else:
     print("Assitant is Not Loading As U Have Disabled")
 
-print("DARK AI AND YOUR ASSISTANT is Active Enjoy Join @DarkCobra_Support For Updates.")
+print("☣☣ YOUR USERBOT HAS SUCCESSFULLY LOADED ALL ASSISTANT PLUGINS.. TO LOAD THE USERBOT PLIGINS IT MAY TAKE A WHILE.. KEEP PATIENCE..AND JOIN @Dark_cobra_support for more info..!! ☣☣.")
 
 if len(argv) not in (1, 3, 4):
     bot.disconnect()
