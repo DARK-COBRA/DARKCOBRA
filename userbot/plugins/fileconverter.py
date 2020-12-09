@@ -7,8 +7,12 @@
 #  Added Paste System by @danish_00
 
 import os, requests, re
+import asyncio
+import time
+from datetime import datetime
+
+from userbot.utils import admin_cmd, sudo_cmd , edit_or_reply
 from userbot import CMD_HELP, bot
-from userbot.utils import admin_cmd
 
 @borg.on(admin_cmd(pattern=r"open", outgoing=True))
 async def _(event):
@@ -49,12 +53,136 @@ async def get(event):
         await event.edit("reply to text message as .doc <file name.extension>")
 
 
+
+#hehe
+
+
+#.stoi nd .itos made by @danish_00
+
+#teamcobra 
+
+#hehe
+
+thumb_image_path = Config.TMP_DOWNLOAD_DIRECTORY + "thumb_image.jpg"
+
+
+@borg.on(admin_cmd(pattern="stoi"))
+@borg.on(sudo_cmd(pattern="stoi", allow_sudo=True))
+async def danish(hehe):
+    if hehe.fwd_from:
+        return
+    thumb = None
+    reply_to_id = hehe.message.id
+    if hehe.reply_to_msg_id:
+        reply_to_id = hehe.reply_to_msg_id
+    cobra = await edit_or_reply(hehe, "Converting.....")
+    
+  
+    input_str = "dc.jpeg"
+    if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
+        os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
+    if cobra.reply_to_msg_id:
+        start = datetime.now()
+        file_name = input_str
+        reply_message = await cobra.get_reply_message()
+      
+        to_download_directory = Config.TMP_DOWNLOAD_DIRECTORY
+        downloaded_file_name = os.path.join(to_download_directory, file_name)
+        downloaded_file_name = await hehe.client.download_media(
+            reply_message,
+            downloaded_file_name
+        )
+      
+        try:
+            thumb = await reply_message.download_media(thumb=-1)
+        except Exception:
+            thumb = thumb
+        if os.path.exists(downloaded_file_name):
+            
+            dc = await hehe.client.send_file(
+                hehe.chat_id,
+                downloaded_file_name,
+                force_document=False,
+                supports_streaming=True,
+                allow_cache=False,
+                reply_to=reply_message,
+                thumb=thumb
+                
+            )
+            
+            os.remove(downloaded_file_name)
+            await cobra.delete()
+        else:
+            await cobra.edit("Something went wrong")
+    else:
+        await cobra.edit("reply to a non animated sticker")
+
+  
+  
+  #hehe
+  
+@borg.on(admin_cmd(pattern="itos"))
+@borg.on(sudo_cmd(pattern="itos", allow_sudo=True))
+async def teamcobra(hehe):
+    if hehe.fwd_from:
+        return
+    thumb = None
+    reply_to_id = hehe.message.id
+    if hehe.reply_to_msg_id:
+        reply_to_id = hehe.reply_to_msg_id
+    cobra = await edit_or_reply(hehe, "Converting.....")
+    
+  
+    input_str = "dc.webp"
+    if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
+        os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
+    if cobra.reply_to_msg_id:
+        start = datetime.now()
+        file_name = input_str
+        reply_message = await cobra.get_reply_message()
+      
+        to_download_directory = Config.TMP_DOWNLOAD_DIRECTORY
+        downloaded_file_name = os.path.join(to_download_directory, file_name)
+        downloaded_file_name = await hehe.client.download_media(
+            reply_message,
+            downloaded_file_name
+        )
+      
+        try:
+            thumb = await reply_message.download_media(thumb=-1)
+        except Exception:
+            thumb = thumb
+        if os.path.exists(downloaded_file_name):
+            
+            dc = await hehe.client.send_file(
+                hehe.chat_id,
+                downloaded_file_name,
+                force_document=False,
+                supports_streaming=True,
+                allow_cache=False,
+                reply_to=reply_message,
+                thumb=thumb
+                
+            )
+            
+            os.remove(downloaded_file_name)
+            await cobra.delete()
+        else:
+            await cobra.edit("Something went wrong")
+    else:
+        await cobra.edit("reply to a non animated sticker")
+
+  
 CMD_HELP.update(
     {
         "fileconverter": "PLUGIN NAME : fileconverter\
     \n\n📌 CMD ★ .open\
     \nUSAGE   ★  open files as text (id the amount of words r resonable)\
     \n\n📌 CMD ★ .doc <file name.extension> <reply to any text/media>\
-    \nUSAGE   ★  Create a document of anything (example:- .doc dc.mp4, .doc dc.txt, .doc dc.webp)"
+    \nUSAGE   ★  Create a document of anything (example:- .doc dc.mp4, .doc dc.txt, .doc dc.webp)\
+    \n\n📌 CMD ★ .stoi\
+    \nUSAGE   ★  Convert sticker to image\
+    \n\n📌 CMD ★ .itos\
+    \nUSAGE   ★  Convert Image to Sticker"
     }
 )
