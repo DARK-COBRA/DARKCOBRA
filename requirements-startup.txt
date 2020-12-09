@@ -35,6 +35,7 @@ keyboard
 lottie
 lxml
 oauth2client
+opencv-python--headless
 patool
 psycopg2
 psutil
