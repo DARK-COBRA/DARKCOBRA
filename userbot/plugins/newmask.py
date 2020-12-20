@@ -74,8 +74,8 @@ async def scan(event):
 
    
 
-@bot.on(admin_cmd(pattern=r"pro"))
-@bot.on(sudo_cmd(pattern=r"pro", outgoing=True))
+@bot.on(admin_cmd(pattern=r"pru"))
+@bot.on(sudo_cmd(pattern=r"pru", outgoing=True))
 
 async def scan(event):
     path = "dcobra"
