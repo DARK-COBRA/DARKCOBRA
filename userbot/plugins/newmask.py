@@ -28,7 +28,7 @@ async def scan(event):
 
     import cv2
 
-    os.system('wget https://datreon.000webhostapp.com/haarcascade_frontalface_default.xml')    
+       
     
     os.system('wget https://telegra.ph/file/8c47ddc5c368a1d4f4ee4.png')
 
@@ -89,7 +89,7 @@ async def scan(event):
 
     import cv2
 
-    os.system('wget https://datreon.000webhostapp.com/haarcascade_frontalface_default.xml')    
+       
     
     os.system('wget https://telegra.ph/file/f061c861ba85fbb23a51e.png')
 
@@ -151,7 +151,7 @@ async def scan(event):
 
     import cv2
 
-    os.system('wget https://datreon.000webhostapp.com/haarcascade_frontalface_default.xml')    
+       
     
     os.system('wget https://telegra.ph/file/df2d739544595ae337642.png')
 
@@ -211,7 +211,7 @@ async def scan(event):
 
     import cv2
 
-    os.system('wget https://datreon.000webhostapp.com/haarcascade_frontalface_default.xml')    
+       
     
     os.system('wget https://telegra.ph/file/4cc40d1e0846667488341.png')
 
@@ -271,7 +271,7 @@ async def scan(event):
 
     import cv2
 
-    os.system('wget https://datreon.000webhostapp.com/haarcascade_frontalface_default.xml')    
+       
     
     os.system('wget https://telegra.ph/file/55fcb205c6f8f4790585e.png')
 
@@ -331,7 +331,7 @@ async def scan(event):
 
     import cv2
 
-    os.system('wget https://datreon.000webhostapp.com/haarcascade_frontalface_default.xml')    
+       
     
     os.system('wget https://telegra.ph/file/54d2a267d411951b41a20.png')
 
@@ -391,7 +391,7 @@ async def scan(event):
 
     import cv2
 
-    os.system('wget https://datreon.000webhostapp.com/haarcascade_frontalface_default.xml')    
+       
     
     os.system('wget https://telegra.ph/file/b934a713abb321bd1a9fe.png')
 
@@ -451,7 +451,7 @@ async def scan(event):
     pic=linc[31:]
     import cv2
 
-    os.system('wget https://datreon.000webhostapp.com/haarcascade_frontalface_default.xml')    
+      
     
     os.system(f'wget {link}')
     
