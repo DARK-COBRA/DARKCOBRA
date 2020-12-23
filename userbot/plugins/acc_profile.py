@@ -18,10 +18,10 @@ from userbot import CMD_HELP, CMD_LIST
 
 # ====================== CONSTANT ===============================
 INVALID_MEDIA = "```The extension of the media entity is invalid.```"
-PP_CHANGED = "```Profile picture changed successfully.```"
+PP_CHANGED = "```Profile pic Changed Successfully🤤```"
 PP_TOO_SMOL = "```This image is too small, use a bigger image.```"
 PP_ERROR = "```Failure occured while processing image.```"
-BIO_SUCCESS = "```Successfully edited Bio.```"
+BIO_SUCCESS = "```Bio Edited Sucessfully.```"
 NAME_OK = "```Your name was succesfully changed.```"
 USERNAME_SUCCESS = "```Your username was succesfully changed.```"
 USERNAME_TAKEN = "```This username is already taken.```"
@@ -81,7 +81,7 @@ async def _(event):
         await event.edit(str(e))
     else:
         if photo:
-            await event.edit("now, Uploading to Telegram ...")
+            await event.edit("now, Uploading to Telegram ...⚡")
             file = await borg.upload_file(photo)  # pylint:disable=E0602
             try:
                 await borg(functions.photos.UploadProfilePhotoRequest(  # pylint:disable=E0602
@@ -90,7 +90,7 @@ async def _(event):
             except Exception as e:  # pylint:disable=C0103,W0703
                 await event.edit(str(e))
             else:
-                await event.edit("My profile picture was succesfully changed")
+                await event.edit("My profile picture was succesfully chamged")
     try:
         os.remove(photo)
     except Exception as e:  # pylint:disable=C0103,W0703
