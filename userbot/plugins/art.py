@@ -9,7 +9,7 @@ from userbot.utils import admin_cmd
 from userbot import bot
 from userbot import bot as borg
 @bot.on(admin_cmd(pattern="art ?(.*)", outgoing=True))
-# DONOT KANG by @THE_B_LACK_HAT & Sh1vam
+# DONOT KANG by @THE_B_LACK_HAT & Sh1vam #Team DC
 async def __(event):
     
     path = "dck"
