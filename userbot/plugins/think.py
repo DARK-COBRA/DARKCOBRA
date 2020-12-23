@@ -14,7 +14,7 @@ from userbot.utils import admin_cmd
 async def _(event):
     if event.fwd_from:
         return
-    animation_interval = 0.1
+    animation_interval = 0.4
     animation_ttl = range(0, 288)
     
     #await event.edit(input_str)
@@ -22,40 +22,18 @@ async def _(event):
     animation_chars = [
             "THINKING",
             "THI&K#N₹",
-            "T+IN@I?G",
-            "¿H$NK∆NG",
-            "¶H×NK&N*",
+            "ERroR",
+            "ErrOr",
+            "eRrOr",
+            "404",
+            "BRAIn Missing🤤",
+            "BRAIn Missing🤤",
+            "BRAIn Missing🤤",
+            "BRAIn Missing🤤",
+            "DrOp BRAIn In Ib",
+            "Else Gey",
             "NGITHKIN",
-            "T+I#K@₹G",
-            "THINKING",
-            "THI&K#N₹",
-            "T+IN@I?G",
-            "¿H$NK∆NG",
-            "¶H×NK&N*",
-            "NGITHKIN",
-            "T+I#K@₹G",
-            "THINKING",
-            "THI&K#N₹",
-            "T+IN@I?G",
-            "¿H$NK∆NG",
-            "¶H×NK&N*",
-            "NGITHKIN",
-            "T+I#K@₹G",
-            "THINKING",
-            "THI&K#N₹",
-            "T+IN@I?G",
-            "¿H$NK∆NG",
-            "¶H×NK&N*",
-            "NGITHKIN",
-            "T+I#K@₹G",
-            "THINKING",
-            "THI&K#N₹",
-            "T+IN@I?G",
-            "¿H$NK∆NG",
-            "¶H×NK&N*",
-            "NGITHKIN",
-            "T+I#K@₹G",
-            "THINKING... 🤔"
+            "Kuch V Nahi Mila Bisi... 🤔"
         ]
 
     for i in animation_ttl:
