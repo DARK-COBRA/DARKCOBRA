@@ -1,3 +1,5 @@
+# Kang with credits..
+# Team DC
 from PIL import Image
 import sys
 import os
@@ -9,7 +11,7 @@ if not os.path.isdir("./dco/"):
 
 
 #made by @THE_B_LACK_HAT #team DC
-@bot.on(admin_cmd(pattern=r"vtog"))
+@bot.on(admin_cmd(pattern=r"gif"))
 async def vtog(event):
     path = "viddck"
 
