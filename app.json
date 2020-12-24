@@ -48,7 +48,7 @@
       "value": "https://telegra.ph/file/0d0fafe17acca1c51b42d.jpg",
       "required": true
     },
-    "BIO_MSG": {
+    "DEFAULT_BIO": {
       "description": "Put Your Telegram Bio Here Required For Auto Bio.",
       "value": "",
       "required": false
