@@ -35,3 +35,4 @@ def choser(cmd, pack, blacklist={}):
                await event.respond(file=random.choice(docs))
 
 choser('hpdiwali', 'a929138153_by_Shivam_Patel_1_anim')
+choser('hpchristmas', 'HappChristmas')
