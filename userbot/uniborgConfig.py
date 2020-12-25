@@ -127,7 +127,7 @@ if ENV:
         ALIVE_PHOTTO = os.environ.get("ALIVE_PHOTTO", None)
         ALIVE_MSG = os.environ.get("ALIVE_MSG", None)
         #auto bio
-        BIO_MSG = os.environ.get("ALIVE_MSG", None)
+        BIO_MSG = os.environ.get("DEFAULT_BIO", None)
         #Lydia API
         LYDIA_API = os.environ.get("LYDIA_API",None)
         PLUGIN_CHANNEL = int(os.environ.get("PLUGIN_CHANNEL", None))
