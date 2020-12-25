@@ -8,7 +8,7 @@ from userbot import bot
 from userbot.utils import admin_cmd, load_module, remove_plugin, sudo_cmd
 from userbot.utils import edit_or_reply as eor
 
-DELETE_TIMEOUT = 5
+DELETE_TIMEOUT = 3
 thumb_image_path = "./Resources/IMG_20201005_150245_168.jpg"
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "DarkCobra"
 
@@ -40,7 +40,7 @@ async def send(event):
             f"**==> Plugin name:** `{input_str}`\n**==> Uploaded in {time_taken_in_ms} seconds only.**\n**==> Uploaded by:** [{DEFAULTUSER}](tg://user?id={hmm})\n",
         )
         await asyncio.sleep(DELETE_TIMEOUT)
-        await event.delete()
+        await event.edit("__sent!!__") #only italic if loaded markdown else it doesn't look gr8
     else:
         await eor(event, "**404**: __File Not Found__")
 
