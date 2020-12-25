@@ -35,7 +35,7 @@ img28=("https://t.me/danish2512/29")
 img29=("https://t.me/danish2512/30")
 img30=("https://t.me/danish2512/31")
     
-@borg.on(admin_cmd(outgoing=True, pattern="christmas"))
+@borg.on(admin_cmd(outgoing=True, pattern="xmas"))
 
 async def _(event):
 
