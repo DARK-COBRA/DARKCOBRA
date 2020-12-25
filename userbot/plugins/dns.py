@@ -32,7 +32,7 @@ async def _(event):
     sample_url = "https://da.gd/s?url={}".format(input_str)
     response_api = requests.get(sample_url).text
     if response_api:
-        await event.edit("Generated {} for {}.".format(response_api, input_str))
+        await event.edit("Your shortened URL:- {} ".format(response_api))
     else:
         await event.edit("something is wrong. please try again later.")
 
