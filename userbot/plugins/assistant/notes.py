@@ -15,7 +15,7 @@ TYPE_PHOTO = 1
 TYPE_DOCUMENT = 2
 
 
-@tgbot.on(events.NewMessage(pattern=r"\?(\S+)"))
+@tgbot.on(events.NewMessage(pattern=r"\#(\S+)"))
 async def on_snip(event):
     name = event.pattern_match.group(1)
     snip = get_snips(name)
@@ -71,7 +71,7 @@ async def _(event):
             snip.get("fr"),
         )
         await event.reply(
-            "Note {name} saved successfully. Get it with ?{name}".format(name=name)
+            "Note {name} saved successfully. Get it with #{name}".format(name=name)
         )
     else:
         await event.reply("Reply to a message with `snips keyword` to save the snip")
@@ -83,7 +83,7 @@ async def on_snip_list(event):
     OUT_STR = "Available Snips:\n"
     if len(all_snips) > 0:
         for a_snip in all_snips:
-            OUT_STR += f"➤ `?{a_snip.snip}` \n"
+            OUT_STR += f"➤ `#{a_snip.snip}` \n"
     else:
         OUT_STR = "No Snips. Start Saving using `/addnote`"
     if len(OUT_STR) > Config.MAX_MESSAGE_SIZE_LIMIT:
@@ -107,4 +107,4 @@ async def on_snip_list(event):
 async def on_snip_delete(event):
     name = event.pattern_match.group(1)
     remove_snip(name)
-    await event.reply("Note ?{} deleted successfully".format(name))
+    await event.reply("Note #{} deleted successfully".format(name))
