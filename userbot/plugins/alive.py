@@ -16,7 +16,6 @@ from userbot import ALIVE_NAME
 from telethon.tl.types import ChannelParticipantsAdmins
 # 🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "DARK COBRA"
-ALIVE_PHOTTO = os.environ.get("ALIVE_PHOTTO" , None)
 
 # Thanks to Sipak bro and Raganork.. 
 # animation Idea by @NOOB_GUY_OP (Sipakisking)
@@ -44,10 +43,11 @@ pm_caption += f"➾ **ᴍʏ ᴍᴀsᴛᴇʀ** ☞ [{DEFAULTUSER}](tg://user?id={
 @borg.on(admin_cmd(pattern=r"alive"))
 @borg.on(sudo_cmd(pattern=r"alive", allow_sudo=True))
 
-async def amireallyalive(yes):
+async def hmm(yes):
     chat = await yes.get_chat()
     global ghanti
     ghanti = borg.uid
+    await yes.delete()
     on = await borg.send_file(yes.chat_id, file=file1,caption=pm_caption)
 
     await asyncio.sleep(edit_time)
@@ -71,10 +71,5 @@ async def amireallyalive(yes):
     await asyncio.sleep(edit_time)
     ok7 = await borg.edit_message(yes.chat_id, ok6, file=file4)
 
-    await yes.delete()
     
-    """ For .alive command, check if the bot is running.  """
-    await borg.send_file(yes.chat_id, PM_IMG,caption=pm_caption)
-    await yes.delete()
-
 
