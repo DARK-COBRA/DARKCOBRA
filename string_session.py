@@ -1,22 +1,29 @@
+print(
+    "ㅤ\nㅤ\n\n\n\nㅤ\n┈┈┏━╮╭━┓┈╭━━━━━━╮\n┈┈┃┏┗┛┓┃╭┫ⓞⓘⓝⓚ ┃\n┈┈╰┓▋▋┏╯╯╰━━━━━━╯\n┈╭━┻╮╲┗━━━━╮╭╮┈\n┈┃▎▎┃╲╲╲╲╲╲┣━╯┈\n┈╰━┳┻▅╯╲╲╲╲┃┈┈┈\n┈┈┈╰━┳┓┏┳┓┏╯┈┈┈\n┈┈┈┈┈┗┻┛┗┻┛┈┈"
+)
+print("\n\n\n\n\nHello sir!!, I'm Here To Help u to Generate Telethon String Session")
+print("\n\nDarkCobra UserBot")
+
+print("\n\nProperly Fill APP_ID ,HASH and Number.\n")
+
 from telethon.sync import TelegramClient
 from telethon.sessions import StringSession
-print ("")
-print ("")
-print("""processing.......""")
+APP_ID = int(input("Enter APP ID here: "))
+API_HASH = input("Enter API HASH here: ")
+with TelegramClient(StringSession(), APP_ID, API_HASH) as hehe:
+	dcsession = hehe.session.save()
+	dcobra = hehe.send_message(
+	    "me",
+	    f"`{dcsession}`\n\n**Your DarkCobra String Session Here Sir😁😎😎\nClick on above Code to Copy it\n\nFor Support Join** @Dark_Cobra_Support_Group"
+	)
 
-API_KEY = '1754367'
-API_HASH = "231b8cc6cca12ee51a85cf543321f476"
-while True:
-  try:
-   with TelegramClient(StringSession(), API_KEY, API_HASH) as client:
-      print("")
-      session = client.session.save()
-      client.send_message("me", f"Here is your TELEGRAM STRING SESSION\n(tap to copy)👇 \n\n `{session}`")
-      print("You telegram String session successfully stored in your telegram, please check your Telegram Saved Messages ")
-      print("Store it safe !! Don't share with anyone.. Regards.. Team DARK COBRA")
-  except:
-   print ("")
-   print ("Wrong phone number \n make sure its with correct  country code")
-   print ("")
-   continue
-  break
+print("\n\n############################\n")
+print(
+    "check your Telegram Saved Messages For Ur New String String Session 😂😂 or see below. ")
+
+print("\n############################\n")
+
+
+print(f"{dcsession}")
+
+Print(" ")
