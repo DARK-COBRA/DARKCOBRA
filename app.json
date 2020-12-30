@@ -106,7 +106,7 @@
     "TAG_LOG": {
       "description": "Create a group where u want ur tags logs will come add rose bot then get id ,set value, if not then leave blank  ",
       "value": "",
-      "required" : false
+      "required" : true
    },
     "OCR_SPACE_API_KEY": {
       "description": "Needed for ocr.py, get it from ocr.space .",
