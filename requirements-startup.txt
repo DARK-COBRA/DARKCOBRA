@@ -7,6 +7,7 @@ spotdl
 aiohttp
 pygments
 aria2p
+appdirs
 async_generator
 beautifulsoup4
 bs4
