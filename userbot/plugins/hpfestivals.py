@@ -36,3 +36,4 @@ def choser(cmd, pack, blacklist={}):
 
 choser('hpdiwali', 'a929138153_by_Shivam_Patel_1_anim')
 choser('hpchristmas', 'HappChristmas')
+choser('hpnewyear', 'Happy_New_Year_To_All')
