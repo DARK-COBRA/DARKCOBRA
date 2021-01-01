@@ -4,11 +4,11 @@ from telethon import events
 import asyncio
 
 from userbot.utils import admin_cmd
-from userbot import bot as javes
+from userbot import bot as newyear
 from telethon import events
 
 from userbot import CMD_HELP
-@javes.on(admin_cmd("newyear"))
+@newyear.on(admin_cmd(pattern=r"newyear"))
 async def _(event):
     if event.fwd_from:
         return
@@ -21,7 +21,7 @@ async def _(event):
         	
         await asyncio.sleep(animation_interval)
         await event.edit(animation_chars[i % 5])
-@javes.on(admin_cmd("happynewyear"))
+@newyear.on(admin_cmd(pattern=r"happynewyear"))
 async def _(event):
     if event.fwd_from:
         return
