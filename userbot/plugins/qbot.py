@@ -7,7 +7,7 @@ from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from userbot import bot, CMD_HELP
 from userbot.utils import admin_cmd
 
-@borg.on(admin_cmd(pattern=r"qbot(?: |$)(.*)"))
+@borg.on(admin_cmd(pattern=r"qbot"))
 async def _(event):
     if event.fwd_from:
         return 
@@ -32,4 +32,4 @@ async def _(event):
              await event.edit("```Can you kindly disable your forward privacy settings for good?```")
           else: 
              await event.delete()   
-             await bot.forward_messages(event.chat_id, response.message)
+             await event.client.send_file(event.chat_id, response.message , reply_to=reply_message) 
