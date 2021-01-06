@@ -224,9 +224,9 @@ def paginate_help(page_number, loaded_plugins, prefix):
     if len(pairs) > number_of_rows:
         pairs = pairs[modulo_page * number_of_rows:number_of_rows * (modulo_page + 1)] + \
             [
-            (custom.Button.inline("◃:✮𝙿𝚁𝙴𝚅.❃", data="{}_prev({})".format(prefix, modulo_page)),
-             custom.Button.inline("⋇⋆𝙲𝙻✦𝚂𝙴⋆⋇", data="close"),
-             custom.Button.inline("❃.𝙽𝙴𝚇𝚃✮:▹", data="{}_next({})".format(prefix, modulo_page)))
+            (custom.Button.inline("•PREVIOUS•", data="{}_prev({})".format(prefix, modulo_page)),
+             custom.Button.inline("•CLOSE•", data="close"),
+             custom.Button.inline("•NEXT•", data="{}_next({})".format(prefix, modulo_page)))
         ]
     return pairs
 
