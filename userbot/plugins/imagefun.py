@@ -8,9 +8,12 @@
 # Kangers Keep Credits
 
 # Kepp Credits
-import os
 
 
+
+import cv2
+# by @danish_00
+import os, scipy, sys, shutil
 import numpy as np
 import requests, re
 from PIL import Image
@@ -18,11 +21,16 @@ from telegraph import upload_file
 from telethon.tl.types import MessageMediaPhoto
 from userbot import bot, CMD_HELP
 from userbot.utils import admin_cmd, sudo_cmd
+
 pathdc = "./shivam/"
 if not os.path.isdir(pathdc):
     os.makedirs(pathdc)
 
 #keep CREDIT LINES ELSE GET LOST
+
+path = "./cv2/"
+if not os.path.isdir(path):
+    os.makedirs(path)
 
 
 
@@ -103,31 +111,23 @@ async def dc(event):
             
             
 
-@bot.on(admin_cmd(pattern=r"grey"))
-@bot.on(sudo_cmd(pattern=r"grey", allow_sudo=True))
-async def dc(event):
-    await event.edit("Stealing Color from this 😜")    
-    dc = await event.get_reply_message()
-    if isinstance(dc.media, MessageMediaPhoto):
-        img = await borg.download_media(dc.media, pathdc)
-    elif "image" in dc.media.document.mime_type.split("/"):
-        img = await borg.download_media(dc.media, pathdc)
-    else:
-        await event.edit("Reply To any Image only 😅😅")
+@bot.on(admin_cmd("grey"))
+async def hehe(event):
+    if not event.reply_to_msg_id:
+        await event.reply("Reply to any Image.")
         return
-    url = upload_file(img)
-    link = f"https://telegra.ph{url[0]}"
-    hehe = f"https://some-random-api.ml/canvas/greyscale?avatar={link}"
-    r = requests.get(hehe)
-    open("shivam.png", "wb").write(r.content)
-    hehe = "shivam.png"
-    await borg.send_file(
-        event.chat_id, hehe, caption="Ur Black nd White img here 🙃", reply_to=dc
-     )
-    for files in (hehe, img):
-        if files and os.path.exists(files):
-            os.remove(files)
+    reply = await event.get_reply_message()
+    await event.edit('`Processing...`')
+    image = await bot.download_media(reply.media, path)
+    img = cv2.VideoCapture(image) 
+    ret, frame = img.read()
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY) 
+    cv2.imwrite("danish.jpg", gray)
+    await event.client.send_file(event.chat_id, "danish.jpg", force_document=False, reply_to=event.reply_to_msg_id)
     await event.delete()
+    shutil.rmtree(path)
+    os.remove("danish.jpg")
+
     ##Made By Sh1vam  Donot KANG
 # ME MADE MORE THAN ONE AND MORE COMPLEX ONE WAS YT COMMENT 
 #I REMOVED COLOUR CAUSE ALL NEED TO REMEMBER HEX COLOUR CODES # replaced by %23
@@ -139,130 +139,115 @@ async def dc(event):
 
 # Kepp Credits
     
-@bot.on(admin_cmd(pattern=r"blur"))
-@bot.on(sudo_cmd(pattern=r"blur", allow_sudo=True))
-async def dc(event):
-    await event.edit("Bluring Image🤓🤓")    
-    dc = await event.get_reply_message()
-    if isinstance(dc.media, MessageMediaPhoto):
-        img = await borg.download_media(dc.media, pathdc)
-    elif "image" in dc.media.document.mime_type.split("/"):
-        img = await borg.download_media(dc.media, pathdc)
-    else:
-        await event.edit("Reply To any Image only 😅😅")
+@bot.on(admin_cmd("blur"))
+async def hehe(event):
+    if not event.reply_to_msg_id:
+        await event.reply("Reply to any Image.")
         return
-    url = upload_file(img)
-    link = f"https://telegra.ph{url[0]}"
-    hehe = f"https://some-random-api.ml/canvas/blur?avatar={link}"
-    r = requests.get(hehe)
-    open("shivam.png", "wb").write(r.content)
-    hehe = "shivam.png"
-    await borg.send_file(
-        event.chat_id, hehe, caption="Blured 🤓", reply_to=dc
-     )
-    for files in (hehe, img):
-        if files and os.path.exists(files):
-            os.remove(files)
+   
+    reply = await event.get_reply_message()
+    await event.edit('`Processing...`')
+    image = await bot.download_media(reply.media, path)
+    img = cv2.VideoCapture(image) 
+    ret, frame = img.read() 
+    blur = cv2.GaussianBlur(frame, (35, 35), 0)
+    cv2.imwrite("danish.jpg", blur)
+    await event.client.send_file(event.chat_id, "danish.jpg", force_document=False, reply_to=event.reply_to_msg_id)
     await event.delete()
+    shutil.rmtree(path)
+    os.remove("danish.jpg")
+
+@bot.on(admin_cmd("invert"))
+async def hehe(event):
+    if not event.reply_to_msg_id:
+        await event.reply("Reply to any Image.")
+        return
     
+    reply = await event.get_reply_message()
+    await event.edit('`Processing...`')
+    image = await bot.download_media(reply.media, path)
+    img = cv2.VideoCapture(image) 
+    ret, frame = img.read()
+    invert = cv2.bitwise_not(frame)
+    cv2.imwrite("danish.jpg", invert)
+    await event.client.send_file(event.chat_id, "danish.jpg", force_document=False, reply_to=event.reply_to_msg_id)
+    await event.delete()
+    shutil.rmtree(path)
+    os.remove("danish.jpg")
+
+
+@bot.on(admin_cmd("enhance"))
+async def hehe(event):
+    if not event.reply_to_msg_id:
+        await event.reply("Reply to any Image.")
+        return   
+    reply = await event.get_reply_message()
+    await event.edit('`Processing...`')
+    image = await bot.download_media(reply.media, path)
+    img = cv2.VideoCapture(image) 
+    ret, frame = img.read()
+    dtl = cv2.detailEnhance(frame, sigma_s=10, sigma_r=0.15)
+    cv2.imwrite("danish.jpg", dtl)
+    await event.client.send_file(event.chat_id, "danish.jpg", force_document=False, reply_to=event.reply_to_msg_id)
+    await event.delete()
+    shutil.rmtree(path)
+    os.remove("danish.jpg")
+
+@bot.on(admin_cmd("smooth"))
+async def hehe(event):
+    if not event.reply_to_msg_id:
+        await event.reply("Reply to any Image.")
+        return   
+    reply = await event.get_reply_message()
+    await event.edit('`Processing...`')
+    image = await bot.download_media(reply.media, path)
+    img = cv2.VideoCapture(image) 
+    ret, frame = img.read() 
+    smooth = cv2.edgePreservingFilter(frame, flags=1, sigma_s=60, sigma_r=0.4)
+    cv2.imwrite("danish.jpg", smooth)
+    await event.client.send_file(event.chat_id, "danish.jpg", force_document=False, reply_to=event.reply_to_msg_id)
+    await event.delete()
+    shutil.rmtree(path)
+    os.remove("danish.jpg")
+
+@bot.on(admin_cmd("pencil"))
+async def hehe(event):
+    if not event.reply_to_msg_id:
+        await event.reply("Reply to any Image.")
+        return 
+    reply = await event.get_reply_message()
+    await event.edit('`Processing...`')
+    image = await bot.download_media(reply.media, path)
+    img = cv2.VideoCapture(image) 
+    ret, frame = img.read() 
+    grey = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    blur = cv2.GaussianBlur(grey, (3,3), 0)
+    output = cv2.Laplacian(blur, -1, ksize=5)
+    output = 255 - output
+    ret, output = cv2.threshold(output, 150, 255, cv2.THRESH_BINARY)
+    cv2.imwrite("danish.jpg", output)
+    await event.client.send_file(event.chat_id, "danish.jpg", force_document=False, reply_to=event.reply_to_msg_id)
+    await event.delete()
+    shutil.rmtree(path)
+    os.remove("danish.jpg")
     
-@bot.on(admin_cmd(pattern=r"invert"))
-@bot.on(sudo_cmd(pattern=r"invert", allow_sudo=True))
-async def dc(event):
-    await event.edit("Inverting Image🤔🤔")    
-    dc = await event.get_reply_message()
-    if isinstance(dc.media, MessageMediaPhoto):
-        img = await borg.download_media(dc.media, pathdc)
-    elif "image" in dc.media.document.mime_type.split("/"):
-        img = await borg.download_media(dc.media, pathdc)
-    else:
-        await event.edit("Reply To any Image only 😅😅")
-        return
-    url = upload_file(img)
-    link = f"https://telegra.ph{url[0]}"
-    hehe = f"https://some-random-api.ml/canvas/invert?avatar={link}"
-    r = requests.get(hehe)
-    open("shivam.png", "wb").write(r.content)
-    hehe = "shivam.png"
-    await borg.send_file(
-        event.chat_id, hehe, caption="Hmm 🤔 try to invert again", reply_to=dc
-     )
-    for files in (hehe, img):
-        if files and os.path.exists(files):
-            os.remove(files)
+@bot.on(admin_cmd("igrey"))
+async def hehe(event):
+    if not event.reply_to_msg_id:
+        await event.reply("Reply to any Image.")
+        return    
+    reply = await event.get_reply_message()
+    await event.edit('`Processing...`')
+    image = await bot.download_media(reply.media, path)
+    img = cv2.VideoCapture(image) 
+    ret, frame = img.read()
+    invert = cv2.bitwise_not(frame)
+    gray = cv2.cvtColor(invert, cv2.COLOR_BGR2GRAY) 
+    cv2.imwrite("danish.jpg", gray)
+    await event.client.send_file(event.chat_id, "danish.jpg", force_document=False, reply_to=event.reply_to_msg_id)
     await event.delete()
-   #Made By Sh1vam  Donot KANG
-# ME MADE MORE THAN ONE AND MORE COMPLEX ONE WAS YT COMMENT 
-#I REMOVED COLOUR CAUSE ALL NEED TO REMEMBER HEX COLOUR CODES # replaced by %23
-# DARKCOBRA ORIGINAL 
-# by @shivam_patel , fix nd edited by @danish_00
-# by #team dc
-
-# Kangers Keep Credits
-
-# Kepp Credits
-    
-@bot.on(admin_cmd(pattern=r"igrey"))
-@bot.on(sudo_cmd(pattern=r"igery", allow_sudo=True))
-async def dc(event):
-    await event.edit("Don't know what i'm doing 😛😜")    
-    dc = await event.get_reply_message()
-    if isinstance(dc.media, MessageMediaPhoto):
-        img = await borg.download_media(dc.media, pathdc)
-    elif "image" in dc.media.document.mime_type.split("/"):
-        img = await borg.download_media(dc.media, pathdc)
-    else:
-        await event.edit("Reply To any Image only 😅😅")
-        return
-    url = upload_file(img)
-    link = f"https://telegra.ph{url[0]}"
-    hehe = f"https://some-random-api.ml/canvas/invertgreyscale?avatar={link}"
-    r = requests.get(hehe)
-    open("shivam.png", "wb").write(r.content)
-    hehe = "shivam.png"
-    await borg.send_file(
-        event.chat_id, hehe, reply_to=dc
-     )
-    for files in (hehe, img):
-        if files and os.path.exists(files):
-            os.remove(files)
-    await event.delete()
-            
-          #Made By Sh1vam  Donot KANG
-# ME MADE MORE THAN ONE AND MORE COMPLEX ONE WAS YT COMMENT 
-#I REMOVED COLOUR CAUSE ALL NEED TO REMEMBER HEX COLOUR CODES # replaced by %23
-# DARKCOBRA ORIGINAL 
-# by @shivam_patel , fix nd edited by @danish_00
-# by #team dc
-
-# Kangers Keep Credits
-
-# Kepp Credits
-@bot.on(admin_cmd(pattern=r"bright"))
-@bot.on(sudo_cmd(pattern=r"bright", allow_sudo=True))
-async def dc(event):
-    await event.edit("Adding Brightness 😎")    
-    dc = await event.get_reply_message()
-    if isinstance(dc.media, MessageMediaPhoto):
-        img = await borg.download_media(dc.media, pathdc)
-    elif "image" in dc.media.document.mime_type.split("/"):
-        img = await borg.download_media(dc.media, pathdc)
-    else:
-        await event.edit("Reply To any Image only 😅😅")
-        return
-    url = upload_file(img)
-    link = f"https://telegra.ph{url[0]}"
-    hehe = f"https://some-random-api.ml/canvas/brightness?avatar={link}"
-    r = requests.get(hehe)
-    open("shivam.png", "wb").write(r.content)
-    hehe = "shivam.png"
-    await borg.send_file(
-        event.chat_id, hehe, caption="Brightness increased 😎😎", reply_to=dc
-     )
-    for files in (hehe, img):
-        if files and os.path.exists(files):
-            os.remove(files)
-    await event.delete()
+    shutil.rmtree(path)
+    os.remove("danish.jpg")          
     
     
 
@@ -322,80 +307,8 @@ async def hehe(event):
 
 # Kangers Keep Credits
 
-# Kepp Credits
-@bot.on(admin_cmd(pattern=r"glass"))
-@bot.on(sudo_cmd(pattern=r"glass", allow_sudo=True))
-async def dc(event):
-    await event.edit("Framing image under Glass 😁😁")    
-    dc = await event.get_reply_message()
-    if isinstance(dc.media, MessageMediaPhoto):
-        img = await borg.download_media(dc.media, pathdc)
-    elif "image" in dc.media.document.mime_type.split("/"):
-        img = await borg.download_media(dc.media, pathdc)
-    else:
-        await event.edit("Reply To any Image only 😅😅")
-        return
-    url = upload_file(img)
-    link = f"https://telegra.ph{url[0]}"
-    hehe = f"https://some-random-api.ml/canvas/glass?avatar={link}"
-    r = requests.get(hehe)
-    open("shivam.png", "wb").write(r.content)
-    hehe = "shivam.png"
-    await borg.send_file(
-        event.chat_id, hehe, caption="Wow Image Trapped Under the glass 😂", reply_to=dc
-     )
-    for files in (hehe, img):
-        if files and os.path.exists(files):
-            os.remove(files)
-    await event.delete()
-          #Made By Sh1vam  Donot KANG
-# ME MADE MORE THAN ONE AND MORE COMPLEX ONE WAS YT COMMENT 
-#I REMOVED COLOUR CAUSE ALL NEED TO REMEMBER HEX COLOUR CODES # replaced by %23
-# DARKCOBRA ORIGINAL 
-# by @shivam_patel , fix nd edited by @danish_00
-# by #team dc
 
-# Kangers Keep Credits
-
-# Kepp Credits
-            
-@bot.on(admin_cmd(pattern=r"blrpl"))
-@bot.on(sudo_cmd(pattern=r"blrpl", allow_sudo=True))
-async def dc(event):
-    await event.edit("Bluring Image🤓🤓")    
-    dc = await event.get_reply_message()
-    if isinstance(dc.media, MessageMediaPhoto):
-        img = await borg.download_media(dc.media, pathdc)
-    elif "image" in dc.media.document.mime_type.split("/"):
-        img = await borg.download_media(dc.media, pathdc)
-    else:
-        await event.edit("Reply To any Image only 😅😅")
-        return
-    url = upload_file(img)
-    link = f"https://telegra.ph{url[0]}"
-    hehe = f"https://some-random-api.ml/canvas/blurple?avatar={link}"
-    r = requests.get(hehe)
-    open("shivam.png", "wb").write(r.content)
-    hehe = "shivam.png"
-    await borg.send_file(
-        event.chat_id, hehe, reply_to=dc
-     )
-    for files in (hehe, img):
-        if files and os.path.exists(files):
-            os.remove(files)
-    await event.delete()
-    
-            
-        #Made By Sh1vam  Donot KANG
-# ME MADE MORE THAN ONE AND MORE COMPLEX ONE WAS YT COMMENT 
-#I REMOVED COLOUR CAUSE ALL NEED TO REMEMBER HEX COLOUR CODES # replaced by %23
-# DARKCOBRA ORIGINAL 
-# by @shivam_patel , fix nd edited by @danish_00
-# by #team dc
-
-# Kangers Keep Credits
-
-# Kepp Credits
+        
 
 
 CMD_HELP.update(
@@ -411,7 +324,7 @@ CMD_HELP.update(
     \n**USAGE   ★  **Show A Youtube Comment of ur repled img and typed name. (note :- that dot . in middle is important)\
     \n\n📌** CMD ★** `.invert`\
     \n**USAGE   ★  **Create a Negative image to return it back to normal use .invert again\
-    \n\n📌** CMD ★** `.blur / .igrey /.bright / .glass / .blrpl` \
+    \n\n📌** CMD ★** `.blur /.pencil /.enhance / .smooth / .igrey /.bright / .glass / .blrpl` \
     \ncheck them on ur own 😁😁\
     \n(note:- it work only on images, u can use .stoi to convert a sticker info image then u can use😁😁)"
       
