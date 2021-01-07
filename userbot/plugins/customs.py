@@ -16,7 +16,7 @@ async def hhi(event):
         f"{a}{b}{b}{a}{b}{a}{a}{a}\n{a}{b}{b}{a}{b}{b}{a}{b}\n{a}{a}{a}{a}{b}{b}{a}{b}\n{a}{b}{b}{a}{b}{b}{a}{b}\n{a}{b}{b}{a}{b}{a}{a}{a}\n☁☁☁☁☁☁☁☁"
     )
 # later made by me
-@borg.on(admin_cmd(pattern=r"gws?(.*)"))
+@borg.on(admin_cmd(pattern=r"gws ?(.*)"))
 async def gws(event):
     giveVar = event.text
     '''m = giveVar[5:-1]
