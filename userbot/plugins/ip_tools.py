@@ -1,7 +1,8 @@
 # Advanced Web Tools Plugin Made by @Hackintush..
 # All Credits Belong to CɪᴘʜᴇʀX..
 # Edited and ported with accordance to the utility by @hellboi_atul...Itz team DC
-# If you remove these 4 lines you are the geyest gey in the whole world..
+# Use on your own risk..we aren't responsible for any illegal activities done by you..this module is for educational purposes only..neither the team or the maker of the plugin is responsible..
+# If you remove these 5 lines you are the geyest gey in the whole world..
 import json
 import urllib.request
 import requests 
