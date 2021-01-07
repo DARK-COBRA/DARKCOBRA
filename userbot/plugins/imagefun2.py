@@ -14,6 +14,42 @@ if not os.path.isdir(path):
     os.makedirs(path)
 
 
+# Originally Created by @danish_00 
+# All Basics opencv just , the .rtoon was little challenging
+
+
+@bot.on(admin_cmd("rtoon"))
+async def hehe(event):
+    if not event.reply_to_msg_id:
+        await event.reply("Reply to any Image.")
+        return
+    reply = await event.get_reply_message()
+    image = await bot.download_media(reply.media, path)
+    await event.edit("`Processing... takes time`")
+    img = cv2.VideoCapture(image) 
+    ret, frame = img.read() 
+    height, width, channels = frame.shape
+    samples = np.zeros([height*width, 3], dtype = np.float32)
+    count = 0
+    for x in range(height):
+        for y in range(width):
+           samples[count] = frame[x][y] 
+           count += 1
+    compactness, labels, centers = cv2.kmeans(samples,
+                                        13, 
+                                        None,
+                                        (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 10000, 0.0001), 
+                                        5, 
+                                        cv2.KMEANS_PP_CENTERS)
+    centers = np.uint8(centers)
+    res = centers[labels.flatten()]
+    nikal = res.reshape((frame.shape))
+    cv2.imwrite("danish.jpg", nikal)
+    await event.client.send_file(event.chat_id, "danish.jpg", force_document=False, reply_to=event.reply_to_msg_id)
+    shutil.rmtree(path)
+    os.remove("danish.jpg")
+
+
 # opencv basics 
 @bot.on(admin_cmd("ctoon"))
 async def hehe(event):
@@ -253,6 +289,8 @@ async def hehe(event):
 CMD_HELP.update(
     {
         "imagefun2": "__**PLUGIN NAME :** Image fun2 _\
+    \n\n📌** CMD ★** `.rtoon(reply to media)`\
+    \n**USAGE   ★  **Send u can smooth toon like pic \
     \n\n📌** CMD ★** `.ctoon (reply to media)`\
     \n**USAGE   ★  **Send u Cartoon Comics like Output\
     \n\n📌** CMD ★** `.merge(reply to media)(add link of other image on text)`\
