@@ -37,7 +37,7 @@ def deEmojify(inputString: str) -> str:
     return re.sub(IF_EMOJI, '', inputString)
 
 
-@register(outgoing=True, pattern="^.utl (.*)")
+@borg.on(admin_cmd(pattern="utl ?(.*)"))
 async def yt_search(video_q):
     """For .yt command, do a YouTube search from Telegram."""
     query = video_q.pattern_match.group(1)
