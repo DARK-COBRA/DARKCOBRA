@@ -10,7 +10,9 @@ import random
 from userbot import bot, CMD_HELP
 import asyncio
 import os
+import json
 from pathlib import Path
+from youtube_search import YoutubeSearch
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot.utils import admin_cmd, edit_or_reply
 
@@ -35,26 +37,23 @@ def deEmojify(inputString: str) -> str:
     return re.sub(IF_EMOJI, '', inputString)
 
 
-@borg.on(admin_cmd(pattern="utv ?(.*)"))
-
-async def nope(doit):
-    ok = doit.pattern_match.group(1)
-    if not ok:
-        if doit.is_reply:
-            what = (await doit.get_reply_message()).message
-        else:
-            await doit.edit("`Please give some query to search..!`")
-            return
-    sticcers = await bot.inline_query(
-        "vid", f"{(deEmojify(ok))}")
-    await sticcers[0].click(doit.chat_id,
-                            reply_to=doit.reply_to_msg_id,
-                            silent=True if doit.is_reply else False,
-                            hide_via=True)
-    await doit.delete()
-
-
-
+@register(outgoing=True, pattern="^.utl (.*)")
+async def yt_search(video_q):
+    """For .yt command, do a YouTube search from Telegram."""
+    query = video_q.pattern_match.group(1)
+    if not query:
+        await video_q.edit("`Enter query to search`")
+    await video_q.edit("`Processing...`")
+    try:
+        results = json.loads(YoutubeSearch(query, max_results=7).to_json())
+    except KeyError:
+        return await video_q.edit("`Sorry master i couldn't find something related to this query!`")
+    output = f"**Search Query:**\n`{query}`\n\n**Results:**\n\n"
+    for i in results["videos"]:
+        output += (f"--> `{i['title']}`\nhttps://www.youtube.com{i['url_suffix']}\n\n")
+    await video_q.edit(output, link_preview=False)
+ 
+ 
 
 
 
