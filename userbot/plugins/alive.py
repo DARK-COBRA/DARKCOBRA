@@ -32,7 +32,7 @@ if TG_BOT_USER_NAME_BF_HER is not None:
         result = None
         query = event.text
         me = await borg.get_me()
-        if query.startswith("dcmod") and event.query.user_id == me.id:
+        if query.startswith("alive") and event.query.user_id == me.id:
             buttons = [
                 [
                     Button.url("Repo", "https://github.com/DARK-COBRA/DARKCOBRA"),
