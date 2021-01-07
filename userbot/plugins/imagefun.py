@@ -22,9 +22,6 @@ from telethon.tl.types import MessageMediaPhoto
 from userbot import bot, CMD_HELP
 from userbot.utils import admin_cmd, sudo_cmd
 
-pathdc = "./shivam/"
-if not os.path.isdir(pathdc):
-    os.makedirs(pathdc)
 
 #keep CREDIT LINES ELSE GET LOST
 
@@ -40,9 +37,9 @@ async def dc(event):
     await event.edit("Making this image 😡triggered😈")    
     dc = await event.get_reply_message()
     if isinstance(dc.media, MessageMediaPhoto):
-        img = await borg.download_media(dc.media, pathdc)
+        img = await borg.download_media(dc.media, path)
     elif "image" in dc.media.document.mime_type.split("/"):
-        img = await borg.download_media(dc.media, pathdc)
+        img = await borg.download_media(dc.media, path)
     else:
         await event.edit("Reply To any Image only 😅😅")
         return
@@ -76,9 +73,9 @@ async def dc(event):
     await event.edit("What a waste 😒😒")    
     dc = await event.get_reply_message()
     if isinstance(dc.media, MessageMediaPhoto):
-        img = await borg.download_media(dc.media, pathdc)
+        img = await borg.download_media(dc.media, path)
     elif "image" in dc.media.document.mime_type.split("/"):
-        img = await borg.download_media(dc.media, pathdc)
+        img = await borg.download_media(dc.media, path)
     else:
         await event.edit("Reply To any Image only 😅😅")
         return
@@ -144,7 +141,6 @@ async def hehe(event):
     if not event.reply_to_msg_id:
         await event.reply("Reply to any Image.")
         return
-   
     reply = await event.get_reply_message()
     await event.edit('`Processing...`')
     image = await bot.download_media(reply.media, path)
@@ -251,7 +247,60 @@ async def hehe(event):
     
     
 
-            
+
+@bot.on(admin_cmd("emboss"))
+async def hehe(event):
+    if not event.reply_to_msg_id:
+        await event.reply("Reply to any Image.")
+        return
+    reply = await event.get_reply_message()
+    await event.edit('`Processing...`')
+    image = await bot.download_media(reply.media, path)
+    img = cv2.VideoCapture(image) 
+    ret, frame = img.read()
+    kernel = np.array([[0,-1,-1],[1,0,-1], [1,1,0]])
+    emboss = cv2.filter2D(frame, -1, kernel)                        
+    cv2.imwrite("danish.jpg", emboss)
+    await event.client.send_file(event.chat_id, "danish.jpg", force_document=False, reply_to=event.reply_to_msg_id)
+    await event.delete()
+    shutil.rmtree(path)
+    os.remove("danish.jpg")
+
+@bot.on(admin_cmd("sharp"))
+async def hehe(event):
+    if not event.reply_to_msg_id:
+        await event.reply("Reply to any Image.")
+        return
+    reply = await event.get_reply_message()
+    await event.edit('`Processing...`')
+    image = await bot.download_media(reply.media, path)
+    img = cv2.VideoCapture(image) 
+    ret, frame = img.read()
+    kernel = np.array([[-1, -1, -1], [-1, 9, -1], [-1, -1, -1]])
+    sharp = cv2.filter2D(frame, -1, kernel)
+    cv2.imwrite("danish.jpg", sharp)
+    await event.client.send_file(event.chat_id, "danish.jpg", force_document=False, reply_to=event.reply_to_msg_id)
+    await event.delete()
+    shutil.rmtree(path)
+    os.remove("danish.jpg")
+    
+    
+@bot.on(admin_cmd("bright"))
+async def hehe(event):
+    if not event.reply_to_msg_id:
+        await event.reply("Reply to any Image.")
+        return
+    reply = await event.get_reply_message()
+    await event.edit('`Processing...`')
+    image = await bot.download_media(reply.media, path)
+    img = cv2.VideoCapture(image) 
+    ret, frame = img.read()
+    brt = cv2.convertScaleAbs(frame, beta=90)
+    cv2.imwrite("danish.jpg", brt)
+    await event.client.send_file(event.chat_id, "danish.jpg", force_document=False, reply_to=event.reply_to_msg_id)
+    await event.delete()
+    shutil.rmtree(path)
+    os.remove("danish.jpg")            
 
           #Made By Sh1vam  Donot KANG
 # ME MADE MORE THAN ONE AND MORE COMPLEX ONE WAS YT COMMENT 
@@ -277,9 +326,9 @@ async def hehe(event):
     await event.delete()
     dc = await event.get_reply_message()
     if isinstance(dc.media, MessageMediaPhoto):
-        img = await borg.download_media(dc.media, pathdc)
+        img = await borg.download_media(dc.media, path)
     elif "image" in sed.media.document.mime_type.split("/"):
-        img = await borg.download_media(dc.media, pathd )
+        img = await borg.download_media(dc.media, path)
     else:
         await event.edit("Reply To Image")
         return
@@ -324,7 +373,7 @@ CMD_HELP.update(
     \n**USAGE   ★  **Show A Youtube Comment of ur repled img and typed name. (note :- that dot . in middle is important)\
     \n\n📌** CMD ★** `.invert`\
     \n**USAGE   ★  **Create a Negative image to return it back to normal use .invert again\
-    \n\n📌** CMD ★** `.blur /.pencil /.enhance / .smooth / .igrey /.bright / .glass / .blrpl` \
+    \n\n📌** CMD ★** `.blur /.pencil /.enhance / .smooth / .embross /.bright / .sharp / .` \
     \ncheck them on ur own 😁😁\
     \n(note:- it work only on images, u can use .stoi to convert a sticker info image then u can use😁😁)"
       
