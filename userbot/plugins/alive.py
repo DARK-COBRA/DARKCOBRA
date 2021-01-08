@@ -1,5 +1,5 @@
-# Thanks to Sipak And Aryan bro.. 
-# Idea by @Hellboy_OP 
+# Thanks to Sipak .. 
+# Idea by @ItzSipak 
 # Made by @ProgrammingError ....TEAM DC
 # Kang with credits else gay...
 # inline alive
