@@ -18,7 +18,7 @@ from userbot import bot as borg
 from telethon.tl.custom import Button
 from telethon.tl.types import ChannelParticipantsAdmins
 ok = borg.get_me()
-ghanti = ok.id
+ghanti = ok.uid
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "DARK COBRA"
 ALIVE_PHOTTO = os.environ.get("ALIVE_PHOTTO" , None)
