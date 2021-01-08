@@ -202,7 +202,7 @@ async def howitworks(event):
     edges = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 9, 9)
     color = cv2.bilateralFilter(frame, 13, 400, 400)
     cartoon = cv2.bitwise_and(color, color, mask=edges) 
-    cv2.imwrite("a.jpg", img) 
+    cv2.imwrite("a.jpg", frame) 
     cv2.imwrite("b.jpg", gray) 
     cv2.imwrite("c.jpg", edges)
     cv2.imwrite("d.jpg", color) 
