@@ -1,5 +1,5 @@
-# originally made by @danish_00 
- # Team dc
+   # originally made by @danish_00 
+   # Team dc
    # For cobra
 
 from PIL import Image
@@ -46,11 +46,13 @@ async def hehe(event):
     nikal = res.reshape((frame.shape))
     cv2.imwrite("danish.jpg", nikal)
     await event.client.send_file(event.chat_id, "danish.jpg", force_document=False, reply_to=event.reply_to_msg_id)
+    await event.delete()
     shutil.rmtree(path)
     os.remove("danish.jpg")
 
 
-# opencv basics 
+    # opencv basics 
+
 @bot.on(admin_cmd("ctoon"))
 async def hehe(event):
     if not event.reply_to_msg_id:
@@ -307,8 +309,8 @@ CMD_HELP.update(
       
     }
 )
+    # Thank U for ur Efforts to check out this
 
+  
 
-#gtfo
-
-#nikal mc
+ 
