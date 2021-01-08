@@ -44,9 +44,9 @@ async def _(event):
             await event.delete()
             await event.client.send_file(event.chat_id, response.message)   
         
-        CMD_HELP.update(
+CMD_HELP.update(
     {
-        "skeedy": ".skeedy `<reason for remainder> <timing>\nUse - Set A Remainder"
-        
+        "skeedy": "`.skeedy (reason for remainder) (Time)`"
+        "\nUsage Set a remainder."
     }
 )
