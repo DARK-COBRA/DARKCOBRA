@@ -51,14 +51,16 @@ if TG_BOT_USER_NAME_BF_HER is not None:
             elif ALIVE_PHOTTO:
                 result = builder.document(
                     ALIVE_PHOTTO,
-                    title="DC Mod",
+                    title="DARK Cobra",
                     text=dc_text,
                     buttons=buttons,
+                    link_preview=False,
                 )
             else:
                 result = builder.article(
-                    title="DC Mod",
+                    title="Dark Cobra",
                     text=dc_text,
                     buttons=buttons,
+                    link_preview=False,
                 )
             await event.answer([result] if result else None)
