@@ -17,61 +17,55 @@ if not os.path.isdir(path):
     os.makedirs(path)
 
 @bot.on(admin_cmd(pattern=r"trig"))
-@bot.on(sudo_cmd(pattern=r"trig", allow_sudo=True))
 async def dc(event):
-    await event.edit("Making this image 😡triggered😈")    
-    dc = await event.get_reply_message()
-    if isinstance(dc.media, MessageMediaPhoto):
-        img = await borg.download_media(dc.media, path)
-    elif "image" in dc.media.document.mime_type.split("/"):
-        img = await borg.download_media(dc.media, path)
-    else:
-        await event.edit("Reply To any Image only 😅😅")
+    if not event.reply_to_msg_id:
+        await event.edit("Reply to any media.")
         return
-    url = upload_file(img)
+    reply = await event.get_reply_message()
+    await event.edit('`Processing...`')
+    download = await bot.download_media(reply.media, path)
+    img = cv2.VideoCapture(download)
+    ret, frame = img.read()
+    cv2.imwrite("danish.png", frame)
+    url = upload_file("danish.png")
     link = f"https://telegra.ph{url[0]}"
-    hmm = f"https://some-random-api.ml/canvas/triggered?avatar={link}"
-    r = requests.get(hmm)
+    api = f"https://some-random-api.ml/canvas/triggered?avatar={link}"
+    r = requests.get(api)
     open("shivam.gif", "wb").write(r.content)
-    hehe = "shivam.gif"
-    await borg.send_file(
-        event.chat_id, hehe, caption="Got Triggered 😈😂", reply_to=dc
-     )
-    for files in (hehe, img):
-        if files and os.path.exists(files):
-            os.remove(files)
+    await event.client.send_file(event.chat_id, "shivam.gif", force_document=False, reply_to=event.reply_to_msg_id)
     await event.delete()
+    shutil.rmtree(path)
+    os.remove("danish.png")
+    os.remove("shivam.gif")
+    
             
 @bot.on(admin_cmd(pattern=r"wst"))
-@bot.on(sudo_cmd(pattern=r"wst", allow_sudo=True))
 async def dc(event):
-    await event.edit("What a waste 😒😒")    
-    dc = await event.get_reply_message()
-    if isinstance(dc.media, MessageMediaPhoto):
-        img = await borg.download_media(dc.media, path)
-    elif "image" in dc.media.document.mime_type.split("/"):
-        img = await borg.download_media(dc.media, path)
-    else:
-        await event.edit("Reply To any Image only 😅😅")
+    if not event.reply_to_msg_id:
+        await event.edit("Reply to any media.")
         return
-    url = upload_file(img)
+    reply = await event.get_reply_message()
+    await event.edit('`Processing...`')
+    download = await bot.download_media(reply.media, path)
+    img = cv2.VideoCapture(download)
+    ret, frame = img.read()
+    cv2.imwrite("danish.png", frame)
+    url = upload_file("danish.png")
     link = f"https://telegra.ph{url[0]}"
-    hmm = f"https://some-random-api.ml/canvas/wasted?avatar={link}"
-    r = requests.get(hmm)
-    open("shivam.png", "wb").write(r.content)
-    hehe = "shivam.png"
-    await borg.send_file(
-        event.chat_id, hehe, caption="Totally wasted⚰️ 😒", reply_to=dc
-     )
-    for files in (hehe, img):
-        if files and os.path.exists(files):
-            os.remove(files)
+    api = f"https://some-random-api.ml/canvas/wasted?avatar={link}"
+    r = requests.get(api)
+    open("shivam.gif", "wb").write(r.content)
+    await event.client.send_file(event.chat_id, "shivam.gif", force_document=False, reply_to=event.reply_to_msg_id)
     await event.delete()
+    shutil.rmtree(path)
+    os.remove("danish.png")
+    os.remove("shivam.gif")
             
 
 @bot.on(admin_cmd(pattern="rgif"))
 async def _(event):
-    if event.fwd_from:
+    if not event.reply_to_msg_id:
+        await event.edit("Reply to any media.")
         return
     reply = await event.get_reply_message()
     download = await bot.download_media(reply.media, path)
@@ -99,7 +93,7 @@ async def _(event):
 @bot.on(admin_cmd("grey"))
 async def hehe(event):
     if not event.reply_to_msg_id:
-        await event.reply("Reply to any Image.")
+        await event.edit("Reply to any Media.")
         return
     reply = await event.get_reply_message()
     await event.edit('`Processing...`')
