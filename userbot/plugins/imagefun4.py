@@ -1,5 +1,12 @@
  
     
+
+     # @THE_B_LACK_HAT with @shivam_patel
+     # Modified with OpenCV by @danish_00
+     # Team Cobra
+     # For Dark Cobra
+     # Keep Credits
+
 import cv2
 from PIL import Image
 import sys
