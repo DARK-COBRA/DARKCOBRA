@@ -50,7 +50,7 @@ async def hehe(event):
 
 
     
-@bot.on(admin_cmd("miror"))
+@bot.on(admin_cmd("flip"))
 async def hehe(event):
     if not event.reply_to_msg_id:
         await event.edit("Reply to media")
@@ -75,7 +75,7 @@ async def hehe(event):
     os.remove("cobra.jpg")
 
 
-@bot.on(admin_cmd("imirror"))
+@bot.on(admin_cmd("mirror"))
 async def hehe(event):
     if not event.reply_to_msg_id:
         await event.edit("Reply to media")
