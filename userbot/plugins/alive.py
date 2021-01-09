@@ -1,9 +1,7 @@
-# Thanks to @Shivam_Patel Bro
-# Thanks to Sipak .. 
-# Idea by @Shivam_Patel 
-# Made by @Shivam_Patel & @ProgrammingError ....TEAM DC
+# Thanks to Sipak bro and Aryan.. 
+# animation Idea by @(ItzSipak) && @Hell boy_pikachu
+# Made by @hellboi_atul ....and thanks to @Crackexy for the logos...
 # Kang with credits else gay...
-# inline alive
 import asyncio
 import os
 import requests
@@ -12,56 +10,66 @@ from PIL import Image
 from io import BytesIO
 from datetime import datetime
 import random
-from telethon import events, Button, custom
-from userbot.utils import admin_cmd
+from telethon import events
+from userbot.utils import admin_cmd, sudo_cmd
 from userbot import ALIVE_NAME
-from userbot import bot as borg
-from telethon.tl.custom import Button
 from telethon.tl.types import ChannelParticipantsAdmins
-global ok
-ok = borg.uid
-
+# 🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "DARK COBRA"
-ALIVE_PHOTTO = os.environ.get("ALIVE_PHOTTO" , None)
 
-dc_text=(f"** 𝙳𝙰𝚁𝙺 𝙲𝙾𝙱𝚁𝙰 𝙸𝚂 𝙾𝙽𝙻𝙸𝙽𝙴**\n\n**Yes Master, Am Alive And Systems Are Working Perfectly As It Should Be...**\n\n✘ About My System ✘\n\n➾ **ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀꜱɪᴏɴ** ☞ 1.17.5\n➾ **ꜱᴜᴘᴘᴏʀᴛ ᴄʜᴀɴɴᴇʟ** ☞ [ᴊᴏɪɴ](https://t.me/Dark_cobra_support)\n➾ **ʟɪᴄᴇɴꜱᴇ**  ☞ [𝙏𝙚𝙖𝙢 𝘿𝘾](https://github.com/DARK-COBRA)\n➾ **ᴄᴏᴘʏʀɪɢʜᴛ ʙʏ** ☞ [𝘿𝙖𝙧𝙠-𝘾𝙤𝙗𝙧𝙖](https://github.com/DARK-COBRA/DARKCOBRA)\n\n➾ **ᴍʏ ᴍᴀsᴛᴇʀ** ☞ [{DEFAULTUSER}](tg://user?id={ok})\n")
-TG_BOT_USER_NAME_BF_HER = os.environ.get("TG_BOT_USER_NAME_BF_HER", None)
-if TG_BOT_USER_NAME_BF_HER is not None:
-    @tgbot.on(events.InlineQuery)
-    async def inline_handler(event):
-        builder = event.builder
-        result = None
-        query = event.text
-        me = await borg.get_me()
-        if query.startswith("alive") and event.query.user_id == me.id:
-            buttons = [
-                [
-                    Button.url("Repo", "https://github.com/DARK-COBRA/DARKCOBRA"),
-                    Button.url("Deploy", "https://heroku.com/deploy?template=https://github.com/DARK-COBRA/DARKCOBRA/blob/master")],
-                    [Button.url("String", "https://repl.it/@Danish00/DarkCobra#main.py"),
-                    Button.url("Channel", "https://t.me/Dark_cobra_support"),
-                ]
-            ]
-            if ALIVE_PHOTTO and ALIVE_PHOTTO.endswith((".jpg", ".png")):
-                result = builder.photo(
-                    ALIVE_PHOTTO,
-                    text=dc_text,
-                    buttons=buttons,
-                    link_preview=False
-                )
-            elif ALIVE_PHOTTO:
-                result = builder.document(
-                    ALIVE_PHOTTO,
-                    title="DARK Cobra",
-                    text=dc_text,
-                    buttons=buttons,
-                    link_preview=False,
-                )
-            else:
-                result = builder.article(
-                    title="Dark Cobra",
-                    text=dc_text,
-                    buttons=buttons,
-                    link_preview=False,
-                )
-            await event.answer([result] if result else None)
+# Thanks to Sipak bro and Raganork.. 
+# animation Idea by @NOOB_GUY_OP (Sipakisking)
+# Made by @hellboi_atul ....and thanks to @Crackexy for the logos...
+# Kang with credits else gay...
+# alive.py for DC(DARK COBRA)
+global ghanti
+ghanti = borg.uid
+edit_time = 5
+""" =======================CONSTANTS====================== """
+file1 = "https://telegra.ph/file/6aa39732748ed7c319943.jpg"
+file2 = "https://telegra.ph/file/a6d72504bc09e71484a54.jpg"
+file3 = "https://telegra.ph/file/3cdbede1d5d85aa2d50fc.jpg"
+file4 = "https://telegra.ph/file/3dae01973943e8b28c931.jpg"
+""" =======================CONSTANTS====================== """
+pm_caption = "** 𝙳𝙰𝚁𝙺 𝙲𝙾𝙱𝚁𝙰 𝙸𝚂 𝙾𝙽𝙻𝙸𝙽𝙴**\n\n"
+pm_caption += "**Yes Master, Am Alive And Systems Are Working Perfectly As It Should Be...**\n\n"
+pm_caption += "✘ About My System ✘\n\n"
+pm_caption += "➾ **ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀꜱɪᴏɴ** ☞ 1.17.5\n"
+pm_caption += "➾ **ꜱᴜᴘᴘᴏʀᴛ ᴄʜᴀɴɴᴇʟ** ☞ [ᴊᴏɪɴ](https://t.me/Dark_cobra_support)\n"
+pm_caption += "➾ **ʟɪᴄᴇɴꜱᴇ**  ☞ [𝚃𝙴𝙰𝙼 𝙲𝙾𝙱𝚁𝙰](https://github.com/DARK-COBRA)\n"
+pm_caption += "➾ **ᴄᴏᴘʏʀɪɢʜᴛ ʙʏ** ☞ [𝙳𝙰𝚁𝙺-𝙲𝙾𝙱𝚁𝙰](https://github.com/DARK-COBRA/DARKCOBRA)\n\n"
+pm_caption += f"➾ **ᴍʏ ᴍᴀsᴛᴇʀ** ☞ [{DEFAULTUSER}](tg://user?id={ghanti})\n"
+
+@borg.on(admin_cmd(pattern=r"alive"))
+@borg.on(sudo_cmd(pattern=r"alive", allow_sudo=True))
+
+async def hmm(yes):
+    chat = await yes.get_chat()
+    global ghanti
+    ghanti = borg.uid
+    await yes.delete()
+    on = await borg.send_file(yes.chat_id, file=file1,caption=pm_caption)
+
+    await asyncio.sleep(edit_time)
+    ok = await borg.edit_message(yes.chat_id, on, file=file2) 
+
+    await asyncio.sleep(edit_time)
+    ok2 = await borg.edit_message(yes.chat_id, ok, file=file3)
+
+    await asyncio.sleep(edit_time)
+    ok3 = await borg.edit_message(yes.chat_id, ok2, file=file1)
+    
+    await asyncio.sleep(edit_time)
+    ok4 = await borg.edit_message(yes.chat_id, ok3, file=file3)
+    
+    await asyncio.sleep(edit_time)
+    ok5 = await borg.edit_message(yes.chat_id, ok4, file=file2)
+    
+    await asyncio.sleep(edit_time)
+    ok6 = await borg.edit_message(yes.chat_id, ok5, file=file1)
+    
+    await asyncio.sleep(edit_time)
+    ok7 = await borg.edit_message(yes.chat_id, ok6, file=file4)
+
+    
+
