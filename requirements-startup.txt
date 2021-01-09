@@ -58,7 +58,7 @@ pytz
 qrcode
 regex
 requests>=2.18.4
-scipy
+scapy
 search-engine-parser>=0.4.2
 selenium
 speedtest-cli>=2.0.2
