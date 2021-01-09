@@ -116,7 +116,7 @@ async def hehe(event):
 
     # api for adding color only....  
 DARKCOBRA = Config.DEEP_AI if Config.DEEP_AI else "quickstart-QUdJIGlzIGNvbWluZy4uLi4K"
-@borg.on(admin_cmd(pattern="colp$", outgoing=True))
+@borg.on(admin_cmd(pattern="color$", outgoing=True))
 async def _(event):
     if not event.reply_to_msg_id:
         await event.edit("Reply to any Media.")
@@ -138,9 +138,8 @@ async def _(event):
     pic_id = r.json()["id"]
     link = f"https://api.deepai.org/job-view-file/{pic_id}/inputs/image.jpg"
     result = f"{r_json}"
-    await event.delete()
     await bot.send_message(event.chat_id, file = result, reply_to=event.reply_to_msg_id)
-        
+    await event.delete()
     
    
 @bot.on(admin_cmd(pattern="circle", outgoing=True))
@@ -169,7 +168,31 @@ async def shiv(event):
     os.remove("danish.jpg")
 
 
-
+@borg.on(admin_cmd(pattern="ftoon$"))
+async def _(event):
+    if not event.reply_to_msg_id:
+        await event.edit("Reply to any Media.")
+        return
+    reply = await event.get_reply_message()
+    await event.edit("```Toonifing face😜😝...```")
+    image = await bot.download_media(reply.media, path)
+    img = cv2.VideoCapture(image) 
+    ret, frame = img.read()
+    cv2.imwrite("danish.jpg", frame)
+    r = requests.post(
+        "https://api.deepai.org/api/toonify",
+        files={"image": open("danish.jpg", "rb")},
+        headers={"api-key": f"{DARKCOBRA}"})
+    os.remove("danish.jpg")
+    if "status" in r.json():
+        return await event.edit( r.json()["status"])
+    r_json = r.json()["output_url"]
+    pic_id = r.json()["id"]
+    link = f"https://api.deepai.org/job-view-file/{pic_id}/inputs/image.jpg"
+    result = f"{r_json}"
+    await event.edit("```Be sure to reply a image in which face is visible```")
+    await bot.send_message(event.chat_id, file = result, reply_to=event.reply_to_msg_id)
+    await event.delete()
 
 CMD_HELP.update(
     {
@@ -182,19 +205,17 @@ CMD_HELP.update(
     \n**USAGE   ★  **Show A rotation gif. 😂😂\
     \n\n📌** CMD ★** `.grey(reply to media)`\
     \n**USAGE   ★  **Convert Colour image to Black nd white\
+    \n\n📌** CMD ★** `.color(reply to media)`\
+    \n**USAGE   ★  **Convert Black-White media to Colorfull.\
     \n\n📌** CMD ★** `.circle(reply to media)`\
-    \n**USAGE   ★  **Make A circle sticker of that media."
+    \n**USAGE   ★  **Make A circle sticker of that media.\
+    \n\n📌** CMD ★** `.ftoon(reply to media)`\
+    \n**USAGE   ★  **Makes faces look like 💩Toon💩."
     
       
     }
-)
 
 
-
-
-
-
-
-
+    )#  Thanks for Coming 🤗🤗
 
     
