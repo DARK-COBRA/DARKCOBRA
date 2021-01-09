@@ -1,6 +1,5 @@
-
-
-
+#Team DC
+#Kang with credicts...
 from telethon import events
 import subprocess, os , asyncio, PIL, cv2, shutil
 from userbot.utils import admin_cmd 
