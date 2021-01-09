@@ -61,7 +61,7 @@ async def dc(event):
     link = f"https://telegra.ph{url[0]}"
     api = f"https://some-random-api.ml/canvas/wasted?avatar={link}"
     r = requests.get(api)
-    open("shivam.gif", "wb").write(r.content)
+    open("shivam.jpg", "wb").write(r.content)
     await event.client.send_file(event.chat_id, "shivam.jpg", stream=True, reply_to=event.reply_to_msg_id)
     await event.delete()
     shutil.rmtree(path)
