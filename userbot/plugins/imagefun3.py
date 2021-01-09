@@ -168,11 +168,12 @@ async def hehe(event):
     ims=image
     os.system(f'wget https://telegra.ph/file/9974f1b3947f5f97f4075.png')
     lbcn= '9974f1b3947f5f97f4075.png'
-    image = Image.open(image)
-    shi,vam = image.size
     img1 = cv2.VideoCapture(ims) 
     ret, frame = img1.read()
     img2 = cv2.imread(f'{lbcn}')
+    achha = cv2.imwrite("cobra.jpg",frame)
+    image = Image.open("cobra.jpg")
+    shi,vam = image.size
     img1 = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
     img2 = cv2.cvtColor(img2, cv2.COLOR_BGR2RGB)
     img1 =cv2.resize(img1,(620,350))
@@ -187,6 +188,7 @@ async def hehe(event):
     await event.delete()
     shutil.rmtree(path)
     os.remove("danish.png")
+    os.remove("cobra.jpg")
 
 @bot.on(admin_cmd("howctoon"))
 async def howitworks(event):
