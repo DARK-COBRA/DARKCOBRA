@@ -1,5 +1,9 @@
 
 
+     # By @danish_00
+     # OpenCV Basics
+     # For Dark Cobra
+     # Team Dc
 
 import cv2
 import numpy as np
@@ -35,12 +39,12 @@ async def hehe(event):
     shutil.rmtree(path)
     os.remove("danish.jpg")
 
+
 @bot.on(admin_cmd("invert"))
 async def hehe(event):
     if not event.reply_to_msg_id:
         await event.reply("Reply to any Image.")
         return
-    
     reply = await event.get_reply_message()
     await event.edit('`Processing...`')
     image = await bot.download_media(reply.media, path)
@@ -161,7 +165,8 @@ async def hehe(event):
     shutil.rmtree(path)
     os.remove("danish.jpg")
 
-          
+    # .ytc by @shivam_patel
+    #  kang with credits
 @bot.on(admin_cmd(pattern=r"ytc"))
 async def hehe(event):
     if not event.reply_to_msg_id:
