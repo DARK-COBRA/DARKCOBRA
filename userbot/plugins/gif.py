@@ -11,25 +11,15 @@ if not os.path.isdir("./dcpath/"):
     os.makedirs("./dcpath/")
 
 
-
 @bot.on(admin_cmd(pattern="gif ?(.*)"))
-async def gifs(search):
-    get = search.pattern_match.group(1)
+async def gifs(event):
+    get = event.pattern_match.group(1)
     if not get:
-       if search.is_reply:
-           what = (await search.get_reply_message()).message
-       else:
-           await search.edit("`Sir please give some query to search and download it for you..!`")
-           return
+       await event.edit("`.gif <text>`")
+       return
     gifs = await bot.inline_query("gif", f"{get}")
-    await gifs[0].click(search.chat.id,
-                            reply_to=search.reply_to_msg_id,
-                            silent=True if search.is_reply else False,
-                            hide_via=True)
-    await search.delete()
-
-
-
+    await gifs[0].click(event.chat.id, reply_to=event.reply_to_msg_id, silent=True ,hide_via=True)
+    await event.delete()                         
 
 
 
