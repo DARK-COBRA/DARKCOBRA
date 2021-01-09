@@ -1,10 +1,5 @@
  
-    # @THE_B_LACK_HAT
-    # @danish_00
-    # @shivam_patel
-    # Teams Cobra
-    # For Dark Cobra
-
+    
 import cv2
 from PIL import Image
 import sys
