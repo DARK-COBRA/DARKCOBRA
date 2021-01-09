@@ -158,9 +158,16 @@ async def hehe(event):
 
           
 @bot.on(admin_cmd(pattern=r"ytc"))
-@bot.on(sudo_cmd(pattern=r"ytc", allow_sudo=True))
 async def hehe(event):
-    await event.edit("Lets make a utube comment 😁😁")
+    if not event.reply_to_msg_id:
+        await event.reply("Reply to any Image.")
+        return
+    reply = await event.get_reply_message()
+    await event.edit('`Processing...`')
+    download = await bot.download_media(reply.media, path)
+    img = cv2.VideoCapture(download)
+    ret, frame = img.read()
+    cv2.imwrite("danish.png", frame)
     givenvar=event.text
     text = givenvar[5:]
     try:
@@ -168,27 +175,13 @@ async def hehe(event):
         username, comment= text.split(".")
     except:
         await event.edit("`.ytc username.comment reply  to image`")
-    await event.delete()
-    dc = await event.get_reply_message()
-    if isinstance(dc.media, MessageMediaPhoto):
-        img = await borg.download_media(dc.media, path)
-    elif "image" in sed.media.document.mime_type.split("/"):
-        img = await borg.download_media(dc.media, path)
-    else:
-        await event.edit("Reply To Image")
-        return
-    url_s = upload_file(img)
+    url_s = upload_file("danish.png")
     imglink = f"https://telegra.ph{url_s[0]}"
     nikal = f"https://some-random-api.ml/canvas/youtube-comment?avatar={imglink}&comment={comment}&username={username}"
     r = requests.get(nikal)
     open("shivam.png", "wb").write(r.content)
-    chutiya = "shivam.png"
-    await borg.send_file(
-        event.chat_id, chutiya, reply_to=dc
-    )
-    for files in (chutiya, img):
-        if files and os.path.exists(files):
-            os.remove(files)
-            
+    await event.client.send_file(event.chat_id, "shivam.png", force_document=False, reply_to=event.reply_to_msg_id)
     await event.delete()
-
+    shutil.rmtree(path)
+    os.remove("shivam.png")
+    os.remove("danish.jpg")
