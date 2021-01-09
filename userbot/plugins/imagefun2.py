@@ -14,6 +14,10 @@ from telethon import events
 from telethon.tl.types import MessageMediaPhoto
 
 
+path = "./dcobra/"
+if not os.path.isdir(path):
+    os.makedirs(path)
+
 @bot.on(admin_cmd("blur"))
 async def hehe(event):
     if not event.reply_to_msg_id:
@@ -164,7 +168,6 @@ async def hehe(event):
         await event.reply("Reply to any Image.")
         return
     reply = await event.get_reply_message()
-    await event.edit('`Processing...`')
     download = await bot.download_media(reply.media, path)
     img = cv2.VideoCapture(download)
     ret, frame = img.read()
@@ -176,12 +179,13 @@ async def hehe(event):
         username, comment= text.split(".")
     except:
         await event.edit("`.ytc username.comment reply  to image`")
+    await event.edit('`Processing...`')
     url_s = upload_file("danish.png")
     imglink = f"https://telegra.ph{url_s[0]}"
     nikal = f"https://some-random-api.ml/canvas/youtube-comment?avatar={imglink}&comment={comment}&username={username}"
     r = requests.get(nikal)
     open("shivam.png", "wb").write(r.content)
-    await event.client.send_file(event.chat_id, "shivam.png", force_document=False, reply_to=event.reply_to_msg_id)
+    await event.client.send_file(event.chat_id, "shivam.png", reply_to=event.reply_to_msg_id)
     await event.delete()
     shutil.rmtree(path)
     os.remove("shivam.png")
