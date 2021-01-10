@@ -1,7 +1,8 @@
 
 
-   # By @danish_00
+   
    # import cv2
+   # By @danish_00
    # with @shivam_patel
    # @THE_B_LACK_HAT
    # Team Dc
@@ -45,28 +46,48 @@ async def dc(event):
     os.remove("danish.png")
     os.remove("shivam.gif")
     
-            
-@bot.on(admin_cmd(pattern=r"wst"))
-async def dc(event):
-    if not event.reply_to_msg_id:
-        await event.edit("Reply to any media.")
-        return
+
+    # New .wst By @Shivam_Patel with @danish_00
+
+@borg.on(admin_cmd(pattern=r"wst"))
+async def hmm(event):
     reply = await event.get_reply_message()
-    await event.edit('`Processing...`')
-    download = await bot.download_media(reply.media, path)
-    img = cv2.VideoCapture(download)
-    ret, frame = img.read()
-    cv2.imwrite("danish.jpg", frame)
-    url = upload_file("danish.jpg")
-    link = f"https://telegra.ph{url[0]}"
-    api = f"https://some-random-api.ml/canvas/wasted?avatar={link}"
-    r = requests.get(api)
-    open("shivam.jpg", "wb").write(r.content)
-    await event.client.send_file(event.chat_id, "shivam.jpg", stream=True, reply_to=event.reply_to_msg_id)
+    await event.edit("```Processing```")
+    os.system(f'wget https://telegra.ph/file/b3a6038bc825cc4edc4f0.png')
+    img = await bot.download_media(reply.media, path)
+    mon = "b3a6038bc825cc4edc4f0.png"
+    foreground = Image.open(mon).convert("RGBA")
+    img = cv2.VideoCapture(img) 
+    tales, miraculous = img.read()
+    cv2.imwrite("MiraculousLadybug.png",miraculous)
+    shvm=PIL.Image.open("MiraculousLadybug.png")
+    shi,vam = shvm.size
+    img=shvm.resize((512,512))
+    img.save("shivamgta.png", format="PNG", optimize=True)
+    img = cv2.VideoCapture("shivamgta.png") 
+    tales, miraculousladybug = img.read()
+    dan = cv2.cvtColor(miraculousladybug, cv2.COLOR_BGR2GRAY) 
+    bug = cv2.imwrite("shivamgtas.jpg", dan)
+    image = cv2.imread("shivamgtas.jpg")
+    overlay = image.copy()
+    overlay =cv2.rectangle(overlay, (0, 210), (800, 100), (0,0,0), -1) 
+    image_new = cv2.addWeighted(overlay, 0.8, image, 0.2 , 0)
+    cv2.imwrite("shivamgta.jpg", image_new)
+    background = Image.open("shivamgta.jpg").convert("RGB")
+    with Image.open("shivamgta.jpg") as imge:
+        width, height = imge.size
+    fg_resized = foreground.resize((width, int(height/5)))
+    background.paste(fg_resized, box=(0,int(height/2)-50), mask=fg_resized)
+    background.save("shivamwasted.png")
+    miraculous=PIL.Image.open("shivamwasted.png")
+    img=miraculous.resize((int(shi),int(vam)))
+    img.save("shivamwastedgta.png", format="PNG", optimize=True)
+    await event.client.send_file(event.chat_id, "shivamwastedgta.png", force_document=False, reply_to=event.reply_to_msg_id)
     await event.delete()
-    shutil.rmtree(path)
-    os.remove("danish.jpg")
-    os.remove("shivam.jpg")
+    os.remove("shivamwasted.png")
+    os.remove("shivamwastedgta.png")
+    os.remove("MiraculousLadybug.png")
+    os.remove("shivamgta.png")
             
 
 @bot.on(admin_cmd(pattern="rgif"))
