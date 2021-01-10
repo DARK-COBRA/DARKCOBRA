@@ -74,8 +74,8 @@ async def hmm(event):
     bug = cv2.imwrite("shivamgtas.jpg", dan)
     image = cv2.imread("shivamgtas.jpg")
     overlay = image.copy()
-    overlay =cv2.rectangle(overlay, (0, 210), (800, 100), (0,0,0), -1) 
-    image_new = cv2.addWeighted(overlay, 0.5 , image, 0.2 , 0)
+    overlay =cv2.rectangle(overlay, (0, 210), (800, 310), (0,0,0), -1) 
+    image_new = cv2.addWeighted(overlay, 0.5 , image, 0.5 , 0)
     cv2.imwrite("shivamgta.jpg", image_new)
     background = Image.open("shivamgta.jpg").convert("RGB")
     with Image.open("shivamgta.jpg") as imge:
