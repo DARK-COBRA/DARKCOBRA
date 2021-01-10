@@ -16,7 +16,7 @@ async def info(event):
         if args in CMD_HELP:
             await event.edit(str(CMD_HELP[args]))
         else:
-            await event.edit("Please specify a valid plugin name.")
+            await event.edit("Maybe the command help or plugin info has not been set or the plugin is invalid...")
     else:
         await event.edit("Please specify which plugin do you want help for !!\
             \nUsage: .pinfo <plugin name>")
