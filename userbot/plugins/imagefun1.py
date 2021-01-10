@@ -10,6 +10,7 @@
 
 import cv2
 import numpy as np
+import PIL
 from PIL import Image, ImageDraw
 import pygments, os, asyncio, shutil, scapy, sys, requests, re, subprocess, urllib
 from pygments.lexers import Python3Lexer
@@ -51,6 +52,9 @@ async def dc(event):
 
 @borg.on(admin_cmd(pattern=r"wst"))
 async def hmm(event):
+    if not event.reply_to_msg_id:
+        await event.edit("Reply to any media.")
+        return
     reply = await event.get_reply_message()
     await event.edit("```Processing```")
     os.system(f'wget https://telegra.ph/file/b3a6038bc825cc4edc4f0.png')
@@ -71,7 +75,7 @@ async def hmm(event):
     image = cv2.imread("shivamgtas.jpg")
     overlay = image.copy()
     overlay =cv2.rectangle(overlay, (0, 210), (800, 100), (0,0,0), -1) 
-    image_new = cv2.addWeighted(overlay, 0.8, image, 0.2 , 0)
+    image_new = cv2.addWeighted(overlay, 0.5 , image, 0.2 , 0)
     cv2.imwrite("shivamgta.jpg", image_new)
     background = Image.open("shivamgta.jpg").convert("RGB")
     with Image.open("shivamgta.jpg") as imge:
