@@ -184,7 +184,6 @@ async def hehe(event):
         username, comment= text.split(".")
     except:
         await event.edit("`.ytc username.comment reply  to image`")
-    await event.edit('`Processing...`')
     url_s = upload_file("danish.png")
     imglink = f"https://telegra.ph{url_s[0]}"
     nikal = f"https://some-random-api.ml/canvas/youtube-comment?avatar={imglink}&comment={comment}&username={username}"
