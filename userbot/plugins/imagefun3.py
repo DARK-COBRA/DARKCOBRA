@@ -293,7 +293,7 @@ async def hehe(event):
 
 CMD_HELP.update(
     {
-        "imagefun2": "__**PLUGIN NAME :** Image fun2 _\
+        "imagefun3": "__**PLUGIN NAME :** Image fun2 _\
     \n\n📌** CMD ★** `.rtoon(reply to media)`\
     \n**USAGE   ★  **Send u can smooth toon like pic \
     \n\n📌** CMD ★** `.ctoon (reply to media)`\
