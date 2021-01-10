@@ -212,17 +212,17 @@ async def _(event):
     os.remove("danish.jpg")
     if "status" in r.json():
         return await event.edit( r.json()["status"])
+    await event.edit("```Be sure to reply a image in which face is visible```")
     r_json = r.json()["output_url"]
     pic_id = r.json()["id"]
     link = f"https://api.deepai.org/job-view-file/{pic_id}/inputs/image.jpg"
     result = f"{r_json}"
-    await event.edit("```Be sure to reply a image in which face is visible```")
     await bot.send_message(event.chat_id, file = result, reply_to=event.reply_to_msg_id)
     await event.delete()
 
 CMD_HELP.update(
     {
-        "imagefun": "__**PLUGIN NAME :** Image Fun _\
+        "imagefun1": "__**PLUGIN NAME :** Image Fun _\
     \n\n📌** CMD ★** `.trig (reply to media)`\
     \n**USAGE   ★  **Makes a Triggered Gif\
     \n\n📌** CMD ★** `.wst(reply to media)`\
