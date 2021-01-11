@@ -36,6 +36,7 @@ humanize
 justwatch
 keyboard
 lottie
+lyrics_extractor
 lxml
 oauth2client
 opencv-python--headless
