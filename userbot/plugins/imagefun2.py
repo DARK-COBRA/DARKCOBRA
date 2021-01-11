@@ -59,7 +59,7 @@ async def hehe(event):
 
 
     
-@bot.on(admin_cmd("flip"))
+@bot.on(admin_cmd("mirror"))
 async def hehe(event):
     if not event.reply_to_msg_id:
         await event.edit("Reply to media")
@@ -84,7 +84,33 @@ async def hehe(event):
     os.remove("cobra.jpg")
 
 
-@bot.on(admin_cmd("mirror"))
+@bot.on(admin_cmd("quad"))
+async def hehe(event):
+    if not event.reply_to_msg_id:
+        await event.edit("Reply to media")
+        return
+    await event.edit("```Processing...```")
+    reply = await event.get_reply_message()
+    pathh = await bot.download_media(reply.media, path)
+    img = cv2.VideoCapture(pathh)
+    ret,frame = img.read()
+    flip = cv2.flip(frame, 1)
+    up = cv2.rotate(flip, cv2.ROTATE_180)
+    cv2.imwrite("cobra.jpg", frame)
+    cv2.imwrite("danish.jpg", up) 
+    dark = cv2.imread("cobra.jpg")
+    cobra = cv2.imread("danish.jpg")
+    merge = cv2.vconcat([dark, cobra])
+    quad = cv2.flip(merge, 1)
+    cv2.imwrite('dark.jpg', quad)
+    await event.client.send_file(event.chat_id, "dark.jpg" , reply_to=event.reply_to_msg_id) 
+    await event.delete()
+    shutil.rmtree(path)
+    os.remove("danish.jpg")
+    os.remove("dark.jpg")
+    os.remove("cobra.jpg")
+
+@bot.on(admin_cmd("flip"))
 async def hehe(event):
     if not event.reply_to_msg_id:
         await event.edit("Reply to media")
@@ -108,6 +134,8 @@ async def hehe(event):
     os.remove("danish.jpg")
     os.remove("dark.jpg")
     os.remove("cobra.jpg")
+
+
 
 @bot.on(admin_cmd("enhance"))
 async def hehe(event):
