@@ -36,7 +36,7 @@ LWARN = ("**This is your last warning. DO NOT send another message else you will
 
 @command(pattern=r"\/start", incoming=True)
 async def _(event):
-    chat_id = event.from_id
+    chat_id = event.sender_id
     userid = event.sender_id
     if not pmpermit_sql.is_approved(chat_id):
         chat = await event.get_chat()
@@ -46,7 +46,7 @@ async def _(event):
 
          async with borg.conversation(chat) as conv:
           await borg.send_message(chat,message=PM)
-          chat_id = event.from_id
+          chat_id = event.sender_id
           response = await conv.get_response(chat)
           y = response.text
           if y == "1":

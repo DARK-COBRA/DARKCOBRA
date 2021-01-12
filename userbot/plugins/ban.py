@@ -90,7 +90,7 @@ async def _(event):
     reply_msg_id = event.reply_to_msg_id
     if reply_msg_id:
         r_mesg = await event.get_reply_message()
-        to_ban_id = r_mesg.from_id
+        to_ban_id = r_mesg.sender_id
     elif input_str and "all" not in input_str:
         to_ban_id = int(input_str)
     else:
@@ -151,7 +151,7 @@ async def _(event):
     reply_msg_id = event.reply_to_msg_id
     if reply_msg_id:
         r_mesg = await event.get_reply_message()
-        to_ban_id = r_mesg.from_id
+        to_ban_id = r_mesg.sender_id
     elif input_str and "all" not in input_str:
         to_ban_id = int(input_str)
     else:
@@ -170,7 +170,7 @@ async def get_user_from_event(event):
     extra = None
     if event.reply_to_msg_id:
         previous_message = await event.get_reply_message()
-        user_obj = await event.client.get_entity(previous_message.from_id)
+        user_obj = await event.client.get_entity(previous_message.sender_id)
         extra = event.pattern_match.group(1)
     elif args:
         user = args[0]

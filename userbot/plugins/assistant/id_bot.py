@@ -12,14 +12,14 @@ async def _(event):
             await tgbot.send_message(
                 event.chat_id,
                 "Current Chat ID: `{}`\nFrom User ID: `{}`\nBot API File ID: `{}`".format(
-                    str(event.chat_id), str(r_msg.from_id), bot_api_file_id
+                    str(event.chat_id), str(r_msg.sender_id), bot_api_file_id
                 ),
             )
         else:
             await tgbot.send_message(
                 event.chat_id,
                 "Current Chat ID: `{}`\nFrom User ID: `{}`".format(
-                    str(event.chat_id), str(r_msg.from_id)
+                    str(event.chat_id), str(r_msg.sender_id)
                 ),
             )
     else:
