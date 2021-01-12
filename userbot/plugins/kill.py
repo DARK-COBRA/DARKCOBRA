@@ -28,10 +28,10 @@ async def _(event):
 
     if event.reply_to_msg_id:
         reply_message = await event.get_reply_message()
-        replied_user = await event.client(GetFullUserRequest(reply_message.from_id))
+        replied_user = await event.client(GetFullUserRequest(reply_message.sender_id))
         firstname = replied_user.user.first_name
         usname = replied_user.user.username
-        idd = reply_message.from_id
+        idd = reply_message.sender_id
         if idd==1289422521:
             await event.edit("This is My Master\n**How dare you trying to tell me to kill master u nub nibba!**\n\n__Your account is on hold! Pay 99$ to my master__ [Atul](tg://user?id=1289422521) __to release your account__😏")
         else:
