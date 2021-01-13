@@ -14,7 +14,8 @@ from datetime import datetime
 import random
 from telethon import events, Button, custom, version
 from userbot.utils import admin_cmd
-from userbot import ALIVE_NAME, dcdef, Lastupdate
+from userbot import ALIVE_NAME, Lastupdate
+from . import dcdef
 from userbot import bot as borg
 from telethon.tl.custom import Button
 from telethon.tl.types import ChannelParticipantsAdmins
