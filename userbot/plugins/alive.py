@@ -52,7 +52,7 @@ async def hmm(yes):
     pm_caption += "➾ **ᴄᴏᴘʏʀɪɢʜᴛ ʙʏ** ☞ [𝙳𝙰𝚁𝙺-𝙲𝙾𝙱𝚁𝙰](https://github.com/DARK-COBRA/DARKCOBRA)\n\n"
     pm_caption += f"➾ **ᴜᴘᴛɪᴍᴇ** ☞ {uptime}\n\n"
     pm_caption += f"➾ **ᴍʏ ᴍᴀsᴛᴇʀ** ☞ [{DEFAULTUSER}](tg://user?id={ghanti})\n"
-        on = await borg.send_file(yes.chat_id, file=file1,caption=pm_caption)
+    on = await borg.send_file(yes.chat_id, file=file1,caption=pm_caption)
 
     await asyncio.sleep(edit_time)
     ok = await borg.edit_message(yes.chat_id, on, file=file2) 
