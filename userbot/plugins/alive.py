@@ -1,5 +1,5 @@
 # Thanks to Sipak bro and Aryan.. 
-# animation Idea by @(ItzSipak) && @Hell boy_pikachu
+# animation Idea by @ItzSipak && @Hell boy_pikachu
 # Made by @hellboi_atul ....and thanks to @Crackexy for the logos...
 # Kang with credits else gay...
 import asyncio
@@ -18,8 +18,8 @@ from telethon.tl.types import ChannelParticipantsAdmins
 # 🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "DARK COBRA"
 
-# Thanks to Sipak bro and Raganork.. 
-# animation Idea by @NOOB_GUY_OP (Sipakisking)
+# Thanks to Sipak bro and Aryan.. 
+# animation Idea by @ItzSipak && @Hell boy_pikachu
 # Made by @hellboi_atul ....and thanks to @Crackexy for the logos...
 # Kang with credits else gay...
 # alive.py for DC(DARK COBRA)
@@ -50,9 +50,9 @@ async def hmm(yes):
     pm_caption += "➾ **ꜱᴜᴘᴘᴏʀᴛ ᴄʜᴀɴɴᴇʟ** ☞ [ᴊᴏɪɴ](https://t.me/Dark_cobra_support)\n"
     pm_caption += "➾ **ʟɪᴄᴇɴꜱᴇ**  ☞ [𝚃𝙴𝙰𝙼 𝙲𝙾𝙱𝚁𝙰](https://github.com/DARK-COBRA)\n"
     pm_caption += "➾ **ᴄᴏᴘʏʀɪɢʜᴛ ʙʏ** ☞ [𝙳𝙰𝚁𝙺-𝙲𝙾𝙱𝚁𝙰](https://github.com/DARK-COBRA/DARKCOBRA)\n\n"
+    pm_caption += f"➾ **ᴜᴘᴛɪᴍᴇ** ☞ {uptime}\n\n"
     pm_caption += f"➾ **ᴍʏ ᴍᴀsᴛᴇʀ** ☞ [{DEFAULTUSER}](tg://user?id={ghanti})\n"
-    pm_caption += f"➾ **ᴜᴘᴛɪᴍᴇ** ☞ {uptime}"
-    on = await borg.send_file(yes.chat_id, file=file1,caption=pm_caption)
+        on = await borg.send_file(yes.chat_id, file=file1,caption=pm_caption)
 
     await asyncio.sleep(edit_time)
     ok = await borg.edit_message(yes.chat_id, on, file=file2) 
