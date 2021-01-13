@@ -12,9 +12,9 @@ from PIL import Image
 from io import BytesIO
 from datetime import datetime
 import random
-from telethon import events, Button, custom
+from telethon import events, Button, custom, version
 from userbot.utils import admin_cmd
-from userbot import ALIVE_NAME
+from userbot import ALIVE_NAME, dcdef, Lastupdate
 from userbot import bot as borg
 from telethon.tl.custom import Button
 from telethon.tl.types import ChannelParticipantsAdmins
@@ -24,7 +24,6 @@ ok = borg.uid
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "DARK COBRA"
 ALIVE_PHOTTO = os.environ.get("ALIVE_PHOTTO" , None)
 
-dc_text=(f"** 𝙳𝙰𝚁𝙺 𝙲𝙾𝙱𝚁𝙰 𝙸𝚂 𝙾𝙽𝙻𝙸𝙽𝙴**\n\n**Yes Master, Am Alive And Systems Are Working Perfectly As It Should Be...**\n\n✘ About My System ✘\n\n➾ **ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀꜱɪᴏɴ** ☞ 1.17.5\n➾ **ꜱᴜᴘᴘᴏʀᴛ ᴄʜᴀɴɴᴇʟ** ☞ [ᴊᴏɪɴ](https://t.me/Dark_cobra_support)\n➾ **ʟɪᴄᴇɴꜱᴇ**  ☞ [𝙏𝙚𝙖𝙢 𝘿𝘾](https://github.com/DARK-COBRA)\n➾ **ᴄᴏᴘʏʀɪɢʜᴛ ʙʏ** ☞ [𝘿𝙖𝙧𝙠-𝘾𝙤𝙗𝙧𝙖](https://github.com/DARK-COBRA/DARKCOBRA)\n\n➾ **ᴍʏ ᴍᴀsᴛᴇʀ** ☞ [{DEFAULTUSER}](tg://user?id={ok})\n")
 TG_BOT_USER_NAME_BF_HER = os.environ.get("TG_BOT_USER_NAME_BF_HER", None)
 if TG_BOT_USER_NAME_BF_HER is not None:
     @tgbot.on(events.InlineQuery)
@@ -33,6 +32,8 @@ if TG_BOT_USER_NAME_BF_HER is not None:
         result = None
         query = event.text
         me = await borg.get_me()
+        uptime = await dcdef.get_readable_time((time.time() - Lastupdate))
+        dc_text=(f"** 𝙳𝙰𝚁𝙺 𝙲𝙾𝙱𝚁𝙰 𝙸𝚂 𝙾𝙽𝙻𝙸𝙽𝙴**\n\n**Yes Master, Am Alive And Systems Are Working Perfectly As It Should Be...**\n\n✘ About My System ✘\n\n➾ **ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀꜱɪᴏɴ** ☞ {version.__version__}➾ **ꜱᴜᴘᴘᴏʀᴛ ᴄʜᴀɴɴᴇʟ** ☞ [ᴊᴏɪɴ](https://t.me/Dark_cobra_support)\n➾ **ʟɪᴄᴇɴꜱᴇ**  ☞ [𝙏𝙚𝙖𝙢 𝘿𝘾](https://github.com/DARK-COBRA)\n➾ **ᴄᴏᴘʏʀɪɢʜᴛ ʙʏ** ☞ [𝘿𝙖𝙧𝙠-𝘾𝙤𝙗𝙧𝙖](https://github.com/DARK-COBRA/DARKCOBRA)\n\n➾ **ᴜᴘᴛɪᴍᴇ** ☞ {uptime}\n\n➾ **ᴍʏ ᴍᴀsᴛᴇʀ** ☞ [{DEFAULTUSER}](tg://user?id={ok})\n")
         if query.startswith("alive") and event.query.user_id == me.id:
             buttons = [
                 [
