@@ -4,13 +4,16 @@ import shutil
 from re import findall
 from userbot.utils import admin_cmd
 import requests
-@borg.on(admin_cmd(pattern="pokedex ?(.*)"))
-#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG
-async def pokedex(event):
 
+
+#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG
+
+
+@bot.on(admin_cmd(pattern="pokedex ?(.*)"))
+async def pokedex(event):
     await event.edit("`Booting up the pokedex.......`")
     pokemon = event.pattern_match.group(1)
-
+    move = requests.get(f'https://pokeapi.co/api/v2/pokemon/{pokemon}')
     rw = f"https://some-random-api.ml/pokedex?pokemon={pokemon}"
     w=requests.get(f"https://api.pokemontcg.io/v1/cards?name={pokemon}")
     lol=w.json()
@@ -25,23 +28,35 @@ async def pokedex(event):
     weight=a['weight']
     esatge=r.json()['family']['evolutionStage']
     l=r.json()['family']['evolutionLine']
-    line='\n'.join(map(str, l))
+    if not l:
+        line = 'None'
+    else:
+        line=', '.join(map(str, l))
     gen=a['generation']
+    try:    move1=move.json()["moves"][0]['move']['name']
+    except IndexError: pass
+    try:    move2=move.json()["moves"][1]['move']['name']
+    except IndexError: move2=None
+    try:    move3=move.json()["moves"][2]['move']['name']
+    except IndexError: move3=None
+    try:    move4=move.json()["moves"][3]['move']['name']
+    except IndexError : move4=None
     description=a['description']
     typ=', '.join(map(str, typ))
     Stats=a['stats']
-    species=','.join(map(str, species))
-    abilities=','.join(map(str, abilities))
+    species=', '.join(map(str, species))
+    abilities=', '.join(map(str, abilities))
     poli = badhiya.Pokedex()
     pname = poli.get_pokemon_by_name(pokemon)
     pokemon = pname[0]
     lst=pokemon.get("sprite")
+
     cap=f'''
 
 **NAME** : `{name}`
 **TYPE** : `{typ}`
 **SPECIES** : `{species}`
-**Evolution Line : `{line}`
+**Evolution Line** : `{line}`
 **Evolution Stage** : `{esatge}`
 **Generation** : `{gen}`
 **ABILITIES** : `{abilities}`
@@ -49,25 +64,21 @@ async def pokedex(event):
 **HEIGHT** : `{height}`
 **WEIGHT** : `{weight}`
 
-**Stats**
-\n
-
-**Hp** : `{Stats['hp']}`
-**Attack** : `{Stats['attack']}`
-**Defense** : `{Stats['defense']}`
-**Sp_atk** : `{Stats['sp_atk']}`
-**Sp_def** : `{Stats['sp_def']}`
-**Speed** : `{Stats['speed']}`
-**Total** : `{Stats['total']}`
-
+    **Stats**                               **Moves**
+**Hp**      : `{Stats['hp']}`               `(1){move1}`
+**Attack**  : `{Stats['attack']}`           `(2){move2}`   
+**Defense** : `{Stats['defense']}`          `(3){move3}`   
+**Sp_atk**  : `{Stats['sp_atk']}`           `(4){move4}`
+**Sp_def**  : `{Stats['sp_def']}`
+**Speed**   : `{Stats['speed']}`
+**Total**   : `{Stats['total']}`
 **DESCRIPTION** : `{description}`
-  
-    '''
-    await event.client.send_file(await event.client.get_input_entity(event.chat_id), lst, caption=cap)
+  '''
+    await borg.send_file(event.chat_id, lst, caption=cap)
     await event.delete()
-#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG
 
-@borg.on(admin_cmd(pattern="pokecard ?(.*)"))
+
+@bot.on(admin_cmd(pattern="pokecard ?(.*)"))
 async def pokedex(event):
     pokename=event.pattern_match.group(1)
     rw = f"https://api.pokemontcg.io/v1/cards?name={pokename}"
@@ -76,4 +87,3 @@ async def pokedex(event):
     o=a['cards'][0]['imageUrlHiRes']
     await event.client.send_file(await event.client.get_input_entity(event.chat_id), o)
     await event.delete()
-#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG
