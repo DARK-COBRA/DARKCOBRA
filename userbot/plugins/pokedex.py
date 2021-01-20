@@ -4,13 +4,10 @@ import shutil
 from re import findall
 from userbot.utils import admin_cmd
 import requests
-
-
-#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG#made by @THE_B_LACK_HAT #team dc DONOT KANG
-
-
-@bot.on(admin_cmd(pattern="pokedex ?(.*)"))
+@borg.on(admin_cmd(pattern="pokedex ?(.*)"))
+#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC
 async def pokedex(event):
+
     await event.edit("`Booting up the pokedex.......`")
     pokemon = event.pattern_match.group(1)
     move = requests.get(f'https://pokeapi.co/api/v2/pokemon/{pokemon}')
@@ -41,6 +38,12 @@ async def pokedex(event):
     except IndexError: move3=None
     try:    move4=move.json()["moves"][3]['move']['name']
     except IndexError : move4=None
+    try:    move5=move.json()["moves"][4]['move']['name']
+    except IndexError : move5=None
+    try:    move6=move.json()["moves"][5]['move']['name']
+    except IndexError : move6=None
+    try:    move7=move.json()["moves"][6]['move']['name']
+    except IndexError : move7=None
     description=a['description']
     typ=', '.join(map(str, typ))
     Stats=a['stats']
@@ -69,16 +72,16 @@ async def pokedex(event):
 **Attack**  : `{Stats['attack']}`           `(2){move2}`   
 **Defense** : `{Stats['defense']}`          `(3){move3}`   
 **Sp_atk**  : `{Stats['sp_atk']}`           `(4){move4}`
-**Sp_def**  : `{Stats['sp_def']}`
-**Speed**   : `{Stats['speed']}`
-**Total**   : `{Stats['total']}`
+**Sp_def**  : `{Stats['sp_def']}`           `(5){move5}`
+**Speed**   : `{Stats['speed']}`            `(6){move6}`
+**Total**   : `{Stats['total']}`            `(7){move7}`
 **DESCRIPTION** : `{description}`
   '''
     await borg.send_file(event.chat_id, lst, caption=cap)
     await event.delete()
+#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC
 
-
-@bot.on(admin_cmd(pattern="pokecard ?(.*)"))
+@borg.on(admin_cmd(pattern="pokecard ?(.*)"))
 async def pokedex(event):
     pokename=event.pattern_match.group(1)
     rw = f"https://api.pokemontcg.io/v1/cards?name={pokename}"
@@ -87,3 +90,4 @@ async def pokedex(event):
     o=a['cards'][0]['imageUrlHiRes']
     await event.client.send_file(await event.client.get_input_entity(event.chat_id), o)
     await event.delete()
+#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC#made by @THE_B_LACK_HAT @ Sh1vam #TEAM DC
