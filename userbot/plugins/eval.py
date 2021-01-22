@@ -8,10 +8,11 @@ import traceback
 import asyncio
 import sys
 import io
-from uniborg.util import admin_cmd
+from uniborg.util import admin_cmd, sudo_cmd
 from userbot import CMD_HELP
 
 @borg.on(admin_cmd("eval"))
+@borg.on(sudo_cmd("eval"))
 async def _(event):
     if event.fwd_from:
         return
