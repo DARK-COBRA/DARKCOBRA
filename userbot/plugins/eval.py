@@ -8,7 +8,7 @@ import traceback
 import asyncio
 import sys
 import io
-from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply as eor
+from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply 
 from userbot import CMD_HELP
 
 @bot.on(admin_cmd("eval"))
