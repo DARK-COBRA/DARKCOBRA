@@ -53,7 +53,7 @@ async def _(event):
     if len(final_output) > 7000:
         with io.BytesIO(str.encode(final_output)) as out_file:
             out_file.name = "eval.text"
-            await borg.send_file(
+            await bot.send_file(
                 event.chat_id,
                 out_file,
                 force_document=True,
