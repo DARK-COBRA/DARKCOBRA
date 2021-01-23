@@ -8,15 +8,15 @@ import traceback
 import asyncio
 import sys
 import io
-from uniborg.util import admin_cmd, sudo_cmd
+from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply as eor
 from userbot import CMD_HELP
 
-@borg.on(admin_cmd("eval"))
-@borg.on(sudo_cmd("eval"))
+@bot.on(admin_cmd("eval"))
+@bot.on(sudo_cmd("eval"))
 async def _(event):
     if event.fwd_from:
         return
-    await event.reply("Processing ...")
+    await eor(event, "Processing ...")
     cmd = event.text.split(" ", maxsplit=1)[1]
     reply_to_id = event.message.id
     if event.reply_to_msg_id:
@@ -53,7 +53,7 @@ async def _(event):
     if len(final_output) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(final_output)) as out_file:
             out_file.name = "eval.text"
-            await borg.send_file(
+            await bot.send_file(
                 event.chat_id,
                 out_file,
                 force_document=True,
