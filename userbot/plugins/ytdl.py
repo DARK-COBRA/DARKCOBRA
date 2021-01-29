@@ -77,7 +77,7 @@ def time_formatter(milliseconds: int) -> str:
         ((str(milliseconds) + " millisecond(s), ") if milliseconds else "")
     return tmp[:-2]
 
-@borg.on(admin_cmd(pattern="yt(a|v) (.*)"))
+@borg.on(admin_cmd(pattern="yt(a|v|hq) (.*)"))
 async def download_video(v_url):
     """ For .ytdl command, download media from YouTube and many other sites. """
     url = v_url.pattern_match.group(2)
@@ -140,6 +140,24 @@ async def download_video(v_url):
             False,
             'quiet':
             True
+        }
+        song = False
+        video = True
+        
+    elif type == "hq":
+        opts = {
+            "format": "bestvideo[height=720]+bestaudio/best[height=720]",
+            "addmetadata": True,
+            "key": "FFmpegMetadata",
+            "prefer_ffmpeg": True,
+            "geo_bypass": True,
+            "nocheckcertificate": True,
+            "postprocessors": [
+                {"key": "FFmpegVideoConvertor", "preferedformat": "mp4"}
+            ],
+            "outtmpl": "%(id)s.mp4",
+            "logtostderr": False,
+            "quiet": True,
         }
         song = False
         video = True
@@ -219,5 +237,7 @@ CMD_HELP.update(
         "\nUsage Downloads audios from Youtube\n\n"
         "\n\n.ytv <Youtube Link>"
         "\nUsage Downloads videos from Youtube\n\n"
+        "\n\n.ythq <Youtube Link>"
+        "\nUsage Downloads videos at 720p quality from Youtube\n\n"
     }
 )
