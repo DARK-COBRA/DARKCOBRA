@@ -2,7 +2,6 @@
 # Give credits... Dont remove or edit these lines
 # uses ytdl 
 # made for DARK COBRA userbot..
-
 import os
 import time
 import math
@@ -22,7 +21,7 @@ from uniborg.util import admin_cmd
 try:
    from youtubesearchpython import SearchVideos 
 except:
-	os.system("pip install pip install youtube-search-python")
+	
 	from youtubesearchpython import SearchVideos 
 
 async def progress(current, total, event, start, type_of_ps, file_name=None):
