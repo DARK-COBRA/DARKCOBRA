@@ -28,6 +28,7 @@ google-api-python-client==1.8.0
 google-auth-oauthlib
 google_images_download>=2.8.0
 googletrans==3.1.0a0
+google
 geopy
 gsearch
 hachoir
