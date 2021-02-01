@@ -24,12 +24,7 @@ async def spammer(e):
         spam_message = str(e.text[8:])
         await asyncio.wait([e.respond(spam_message) for i in range(counter)])
         await e.delete()
-        if LOGGER:
-            await e.client.send_message(
-                LOGGER_GROUP,
-                "#SPAM \n\n"
-                "Spam was executed successfully"
-                )
+        
                                
 @register(outgoing=True, pattern="^.bigspam")
 async def bigspam(e):
@@ -40,12 +35,7 @@ async def bigspam(e):
         for i in range(1, counter):
             await e.respond(spam_message)
         await e.delete()
-        if LOGGER:
-            await e.client.send_message(
-                LOGGER_GROUP,
-                "#BIGSPAM \n\n"
-                "Bigspam was executed successfully"
-                )
+        
         
         
 
@@ -60,12 +50,7 @@ async def tiny_pic_spam(e):
         for i in range(1, counter):
             await e.client.send_file(e.chat_id, media)
         await e.delete()
-        if LOGGER:
-            await e.client.send_message(
-                LOGGER_GROUP,
-                "#MEDIASPAM \n\n"
-                "MediaSpam was executed successfully boss"
-                )
+        
 
 @register(outgoing=True, pattern="^.delayspam (.*)")
 async def spammer(e):
@@ -76,12 +61,7 @@ async def spammer(e):
     for i in range(1, counter):
         await e.respond(spam_message)
         await asyncio.sleep(spamDelay)
-    if LOGGER:
-        await e.client.send_message(
-            LOGGER_GROUP, "#DelaySPAM\n"
-            "DelaySpam was executed successfully")
-            
-
+    
 CMD_HELP.update(
     {
         "spam": ".spam <no of msgs> <your msg>"
