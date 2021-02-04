@@ -24,6 +24,9 @@ async def _(event):
     elif 'borg.me' in cmd:
         await edit_or_reply(event, 'The Plug cannot proceed due to security reasons')
         return
+    elif 'print(borg.me)' in cmd:
+        await edit_or_reply(event, 'The Plug cannot proceed due to security reasons')
+        return
     elif 'STRING_SESSION' in cmd:
         await edit_or_reply(event, 'The Plug cannot proceed due to security reasons')
         return
