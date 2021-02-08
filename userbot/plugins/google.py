@@ -10,8 +10,9 @@ import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
 from google_images_download import google_images_download
-from uniborg.util import admin_cmd
-
+from userbot.utils import admin_cmd
+from search_engine_parser import GoogleSearch
+        
 
 def progress(current, total):
     logger.info("Downloaded {} of {}\nCompleted {}".format(current, total, (current / total) * 100))
@@ -21,24 +22,15 @@ def progress(current, total):
 async def _(event):
     if event.fwd_from:
         return
-    start = datetime.now()
     await event.edit("searching")
-    # SHOW_DESCRIPTION = False
-    input_str = event.pattern_match.group(1) # + " -inurl:(htm|html|php|pls|txt) intitle:index.of \"last modified\" (mkv|mp4|avi|epub|pdf|mp3)"
-    input_url = "https://bots.shrimadhavuk.me/search/?q={}".format(input_str)
-    headers = {"USER-AGENT": "UniBorg"}
-    response = requests.get(input_url, headers=headers).json()
-    output_str = " "
-    for result in response["results"]:
-        text = result.get("title")
-        url = result.get("url")
-        description = result.get("description")
-        image = result.get("image")
+    input_str = event.pattern_match.group(1)
+    gs = GoogleSearch()
+    res = await gs.async_search(f"{input_str}")
+    gres = ""
+    for i in range(len(res["links"])):
+        text = res["titles"][i]
+        url = res["links"][i]
         output_str += " 👉🏻  [{}]({}) \n\n".format(text, url)
-    end = datetime.now()
-    ms = (end - start).seconds
-    await event.edit("searched Google for {} in {} seconds. \n{}".format(input_str, ms, output_str), link_preview=False)
-    await asyncio.sleep(5)
     await event.edit("**Google: {}\n{}**".format(input_str, output_str), link_preview=False)
 
 
