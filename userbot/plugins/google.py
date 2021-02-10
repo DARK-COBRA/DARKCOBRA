@@ -18,19 +18,21 @@ def progress(current, total):
     logger.info("Downloaded {} of {}\nCompleted {}".format(current, total, (current / total) * 100))
 
 
-@borg.on(admin_cmd(pattern="gs (.*)"))
+@borg.on(admin_cmd(pattern="gs ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
     await event.edit("searching")
     input_str = event.pattern_match.group(1)
+    if not input_str:
+        return event.edit("Give something to search")
     gs = GoogleSearch()
     res = await gs.async_search(f"{input_str}")
     gres = ""
     for i in range(len(res["links"])):
         text = res["titles"][i]
         url = res["links"][i]
-        output_str += " 👉🏻  [{}]({}) \n\n".format(text, url)
+        output_str = " 👉🏻  [{}]({}) \n\n".format(text, url)
     await event.edit("**Google: {}\n{}**".format(input_str, output_str), link_preview=False)
 
 
