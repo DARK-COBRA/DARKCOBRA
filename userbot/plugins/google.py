@@ -28,11 +28,11 @@ async def _(event):
         return await event.edit("Give something to search")
     gs = GoogleSearch()
     res = await gs.async_search(f"{input_str}")
-    gres = ""
+    output_str = ""
     for i in range(len(res["links"])):
         text = res["titles"][i]
         url = res["links"][i]
-        output_str = " 👉🏻  [{}]({}) \n\n".format(text, url)
+        output_str += " 👉🏻  [{}]({}) \n\n".format(text, url)
     await event.edit("**Google: {}\n{}**".format(input_str, output_str), link_preview=False)
 
 
