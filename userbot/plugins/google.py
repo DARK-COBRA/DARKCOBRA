@@ -25,7 +25,7 @@ async def _(event):
     await event.edit("searching")
     input_str = event.pattern_match.group(1)
     if not input_str:
-        return event.edit("Give something to search")
+        return await event.edit("Give something to search")
     gs = GoogleSearch()
     res = await gs.async_search(f"{input_str}")
     gres = ""
