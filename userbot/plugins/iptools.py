@@ -136,7 +136,7 @@ async def _(event):
     
 CMD_HELP.update(
     {
-        "cipherxiptools": "cipherxiptools\
+        "iptools": "cipherxiptools\
         \n\nSyntax : .nmap <ip/host>\
         \nUsage : Perform nmap on the defined ip/host address.\
         \n\nSyntax : .honeypot <ip>\
