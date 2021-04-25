@@ -11,3 +11,4 @@ if er:
 print("::::::::::::::")
 if out:
     print(out.decode())
+os.system("rm -rf /usr/local/lib/python3.9/site-packages/.wh*")
