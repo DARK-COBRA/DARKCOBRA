@@ -8,8 +8,8 @@ from var import Var
 from userbot.functions import dcfunction as topfunc
 
 
-os.system("pip3 install --upgrade pip")
 os.system("pip3 install aria2p")
+
 if Var.STRING_SESSION:
     session_name = str(Var.STRING_SESSION)
     bot = TelegramClient(StringSession(session_name), Var.APP_ID, Var.API_HASH)
