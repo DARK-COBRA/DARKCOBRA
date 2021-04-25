@@ -10,13 +10,11 @@ from selenium import webdriver
 from telethon import events
 from userbot.utils import admin_cmd
 
+CHROME_BIN = "/usr/bin/google-chrome"
 
 @borg.on(admin_cmd(pattern="screenshot (.*)"))
 async def _(event):
     if event.fwd_from:
-        return
-    if Config.GOOGLE_CHROME_BIN is None:
-        await event.edit("need to install Google Chrome. Module Stopping.")
         return
     await event.edit("Processing ...weit")
     start = datetime.now()
@@ -28,7 +26,7 @@ async def _(event):
         # https://stackoverflow.com/a/53073789/4723940
         chrome_options.add_argument('--no-sandbox')
         chrome_options.add_argument('--disable-dev-shm-usage')
-        chrome_options.binary_location = Config.GOOGLE_CHROME_BIN
+        chrome_options.binary_location = CHROME_BIN
         await event.edit("Starting Google Chrome BIN")
         driver = webdriver.Chrome(chrome_options=chrome_options)
         input_str = event.pattern_match.group(1)
