@@ -59,5 +59,5 @@ RUN wget -O chromedriver.zip http://chromedriver.storage.googleapis.com/$(curl -
 COPY start.py .
 COPY requirements.txt .
 RUN pip3 install --no-cache-dir -r requirements.txt
-COPY . .
+COPY start.py .
 CMD ["python","start.py"]
