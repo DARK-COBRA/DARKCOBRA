@@ -45,7 +45,10 @@ if LOAD_USERBOT == True:
         with open(name) as f:
             path1 = Path(f.name)
             shortname = path1.stem
-            load_module(shortname.replace(".py", ""))
+            try:
+                load_module(shortname.replace(".py", ""))
+            except Exception as er:
+                print(er)
 else:
     print("Userbot is Not Loading As U Have Disabled")
 
@@ -56,7 +59,10 @@ if LOAD_ASSISTANT == True:
         with open(name) as f:
             path1 = Path(f.name)
             shortname = path1.stem
-            start_assistant(shortname.replace(".py", ""))
+            try:
+                start_assistant(shortname.replace(".py", ""))
+            except Exception as er:
+                print(er)
 else:
     print("Assitant is Not Loading As U Have Disabled")
 
