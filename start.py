@@ -1,6 +1,7 @@
 import os 
 import subprocess
-os.system("git clone https://github.com/DARK-COBRA/DARKCOBRA cobra && cd cobra")
+os.system("git clone https://github.com/DARK-COBRA/DARKCOBRA darkcobra")
+os.chdir("darkcobra")
 process = subprocess.Popen(
         ["python3", "-m", "userbot"],
         stdout=subprocess.PIPE,
