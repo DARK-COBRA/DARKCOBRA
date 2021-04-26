@@ -1,6 +1,7 @@
 import os 
 import subprocess
-from logging import getLogger
+from logging import DEBUG, INFO, basicConfig, getLogger, warning
+basicConfig(format="[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s", level=INFO)
 LOGS = getLogger("Helper")
 os.system("git clone https://github.com/DARK-COBRA/DARKCOBRA darkcobra")
 os.chdir("darkcobra")
